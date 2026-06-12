@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Physician Consultation | Sutra Health</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    /* =========================
+       RESET
+    ========================= */
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'DM Sans',sans-serif;
+      background:#f8f6f1;
+      color:#1E2A1C;
+      line-height:1.7;
+      overflow-x:hidden;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    /* =========================
+       COMMON
+    ========================= */
+
+    .pc-container{
+      width:90%;
+      max-width:1250px;
+      margin:auto;
+    }
+
+    /* =========================
+       HERO SECTION
+    ========================= */
+
+    .hero{
+      min-height:100vh;
+
+      background:
+      linear-gradient(rgba(0,0,0,0.58),rgba(0,0,0,0.62)),
+      url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1800&auto=format&fit=crop');
+
+      background-size:cover;
+      background-position:center;
+
+      display:flex;
+      align-items:center;
+
+      padding:160px 0 90px;
+    }
+
+    .hero-content{
+      max-width:750px;
+    }
+
+    .hero span{
+      display:inline-block;
+      padding:10px 22px;
+      border-radius:40px;
+
+      background:rgba(255,255,255,0.12);
+      border:1px solid rgba(255,255,255,0.18);
+
+      color:#E9C46A;
+      font-size:14px;
+      letter-spacing:2px;
+      margin-bottom:25px;
+    }
+
+    .hero h1{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(42px,7vw,78px);
+      line-height:1.1;
+      color:#fff;
+      margin-bottom:28px;
+    }
+
+    .hero p{
+      color:rgba(255,255,255,0.85);
+      font-size:1.1rem;
+      margin-bottom:40px;
+      max-width:680px;
+    }
+
+    /* =========================
+       BUTTONS
+    ========================= */
+
+    .hero-btns{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .btn-primary,
+    .btn-secondary,
+    .tool-btn{
+      text-decoration:none;
+      transition:0.3s ease;
+      display:inline-block;
+      font-weight:600;
+    }
+
+    .btn-primary{
+      background: #2eb872;
+      color:#ffffff;
+      padding:14px 34px;
+      border-radius:50px;
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-3px);
+      background: #0c301e;
+    }
+
+    .btn-secondary{
+      border:1px solid rgba(255,255,255,0.35);
+      color:#fff;
+      background:rgba(255,255,255,0.08);
+      backdrop-filter:blur(8px);
+
+      padding:14px 34px;
+      border-radius:50px;
+    }
+
+    .btn-secondary:hover{
+      background:rgba(255,255,255,0.15);
+    }
+
+    /* =========================
+       SECTION
+    ========================= */
+
+    .section{
+      padding:100px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:70px;
+    }
+
+    .section-title h2{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(34px,5vw,54px);
+      margin-bottom:18px;
+      color:#1E2A1C;
+    }
+
+    .section-title p{
+      max-width:700px;
+      margin:auto;
+      color:#4d5b4a;
+      font-size:1.05rem;
+    }
+
+    /* =========================
+       CONSULT CARD
+    ========================= */
+
+    .consult-card{
+      background:#fff;
+      border-radius:30px;
+      padding:45px;
+      box-shadow:0 20px 45px rgba(0,0,0,0.06);
+      margin-bottom:50px;
+    }
+
+    .consult-card h3{
+      font-size:2rem;
+      margin-bottom:20px;
+      color: #000000;
+      font-family:'Playfair Display',serif;
+    }
+
+    .consult-card p{
+      margin-bottom:18px;
+      color:#465342;
+      font-size:1.05rem;
+    }
+
+    .highlight-box{
+      background:#EEF4E8;
+      border-left:5px solid  #2eb872;
+      padding:22px 25px;
+      border-radius:18px;
+      margin:30px 0;
+      font-weight:600;
+      color:#2d3a2b;
+    }
+
+    /* =========================
+       TOOL GRID
+    ========================= */
+
+    .tools-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:30px;
+    }
+
+    .tool-card{
+      background:#fff;
+      border-radius:28px;
+      padding:35px 30px;
+      box-shadow:0 12px 28px rgba(0,0,0,0.05);
+      transition:0.3s;
+      border:1px solid #ece7dc;
+    }
+
+    .tool-card:hover{
+      transform:translateY(-6px);
+      border-color:#E9C46A;
+    }
+
+    .tool-card h3{
+      font-size:1.5rem;
+      margin-bottom:18px;
+      color:#1E2A1C;
+      font-family:'Playfair Display',serif;
+    }
+
+    .tool-card p{
+      color:#4c5b49;
+      margin-bottom:20px;
+    }
+
+    .tool-btn{
+      background: #2eb872;
+      color:#fff;
+      padding:12px 24px;
+      border-radius:40px;
+    }
+
+    .tool-btn:hover{
+      background: #0b2e1d;
+      color: #fff;
+    }
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta{
+      padding:90px 30px;
+      border-radius:40px;
+
+      background:
+      linear-gradient(135deg,#1f3720,#2f5332);
+
+      text-align:center;
+      color:#fff;
+
+      margin-top:90px;
+    }
+
+    .cta h2{
+      font-size:clamp(34px,5vw,58px);
+      margin-bottom:20px;
+      font-family:'Playfair Display',serif;
+    }
+
+    .cta p{
+      max-width:700px;
+      margin:auto auto 35px;
+      color:rgba(255,255,255,0.85);
+      font-size:1.05rem;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media(max-width:768px){
+
+      .hero{
+        text-align:center;
+        padding-top:140px;
+      }
+
+      .hero-btns{
+        justify-content:center;
+      }
+
+      .consult-card{
+        padding:30px;
+      }
+
+      .tool-card{
+        padding:28px 24px;
+      }
+
+      .tools-grid{
+        grid-template-columns:1fr;
+      }
+
+    }
+
+    @media(max-width:500px){
+
+      .hero h1{
+        font-size:42px;
+      }
+
+      .section{
+        padding:70px 0;
+      }
+
+      .consult-card{
+        padding:24px;
+        border-radius:22px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <div id="navbar"></div>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="pc-container">
+
+      <div class="hero-content">
+
+        <span>WHOLE PERSON CARE</span>
+
+        <h1>Physician Consultation</h1>
+
+        <p>
+          We provide patient-centered, whole of person care nested in patient's family using best of integrative medicine.
+        </p>
+
+        <div class="hero-btns">
+
+          <a href="https://appointment-app-taupe-six.vercel.app/" class="btn-primary">
+            Book Appointment →
+          </a>
+
+          <a href="https://www.lybrate.com/faridabad/doctor/dr-rakesh-sarwal-preventive-medicine-specialist" class="btn-secondary">
+            Online Consultation
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONSULTATION -->
+
+  <section class="section">
+
+    <div class="pc-container">
+
+      <div class="section-title">
+
+        <h2>Integrative Consultation</h2>
+
+        <p>
+          Book an Appointment with a team of Allopathy, Ayurveda and Yoga experts for a whole of body, root cause diagnosis and treatment.
+        </p>
+
+      </div>
+
+      <div class="consult-card">
+
+        <h3>Patient-Centered Healing</h3>
+
+        <p>
+          Our consultations are designed to understand the complete picture of your health — body, mind, lifestyle, family environment, nutrition, and emotional wellbeing.
+        </p>
+
+        <p>
+          We combine the best practices from modern medicine, Yoga, Ayurveda, and lifestyle medicine to help you achieve long-term wellness and disease reversal naturally.
+        </p>
+
+        <div class="highlight-box">
+
+          Suggested donation Rs. 100 per consultation.
+
+        </div>
+
+        <a href="https://www.lybrate.com/faridabad/doctor/dr-rakesh-sarwal-preventive-medicine-specialist" class="tool-btn">
+          For Consultation Online / Booking Appointment on Lybrate →
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABHA -->
+
+  <section class="section" style="background:#F1EEE6;">
+
+    <div class="pc-container">
+
+      <div class="section-title">
+
+        <h2>Get your ABHA</h2>
+
+        <p>
+          Having a ABHA ID will help you securely save your medical data and grant access to medical professionals as and when needed.
+        </p>
+
+      </div>
+
+      <div class="consult-card">
+
+        <h3>Ayushman Bharat Health Account</h3>
+
+        <p>
+          Having an ABHA card can improve your healthcare experience by making your health records accessible, secure, and portable across healthcare systems.
+        </p>
+
+        <a href="https://abha.abdm.gov.in/abha/v3" class="tool-btn">
+          Create ABHA Account →
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- HEALTH TOOLS -->
+
+  <section class="section">
+
+    <div class="pc-container">
+
+      <div class="section-title">
+
+        <h2>Useful Self-Assessment Tools</h2>
+
+        <p>
+          Monitor your health, stress, and nervous system with evidence-based tools recommended for better awareness and preventive care.
+        </p>
+
+      </div>
+
+      <div class="tools-grid">
+
+        <div class="tool-card">
+
+          <h3>📱 Test Your Pulse</h3>
+
+          <p>
+            EQUAL recommends HeartBeat app for self monitoring of Blood Pressure using Android Phone.
+          </p>
+
+          <a href="https://f-droid.org/en/packages/com.heartbeats/" class="tool-btn">
+            Get from F-Droid
+          </a>
+
+        </div>
+
+        <div class="tool-card">
+
+          <h3>🧠 Stress Handling Capacity</h3>
+
+          <p>
+            Heart rate variability (HRV) measures the slight variations in time between your heartbeats, which can indicate your body's ability to handle stress and recover.
+          </p>
+
+          <a href="https://kubios.com/" class="tool-btn">
+            Get Kubios App
+          </a>
+
+        </div>
+
+        <div class="tool-card">
+
+          <h3>🧩 Brain Health Check</h3>
+
+          <p>
+            Check your risk of developing dementia in 10 minutes using the Think Brain Health Hub Tool.
+          </p>
+
+          <a href="https://thinkbrainhealth.com/" class="tool-btn">
+            Check Brain Health
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- CTA -->
+
+      <div class="cta">
+
+        <h2>Begin Your Healing Journey</h2>
+
+        <p>
+          Discover an evidence-based integrative approach that focuses on root-cause healing, lifestyle transformation, and long-term wellbeing.
+        </p>
+
+        <a href="https://appointment-app-taupe-six.vercel.app/" class="btn-primary">
+          Schedule Consultation →
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <!-- Include Navbar/Footer -->
+  <script src="js/include.js"></script>
+
+</body>
+</html>

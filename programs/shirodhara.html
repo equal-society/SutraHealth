@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Shirodhara & Panchakarma</title>
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- REMIX ICONS -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'DM Sans',sans-serif;
+      background:#f7f5f1;
+      color:#173322;
+      overflow-x:hidden;
+      line-height:1.7;
+    }
+
+    img{
+      width:100%;
+      display:block;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    .sh-container{
+      width:90%;
+      max-width:1240px;
+      margin:auto;
+    }
+
+    section{
+      padding:100px 0;
+    }
+
+    /* =========================
+       HERO SECTION
+    ========================= */
+
+    .sh-hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      position:relative;
+      overflow:hidden;
+      background:
+      linear-gradient(rgba(6,40,20,0.75),rgba(6,40,20,0.75)),
+      url('https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1800&auto=format&fit=crop')
+      center/cover no-repeat;
+    }
+
+    .sh-hero::before{
+      content:"";
+      position:absolute;
+      width:700px;
+      height:700px;
+      background:rgba(198,146,62,0.08);
+      border-radius:50%;
+      top:-200px;
+      right:-150px;
+      filter:blur(10px);
+    }
+
+    .sh-hero-content{
+      max-width:760px;
+      position:relative;
+      z-index:2;
+    }
+
+    .sh-tag{
+      display:inline-block;
+      padding:10px 18px;
+      border-radius:40px;
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.1);
+      color: #2eb872;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      font-size:13px;
+      margin-bottom:24px;
+      backdrop-filter:blur(4px);
+    }
+
+    .sh-hero h1{
+      font-size:78px;
+      line-height:1.08;
+      color:#fff;
+      font-family:'Playfair Display',serif;
+      margin-bottom:28px;
+    }
+
+    .sh-hero p{
+      color:rgba(255,255,255,0.72);
+      font-size:19px;
+      max-width:680px;
+      margin-bottom:38px;
+    }
+
+    .sh-btns{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+
+    .sh-btn{
+      padding:16px 34px;
+      border-radius:50px;
+      background: #2eb872;
+      color:#fff;
+      font-size:16px;
+      font-weight:600;
+      transition:0.35s ease;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .sh-btn:hover{
+      transform:translateY(-5px);
+      background: #0d3a23;
+    }
+
+    .sh-btn-outline{
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.18);
+    }
+
+    .sh-btn-outline:hover{
+      background:#fff;
+      color:#062814;
+    }
+
+    /* =========================
+       SECTION TITLE
+    ========================= */
+
+    .sh-section-head{
+      text-align:center;
+      margin-bottom:70px;
+    }
+
+    .sh-section-head span{
+      color: #2eb872;
+      text-transform:uppercase;
+      letter-spacing:2px;
+      font-size:14px;
+      font-weight:700;
+      margin-bottom:14px;
+      display:inline-block;
+    }
+
+    .sh-section-head h2{
+      font-size:56px;
+      font-family:'Playfair Display',serif;
+      color:#072a17;
+    }
+
+    /* =========================
+       ABOUT PANCHAKARMA
+    ========================= */
+
+    .sh-about{
+      background:#fff;
+    }
+
+    .sh-about-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:70px;
+      align-items:center;
+    }
+
+    .sh-about-image{
+      position:relative;
+    }
+
+    .sh-about-image img{
+      height:620px;
+      object-fit:cover;
+      border-radius:34px;
+      box-shadow:0 30px 70px rgba(0,0,0,0.1);
+    }
+
+    .sh-about-image::after{
+      content:"";
+      position:absolute;
+      width:180px;
+      height:180px;
+      border-radius:28px;
+      background: #2eb872;
+      bottom:-30px;
+      right:-30px;
+      z-index:-1;
+    }
+
+    .sh-about-content h3{
+      font-size:46px;
+      line-height:1.2;
+      margin-bottom:28px;
+      color:#072a17;
+      font-family:'Playfair Display',serif;
+    }
+
+    .sh-about-content p{
+      color:#496255;
+      margin-bottom:24px;
+      font-size:18px;
+    }
+
+    /* =========================
+       THERAPY CARDS
+    ========================= */
+
+    .sh-therapy-section{
+      background:
+      linear-gradient(to right,#072a17,#083117,#062814);
+      color:#fff;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .sh-therapy-section::before{
+      content:"";
+      position:absolute;
+      width:500px;
+      height:500px;
+      border-radius:50%;
+      background:rgba(198,146,62,0.08);
+      top:-120px;
+      left:-150px;
+    }
+
+    .sh-therapy-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+      gap:34px;
+      position:relative;
+      z-index:2;
+    }
+
+    .sh-card{
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:34px;
+      overflow:hidden;
+      transition:0.4s ease;
+      backdrop-filter:blur(4px);
+    }
+
+    .sh-card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 20px 40px rgba(0,0,0,0.2);
+    }
+
+    .sh-card img{
+      height:260px;
+      object-fit:cover;
+    }
+
+    .sh-card-content{
+      padding:34px;
+    }
+
+    .sh-card-icon{
+      width:70px;
+      height:70px;
+      border-radius:50%;
+      background: #2eb872;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      margin-bottom:24px;
+      font-size:28px;
+      color:#fff;
+    }
+
+    .sh-card h3{
+      font-size:34px;
+      margin-bottom:18px;
+      font-family:'Playfair Display',serif;
+    }
+
+    .sh-card p{
+      color:rgba(255,255,255,0.72);
+      font-size:17px;
+      line-height:1.9;
+    }
+
+    /* =========================
+       BENEFITS SECTION
+    ========================= */
+
+    .sh-benefits{
+      background:#f7f5f1;
+    }
+
+    .sh-benefit-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:28px;
+    }
+
+    .sh-benefit-box{
+      background:#fff;
+      padding:40px 34px;
+      border-radius:30px;
+      box-shadow:0 12px 30px rgba(0,0,0,0.05);
+      transition:0.35s ease;
+    }
+
+    .sh-benefit-box:hover{
+      transform:translateY(-8px);
+    }
+
+    .sh-benefit-box i{
+      font-size:42px;
+      color:#c6923e;
+      margin-bottom:20px;
+    }
+
+    .sh-benefit-box h4{
+      font-size:24px;
+      margin-bottom:14px;
+      color:#072a17;
+    }
+
+    .sh-benefit-box p{
+      color:#5b6f64;
+    }
+
+    /* =========================
+       CTA SECTION
+    ========================= */
+
+    .sh-cta{
+      padding:120px 0;
+      background:
+      linear-gradient(rgba(7,42,23,0.8),rgba(7,42,23,0.8)),
+      url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=1800&auto=format&fit=crop')
+      center/cover no-repeat fixed;
+      text-align:center;
+      color:#fff;
+    }
+
+    .sh-cta h2{
+      font-size:62px;
+      line-height:1.2;
+      margin-bottom:24px;
+      font-family:'Playfair Display',serif;
+    }
+
+    .sh-cta p{
+      max-width:760px;
+      margin:auto;
+      color:rgba(255,255,255,0.76);
+      font-size:18px;
+      margin-bottom:36px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    .footer{
+      width:100%;
+      background:
+      linear-gradient(to right,#072a17,#083117,#062814);
+      padding:80px 40px 30px;
+    }
+
+    .footer-container{
+      width:100%;
+      max-width:1220px;
+      margin:auto;
+    }
+
+    .footer-top{
+      display:grid;
+      grid-template-columns:1.2fr 1fr 1fr 1.2fr;
+      gap:70px;
+      padding-bottom:60px;
+    }
+
+    .footer-logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-bottom:28px;
+    }
+
+    .logo-icon{
+      width:38px;
+      height:38px;
+      border-radius:50%;
+      background:#c6923e;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      color:#fff;
+      font-size:15px;
+    }
+
+    .footer-logo h2{
+      font-family:'Playfair Display',serif;
+      font-size:38px;
+      color:#fff;
+      font-weight:700;
+    }
+
+    .brand-text{
+      color:rgba(255,255,255,0.58);
+      line-height:1.9;
+      font-size:17px;
+      max-width:340px;
+      margin-bottom:28px;
+    }
+
+    .social-icons{
+      display:flex;
+      gap:14px;
+    }
+
+    .social-icons a{
+      width:44px;
+      height:44px;
+      border-radius:50%;
+      background:rgba(255,255,255,0.08);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-decoration:none;
+      color:#fff;
+      transition:0.3s ease;
+      font-size:15px;
+    }
+
+    .social-icons a:hover{
+      background:#c6923e;
+      transform:translateY(-3px);
+    }
+
+    .footer-title{
+      color:rgba(255,255,255,0.42);
+      font-size:13px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      font-weight:700;
+      margin-bottom:28px;
+    }
+
+    .footer-links{
+      list-style:none;
+    }
+
+    .footer-links li{
+      margin-bottom:20px;
+    }
+
+    .footer-links a{
+      text-decoration:none;
+      color:rgba(255,255,255,0.62);
+      font-size:17px;
+      transition:0.3s ease;
+    }
+
+    .footer-links a:hover{
+      color:#fff;
+      padding-left:4px;
+    }
+
+    .newsletter-text{
+      color:rgba(255,255,255,0.58);
+      line-height:1.8;
+      font-size:17px;
+      margin-bottom:24px;
+      max-width:360px;
+    }
+
+    .newsletter-form{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .newsletter-input{
+      flex:1;
+      height:56px;
+      border-radius:40px;
+      border:1px solid rgba(255,255,255,0.12);
+      background:rgba(255,255,255,0.08);
+      padding:0 22px;
+      color:#fff;
+      outline:none;
+      font-size:16px;
+    }
+
+    .send-btn{
+      width:56px;
+      height:56px;
+      border:none;
+      border-radius:50%;
+      background:#c6923e;
+      color:#fff;
+      font-size:18px;
+      cursor:pointer;
+      transition:0.3s ease;
+    }
+
+    .send-btn:hover{
+      transform:translateY(-3px);
+      background:#d39f48;
+    }
+
+    .footer-bottom{
+      border-top:1px solid rgba(255,255,255,0.08);
+      padding-top:28px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .copyright{
+      color:rgba(255,255,255,0.4);
+      font-size:15px;
+    }
+
+    .bottom-links{
+      display:flex;
+      gap:28px;
+      flex-wrap:wrap;
+    }
+
+    .bottom-links a{
+      text-decoration:none;
+      color:rgba(255,255,255,0.4);
+      font-size:15px;
+      transition:0.3s ease;
+    }
+
+    .bottom-links a:hover{
+      color:#fff;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media(max-width:1100px){
+
+      .sh-about-grid{
+        grid-template-columns:1fr;
+      }
+
+      .footer-top{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .sh-hero h1{
+        font-size:58px;
+      }
+    }
+
+    @media(max-width:768px){
+
+      section{
+        padding:70px 0;
+      }
+
+      .sh-hero{
+        text-align:center;
+      }
+
+      .sh-hero h1{
+        font-size:42px;
+      }
+
+      .sh-section-head h2{
+        font-size:38px;
+      }
+
+      .sh-about-content h3{
+        font-size:36px;
+      }
+
+      .sh-cta h2{
+        font-size:40px;
+      }
+
+      .footer{
+        padding:60px 20px 30px;
+      }
+
+      .footer-top{
+        grid-template-columns:1fr;
+        gap:50px;
+      }
+
+      .newsletter-form{
+        flex-direction:column;
+      }
+
+      .send-btn{
+        width:100%;
+        border-radius:40px;
+      }
+
+      .footer-bottom{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+
+  <section class="sh-hero">
+    <div id="navbar"></div>
+    <div class="sh-container">
+
+      <div class="sh-hero-content">
+
+        <span class="sh-tag">
+          Ayurvedic Healing Therapy
+        </span>
+
+        <h1>
+          Shirodhara & Panchakarma
+        </h1>
+
+        <p>
+          Discover the ancient Ayurvedic healing practice that calms the nervous system,
+          rejuvenates the body, detoxifies the mind and restores holistic wellness naturally.
+        </p>
+
+        <div class="sh-btns">
+
+          <a href="#therapy" class="sh-btn">
+            Explore Therapy
+            <i class="ri-arrow-right-line"></i>
+          </a>
+
+          <a href="#benefits" class="sh-btn sh-btn-outline">
+            Benefits
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section class="sh-about">
+
+    <div class="sh-container">
+
+      <div class="sh-about-grid">
+
+        <div class="sh-about-image">
+
+          <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1200&auto=format&fit=crop" alt="Ayurvedic Massage">
+
+        </div>
+
+        <div class="sh-about-content">
+
+          <h3>
+            Panchakarma Cleansing Therapy
+          </h3>
+
+          <p>
+            Panchakarma is a traditional Ayurvedic detoxification and rejuvenation therapy
+            designed to cleanse the body of toxins and restore natural balance.
+          </p>
+
+          <p>
+            It combines preventive, promotive and curative healing techniques to support
+            physical wellness, emotional harmony and mental clarity.
+          </p>
+
+          <p>
+            Panchakarma therapies help lubricate, nourish and revitalize the body while
+            enhancing circulation, calming the nervous system and improving vitality.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- THERAPIES -->
+
+  <section class="sh-therapy-section" id="therapy">
+
+    <div class="sh-container">
+
+      <div class="sh-section-head">
+
+        <span>
+          Healing Therapies
+        </span>
+
+        <h2>
+          Ayurvedic Treatments
+        </h2>
+
+      </div>
+
+      <div class="sh-therapy-grid">
+
+        <!-- CARD 1 -->
+
+        <div class="sh-card">
+
+          <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200&auto=format&fit=crop" alt="Massage Therapy">
+
+          <div class="sh-card-content">
+
+            <div class="sh-card-icon">
+              <i class="ri-hand-heart-line"></i>
+            </div>
+
+            <h3>
+              Abhyanga Massage
+            </h3>
+
+            <p>
+              Abhyanga massage, also called Snehana, means “to nurture with love.”
+              Warm herbal oils are used to massage the body with special focus on the forehead,
+              temples, ears, palms and soles where important Marma points are present.
+            </p>
+
+            <p>
+              This therapy helps improve circulation, relieve stress, rejuvenate the body
+              and calm the nervous system naturally.
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- CARD 2 -->
+
+        <div class="sh-card">
+
+          <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=1200&auto=format&fit=crop" alt="Shirodhara Therapy">
+
+          <div class="sh-card-content">
+
+            <div class="sh-card-icon">
+              <i class="ri-water-flash-line"></i>
+            </div>
+
+            <h3>
+              Shirodhara Therapy
+            </h3>
+
+            <p>
+              Shirodhara comes from the Sanskrit words “Shiro” meaning head
+              and “Dhara” meaning flow.
+            </p>
+
+            <p>
+              In this therapy, warm herbal oil, milk, buttermilk or water is gently poured
+              onto the forehead in a rhythmic stream while the body relaxes deeply.
+            </p>
+
+            <p>
+              The STHAPNI Marma on the forehead gets stimulated, helping calm the mind,
+              balance emotions and relax the hypothalamus.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- BENEFITS -->
+
+  <section class="sh-benefits" id="benefits">
+
+    <div class="sh-container">
+
+      <div class="sh-section-head">
+
+        <span>
+          Wellness Benefits
+        </span>
+
+        <h2>
+          Why Choose Shirodhara?
+        </h2>
+
+      </div>
+
+      <div class="sh-benefit-grid">
+
+        <div class="sh-benefit-box">
+
+          <i class="ri-mental-health-line"></i>
+
+          <h4>
+            Stress Relief
+          </h4>
+
+          <p>
+            Deeply relaxes the nervous system and helps calm anxiety and emotional fatigue.
+          </p>
+
+        </div>
+
+        <div class="sh-benefit-box">
+
+          <i class="ri-heart-pulse-line"></i>
+
+          <h4>
+            Better Sleep
+          </h4>
+
+          <p>
+            Supports healthy sleep cycles and helps reduce insomnia naturally.
+          </p>
+
+        </div>
+
+        <div class="sh-benefit-box">
+
+          <i class="ri-leaf-line"></i>
+
+          <h4>
+            Detoxification
+          </h4>
+
+          <p>
+            Helps eliminate toxins and improves body purification and energy flow.
+          </p>
+
+        </div>
+
+        <div class="sh-benefit-box">
+
+          <i class="ri-sparkling-line"></i>
+
+          <h4>
+            Mental Clarity
+          </h4>
+
+          <p>
+            Enhances concentration, emotional balance and inner peace.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+
+  <section class="sh-cta">
+
+    <div class="sh-container">
+
+      <h2>
+        Experience Ancient Ayurvedic Healing
+      </h2>
+
+      <p>
+        Rejuvenate your body, calm your mind and reconnect with holistic wellness
+        through traditional Panchakarma and Shirodhara therapies.
+      </p>
+
+      <a href="#" class="sh-btn">
+        Book Consultation
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <div id="footer"></div>
+
+</body>
+<script src="../js/include.js"></script>
+</html>

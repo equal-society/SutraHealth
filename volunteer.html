@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Heal Together | Arogya Community</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    /* ======================================== */
+    /* MODERN RESET - ISOLATED & CLEAN */
+    /* ======================================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f5f2ea;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ======================================== */
+    /* MAIN SECTION - MODERN DESIGN */
+    /* ======================================== */
+    .community-healing {
+      width: 100%;
+      min-height: 100vh;
+      position: relative;
+      background: linear-gradient(145deg, #f5f2ea 0%, #fefcf8 100%);
+      overflow: hidden;
+    }
+
+    /* Decorative background elements */
+    .community-healing::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 70%;
+      height: 70%;
+      background: radial-gradient(circle, rgba(190,141,70,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .community-healing::after {
+      content: '';
+      position: absolute;
+      bottom: -15%;
+      left: -5%;
+      width: 60%;
+      height: 60%;
+      background: radial-gradient(circle, rgba(22,56,40,0.06) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .healing-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 5vw, 3rem);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 6vw, 5rem);
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ======================================== */
+    /* LEFT SIDE - MODERN TYPOGRAPHY */
+    /* ======================================== */
+    .mission-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(190, 141, 70, 0.12);
+      backdrop-filter: blur(4px);
+      padding: 0.5rem 1.2rem;
+      border-radius: 60px;
+      margin-bottom: clamp(1.5rem, 4vw, 2.2rem);
+      width: fit-content;
+      border: 1px solid rgba(190, 141, 70, 0.2);
+    }
+
+    .mission-badge i {
+      color: #be8d46;
+      font-size: 0.85rem;
+    }
+
+    .mission-badge span {
+      color: #be8d46;
+      font-size: clamp(0.7rem, 2.5vw, 0.8rem);
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+
+    .main-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      font-weight: 800;
+      line-height: 1.12;
+      color: #0a241b;
+      margin-bottom: clamp(1.2rem, 4vw, 2rem);
+      letter-spacing: -0.02em;
+    }
+
+    .main-title .highlight {
+      color:#2eb872;
+      position: relative;
+      display: inline-block;
+    }
+
+    .main-description {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      line-height: 1.7;
+      color: #5a6a60;
+      margin-bottom: clamp(2rem, 5vw, 3rem);
+      max-width: 90%;
+    }
+
+    /* Modern Stats Cards */
+    .stats-showcase {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+      margin-bottom: clamp(2rem, 5vw, 3rem);
+    }
+
+    .stat-modern {
+      background: white;
+      border-radius: 28px;
+      padding: 1.5rem 1.2rem;
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+      border: 1px solid rgba(190, 141, 70, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-modern::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 100%;
+      background: #be8d46;
+      transform: scaleY(0);
+      transition: transform 0.3s ease;
+    }
+
+    .stat-modern:hover::before {
+      transform: scaleY(1);
+    }
+
+    .stat-modern:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+      border-color: rgba(190, 141, 70, 0.3);
+    }
+
+    .stat-number-modern {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 800;
+      color: #163828;
+      margin-bottom: 0.3rem;
+      letter-spacing: -0.01em;
+    }
+
+    .stat-label-modern {
+      font-size: clamp(0.8rem, 2vw, 0.9rem);
+      font-weight: 500;
+      color: #7a8a7e;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Modern Buttons */
+    .action-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .btn-modern {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.9rem 2rem;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .btn-primary-modern {
+      background: #163828;
+      color: white;
+      border: none;
+      box-shadow: 0 8px 18px rgba(22, 56, 40, 0.15);
+    }
+
+    .btn-primary-modern:hover {
+      background: #0e2a1f;
+      transform: translateY(-3px);
+      box-shadow: 0 15px 25px rgba(22, 56, 40, 0.25);
+      gap: 1rem;
+    }
+
+    .btn-outline-modern {
+      background: transparent;
+      color: #163828;
+      border: 1.5px solid #163828;
+    }
+
+    .btn-outline-modern:hover {
+      background: #163828;
+      color: white;
+      transform: translateY(-3px);
+      gap: 1rem;
+    }
+
+    /* ======================================== */
+    /* RIGHT SIDE - MODERN IMAGE DESIGN */
+    /* ======================================== */
+    .visual-showcase {
+      position: relative;
+    }
+
+    .image-card-modern {
+      position: relative;
+      border-radius: 40px;
+      overflow: hidden;
+      box-shadow: 0 30px 50px -20px rgba(0, 0, 0, 0.25);
+    }
+
+    .image-card-modern img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .image-card-modern:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Floating Glass Card */
+    .floating-glass-card {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      right: 1.5rem;
+      background: rgba(22, 56, 40, 0.85);
+      backdrop-filter: blur(20px);
+      border-radius: 28px;
+      padding: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      transition: all 0.3s ease;
+    }
+
+    .floating-glass-card:hover {
+      background: rgba(22, 56, 40, 0.92);
+      transform: translateY(-3px);
+    }
+
+    .glass-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+      font-weight: 700;
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+
+    .glass-text {
+      font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 1.2rem;
+      line-height: 1.5;
+    }
+
+    .register-btn-modern {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: #be8d46;
+      color: white;
+      padding: 0.7rem 1.3rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: all 0.3s ease;
+    }
+
+    .register-btn-modern:hover {
+      background: #d6a145;
+      gap: 0.9rem;
+      transform: translateY(-2px);
+    }
+
+    /* ======================================== */
+    /* RESPONSIVE BREAKPOINTS */
+    /* ======================================== */
+    @media (max-width: 1024px) {
+      .healing-container {
+        gap: 3rem;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .healing-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      
+      .main-description {
+        max-width: 100%;
+      }
+      
+      .stats-showcase {
+        gap: 1rem;
+      }
+      
+      .visual-showcase {
+        max-width: 600px;
+        margin: 0 auto;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .stats-showcase {
+        grid-template-columns: 1fr;
+        gap: 0.9rem;
+      }
+      
+      .stat-modern {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.2rem 1.2rem;
+      }
+      
+      .stat-number-modern {
+        margin-bottom: 0;
+      }
+      
+      .action-buttons {
+        flex-direction: column;
+      }
+      
+      .btn-modern {
+        width: 100%;
+        justify-content: center;
+      }
+      
+      .floating-glass-card {
+        position: relative;
+        margin-top: 1rem;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+      
+      .image-card-modern {
+        border-radius: 32px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .healing-container {
+        padding: 2rem 1.2rem;
+      }
+      
+      .stat-modern {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+        text-align: left;
+      }
+      
+      .mission-badge {
+        padding: 0.4rem 1rem;
+      }
+      
+      .floating-glass-card {
+        padding: 1rem 1.2rem;
+        border-radius: 24px;
+      }
+      
+      .glass-title {
+        font-size: 1.1rem;
+      }
+    }
+
+    /* Smooth AOS animations */
+    [data-aos] {
+      transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    /* Hide navbar/footer placeholders if empty */
+    #navbar:empty, #footer:empty {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div id="navbar"></div>
+
+<!-- MODERN COMMUNITY SECTION -->
+<section class="community-healing">
+  <div class="healing-container">
+    
+    <!-- LEFT COLUMN -->
+    <div class="content-modern" data-aos="fade-right" data-aos-duration="900">
+      
+      <div class="mission-badge" data-aos="fade-up" data-aos-delay="50">
+        <i class="fa-regular fa-heart"></i>
+        <span>JOIN OUR MOVEMENT</span>
+      </div>
+      
+      <h1 class="main-title" data-aos="fade-up" data-aos-delay="100">
+        Heal <span class="highlight">Together</span>,<br>
+        Grow Together
+      </h1>
+      
+      <p class="main-description" data-aos="fade-up" data-aos-delay="200">
+        Arogya is more than a clinic — it's a living movement. Join thousands
+        of volunteers, wellness advocates, and community healers building 
+        a healthier, happier India.
+      </p>
+      
+      <!-- Modern Stats -->
+      <div class="stats-showcase" data-aos="fade-up" data-aos-delay="250">
+        <div class="stat-modern" data-aos="zoom-in" data-aos-delay="300">
+          <div class="stat-number-modern">4,200+</div>
+          <div class="stat-label-modern">Volunteers</div>
+        </div>
+        <div class="stat-modern" data-aos="zoom-in" data-aos-delay="350">
+          <div class="stat-number-modern">52</div>
+          <div class="stat-label-modern">Cities Reached</div>
+        </div>
+        <div class="stat-modern" data-aos="zoom-in" data-aos-delay="400">
+          <div class="stat-number-modern">₹1.2 Cr</div>
+          <div class="stat-label-modern">Wellness Donated</div>
+        </div>
+        <div class="stat-modern" data-aos="zoom-in" data-aos-delay="450">
+          <div class="stat-number-modern">890+</div>
+          <div class="stat-label-modern">Free Camps</div>
+        </div>
+      </div>
+      
+      <!-- Action Buttons -->
+      <div class="action-buttons" data-aos="fade-up" data-aos-delay="500">
+        <a href="#" class="btn-modern btn-primary-modern">
+          Volunteer With Us <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="#" class="btn-modern btn-outline-modern">
+          Donate Now <i class="fa-regular fa-heart"></i>
+        </a>
+      </div>
+      
+    </div>
+    
+    <!-- RIGHT COLUMN - Visual -->
+    <div class="visual-showcase" data-aos="fade-left" data-aos-duration="900" data-aos-delay="150">
+      <div class="image-card-modern">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1400&auto=format&fit=crop" 
+             alt="Community healing together in nature">
+        
+        <div class="floating-glass-card" data-aos="fade-up" data-aos-delay="350" data-aos-duration="700">
+          <div class="glass-title">
+            <i class="fa-regular fa-calendar-alt" style="margin-right: 0.5rem;"></i>
+            Next Free Community Camp
+          </div>
+          <div class="glass-text">
+            June 21, 2026 • International Yoga Day<br>
+            Major cities across India
+          </div>
+          <a href="#" class="register-btn-modern">
+            Register Free <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<div id="footer"></div>
+
+<script src="./js/include.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    AOS.init({
+      once: true,
+      mirror: false,
+      offset: 80,
+      duration: 800,
+      easing: 'ease-out-quad',
+    });
+    console.log('✨ Modern Heal Together section loaded successfully');
+  });
+</script>
+
+</body>
+</html>

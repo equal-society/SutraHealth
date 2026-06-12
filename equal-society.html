@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>About EQUAL Society | Effort For Quality of Life</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
+
+  <!-- Remix Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+
+  <style>
+
+    /* =========================
+       GLOBAL RESET
+    ========================= */
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'DM Sans', sans-serif;
+      background:#f7f5f1;
+      color:#1e2a2a;
+      overflow-x:hidden;
+      line-height:1.6;
+    }
+
+    img{
+      width:100%;
+      display:block;
+    }
+
+    section{
+      padding:90px 0;
+    }
+
+    .eq-container{
+      width:90%;
+      max-width:1300px;
+      margin:auto;
+    }
+
+    /* =========================
+       SECTION HEADINGS
+    ========================= */
+
+    .eq-section-header{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .eq-section-tag{
+      color:#2eb872;
+      text-transform:uppercase;
+      letter-spacing:3px;
+      font-size:14px;
+      font-weight:700;
+      display:inline-block;
+    }
+
+    .eq-section-header h2{
+      font-size:48px;
+      margin-top:15px;
+      font-family:'Playfair Display', serif;
+      color:#1a2a2a;
+    }
+
+    .eq-light h2,
+    .eq-light .eq-section-tag{
+      color:#fff;
+    }
+
+    .eq-light .eq-section-tag{
+      color:#2eb872;
+    }
+
+    .eq-light p{
+      color:#ddd;
+    }
+
+    /* =========================
+       HERO SECTION
+    ========================= */
+
+    .eq-hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      background:
+      linear-gradient(rgba(10,20,18,0.82), rgba(10,20,18,0.82)),
+      url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=1600&auto=format&fit=crop')
+      center/cover no-repeat;
+      background-attachment:fixed;
+    }
+
+    .eq-hero-content{
+      max-width:850px;
+      color:#fff;
+    }
+
+    .eq-hero-tag{
+      color:#2eb872;
+      text-transform:uppercase;
+      letter-spacing:4px;
+      font-size:14px;
+      font-weight:600;
+    }
+
+    .eq-hero h1{
+      font-size:72px;
+      line-height:1.1;
+      margin:20px 0;
+      font-family:'Playfair Display', serif;
+    }
+
+    .eq-hero p{
+      max-width:700px;
+      color:#e0e0e0;
+      font-size:19px;
+      margin-bottom:35px;
+    }
+
+    .eq-hero-btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      background:#2eb872;
+      color:#111;
+      padding:14px 32px;
+      border-radius:60px;
+      font-weight:600;
+      text-decoration:none;
+      transition:.3s ease;
+    }
+
+    .eq-hero-btn:hover{
+      transform:translateY(-5px);
+      background:#fff;
+      color:#0f2422;
+    }
+
+    /* =========================
+       ABOUT SECTION
+    ========================= */
+
+    .eq-about-section{
+      background:#fff;
+    }
+
+    .eq-about-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:70px;
+      align-items:center;
+    }
+
+    .eq-about-image img{
+      height:550px;
+      object-fit:cover;
+      border-radius:30px;
+      box-shadow:0 20px 40px rgba(0,0,0,.1);
+    }
+
+    .eq-about-content p{
+      margin-bottom:22px;
+      color:#2c3e3e;
+      font-size:18px;
+      line-height:1.8;
+    }
+
+    /* =========================
+       OBJECTIVE SECTION
+    ========================= */
+
+    .eq-objective-section{
+      background:#0f2422;
+      color:#fff;
+    }
+
+    .eq-objective-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:32px;
+    }
+
+    .eq-objective-card{
+      background:rgba(255,255,255,.06);
+      padding:40px 30px;
+      border-radius:28px;
+      border:1px solid rgba(255,255,255,.08);
+      transition:.3s ease;
+    }
+
+    .eq-objective-card:hover{
+      transform:translateY(-8px);
+      background:rgba(255,255,255,.1);
+    }
+
+    .eq-objective-card i{
+      font-size:44px;
+      color:#2eb872;
+      margin-bottom:20px;
+    }
+
+    .eq-objective-card h3{
+      margin-bottom:15px;
+      font-size:24px;
+    }
+
+    .eq-objective-card p{
+      color:#d7d7d7;
+    }
+
+    /* =========================
+       PROMOTERS SECTION
+    ========================= */
+
+    .eq-promoter-section{
+      background:#f7f5f1;
+    }
+
+    .eq-promoter-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:32px;
+    }
+
+    .eq-promoter-card{
+      background:#fff;
+      padding:38px 32px;
+      border-radius:28px;
+      box-shadow:0 12px 30px rgba(0,0,0,.05);
+      transition:.3s ease;
+    }
+
+    .eq-promoter-card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 20px 40px rgba(0,0,0,.1);
+    }
+
+    .eq-promoter-card h3{
+      font-size:28px;
+      margin-bottom:8px;
+      font-family:'Playfair Display', serif;
+    }
+
+    .eq-promoter-card span{
+      display:block;
+      color:#2eb872;
+      font-weight:700;
+      margin-bottom:18px;
+    }
+
+    .eq-promoter-card p{
+      color:#4a5b5b;
+    }
+
+    /* =========================
+       DECLARATION SECTION
+    ========================= */
+
+    .eq-declaration-section{
+      background:#f1ece3;
+    }
+
+    .eq-declaration-box{
+      background:#fff;
+      padding:70px 40px;
+      border-radius:32px;
+      text-align:center;
+      box-shadow:0 20px 50px rgba(0,0,0,.05);
+    }
+
+    .eq-declaration-box h2{
+      font-size:44px;
+      margin-bottom:18px;
+      font-family:'Playfair Display', serif;
+    }
+
+    .eq-declaration-box p{
+      color:#4a5a5a;
+      margin-bottom:32px;
+      font-size:18px;
+    }
+
+    .eq-declaration-btn{
+      display:inline-block;
+      background:#2eb872;
+      color:#fff;
+      padding:12px 34px;
+      border-radius:50px;
+      text-decoration:none;
+      font-weight:500;
+      transition:.3s ease;
+    }
+
+    .eq-declaration-btn:hover{
+      background:#07301c;
+      color:#ffffff;
+    }
+
+    /* =========================
+       DONATE SECTION
+    ========================= */
+
+    .eq-donate-section{
+      background:
+      linear-gradient(rgba(10,20,18,.88), rgba(12, 75, 62, 0.88)),
+      url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1600&auto=format&fit=crop')
+      center/cover fixed;
+      color:#fff;
+    }
+
+    .eq-bank-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:26px;
+      margin-top:30px;
+    }
+
+    .eq-bank-card{
+      background:rgba(255,255,255,.1);
+      padding:28px 20px;
+      border-radius:24px;
+      border:1px solid rgba(255,255,255,.2);
+      text-align:center;
+      backdrop-filter:blur(3px);
+    }
+
+    .eq-bank-card h4{
+      color:#2eb872;
+      margin-bottom:12px;
+      font-size:18px;
+      letter-spacing:1px;
+    }
+
+    .eq-bank-card p{
+      color:#f5f5f5;
+      font-weight:500;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media(max-width:992px){
+
+      .eq-about-grid{
+        grid-template-columns:1fr;
+        gap:40px;
+      }
+
+      .eq-hero h1{
+        font-size:52px;
+      }
+
+      section{
+        padding:70px 0;
+      }
+
+    }
+
+    @media(max-width:768px){
+
+      .eq-hero{
+        text-align:center;
+      }
+
+      .eq-hero h1{
+        font-size:40px;
+      }
+
+      .eq-section-header h2{
+        font-size:36px;
+      }
+
+      .eq-declaration-box{
+        padding:40px 20px;
+      }
+
+      .eq-declaration-box h2{
+        font-size:34px;
+      }
+
+      .eq-promoter-card h3{
+        font-size:24px;
+      }
+
+      .eq-hero-btn{
+        margin:auto;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <div id="navbar"></div>
+  <section class="eq-hero">
+
+    <div class="eq-container">
+
+      <div class="eq-hero-content" data-aos="fade-up">
+
+        <span class="eq-hero-tag">
+          EQUAL Society
+        </span>
+
+        <h1>
+          Effort For Quality of Life
+        </h1>
+
+        <p>
+          A not-for-profit organization dedicated to advancing holistic health,
+          family welfare, education, wellness and human dignity through
+          integrative and compassionate service.
+        </p>
+
+        <a href="#about" class="eq-hero-btn">
+          Explore More
+          <i class="ri-arrow-right-line"></i>
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section class="eq-about-section" id="about">
+
+    <div class="eq-container">
+
+      <div class="eq-section-header" data-aos="fade-up">
+
+        <span class="eq-section-tag">
+          About Us
+        </span>
+
+        <h2>
+          About EQUAL Society
+        </h2>
+
+      </div>
+
+      <div class="eq-about-grid">
+
+        <div class="eq-about-image" data-aos="fade-right">
+
+          <img
+            src="https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=1200&auto=format&fit=crop"
+            alt="Community Service"
+          >
+
+        </div>
+
+        <div class="eq-about-content" data-aos="fade-left">
+
+          <p>
+            <strong>Effort For Quality of Life (EQUAL) Society</strong>
+            is a not-for-profit organization committed to the attainment
+            of highest quality of Life by All.
+          </p>
+
+          <p>
+            It is registered under Societies Registration Act, 1860
+            in Haryana vide no. 363, dated 28.5.1997,
+            under 12A and 80G of Income Tax Act.
+          </p>
+
+          <p>
+            EQUAL Society believes in holistic development of individuals
+            and communities through health, education, empowerment,
+            awareness and sustainable living.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- OBJECTIVES -->
+
+  <section class="eq-objective-section">
+
+    <div class="eq-container">
+
+      <div class="eq-section-header eq-light" data-aos="fade-up">
+
+        <span class="eq-section-tag">
+          Mission & Vision
+        </span>
+
+        <h2>
+          Aims & Objectives
+        </h2>
+
+      </div>
+
+      <div class="eq-objective-grid">
+
+        <div class="eq-objective-card" data-aos="zoom-in">
+
+          <i class="ri-heart-pulse-line"></i>
+
+          <h3>
+            Health Advancement
+          </h3>
+
+          <p>
+            Advancement of health by rendering preventive,
+            promotive, curative and rehabilitative services.
+          </p>
+
+        </div>
+
+        <div class="eq-objective-card" data-aos="zoom-in">
+
+          <i class="ri-parent-line"></i>
+
+          <h3>
+            Family Welfare
+          </h3>
+
+          <p>
+            Promotion of maternal and child health,
+            immunization and awareness programs.
+          </p>
+
+        </div>
+
+        <div class="eq-objective-card" data-aos="zoom-in">
+
+          <i class="ri-community-line"></i>
+
+          <h3>
+            Quality of Life
+          </h3>
+
+          <p>
+            Improving opportunities for education,
+            nutrition, employment and healthy living.
+          </p>
+
+        </div>
+
+        <div class="eq-objective-card" data-aos="zoom-in">
+
+          <i class="ri-scales-3-line"></i>
+
+          <h3>
+            Human Values
+          </h3>
+
+          <p>
+            Promoting dignity, equality,
+            awareness and humanitarian service.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PROMOTERS -->
+
+  <section class="eq-promoter-section">
+
+    <div class="eq-container">
+
+      <div class="eq-section-header" data-aos="fade-up">
+
+        <span class="eq-section-tag">
+          Leadership
+        </span>
+
+        <h2>
+          Promoters of EQUAL Society
+        </h2>
+
+      </div>
+
+      <div class="eq-promoter-grid">
+
+        <div class="eq-promoter-card">
+
+          <h3>
+            Mrs. Bimla Sarwal
+          </h3>
+
+          <span>
+            Wellness Practitioner
+          </span>
+
+          <p>
+            30+ years experience in wellness,
+            healthy diet, yoga and natural living.
+          </p>
+
+        </div>
+
+        <div class="eq-promoter-card">
+
+          <h3>
+            Dr. Rakesh Sarwal
+          </h3>
+
+          <span>
+            MBBS, MPH, DrPH
+          </span>
+
+          <p>
+            Gold medalist with extensive experience
+            in public health and policy.
+          </p>
+
+        </div>
+
+        <div class="eq-promoter-card">
+
+          <h3>
+            Dr. Yamini
+          </h3>
+
+          <span>
+            MBBS, MD
+          </span>
+
+          <p>
+            Experienced healthcare professional
+            serving maternal and family healthcare.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- DECLARATION -->
+
+  <section class="eq-declaration-section">
+
+    <div class="eq-container">
+
+      <div class="eq-declaration-box">
+
+        <h2>
+          TCIH Declaration
+        </h2>
+
+        <p>
+          We are a signatory to the Traditional
+          Complementary Integrative Healthcare Declaration.
+        </p>
+
+        <a href="#" class="eq-declaration-btn">
+          Read Declaration
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- DONATE -->
+
+  <section class="eq-donate-section">
+
+    <div class="eq-container">
+
+      <div class="eq-section-header eq-light">
+
+        <span class="eq-section-tag">
+          Support Us
+        </span>
+
+        <h2>
+          Donate
+        </h2>
+
+        <p>
+          Claim 50% deduction under 80G of Income Tax Act
+        </p>
+
+      </div>
+
+      <div class="eq-bank-grid">
+
+        <div class="eq-bank-card">
+
+          <h4>Organization</h4>
+
+          <p>
+            Effort for Quality of Life (EQUAL)
+          </p>
+
+        </div>
+
+        <div class="eq-bank-card">
+
+          <h4>Bank</h4>
+
+          <p>
+            RBL Bank, Sector 21-C, Faridabad
+          </p>
+
+        </div>
+
+        <div class="eq-bank-card">
+
+          <h4>IFSC Code</h4>
+
+          <p>
+            RATN0000493
+          </p>
+
+        </div>
+
+        <div class="eq-bank-card">
+
+          <h4>Account Number</h4>
+
+          <p>
+            309017789765
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+<div id="footer"></div>
+  <!-- AOS -->
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="../js/include.js"></script>
+  <script>
+
+    AOS.init({
+      duration:800,
+      once:true
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+      anchor.addEventListener('click', function(e){
+
+        const targetId = this.getAttribute('href');
+
+        const target = document.querySelector(targetId);
+
+        if(target){
+
+          e.preventDefault();
+
+          target.scrollIntoView({
+            behavior:'smooth'
+          });
+
+        }
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<div id="navbar"></div>
+<section class="google-reviews">
+
+    <div class="review-heading">
+        <span>Google Reviews</span>
+        <h2>Trusted By Hundreds Of Patients</h2>
+        <p>
+            Real experiences from patients who have transformed their health
+            through Ayurveda, Yoga and Integrative Medicine.
+        </p>
+    </div>
+
+    <div class="slider">
+
+        <div class="slide-track">
+
+            <!-- CARD 1 -->
+            <div class="review-card">
+                <div class="top">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="">
+                    <div>
+                        <h4>Rahul Sharma</h4>
+                        <span>2 Weeks Ago</span>
+                    </div>
+                </div>
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    Amazing consultation experience. The doctors patiently
+                    listened to my concerns and provided practical Ayurvedic
+                    solutions.
+                </p>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="review-card">
+                <div class="top">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="">
+                    <div>
+                        <h4>Priya Verma</h4>
+                        <span>1 Month Ago</span>
+                    </div>
+                </div>
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    Yoga therapy helped reduce my back pain significantly.
+                    Professional staff and peaceful environment.
+                </p>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="review-card">
+                <div class="top">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="">
+                    <div>
+                        <h4>Ankit Mehta</h4>
+                        <span>3 Weeks Ago</span>
+                    </div>
+                </div>
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    Highly recommend Sutra Health. The holistic treatment
+                    approach actually delivers long-term benefits.
+                </p>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="review-card">
+                <div class="top">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="">
+                    <div>
+                        <h4>Neha Kapoor</h4>
+                        <span>4 Weeks Ago</span>
+                    </div>
+                </div>
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    Meditation sessions transformed my daily routine.
+                    Stress levels are much lower now.
+                </p>
+            </div>
+
+            <!-- DUPLICATE FOR LOOP -->
+            <div class="review-card">
+                <div class="top">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="">
+                    <div>
+                        <h4>Rahul Sharma</h4>
+                        <span>2 Weeks Ago</span>
+                    </div>
+                </div>
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    Amazing consultation experience. The doctors patiently
+                    listened to my concerns and provided practical Ayurvedic
+                    solutions.
+                </p>
+            </div>
+
+            <div class="review-card">
+                <div class="top">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="">
+                    <div>
+                        <h4>Priya Verma</h4>
+                        <span>1 Month Ago</span>
+                    </div>
+                </div>
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    Yoga therapy helped reduce my back pain significantly.
+                    Professional staff and peaceful environment.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<div id="footer"></div>
+<script src="../js/include.js"></script>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+.google-reviews{
+    background:#FBF9F4;
+    padding:120px 0;
+    overflow:hidden;
+    position:relative;
+}
+
+.google-reviews::before{
+    content:'';
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:rgba(46,184,114,.06);
+    border-radius:50%;
+    top:-200px;
+    left:-150px;
+    filter:blur(80px);
+}
+
+.google-reviews::after{
+    content:'';
+    position:absolute;
+    width:450px;
+    height:450px;
+    background:rgba(46,184,114,.04);
+    border-radius:50%;
+    bottom:-200px;
+    right:-150px;
+    filter:blur(80px);
+}
+
+.review-heading{
+    text-align:center;
+    max-width:850px;
+    margin:auto;
+    margin-bottom:80px;
+    padding:0 20px;
+    position:relative;
+    z-index:2;
+}
+
+.review-heading span{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:12px 24px;
+    border-radius:50px;
+    background:rgba(17,74,48,.07);
+    color:hsl(148,32%,17%);
+    font-family:'DM Sans',sans-serif;
+    font-weight:600;
+    font-size:14px;
+    letter-spacing:.5px;
+    margin-bottom:24px;
+}
+
+.review-heading h2{
+    font-family:'Playfair Display',serif;
+    font-size:58px;
+    line-height:1.15;
+    font-weight:700;
+    color:hsl(148,32%,17%);
+    margin-bottom:18px;
+}
+
+.review-heading p{
+    font-family:'DM Sans',sans-serif;
+    font-size:18px;
+    line-height:1.9;
+    color:#667085;
+    max-width:680px;
+    margin:auto;
+}
+
+.slider{
+    width:100%;
+    overflow:hidden;
+    position:relative;
+}
+
+.slide-track{
+    display:flex;
+    gap:30px;
+    width:max-content;
+    animation:scroll 35s linear infinite;
+    padding:10px;
+}
+
+.review-card{
+    min-width:380px;
+    max-width:380px;
+    background:rgba(255,255,255,.85);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.7);
+    border-radius:30px;
+    padding:35px;
+    box-shadow:
+    0 10px 40px rgba(0,0,0,.05),
+    0 25px 60px rgba(0,0,0,.04);
+    transition:.45s ease;
+    position:relative;
+}
+
+.review-card::before{
+    content:"❝";
+    position:absolute;
+    top:20px;
+    right:25px;
+    font-size:70px;
+    color:rgba(46,184,114,.12);
+    font-family:serif;
+}
+
+.review-card:hover{
+    transform:translateY(-12px);
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.08),
+    0 35px 80px rgba(0,0,0,.06);
+}
+
+.top{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:22px;
+}
+
+.top img{
+    width:46px;
+    height:46px;
+}
+
+.top h4{
+    font-family:'DM Sans',sans-serif;
+    font-size:18px;
+    font-weight:700;
+    color:hsl(148,32%,17%);
+    margin-bottom:4px;
+}
+
+.top span{
+    font-size:13px;
+    color:#8a8f98;
+}
+
+.stars{
+    color:#FDBA12;
+    font-size:18px;
+    letter-spacing:2px;
+    margin-bottom:18px;
+}
+
+.review-card p{
+    font-family:'DM Sans',sans-serif;
+    color:#5c6670;
+    font-size:16px;
+    line-height:1.9;
+}
+
+.slide-track:hover{
+    animation-play-state:paused;
+}
+
+@keyframes scroll{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-50%);
+    }
+
+}
+
+@media(max-width:992px){
+
+.review-heading h2{
+    font-size:46px;
+}
+
+.review-card{
+    min-width:330px;
+    max-width:330px;
+}
+
+}
+
+@media(max-width:768px){
+
+.google-reviews{
+    padding:80px 0;
+}
+
+.review-heading{
+    margin-bottom:50px;
+}
+
+.review-heading h2{
+    font-size:34px;
+}
+
+.review-heading p{
+    font-size:16px;
+}
+
+.review-card{
+    min-width:290px;
+    max-width:290px;
+    padding:28px;
+}
+
+}
+</style>
+    
+</body>
+</html>
