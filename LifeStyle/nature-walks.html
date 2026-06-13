@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +14,16 @@
   <!-- CSS -->
   <link rel="stylesheet" href="../styles/nature-walks.css">
 
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <style>
+    /* Ensure AOS animations don't cause any layout shift or visual changes */
+    [data-aos] {
+      pointer-events: auto !important;
+    }
+  </style>
 </head>
 
 <body>
@@ -23,249 +32,150 @@
   <div id="navbar"></div>
 
   <!-- HERO SECTION -->
-
   <section class="nature-hero">
-
     <div class="nature-container">
-
       <div class="hero-content">
-
-        <span>NATURAL WELLNESS</span>
-
-        <h1>Nature Walks & Healing Plants</h1>
-
-        <p>
+        <span data-aos="fade-up" data-aos-duration="800" data-aos-delay="50">NATURAL WELLNESS</span>
+        <h1 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150">Nature Walks & Healing Plants</h1>
+        <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="250">
           Reconnect with nature, recharge your body-mind, and create a calming healing environment around you through walking, greenery, and indoor plants.
         </p>
-
       </div>
-
     </div>
-
   </section>
 
   <!-- INTRO SECTION -->
-
   <section class="nature-section">
-
     <div class="nature-container">
-
       <div class="intro-grid">
-
-        <div class="intro-text">
-
-          <h2>Nature Walks</h2>
-
-          <p>
+        <div class="intro-text" data-aos="fade-right" data-aos-duration="1000" data-aos-offset="80">
+          <h2 data-aos="fade-up" data-aos-duration="600" data-aos-delay="50">Nature Walks</h2>
+          <p data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
             Walking is one of the simplest and most powerful forms of exercise. Walking in nature helps recharge the body and mind naturally while reducing stress and improving emotional wellbeing.
           </p>
-
-          <p>
+          <p data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
             Breathing fresh air, grounding yourself on natural earth, and spending time among greenery can restore balance and calmness in daily life.
           </p>
-
         </div>
-
-        <div class="intro-image">
-
+        <div class="intro-image" data-aos="fade-left" data-aos-duration="1000" data-aos-offset="80">
           <img src="../images/Nature Walks.jpg" alt="Nature Walk">
-
         </div>
-
       </div>
-
     </div>
-
   </section>
 
   <!-- MICRO CLIMATE -->
-
   <section class="nature-section soft-bg">
-
     <div class="nature-container">
-
       <div class="section-title">
-
-        <h2>Create a Micro-Climate Around You</h2>
-
-        <p>
+        <h2 data-aos="fade-up" data-aos-duration="800">Create a Micro-Climate Around You</h2>
+        <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
           Even 30 minutes of exposure to nature daily can benefit both body and mind. Indoor plants help purify air, reduce stress, and create a soothing atmosphere inside your home.
         </p>
-
       </div>
-
-      <div class="info-card">
-
-        <p>
+      <div class="info-card" data-aos="fade-up" data-aos-duration="900" data-aos-offset="50">
+        <p data-aos="fade-up" data-aos-duration="600" data-aos-delay="50">
           A NASA study identified several indoor plants that effectively remove air pollutants like formaldehyde, ammonia, benzene, and xylene emitted by household products.
         </p>
-
-        <p>
+        <p data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
           These plants do more than beautify your space — they naturally clean indoor air and improve the quality of your living environment.
         </p>
-
       </div>
-
     </div>
-
   </section>
 
   <!-- PLANTS SECTION -->
-
   <section class="nature-section">
-
     <div class="nature-container">
-
       <div class="section-title">
-
-        <h2>Indoor Plants for Better Health</h2>
-
-        <p>
+        <h2 data-aos="fade-up" data-aos-duration="800">Indoor Plants for Better Health</h2>
+        <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
           Here are five beautiful indoor plants that improve air quality and create a healthier, calmer home environment.
         </p>
-
       </div>
-
       <div class="plants-grid">
-
         <!-- Plant 1 -->
-
-        <div class="plant-card">
-
+        <div class="plant-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="50">
           <div class="plant-image">
             <img src="../images/Peace Lily.jpg" alt="Peace Lily">
           </div>
-
           <div class="plant-content">
-
             <h3>Peace Lily</h3>
-
             <span>Spathiphyllum</span>
-
             <p>
               A humidity-loving flowering plant that thrives in indirect sunlight and helps remove formaldehyde from indoor air.
             </p>
-
           </div>
-
         </div>
-
         <!-- Plant 2 -->
-
-        <div class="plant-card">
-
+        <div class="plant-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
           <div class="plant-image">
             <img src="../images/Spider Plant.jpg" alt="Spider Plant">
           </div>
-
           <div class="plant-content">
-
             <h3>Spider Plant</h3>
-
             <span>Chlorophytum comosum</span>
-
             <p>
               A beginner-friendly indoor plant that survives easily in indirect sunlight and adapts well to different conditions.
             </p>
-
           </div>
-
         </div>
-
         <!-- Plant 3 -->
-
-        <div class="plant-card">
-
+        <div class="plant-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="150">
           <div class="plant-image">
             <img src="../images/money plant.jpg" alt="Money Plant">
           </div>
-
           <div class="plant-content">
-
             <h3>Money Plant</h3>
-
             <span>Golden Pothos</span>
-
             <p>
               A hardy indoor plant that grows beautifully in water or pots while removing benzene, formaldehyde, and xylene.
             </p>
-
           </div>
-
         </div>
-
         <!-- Plant 4 -->
-
-        <div class="plant-card">
-
+        <div class="plant-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
           <div class="plant-image">
             <img src="../images/Snake Plant.jpg" alt="Snake Plant">
           </div>
-
           <div class="plant-content">
-
             <h3>Snake Plant</h3>
-
             <span>Sansevieria</span>
-
             <p>
               One of the easiest plants to maintain, known for eliminating several harmful indoor chemicals while requiring minimal care.
             </p>
-
           </div>
-
         </div>
-
         <!-- Plant 5 -->
-
-        <div class="plant-card">
-
+        <div class="plant-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="250">
           <div class="plant-image">
             <img src="../images/Boston Fern.jpg" alt="Boston Fern">
           </div>
-
           <div class="plant-content">
-
             <h3>Boston Fern</h3>
-
             <span>Nephrolepis exaltata</span>
-
             <p>
               A lush indoor fern that effectively removes formaldehyde while adding freshness and beauty to your living space.
             </p>
-
           </div>
-
         </div>
-
       </div>
-
     </div>
-
   </section>
 
   <!-- CTA -->
-
   <section class="nature-section">
-
     <div class="nature-container">
-
-      <div class="cta-box">
-
-        <h2>Bring Nature Into Your Daily Life</h2>
-
-        <p>
+      <div class="cta-box" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="50">
+        <h2 data-aos="fade-up" data-aos-duration="600" data-aos-delay="50">Bring Nature Into Your Daily Life</h2>
+        <p data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
           Nature has the power to heal, calm, energize, and restore balance. Small daily habits like walking outdoors and surrounding yourself with plants can transform your wellbeing.
         </p>
-
-        <a href="#" class="cta-btn">
+        <a href="#" class="cta-btn" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="150">
           Begin Your Wellness Journey →
         </a>
-
       </div>
-
     </div>
-
   </section>
 
   <!-- Footer -->
@@ -273,6 +183,26 @@
 
   <!-- Include Navbar & Footer -->
   <script src="../js/include.js"></script>
+
+  <!-- Initialize AOS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({
+        duration: 1000,
+        once: false,
+        mirror: false,
+        offset: 80,
+        easing: 'ease-out-quad',
+        disable: false,
+        startEvent: 'DOMContentLoaded'
+      });
+      
+      // Refresh AOS after any dynamic content loads
+      setTimeout(function() {
+        AOS.refresh();
+      }, 300);
+    });
+  </script>
 
 </body>
 </html>

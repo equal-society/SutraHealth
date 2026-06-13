@@ -15,6 +15,10 @@
   <!-- REMIX ICONS -->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
 
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
   <style>
 
     *{
@@ -634,295 +638,200 @@
 
     }
 
+    /* AOS safe styles */
+    [data-aos] {
+      pointer-events: auto !important;
+    }
   </style>
 </head>
 
 <body>
 
   <!-- HERO -->
-
   <section class="sh-hero">
     <div id="navbar"></div>
     <div class="sh-container">
-
       <div class="sh-hero-content">
-
-        <span class="sh-tag">
+        <span class="sh-tag" data-aos="fade-up" data-aos-duration="800" data-aos-delay="50">
           Ayurvedic Healing Therapy
         </span>
-
-        <h1>
+        <h1 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150">
           Shirodhara & Panchakarma
         </h1>
-
-        <p>
+        <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="250">
           Discover the ancient Ayurvedic healing practice that calms the nervous system,
           rejuvenates the body, detoxifies the mind and restores holistic wellness naturally.
         </p>
-
         <div class="sh-btns">
-
-          <a href="#therapy" class="sh-btn">
+          <a href="#therapy" class="sh-btn" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="350">
             Explore Therapy
             <i class="ri-arrow-right-line"></i>
           </a>
-
-          <a href="#benefits" class="sh-btn sh-btn-outline">
+          <a href="#benefits" class="sh-btn sh-btn-outline" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="450">
             Benefits
           </a>
-
         </div>
-
       </div>
-
     </div>
-
   </section>
 
   <!-- ABOUT -->
-
   <section class="sh-about">
-
     <div class="sh-container">
-
       <div class="sh-about-grid">
-
-        <div class="sh-about-image">
-
+        <div class="sh-about-image" data-aos="fade-right" data-aos-duration="1200" data-aos-offset="100">
           <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1200&auto=format&fit=crop" alt="Ayurvedic Massage">
-
         </div>
-
-        <div class="sh-about-content">
-
-          <h3>
+        <div class="sh-about-content" data-aos="fade-left" data-aos-duration="1200" data-aos-offset="100">
+          <h3 data-aos="fade-up" data-aos-duration="600" data-aos-delay="50">
             Panchakarma Cleansing Therapy
           </h3>
-
-          <p>
+          <p data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
             Panchakarma is a traditional Ayurvedic detoxification and rejuvenation therapy
             designed to cleanse the body of toxins and restore natural balance.
           </p>
-
-          <p>
+          <p data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
             It combines preventive, promotive and curative healing techniques to support
             physical wellness, emotional harmony and mental clarity.
           </p>
-
-          <p>
+          <p data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
             Panchakarma therapies help lubricate, nourish and revitalize the body while
             enhancing circulation, calming the nervous system and improving vitality.
           </p>
-
         </div>
-
       </div>
-
     </div>
-
   </section>
 
   <!-- THERAPIES -->
-
   <section class="sh-therapy-section" id="therapy">
-
     <div class="sh-container">
-
       <div class="sh-section-head">
-
-        <span>
-          Healing Therapies
-        </span>
-
-        <h2>
+        <span data-aos="fade-up" data-aos-duration="800">Healing Therapies</span>
+        <h2 data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
           Ayurvedic Treatments
         </h2>
-
       </div>
-
       <div class="sh-therapy-grid">
-
         <!-- CARD 1 -->
-
-        <div class="sh-card">
-
+        <div class="sh-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
           <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200&auto=format&fit=crop" alt="Massage Therapy">
-
           <div class="sh-card-content">
-
             <div class="sh-card-icon">
               <i class="ri-hand-heart-line"></i>
             </div>
-
-            <h3>
-              Abhyanga Massage
-            </h3>
-
+            <h3>Abhyanga Massage</h3>
             <p>
-              Abhyanga massage, also called Snehana, means “to nurture with love.”
+              Abhyanga massage, also called Snehana, means "to nurture with love."
               Warm herbal oils are used to massage the body with special focus on the forehead,
               temples, ears, palms and soles where important Marma points are present.
             </p>
-
             <p>
               This therapy helps improve circulation, relieve stress, rejuvenate the body
               and calm the nervous system naturally.
             </p>
-
           </div>
-
         </div>
-
         <!-- CARD 2 -->
-
-        <div class="sh-card">
-
+        <div class="sh-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="250">
           <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=1200&auto=format&fit=crop" alt="Shirodhara Therapy">
-
           <div class="sh-card-content">
-
             <div class="sh-card-icon">
               <i class="ri-water-flash-line"></i>
             </div>
-
-            <h3>
-              Shirodhara Therapy
-            </h3>
-
+            <h3>Shirodhara Therapy</h3>
             <p>
-              Shirodhara comes from the Sanskrit words “Shiro” meaning head
-              and “Dhara” meaning flow.
+              Shirodhara comes from the Sanskrit words "Shiro" meaning head
+              and "Dhara" meaning flow.
             </p>
-
             <p>
               In this therapy, warm herbal oil, milk, buttermilk or water is gently poured
               onto the forehead in a rhythmic stream while the body relaxes deeply.
             </p>
-
             <p>
               The STHAPNI Marma on the forehead gets stimulated, helping calm the mind,
               balance emotions and relax the hypothalamus.
             </p>
-
           </div>
-
         </div>
-
       </div>
-
     </div>
-
   </section>
 
   <!-- BENEFITS -->
-
   <section class="sh-benefits" id="benefits">
-
     <div class="sh-container">
-
       <div class="sh-section-head">
-
-        <span>
-          Wellness Benefits
-        </span>
-
-        <h2>
+        <span data-aos="fade-up" data-aos-duration="800">Wellness Benefits</span>
+        <h2 data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
           Why Choose Shirodhara?
         </h2>
-
       </div>
-
       <div class="sh-benefit-grid">
-
-        <div class="sh-benefit-box">
-
+        <div class="sh-benefit-box" data-aos="fade-up" data-aos-duration="600" data-aos-delay="50">
           <i class="ri-mental-health-line"></i>
-
-          <h4>
-            Stress Relief
-          </h4>
-
-          <p>
-            Deeply relaxes the nervous system and helps calm anxiety and emotional fatigue.
-          </p>
-
+          <h4>Stress Relief</h4>
+          <p>Deeply relaxes the nervous system and helps calm anxiety and emotional fatigue.</p>
         </div>
-
-        <div class="sh-benefit-box">
-
+        <div class="sh-benefit-box" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
           <i class="ri-heart-pulse-line"></i>
-
-          <h4>
-            Better Sleep
-          </h4>
-
-          <p>
-            Supports healthy sleep cycles and helps reduce insomnia naturally.
-          </p>
-
+          <h4>Better Sleep</h4>
+          <p>Supports healthy sleep cycles and helps reduce insomnia naturally.</p>
         </div>
-
-        <div class="sh-benefit-box">
-
+        <div class="sh-benefit-box" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
           <i class="ri-leaf-line"></i>
-
-          <h4>
-            Detoxification
-          </h4>
-
-          <p>
-            Helps eliminate toxins and improves body purification and energy flow.
-          </p>
-
+          <h4>Detoxification</h4>
+          <p>Helps eliminate toxins and improves body purification and energy flow.</p>
         </div>
-
-        <div class="sh-benefit-box">
-
+        <div class="sh-benefit-box" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
           <i class="ri-sparkling-line"></i>
-
-          <h4>
-            Mental Clarity
-          </h4>
-
-          <p>
-            Enhances concentration, emotional balance and inner peace.
-          </p>
-
+          <h4>Mental Clarity</h4>
+          <p>Enhances concentration, emotional balance and inner peace.</p>
         </div>
-
       </div>
-
     </div>
-
   </section>
 
   <!-- CTA -->
-
   <section class="sh-cta">
-
     <div class="sh-container">
-
-      <h2>
+      <h2 data-aos="fade-up" data-aos-duration="1000" data-aos-offset="50">
         Experience Ancient Ayurvedic Healing
       </h2>
-
-      <p>
+      <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
         Rejuvenate your body, calm your mind and reconnect with holistic wellness
         through traditional Panchakarma and Shirodhara therapies.
       </p>
-
-      <a href="#" class="sh-btn">
+      <a href="#" class="sh-btn" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
         Book Consultation
       </a>
-
     </div>
-
   </section>
 
   <!-- FOOTER -->
-
   <div id="footer"></div>
 
+  <script src="../js/include.js"></script>
+
+  <!-- Initialize AOS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({
+        duration: 1000,
+        once: false,
+        mirror: false,
+        offset: 80,
+        easing: 'ease-out-quad',
+        disable: false,
+        startEvent: 'DOMContentLoaded'
+      });
+      
+      // Refresh AOS after any dynamic content loads
+      setTimeout(function() {
+        AOS.refresh();
+      }, 300);
+    });
+  </script>
+
 </body>
-<script src="../js/include.js"></script>
 </html>

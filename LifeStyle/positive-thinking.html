@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +14,16 @@
   <!-- CSS -->
   <link rel="stylesheet" href="../styles/positive-thinking.css">
 
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <style>
+    /* Ensure AOS animations don't cause any layout shift or visual changes */
+    [data-aos] {
+      pointer-events: auto !important;
+    }
+  </style>
 </head>
 
 <body>
@@ -23,173 +32,102 @@
   <div id="navbar"></div>
 
   <!-- HERO SECTION -->
-
   <section class="positive-hero">
-
     <div class="positive-container">
-
       <div class="hero-content">
-
-        <span>INNER WELLNESS</span>
-
-        <h1>Positive Thinking</h1>
-
-        <p>
+        <span data-aos="fade-up" data-aos-duration="800" data-aos-delay="50">INNER WELLNESS</span>
+        <h1 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150">Positive Thinking</h1>
+        <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="250">
           We become what we think. Positive thoughts create clarity, peace, emotional balance, and a deeper connection with ourselves and the world around us.
         </p>
-
       </div>
-
     </div>
-
   </section>
 
   <!-- QUOTE SECTION -->
-
   <section class="quote-section">
-
     <div class="positive-container">
-
       <div class="quote-grid">
-
-        <div class="quote-card large">
-
-         <img src="../images/image5.png" alt="Positive Thinking Quote" style=" object-fit:cover;">
-
+        <div class="quote-card large" data-aos="fade-right" data-aos-duration="1000" data-aos-offset="80">
+          <img src="../images/image5.png" alt="Positive Thinking Quote" style="object-fit:cover;">
         </div>
-
-        <div class="quote-card">
-
+        <div class="quote-card" data-aos="fade-left" data-aos-duration="1000" data-aos-offset="80">
           <img src="../images/image4.png" alt="Happiness Quote">
-
         </div>
-
       </div>
-
     </div>
-
   </section>
 
   <!-- INTRO SECTION -->
-
   <section class="positive-section">
-
     <div class="positive-container">
-
       <div class="section-title">
-
-        <h2>Five Steps to a Positive Mindset</h2>
-
-        <p>
+        <h2 data-aos="fade-up" data-aos-duration="800">Five Steps to a Positive Mindset</h2>
+        <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
           Small changes in thinking can transform the way we experience life, relationships, emotions, and inner peace.
         </p>
-
       </div>
-
       <div class="mindset-grid">
-
         <!-- STEP 1 -->
-
-        <div class="mindset-card">
-
+        <div class="mindset-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="50">
           <div class="step-number">01</div>
-
           <h3>Do Not Judge Others</h3>
-
           <p>
             Every person is fighting their own internal battles. Compassion and understanding create harmony and reduce negativity within ourselves.
           </p>
-
         </div>
-
         <!-- STEP 2 -->
-
-        <div class="mindset-card">
-
+        <div class="mindset-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
           <div class="step-number">02</div>
-
           <h3>Accept Things as They Are</h3>
-
           <p>
             Perceive and accept situations as they truly are instead of constantly wishing them to be different. Acceptance creates peace.
           </p>
-
         </div>
-
         <!-- STEP 3 -->
-
-        <div class="mindset-card">
-
+        <div class="mindset-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="150">
           <div class="step-number">03</div>
-
           <h3>Practice Gratitude</h3>
-
           <p>
             Express gratitude daily for what you already have. Gratitude shifts the mind from lack to abundance and happiness.
           </p>
-
         </div>
-
         <!-- STEP 4 -->
-
-        <div class="mindset-card wide-card">
-
+        <div class="mindset-card wide-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
           <div class="step-number">04</div>
-
           <h3>Move Towards Self-Empowerment</h3>
-
           <p>
             Move away from the victim-abuser mindset towards self-realization and awareness. Overcome desire, anger, pride, fear, and grief through courage and acceptance.
           </p>
-
           <p>
             Explore the Levels of Consciousness developed by Dr. David Hawkins to better understand emotional and spiritual growth.
           </p>
-
         </div>
-
         <!-- STEP 5 -->
-
-        <div class="mindset-card">
-
+        <div class="mindset-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="250">
           <div class="step-number">05</div>
-
           <h3>Live Quietly in the Moment</h3>
-
           <p>
             The present moment is where peace exists. Slow down, breathe deeply, and experience life with awareness and calmness.
           </p>
-
         </div>
-
       </div>
-
     </div>
-
   </section>
 
   <!-- FINAL CTA -->
-
   <section class="positive-section">
-
     <div class="positive-container">
-
-      <div class="cta-box">
-
-        <h2>Choose Peace Over Negativity</h2>
-
-        <p>
-          Positive thinking is not about ignoring life’s challenges. It is about responding with awareness, acceptance, courage, and gratitude.
+      <div class="cta-box" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="50">
+        <h2 data-aos="fade-up" data-aos-duration="600" data-aos-delay="50">Choose Peace Over Negativity</h2>
+        <p data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+          Positive thinking is not about ignoring life's challenges. It is about responding with awareness, acceptance, courage, and gratitude.
         </p>
-
-        <a href="#" class="cta-btn">
+        <a href="#" class="cta-btn" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="150">
           Begin Your Wellness Journey →
         </a>
-
       </div>
-
     </div>
-
   </section>
 
   <!-- Footer -->
@@ -198,6 +136,25 @@
   <!-- Include Navbar & Footer -->
   <script src="../js/include.js"></script>
 
+  <!-- Initialize AOS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({
+        duration: 1000,
+        once: false,
+        mirror: false,
+        offset: 80,
+        easing: 'ease-out-quad',
+        disable: false,
+        startEvent: 'DOMContentLoaded'
+      });
+      
+      // Refresh AOS after any dynamic content loads
+      setTimeout(function() {
+        AOS.refresh();
+      }, 300);
+    });
+  </script>
+
 </body>
 </html>
-

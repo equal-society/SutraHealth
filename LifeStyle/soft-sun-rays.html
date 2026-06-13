@@ -9,10 +9,20 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="../styles/soft-sun-rays.css">
+
+<!-- AOS Animation Library -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<style>
+  /* Ensure AOS animations don't cause any layout shift or visual changes */
+  [data-aos] {
+    pointer-events: auto !important;
+  }
+</style>
 </head>
 
 <body>
@@ -20,32 +30,23 @@
 <div id="navbar"></div>
 
 <section class="sun-hero">
-
     <div class="sun-container">
-
-        <h1>Benefits of Soft Sun Rays</h1>
-
-        <p>
+        <h1 data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100">Benefits of Soft Sun Rays</h1>
+        <p data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">
             Gentle morning sunlight provides natural healing energy
             and supports physical, mental, and emotional wellbeing.
         </p>
-
     </div>
-
 </section>
 
 <section class="sun-benefits">
-
     <div class="sun-container">
-
         <div class="sun-title">
-            <h2>Health Benefits</h2>
-            <p>Why Soft Morning Sunlight is Beneficial</p>
+            <h2 data-aos="fade-right" data-aos-duration="800">Health Benefits</h2>
+            <p data-aos="fade-right" data-aos-duration="800" data-aos-delay="100">Why Soft Morning Sunlight is Beneficial</p>
         </div>
-
         <div class="sun-grid">
-
-            <div class="sun-card">
+            <div class="sun-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="50">
                 <div class="sun-icon">☀️</div>
                 <h3>Boosting Vitamin D</h3>
                 <p>
@@ -53,8 +54,7 @@
                     supporting stronger bones, immunity, and overall health.
                 </p>
             </div>
-
-            <div class="sun-card">
+            <div class="sun-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
                 <div class="sun-icon">❤️</div>
                 <h3>Heart Health</h3>
                 <p>
@@ -62,8 +62,7 @@
                     better cardiovascular function.
                 </p>
             </div>
-
-            <div class="sun-card">
+            <div class="sun-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="250">
                 <div class="sun-icon">😊</div>
                 <h3>Improves Mood</h3>
                 <p>
@@ -71,8 +70,7 @@
                     helping improve mood and emotional wellbeing.
                 </p>
             </div>
-
-            <div class="sun-card">
+            <div class="sun-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="350">
                 <div class="sun-icon">🌿</div>
                 <h3>Pain Relief</h3>
                 <p>
@@ -80,33 +78,45 @@
                     living with chronic pain conditions.
                 </p>
             </div>
-
         </div>
-
     </div>
-
 </section>
 
 <section class="sun-quote">
-
     <div class="sun-container">
-
-        <div class="quote-box">
-            <h2>Morning Sunlight</h2>
-
-            <p>
+        <div class="quote-box" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
+            <h2 data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">Morning Sunlight</h2>
+            <p data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
                 "A few minutes of soft morning sunlight can nurture
                 the body, calm the mind, and energize the spirit."
             </p>
         </div>
-
     </div>
-
 </section>
 
 <div id="footer"></div>
 
 <script src="../js/include.js"></script>
+
+<!-- Initialize AOS -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    AOS.init({
+      duration: 1000,
+      once: false,
+      mirror: false,
+      offset: 80,
+      easing: 'ease-out-quad',
+      disable: false,
+      startEvent: 'DOMContentLoaded'
+    });
+    
+    // Refresh AOS after any dynamic content loads
+    setTimeout(function() {
+      AOS.refresh();
+    }, 300);
+  });
+</script>
 
 </body>
 </html>

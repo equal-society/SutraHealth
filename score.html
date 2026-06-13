@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>21 Point Lifestyle Questionnaire</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#f4f7f9;
+    color:#1f2937;
+}
+
+/* ===========================
+   Questionnaire Section
+=========================== */
+
+.lifestyle-score-section{
+    padding:120px 20px 80px;
+}
+
+.lifestyle-score-wrapper{
+    max-width:900px;
+    margin:0 auto;
+    background:#ffffff;
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.lifestyle-score-title{
+    text-align:center;
+    color:#0b5d4b;
+    font-size:32px;
+    font-weight:700;
+    margin-bottom:35px;
+}
+
+.lifestyle-question-item{
+    padding:18px 0;
+    border-bottom:1px solid #e5e7eb;
+}
+
+.lifestyle-question-item:last-child{
+    border-bottom:none;
+}
+
+.lifestyle-question-title{
+    font-size:16px;
+    font-weight:600;
+    margin-bottom:12px;
+    line-height:1.5;
+}
+
+.lifestyle-question-options{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.lifestyle-question-options label{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    cursor:pointer;
+    font-size:15px;
+}
+
+.lifestyle-question-options input[type="radio"]{
+    width:18px;
+    height:18px;
+    accent-color:#0b5d4b;
+}
+
+.lifestyle-score-btn{
+    width:100%;
+    border:none;
+    padding:16px;
+    margin-top:30px;
+    background:#0b5d4b;
+    color:#fff;
+    border-radius:12px;
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.lifestyle-score-btn:hover{
+    background:#084638;
+}
+
+.lifestyle-score-result{
+    margin-top:20px;
+    padding:20px;
+    border-radius:12px;
+    background:#ecfdf5;
+    border:1px solid #a7f3d0;
+    text-align:center;
+    font-size:24px;
+    font-weight:700;
+    color:#065f46;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .lifestyle-score-section{
+        padding:100px 15px 60px;
+    }
+
+    .lifestyle-score-wrapper{
+        padding:25px;
+    }
+
+    .lifestyle-score-title{
+        font-size:24px;
+    }
+
+    .lifestyle-question-title{
+        font-size:15px;
+    }
+
+    .lifestyle-question-options{
+        gap:15px;
+    }
+
+    .lifestyle-score-result{
+        font-size:20px;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- Navbar Include -->
+<div id="navbar"></div>
+
+<section class="lifestyle-score-section">
+
+<div class="lifestyle-score-wrapper">
+
+<h1 class="lifestyle-score-title">
+21 Point Lifestyle Questionnaire
+</h1>
+
+<div id="questions"></div>
+
+<button class="lifestyle-score-btn" onclick="calculateScore()">
+Calculate Score
+</button>
+
+<div class="lifestyle-score-result" id="result">
+Total Score: 0 / 21
+</div>
+
+</div>
+
+</section>
+
+<!-- Footer Include -->
+<div id="footer"></div>
+
+<script src="./js/include.js"></script>
+
+<script>
+
+const questions = [
+"Deep fried foods – Fries, Pakoras, Samosa, Kachori etc.",
+"Processed / Packaged food – Chips, Patties, Bread, Biscuits, Sauces",
+"Confectionery – Sweets, Chocolates, Toffees, Cakes, Pastries, Ice-Cream",
+"Carbonated drinks – Soft drinks, Sodas",
+"Caffeinated drinks – Tea and Coffee with Milk",
+"Meat – Red Meat",
+"Alcohol",
+"Vegetables – Seasonal and green leafy vegetables, salads, chutney",
+"Fruits – Seasonal fruits",
+"Cereals – Whole wheat, parboiled rice, millets, fermented cereals",
+"Pulses – Whole pulses, beans, sprouted lentils and gram",
+"Dairy – Toned milk, curd, buttermilk",
+"Oils & Fats – Cook in little oil, steam or boil food, add ghee on top",
+"Sugars – Jaggery, honey, dates, raisins (in moderation)",
+"Walk / Exercise / Yoga / Pranayama for at least 30 minutes daily",
+"Daily Sun Exposure",
+"Maintain Healthy Body Weight (BMI below 25)",
+"Drink Adequate Water",
+"Live Stress-Free Life and Proper Sleep",
+"Abstain from Addiction (Tobacco, Alcohol, Drugs, Screen)",
+"Meal Times Should Be Fixed. Avoid Overeating"
+];
+
+const questionContainer = document.getElementById("questions");
+
+questions.forEach((question,index)=>{
+
+questionContainer.innerHTML += `
+
+<div class="lifestyle-question-item">
+
+<div class="lifestyle-question-title">
+${index + 1}. ${question}
+</div>
+
+<div class="lifestyle-question-options">
+
+<label>
+<input type="radio" name="question${index}" value="1">
+Yes
+</label>
+
+<label>
+<input type="radio" name="question${index}" value="0" checked>
+No
+</label>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+function calculateScore(){
+
+let totalScore = 0;
+
+questions.forEach((question,index)=>{
+
+const selectedValue = document.querySelector(
+`input[name="question${index}"]:checked`
+).value;
+
+totalScore += parseInt(selectedValue);
+
+});
+
+document.getElementById("result").innerHTML =
+`Total Score: ${totalScore} / 21`;
+
+}
+
+</script>
+
+</body>
+</html>
+

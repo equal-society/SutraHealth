@@ -16,6 +16,10 @@
   <link rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
   <style>
 
     *{
@@ -496,6 +500,10 @@
       font-family:'Playfair Display',serif;
     }
 
+    /* AOS safe styles */
+    [data-aos] {
+      pointer-events: auto !important;
+    }
   </style>
 
 </head>
@@ -503,379 +511,201 @@
 <body>
 
   <!-- HERO -->
-
   <section class="buddy-hero">
-
     <div class="buddy-container">
-
       <div class="buddy-hero-content">
-
-        <span class="buddy-tag">
+        <span class="buddy-tag" data-aos="fade-up" data-aos-duration="800" data-aos-delay="50">
           Positive Living Program
         </span>
-
-        <h1>
+        <h1 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150">
           My Buddy
         </h1>
-
-        <p>
+        <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="250">
           Connect with a caring companion who can support you in developing
           a positive mindset, healthy lifestyle and emotionally balanced life.
         </p>
-
         <div class="buddy-btns">
-
-          <a href="#register" class="buddy-btn">
+          <a href="#register" class="buddy-btn" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="350">
             Become a Buddy
             <i class="fa-solid fa-arrow-right"></i>
           </a>
-
-          <a href="#register" class="buddy-btn buddy-outline">
+          <a href="#register" class="buddy-btn buddy-outline" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="450">
             Seeking Buddy
           </a>
-
         </div>
-
       </div>
-
     </div>
-
   </section>
 
   <!-- ABOUT -->
-
   <section class="buddy-about">
-
     <div class="buddy-container">
-
       <div class="buddy-about-grid">
-
-        <div class="buddy-about-image">
-
+        <div class="buddy-about-image" data-aos="fade-right" data-aos-duration="1200" data-aos-offset="100">
           <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?q=80&w=1200&auto=format&fit=crop" alt="Positive Support">
-
         </div>
-
-        <div class="buddy-about-content">
-
-          <h3>
+        <div class="buddy-about-content" data-aos="fade-left" data-aos-duration="1200" data-aos-offset="100">
+          <h3 data-aos="fade-up" data-aos-duration="600" data-aos-delay="50">
             Build Positive Mental <span> Health Together</span>
           </h3>
-
-          <p>
-            “My Buddy” is a wellness initiative designed to help individuals
+          <p data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+            "My Buddy" is a wellness initiative designed to help individuals
             connect with positive companions who encourage healthy living,
             emotional balance and supportive communication.
           </p>
-
-          <p>
+          <p data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
             Through kindness, listening and healthy habits, buddies can help
             create an environment of encouragement, positivity and self-growth.
           </p>
-
-          <p>
+          <p data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
             A positive attitude, healthy routine and calm environment can
             significantly improve emotional wellbeing and overall quality of life.
           </p>
-
         </div>
-
       </div>
-
     </div>
-
   </section>
 
   <!-- REGISTER -->
-
   <section class="buddy-register" id="register">
     <div id="navbar"></div>
     <div class="buddy-container">
-
       <div class="buddy-head">
-
-        <span>
-          Join The Program
-        </span>
-
-        <h2>
+        <span data-aos="fade-up" data-aos-duration="800">Join The Program</span>
+        <h2 data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
           Register Today
         </h2>
-
       </div>
-
       <div class="buddy-register-grid">
-
         <!-- CARD 1 -->
-
-        <div class="buddy-register-card">
-
+        <div class="buddy-register-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
           <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1200&auto=format&fit=crop" alt="Become Buddy">
-
           <div class="buddy-card-content">
-
             <div class="buddy-icon">
               <i class="fa-solid fa-hand-holding-heart"></i>
             </div>
-
-            <h3>
-              Become A Buddy
-            </h3>
-
+            <h3>Become A Buddy</h3>
             <p>
               Help others develop positivity, confidence and healthier habits
               by becoming a supportive and caring companion.
             </p>
-
-            <a href="#" class="buddy-btn">
-              Register
-            </a>
-
+            <a href="#" class="buddy-btn">Register</a>
           </div>
-
         </div>
-
         <!-- CARD 2 -->
-
-        <div class="buddy-register-card">
-
+        <div class="buddy-register-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="250">
           <img src="https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?q=80&w=1200&auto=format&fit=crop" alt="Seeking Buddy">
-
           <div class="buddy-card-content">
-
             <div class="buddy-icon">
               <i class="fa-solid fa-user-group"></i>
             </div>
-
-            <h3>
-              Seeking Buddy
-            </h3>
-
+            <h3>Seeking Buddy</h3>
             <p>
               Connect with someone who can motivate you towards healthy living,
               emotional wellness and a positive mindset.
             </p>
-
-            <a href="#" class="buddy-btn">
-              Register
-            </a>
-
+            <a href="#" class="buddy-btn">Register</a>
           </div>
-
         </div>
-
       </div>
-
     </div>
-
   </section>
 
   <!-- LESSONS -->
-
   <section class="buddy-lessons">
-
     <div class="buddy-container">
-
       <div class="buddy-head">
-
-        <span>
-          Mental Wellness
-        </span>
-
-        <h2 style="color: #062814;">
+        <span data-aos="fade-up" data-aos-duration="800">Mental Wellness</span>
+        <h2 style="color: #062814;" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
           Key Lessons For Good  <span style="color: #2eb872; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 55px;">Mental Health</span>
         </h2>
-
       </div>
-
       <div class="buddy-lesson-grid">
-
-        <div class="buddy-lesson-box">
-
+        <div class="buddy-lesson-box" data-aos="fade-up" data-aos-duration="600" data-aos-delay="50">
           <i class="fa-solid fa-heart-circle-check"></i>
-
-          <h4>
-            Acceptance
-          </h4>
-
-          <p>
-            Accept the things that cannot be changed and focus your energy
-            on positive growth and emotional peace.
-          </p>
-
+          <h4>Acceptance</h4>
+          <p>Accept the things that cannot be changed and focus your energy on positive growth and emotional peace.</p>
         </div>
-
-        <div class="buddy-lesson-box">
-
+        <div class="buddy-lesson-box" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
           <i class="fa-solid fa-seedling"></i>
-
-          <h4>
-            Take Responsibility
-          </h4>
-
-          <p>
-            Avoid a victim mindset. Create a positive environment and take
-            responsibility for your actions and decisions.
-          </p>
-
+          <h4>Take Responsibility</h4>
+          <p>Avoid a victim mindset. Create a positive environment and take responsibility for your actions and decisions.</p>
         </div>
-
-        <div class="buddy-lesson-box">
-
+        <div class="buddy-lesson-box" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
           <i class="fa-solid fa-house"></i>
-
-          <h4>
-            Organized Surroundings
-          </h4>
-
-          <p>
-            Keeping your environment clean and organized can improve mental
-            clarity and emotional balance.
-          </p>
-
+          <h4>Organized Surroundings</h4>
+          <p>Keeping your environment clean and organized can improve mental clarity and emotional balance.</p>
         </div>
-
-        <div class="buddy-lesson-box">
-
+        <div class="buddy-lesson-box" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
           <i class="fa-solid fa-glass-water"></i>
-
-          <h4>
-            Hydration
-          </h4>
-
-          <p>
-            Drinking adequate water helps maintain energy, concentration and
-            overall physical wellbeing.
-          </p>
-
+          <h4>Hydration</h4>
+          <p>Drinking adequate water helps maintain energy, concentration and overall physical wellbeing.</p>
         </div>
-
-        <div class="buddy-lesson-box">
-
+        <div class="buddy-lesson-box" data-aos="fade-up" data-aos-duration="600" data-aos-delay="250">
           <i class="fa-solid fa-spa"></i>
-
-          <h4>
-            Self Care
-          </h4>
-
-          <p>
-            Keep your skin, forehead, temples and hair well-oiled to promote
-            relaxation and reduce stress naturally.
-          </p>
-
+          <h4>Self Care</h4>
+          <p>Keep your skin, forehead, temples and hair well-oiled to promote relaxation and reduce stress naturally.</p>
         </div>
-
-        <div class="buddy-lesson-box">
-
+        <div class="buddy-lesson-box" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
           <i class="fa-solid fa-brain"></i>
-
-          <h4>
-            Energy & Awareness
-          </h4>
-
-          <p>
-            Concentrating on the flow of energy within the body and along
-            the spine can help reduce stress and encourage positivity.
-          </p>
-
+          <h4>Energy & Awareness</h4>
+          <p>Concentrating on the flow of energy within the body and along the spine can help reduce stress and encourage positivity.</p>
         </div>
-
       </div>
-
     </div>
-
   </section>
 
   <!-- QUOTE -->
-
   <section class="buddy-quote">
-
     <div class="buddy-container">
-
-      <h2>
+      <h2 data-aos="fade-up" data-aos-duration="1000" data-aos-offset="50">
         Positive Emotions Create <span>Positive Energy</span>
       </h2>
-
-      <p>
+      <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
         Awareness, gratitude, emotional balance and healthy habits can help
         create a joyful and connected life filled with inner peace and positivity.
       </p>
-
-      <a href="#" class="buddy-btn">
-        Learn More
-      </a>
-
+      <a href="#" class="buddy-btn" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">Learn More</a>
     </div>
-
   </section>
 
   <!-- CTA -->
-
   <section class="buddy-cta">
-
     <div class="buddy-container">
-
-      <div class="buddy-cta-box">
-
-        <h2>
-          Start Your Positive Journey Today
-        </h2>
-
-        <p>
+      <div class="buddy-cta-box" data-aos="fade-up" data-aos-duration="1200" data-aos-offset="50">
+        <h2 data-aos="fade-up" data-aos-duration="600" data-aos-delay="50">Start Your Positive Journey Today</h2>
+        <p data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
           Whether you want to support someone or seek guidance for yourself,
-          “My Buddy” is here to help build a healthier and happier life together.
+          "My Buddy" is here to help build a healthier and happier life together.
         </p>
-
-        <a href="#" class="buddy-btn">
-          Join My Buddy
-        </a>
-
+        <a href="#" class="buddy-btn" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="150">Join My Buddy</a>
       </div>
-
     </div>
-
   </section>
 
   <!-- FOOTER -->
-
   <div id="footer"></div>
 
   <script src="../js/include.js"></script>
-  <!-- JS -->
 
+  <!-- Initialize AOS -->
   <script>
-
-    // Smooth animation on scroll
-
-    const cards = document.querySelectorAll(
-      '.buddy-register-card, .buddy-lesson-box'
-    );
-
-    window.addEventListener('scroll', () => {
-
-      cards.forEach(card => {
-
-        const top = card.getBoundingClientRect().top;
-
-        if(top < window.innerHeight - 100){
-
-          card.style.opacity = "1";
-          card.style.transform = "translateY(0px)";
-
-        }
-
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({
+        duration: 1000,
+        once: false,
+        mirror: false,
+        offset: 80,
+        easing: 'ease-out-quad',
+        disable: false,
+        startEvent: 'DOMContentLoaded'
       });
-
+      
+      // Refresh AOS after any dynamic content loads
+      setTimeout(function() {
+        AOS.refresh();
+      }, 300);
     });
-
-    cards.forEach(card => {
-
-      card.style.opacity = "0";
-      card.style.transform = "translateY(50px)";
-      card.style.transition = "0.8s ease";
-
-    });
-
   </script>
 
 </body>

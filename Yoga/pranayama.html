@@ -5,6 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pranayama Protocol</title>
   <link rel="stylesheet" href="../styles/pranayama.css">
+  
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <style>
+    /* Ensure AOS animations don't cause any layout shift or visual changes */
+    [data-aos] {
+      pointer-events: auto !important;
+    }
+  </style>
 </head>
 
 <body>
@@ -14,14 +25,14 @@
   <div id="navbar"></div>
 
   <div class="section-title">
-    <h2>Pranayama Protocol</h2>
-    <p>Traditional Yogic Breathing Practices for physical, mental and spiritual wellbeing.</p>
+    <h2 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">Pranayama Protocol</h2>
+    <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">Traditional Yogic Breathing Practices for physical, mental and spiritual wellbeing.</p>
   </div>
 
   <div class="pranayama-grid">
 
     <!-- CARD 1 -->
-    <div class="pranayama-card">
+    <div class="pranayama-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="50">
       <div class="pranayama-img">
         <a href="https://youtube.com/shorts/-ZJ3Yhi8s_M?si=HA9yEGP8kdNdn9dX" target="_blank">
           <img src="https://img.youtube.com/vi/-ZJ3Yhi8s_M/maxresdefault.jpg" alt="Shirshasana">
@@ -35,7 +46,7 @@
     </div>
 
     <!-- CARD 2 -->
-    <div class="pranayama-card">
+    <div class="pranayama-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
       <div class="pranayama-img">
         <a href="https://youtu.be/aKdpdQyx-f4?si=BBGHQotcNt95ATaD" target="_blank">
           <img src="https://img.youtube.com/vi/aKdpdQyx-f4/maxresdefault.jpg" alt="Yoga Video">
@@ -49,7 +60,7 @@
     </div>
 
     <!-- CARD 3 -->
-    <div class="pranayama-card">
+    <div class="pranayama-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
       <div class="pranayama-img">
         <a href="https://youtube.com/shorts/X6Iq6alj6rA?si=oexKJKLml-CG-c2i" target="_blank">
           <img src="https://img.youtube.com/vi/X6Iq6alj6rA/maxresdefault.jpg" alt="Yoga Practice">
@@ -63,7 +74,7 @@
     </div>
 
     <!-- CARD 4 -->
-    <div class="pranayama-card">
+    <div class="pranayama-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
       <div class="pranayama-img">
         <a href="https://youtube.com/shorts/QnwUcLWGtv8?si=-EBn1MrYBaizL4ju" target="_blank">
           <img src="https://img.youtube.com/vi/QnwUcLWGtv8/maxresdefault.jpg" alt="Lifestyle">
@@ -77,7 +88,7 @@
     </div>
 
     <!-- CARD 5 -->
-    <div class="pranayama-card">
+    <div class="pranayama-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="250">
       <div class="pranayama-img">
         <a href="https://youtube.com/shorts/6YnuyzY5RYg?si=vTDaSArNlNftiVsK" target="_blank">
           <img src="https://img.youtube.com/vi/6YnuyzY5RYg/maxresdefault.jpg" alt="Spices">
@@ -91,7 +102,7 @@
     </div>
 
     <!-- CARD 6 -->
-    <div class="pranayama-card">
+    <div class="pranayama-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
       <div class="pranayama-img">
         <a href="https://youtube.com/shorts/o6QVnZSyByE?si=JYIaeF9p804pJuLP" target="_blank">
           <img src="https://img.youtube.com/vi/o6QVnZSyByE/maxresdefault.jpg" alt="Tadasana">
@@ -105,7 +116,7 @@
     </div>
 
     <!-- CARD 7 -->
-    <div class="pranayama-card">
+    <div class="pranayama-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="350">
       <div class="pranayama-img">
         <a href="https://youtube.com/shorts/DXcniub8Y7U?si=4cyX0tGuuZ5Mmg-O" target="_blank">
           <img src="https://img.youtube.com/vi/DXcniub8Y7U/maxresdefault.jpg" alt="Vriksha Asana">
@@ -124,6 +135,26 @@
 <footer id="footer"></footer>
 
 <script src="../js/include.js"></script>
+
+<!-- Initialize AOS -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    AOS.init({
+      duration: 1000,
+      once: false,
+      mirror: false,
+      offset: 80,
+      easing: 'ease-out-quad',
+      disable: false,
+      startEvent: 'DOMContentLoaded'
+    });
+    
+    // Refresh AOS after any dynamic content loads
+    setTimeout(function() {
+      AOS.refresh();
+    }, 300);
+  });
+</script>
 
 </body>
 </html>
