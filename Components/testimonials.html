@@ -4,17 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
-    <style>
-        /* Ensure AOS animations don't cause any layout shift or visual changes */
-        [data-aos] {
-            pointer-events: auto !important;
-        }
-    </style>
 </head>
 <body>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -22,9 +11,9 @@
 <section class="google-reviews">
 
     <div class="review-heading">
-        <span data-aos="fade-up" data-aos-duration="800" data-aos-delay="50">Google Reviews</span>
-        <h2 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150">Trusted By Hundreds Of Patients</h2>
-        <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="250">
+        <span>Google Reviews</span>
+        <h2>Trusted By Hundreds Of Patients</h2>
+        <p>
             Real experiences from patients who have transformed their health
             through Ayurveda, Yoga and Integrative Medicine.
         </p>
@@ -35,7 +24,7 @@
         <div class="slide-track">
 
             <!-- CARD 1 -->
-            <div class="review-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="50">
+            <div class="review-card">
                 <div class="top">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="">
                     <div>
@@ -56,7 +45,7 @@
             </div>
 
             <!-- CARD 2 -->
-            <div class="review-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
+            <div class="review-card">
                 <div class="top">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="">
                     <div>
@@ -76,7 +65,7 @@
             </div>
 
             <!-- CARD 3 -->
-            <div class="review-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="150">
+            <div class="review-card">
                 <div class="top">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="">
                     <div>
@@ -96,7 +85,7 @@
             </div>
 
             <!-- CARD 4 -->
-            <div class="review-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
+            <div class="review-card">
                 <div class="top">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="">
                     <div>
@@ -380,26 +369,6 @@
 
 }
 </style>
-
-<!-- Initialize AOS -->
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        AOS.init({
-            duration: 1000,
-            once: false,
-            mirror: false,
-            offset: 80,
-            easing: 'ease-out-quad',
-            disable: false,
-            startEvent: 'DOMContentLoaded'
-        });
-        
-        // Refresh AOS after any dynamic content loads
-        setTimeout(function() {
-            AOS.refresh();
-        }, 300);
-    });
-</script>
     
 </body>
 </html>
