@@ -248,6 +248,34 @@ body.home .navbar{
   box-shadow: 0 10px 24px rgba(46,184,114,0.28);
 }
 
+@media (max-width: 480px){
+
+  .container{
+    padding: 0 12px;
+  }
+
+  .logo span{
+    font-size: 16px;
+  }
+
+  .logo-icon{
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .menu-btn{
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+}
+html,
+body{
+  overflow-x:hidden;
+  width:100%;
+}
 /* =========================
    Mobile Button
 ========================= */
