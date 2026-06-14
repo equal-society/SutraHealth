@@ -526,10 +526,10 @@
           <label><i class="fa-brands fa-whatsapp"></i> Phone / WhatsApp</label>
           <input type="tel" id="phone" placeholder="+91 98765 43210">
         </div>
-        <div class="input-group-new" data-aos="fade-up" data-aos-delay="350">
+        <!-- <div class="input-group-new" data-aos="fade-up" data-aos-delay="350">
           <label><i class="fa-regular fa-message"></i> Your story or question</label>
           <textarea id="message" placeholder="Tell me about your health or spiritual concerns..."></textarea>
-        </div>
+        </div> -->
         <button type="submit" class="btn-send" data-aos="fade-up" data-aos-delay="400">
           <span>Send Message</span> <i class="fa-regular fa-paper-plane"></i>
         </button>
@@ -573,9 +573,9 @@
   (function() {
     
     // To get your keys: https://www.emailjs.com/docs/rest-api/introduction/
-    const EMAILJS_PUBLIC_KEY = "YOUR_EMAILJS_PUBLIC_KEY";    
-    const SERVICE_ID = "service_healing_sanctuary";        
-    const TEMPLATE_ID = "template_healing_contact";          
+    const EMAILJS_PUBLIC_KEY = "sNMA6vcboIYLiSOgq";    
+    const SERVICE_ID = "service_rcoz3es";        
+    const TEMPLATE_ID = "template_dtmqblu";          
     
    
     
@@ -637,14 +637,11 @@
     async function sendEmailViaEmailJS(formData) {
       if (emailjsInitialized && SERVICE_ID && TEMPLATE_ID && SERVICE_ID !== "service_healing_sanctuary" && TEMPLATE_ID !== "template_healing_contact") {
         // prepared template params: ensure naming matches your emailjs template variables
-        const templateParams = {
-          from_name: formData.name,
-          from_email: formData.email,
-          phone: formData.phone,
-          message: formData.message,
-          to_name: "Sanctuary Healing Team",
-          reply_to: formData.email
-        };
+       const templateParams = {
+  patient_name: formData.name,
+  patient_email: formData.email,
+  patient_phone: formData.phone
+};
         try {
           const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams);
           console.log("EmailJS success:", response);
@@ -673,7 +670,7 @@
         const nameInput = document.getElementById('fullname');
         const emailInput = document.getElementById('email');
         const phoneInput = document.getElementById('phone');
-        const messageInput = document.getElementById('message');
+       
         
         let isValid = true;
         
@@ -710,7 +707,7 @@
           name: nameInput.value.trim(),
           email: emailInput.value.trim(),
           phone: phoneInput.value.trim(),
-          message: messageInput.value.trim() || "No additional message"
+         
         };
         
         try {
