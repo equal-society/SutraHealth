@@ -147,28 +147,27 @@ body{
 </head>
 <body>
 
-<!-- Navbar Include -->
 <div id="navbar"></div>
 
 <section class="lifestyle-score-section">
 
-<div class="lifestyle-score-wrapper">
+  <div class="lifestyle-score-wrapper">
 
-<h1 class="lifestyle-score-title">
-21 Point Lifestyle Questionnaire
-</h1>
+    <h1 class="lifestyle-score-title">
+      21 Point Lifestyle Questionnaire
+    </h1>
 
-<div id="questions"></div>
+    <div id="questions"></div>
 
-<button class="lifestyle-score-btn" onclick="calculateScore()">
-Calculate Score
-</button>
+    <button class="lifestyle-score-btn" onclick="calculateScore()">
+      Calculate Score
+    </button>
 
-<div class="lifestyle-score-result" id="result">
-Total Score: 0 / 21
-</div>
+    <div class="lifestyle-score-result" id="result">
+      Total Score: 0 / 21
+    </div>
 
-</div>
+  </div>
 
 </section>
 
@@ -180,81 +179,105 @@ Total Score: 0 / 21
 <script>
 
 const questions = [
-"Deep fried foods – Fries, Pakoras, Samosa, Kachori etc.",
-"Processed / Packaged food – Chips, Patties, Bread, Biscuits, Sauces",
-"Confectionery – Sweets, Chocolates, Toffees, Cakes, Pastries, Ice-Cream",
-"Carbonated drinks – Soft drinks, Sodas",
-"Caffeinated drinks – Tea and Coffee with Milk",
-"Meat – Red Meat",
-"Alcohol",
-"Vegetables – Seasonal and green leafy vegetables, salads, chutney",
-"Fruits – Seasonal fruits",
-"Cereals – Whole wheat, parboiled rice, millets, fermented cereals",
-"Pulses – Whole pulses, beans, sprouted lentils and gram",
-"Dairy – Toned milk, curd, buttermilk",
-"Oils & Fats – Cook in little oil, steam or boil food, add ghee on top",
-"Sugars – Jaggery, honey, dates, raisins (in moderation)",
-"Walk / Exercise / Yoga / Pranayama for at least 30 minutes daily",
-"Daily Sun Exposure",
-"Maintain Healthy Body Weight (BMI below 25)",
-"Drink Adequate Water",
-"Live Stress-Free Life and Proper Sleep",
-"Abstain from Addiction (Tobacco, Alcohol, Drugs, Screen)",
-"Meal Times Should Be Fixed. Avoid Overeating"
+  "Deep fried foods – Fries, Pakoras, Samosa, Kachori etc.",
+  "Processed / Packaged food – Chips, Patties, Bread, Biscuits, Sauces",
+  "Confectionery – Sweets, Chocolates, Toffees, Cakes, Pastries, Ice-Cream",
+  "Carbonated drinks – Soft drinks, Sodas",
+  "Caffeinated drinks – Tea and Coffee with Milk",
+  "Meat – Red Meat",
+  "Alcohol",
+  "Vegetables – Seasonal and green leafy vegetables, salads, chutney",
+  "Fruits – Seasonal fruits",
+  "Cereals – Whole wheat, parboiled rice, millets, fermented cereals",
+  "Pulses – Whole pulses, beans, sprouted lentils and gram",
+  "Dairy – Toned milk, curd, buttermilk",
+  "Oils & Fats – Cook in little oil, steam or boil food, add ghee on top",
+  "Sugars – Jaggery, honey, dates, raisins (in moderation)",
+  "Walk / Exercise / Yoga / Pranayama for at least 30 minutes daily",
+  "Daily Sun Exposure",
+  "Maintain Healthy Body Weight (BMI below 25)",
+  "Drink Adequate Water",
+  "Live Stress-Free Life and Proper Sleep",
+  "Abstain from Addiction (Tobacco, Alcohol, Drugs, Screen)",
+  "Meal Times Should Be Fixed. Avoid Overeating"
 ];
 
 const questionContainer = document.getElementById("questions");
 
-questions.forEach((question,index)=>{
+questions.forEach((question, index) => {
 
-questionContainer.innerHTML += `
+  let yesValue = 1;
+  let noValue = 0;
+  let yesChecked = "";
+  let noChecked = "checked";
 
-<div class="lifestyle-question-item">
+  // Questions 1-7: Reverse scoring
+  if (index < 7) {
+    yesValue = 0;
+    noValue = 1;
+    yesChecked = "checked";
+    noChecked = "";
+  }
 
-<div class="lifestyle-question-title">
-${index + 1}. ${question}
-</div>
+  questionContainer.innerHTML += `
 
-<div class="lifestyle-question-options">
+    <div class="lifestyle-question-item">
 
-<label>
-<input type="radio" name="question${index}" value="1">
-Yes
-</label>
+      <div class="lifestyle-question-title">
+        ${index + 1}. ${question}
+      </div>
 
-<label>
-<input type="radio" name="question${index}" value="0" checked>
-No
-</label>
+      <div class="lifestyle-question-options">
 
-</div>
+        <label>
+          <input
+            type="radio"
+            name="question${index}"
+            value="${yesValue}"
+            ${yesChecked}
+          >
+          Yes
+        </label>
 
-</div>
+        <label>
+          <input
+            type="radio"
+            name="question${index}"
+            value="${noValue}"
+            ${noChecked}
+          >
+          No
+        </label>
 
-`;
+      </div>
+
+    </div>
+
+  `;
 
 });
 
-function calculateScore(){
+function calculateScore() {
 
-let totalScore = 0;
+  let totalScore = 0;
 
-questions.forEach((question,index)=>{
+  questions.forEach((question, index) => {
 
-const selectedValue = document.querySelector(
-`input[name="question${index}"]:checked`
-).value;
+    const selectedValue = document.querySelector(
+      `input[name="question${index}"]:checked`
+    ).value;
 
-totalScore += parseInt(selectedValue);
+    totalScore += parseInt(selectedValue);
 
-});
+  });
 
-document.getElementById("result").innerHTML =
-`Total Score: ${totalScore} / 21`;
+  document.getElementById("result").innerHTML =
+    `Total Score: ${totalScore} / 21`;
 
 }
 
 </script>
+
 
 </body>
 </html>
