@@ -189,39 +189,54 @@ img{
 .video-box{
   position:relative;
   overflow:hidden;
-  border-radius:35px;
+  border-radius:30px;
   box-shadow:0 25px 60px rgba(0,0,0,0.25);
 }
 
-.video-box img{
+.video-box a{
+  display:block;
+  position:relative;
+  width:100%;
   height:700px;
+  text-decoration:none;
+}
+
+.video-thumb{
+  width:100%;
+  height:100%;
   object-fit:cover;
-  filter:brightness(0.45);
+  display:block;
+}
+
+.video-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.55);
 }
 
 .video-content{
   position:absolute;
   top:50%;
   left:50%;
-  transform:translate(-50%,-50%);
+  transform:translate(-50%, -50%);
   width:90%;
   text-align:center;
   color:#fff;
+  z-index:2;
 }
 
 .video-content h2{
   font-size:60px;
   line-height:1.2;
-  margin-bottom:30px;
+  margin-bottom:25px;
   font-family:'Playfair Display', serif;
 }
 
 .video-content p{
   max-width:850px;
-  margin:auto;
-  line-height:2;
+  margin:0 auto 40px;
+  line-height:1.8;
   font-size:18px;
-  margin-bottom:40px;
 }
 
 .play-btn{
@@ -230,22 +245,85 @@ img{
   border-radius:50%;
   background:#fff;
   color:#0b4d43;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
-  font-size:32px;
+  font-size:34px;
   margin:auto;
-
-  transition:0.3s;
-  cursor:pointer;
+  transition:all .3s ease;
 }
 
 .play-btn:hover{
   transform:scale(1.1);
+  background:#0b4d43;
+  color:#fff;
 }
 
+/* Responsive */
+
+@media (max-width:991px){
+
+  .video-box a{
+    height:500px;
+  }
+
+  .video-content h2{
+    font-size:42px;
+  }
+}
+
+@media (max-width:767px){
+
+  .video-section{
+    padding:80px 0;
+  }
+
+  .video-box a{
+    height:380px;
+  }
+
+  .video-content h2{
+    font-size:28px;
+  }
+
+  .video-content p{
+    font-size:16px;
+    line-height:1.6;
+  }
+
+  .play-btn{
+    width:70px;
+    height:70px;
+    font-size:24px;
+  }
+} 
+.video-box{
+    position:relative;
+    overflow:hidden;
+    border-radius:30px;
+}
+
+.video-box a{
+    display:block;
+    position:relative;
+    height:700px;
+}
+
+.video-thumb{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.video-content{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    color:#fff;
+    text-align:center;
+} 
 /* =========================
    RESPONSIVE
 ========================= */
