@@ -8,778 +8,343 @@
   <!-- Preconnect & Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Font Awesome 6 (free) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- AOS CSS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background: #FCF9F4;
-      font-family: 'Inter', sans-serif;
-      color: #1E2F2A;
-      overflow-x: hidden;
-      line-height: 1.5;
-    }
-
-    /* smooth scroll & subtle selection */
-    ::selection {
-      background: #C8A27A;
-      color: #1A2E28;
-    }
-
-    /* modern container approach */
-    .contact-modern {
-      width: 100%;
-      padding: 7rem 2rem;
-      position: relative;
-      isolation: isolate;
-    }
-
-    /* decorative abstract blob */
-    .contact-modern::before {
-      content: "";
-      position: absolute;
-      top: 10%;
-      right: -5%;
-      width: 480px;
-      height: 480px;
-      background: radial-gradient(circle, rgba(200,162,122,0.08) 0%, rgba(200,162,122,0) 70%);
-      border-radius: 50%;
-      z-index: -1;
-      pointer-events: none;
-    }
-
-    .contact-modern::after {
-      content: "";
-      position: absolute;
-      bottom: 5%;
-      left: -3%;
-      width: 420px;
-      height: 420px;
-      background: radial-gradient(circle, rgba(90,141,115,0.05) 0%, rgba(90,141,115,0) 70%);
-      border-radius: 50%;
-      z-index: -1;
-    }
-
-    .modern-grid {
-      max-width: 1320px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: start;
-    }
-
-    /* ========= LEFT COLUMN ========= */
-    .brand-col {
-      position: relative;
-    }
-
-    .accent-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(200, 162, 122, 0.12);
-      backdrop-filter: blur(2px);
-      padding: 0.5rem 1.2rem;
-      border-radius: 40px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-      
-      color:#2eb872;
-      margin-bottom: 1.8rem;
-      width: fit-content;
-      border: 0.5px solid rgba(180, 104, 58, 0.25);
-    }
-
-    .healing-headline {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 4.2rem;
-      font-weight: 600;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-      color: #172E26;
-      margin-bottom: 1.5rem;
-    }
-
-    .healing-headline span {
-      background:#2eb872;
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      font-weight: 700;
-    }
-
-    .desc-text {
-      font-size: 1.05rem;
-      line-height: 1.6;
-      color: #566B62;
-      margin-bottom: 2.5rem;
-      max-width: 90%;
-    }
-
-    /* info cards — modern sleek */
-    .info-cards {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .info-row {
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
-      background: #FFFFFF;
-      border-radius: 28px;
-      padding: 0.8rem 1.4rem 0.8rem 1rem;
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.03);
-      transition: all 0.25s ease;
-      border: 1px solid #F0E7DE;
-    }
-
-    .info-row:hover {
-      transform: translateX(6px);
-      border-color: #E2D2C2;
-      box-shadow: 0 12px 22px -12px rgba(90, 70, 50, 0.12);
-    }
-
-    .icon-circle {
-      width: 48px;
-      height: 48px;
-      background: #F6EFE8;
-      border-radius: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-      color:#2eb872;
-      transition: 0.2s;
-    }
-
-    .info-row:hover .icon-circle {
-      background:#0e3622;
-      color: white;
-    }
-
-    .info-detail small {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: #9B8F82;
-    }
-
-    .info-detail p {
-      font-weight: 600;
-      font-size: 1rem;
-      color: #1F3B32;
-      margin-top: 4px;
-    }
-
-    /* social links modern */
-    .social-links-modern {
-      display: flex;
-      gap: 1rem;
-      margin: 2rem 0 2rem;
-    }
-
-    .social-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 44px;
-      height: 44px;
-      background: white;
-      border-radius: 30px;
-      color: #376952;
-      font-size: 1.2rem;
-      transition: all 0.25s ease;
-      border: 1px solid #EADDCB;
-      text-decoration: none;
-    }
-
-    .social-icon:hover {
-      background: #0e3622;
-      color: #FCF9F4;
-      border-color: #0e3622;
-      transform: translateY(-3px);
-    }
-
-    /* modern image card + floating badge */
-    .feature-image {
-      position: relative;
-      border-radius: 34px;
-      overflow: hidden;
-      margin-top: 1.2rem;
-      box-shadow: 0 30px 40px -18px rgba(0, 0, 0, 0.15);
-    }
-
-    .feature-image img {
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-    }
-
-    .feature-image:hover img {
-      transform: scale(1.04);
-    }
-
-    .floating-address {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      right: 20px;
-      background: rgba(255, 253, 250, 0.96);
-      backdrop-filter: blur(12px);
-      padding: 12px 18px;
-      border-radius: 60px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: #1F2E27;
-      width: calc(100% - 40px);
-      border: 0.5px solid rgba(255,255,240,0.6);
-      box-shadow: 0 6px 14px rgba(0,0,0,0.05);
-    }
-
-    /* ========= RIGHT COLUMN (FORM MODERN) ========= */
-    .form-card {
-      background: #FFFFFF;
-      border-radius: 48px;
-      padding: 2.5rem 2.4rem 2.8rem 2.4rem;
-      box-shadow: 0 25px 45px -12px rgba(30, 40, 30, 0.12);
-      border: 1px solid #F1E9E0;
-      transition: transform 0.2s;
-    }
-
-    .form-title-modern {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 2.2rem;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      color: #1F3A30;
-      margin-bottom: 0.4rem;
-    }
-
-    .form-sub {
-      font-size: 0.85rem;
-      color: #8F9E96;
-      margin-bottom: 2rem;
-      border-left: 3px solid #D9A87C;
-      padding-left: 12px;
-    }
-
-    .input-group-new {
-      margin-bottom: 1.4rem;
-    }
-
-    .input-group-new label {
-      display: block;
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: #6F7F76;
-      margin-bottom: 8px;
-    }
-
-    .input-group-new input,
-    .input-group-new textarea {
-      width: 100%;
-      background: #FEFCF9;
-      border: 1.5px solid #EDE3D9;
-      border-radius: 28px;
-      padding: 14px 20px;
-      font-family: 'Inter', monospace;
-      font-size: 0.95rem;
-      transition: 0.2s;
-      color: #1A2D26;
-      outline: none;
-    }
-
-    .input-group-new input:focus,
-    .input-group-new textarea:focus {
-      border-color: #C38859;
-      box-shadow: 0 0 0 3px rgba(195, 136, 89, 0.2);
-      background: white;
-    }
-
-    .input-group-new textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-
-    /* button with new style */
-    .btn-send {
-      width: 100%;
-      background:#2eb872;
-      color: white;
-      border: none;
-      padding: 16px 24px;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      cursor: pointer;
-      transition: 0.25s ease;
-      margin-top: 10px;
-      box-shadow: 0 8px 20px -8px rgba(31,58,48,0.3);
-    }
-
-    .btn-send:hover {
-      background: #0e3622;
-      transform: translateY(-2px);
-      gap: 16px;
-      box-shadow: 0 14px 26px -8px rgba(31,58,48,0.45);
-    }
-
-    .whatsapp-helper {
-      text-align: center;
-      margin-top: 1.5rem;
-      font-size: 0.85rem;
-      color: #7C8C84;
-      border-top: 1px solid #F0E6DD;
-      padding-top: 1.3rem;
-    }
-
-    .whatsapp-helper a {
-      color: #2C6E4F;
-      font-weight: 700;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .whatsapp-helper a:hover {
-      text-decoration: underline;
-    }
-
-    /* success message overlay (modern) */
-    .success-toast {
-      display: none;
-      background: #F1F9F4;
-      border-radius: 28px;
-      text-align: center;
-      padding: 2rem 1.5rem;
-      margin-top: 1rem;
-      border: 1px solid #D4E2D8;
-    }
-
-    .success-toast i {
-      font-size: 2.8rem;
-      color: #2C8C6B;
-      background: #E6F2EC;
-      width: 70px;
-      height: 70px;
-      border-radius: 60px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1rem;
-    }
-
-    /* responsive */
-    @media (max-width: 1000px) {
-      .modern-grid {
-        gap: 2.5rem;
-      }
-      .healing-headline {
-        font-size: 3.2rem;
-      }
-    }
-
-    @media (max-width: 850px) {
-      .modern-grid {
-        grid-template-columns: 1fr;
-      }
-      .contact-modern {
-        padding: 3rem 1.5rem;
-      }
-      .healing-headline {
-        font-size: 3rem;
-      }
-      .form-card {
-        padding: 2rem;
-      }
-      .desc-text {
-        max-width: 100%;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .healing-headline {
-        font-size: 2.4rem;
-      }
-      .floating-address {
-        font-size: 0.7rem;
-        padding: 8px 14px;
-      }
-    }
-  </style>
+  <link href="/styles/Contact.css" rel="stylesheet">
 </head>
 <body>
   <div id="navbar"></div>
 
-<section class="contact-modern">
-  <div class="modern-grid">
-    
-    <!-- LEFT COLUMN: brand + healing story with AOS animations -->
-    <div class="brand-col" data-aos="fade-right" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-      <div class="accent-chip" data-aos="fade-up" data-aos-delay="100">
-        <i class="fa-regular fa-leaf" style="font-size: 12px;"></i> 
-        sacred connection
-      </div>
-      <h1 class="healing-headline" data-aos="fade-up" data-aos-delay="200">
-        Begin Your <span>Healing<br></span>Journey Within
-      </h1>
-      <p class="desc-text" data-aos="fade-up" data-aos-delay="300">
-        A sanctuary for holistic wellness — whether it’s your first step or a deeper path, 
-        we nurture transformation with compassion and expertise.
-      </p>
+  <section class="contact-modern">
+    <div class="modern-grid">
       
-      <!-- contact info row (refreshed) -->
-      <div class="info-cards">
-        <div class="info-row" data-aos="fade-up" data-aos-delay="400">
-          <div class="icon-circle"><i class="fa-solid fa-phone"></i></div>
-          <div class="info-detail">
-            <small>WHATSAPP / CALL</small>
-            <p>+91 90131 03676</p>
-          </div>
+      <!-- LEFT COLUMN -->
+      <div class="brand-col" data-aos="fade-right" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+        <div class="accent-chip" data-aos="fade-up" data-aos-delay="100">
+          <i class="fa-regular fa-leaf"></i> 
+          sacred connection
         </div>
-        <div class="info-row" data-aos="fade-up" data-aos-delay="450">
-          <div class="icon-circle"><i class="fa-regular fa-envelope"></i></div>
-          <div class="info-detail">
-            <small>EMAIL</small>
+        <h1 class="healing-headline" data-aos="fade-up" data-aos-delay="200">
+          Begin Your <span>Healing<br></span>Journey Within
+        </h1>
+        <p class="desc-text" data-aos="fade-up" data-aos-delay="300">
+          A sanctuary for holistic wellness — whether it's your first step or a deeper path, 
+          we nurture transformation with compassion and expertise.
+        </p>
+        
+        <div class="info-cards">
+          <div class="info-row" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon-circle">    <a href="mailto:equal.society@gmail.com" style="text-decoration: none;"><i class="fa-solid fa-phone" style="color: #2A7A55;"></i></a></div>
+            <div class="info-detail">
+              <small>WHATSAPP / CALL</small>
+              <a href="tel:+919013103676" style="text-decoration: none;"><p>+91 90131 03676</p></a>
+            </div>
+          </div>
+          <div class="info-row" data-aos="fade-up" data-aos-delay="450">
+            <div class="icon-circle"><i class="fa-regular fa-envelope"></i></div>
+            <div class="info-detail">
+              <small>EMAIL</small>
+             <a href="mailto:equal.society@gmail.com" style="text-decoration: none;">
             <p>equal.society@gmail.com</p>
+            </a>
+            </div>
+          </div>
+          <div class="info-row" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon-circle">
+              <a href="https://maps.app.goo.gl/Bso3TJCkvqDSLWKP9" style="color: #2A7A55;"><i class="fa-solid fa-location-dot"></i></a>
+            </div>
+            <div class="info-detail">
+              <small>STUDIO SPACE</small>
+             <a href="https://maps.app.goo.gl/Bso3TJCkvqDSLWKP9" style="text-decoration:none;"> <p>House No. 229, Roof-Top, Sector 46, Faridabad</p></a>
+            </div>
+          </div>
+          <div class="info-row" data-aos="fade-up" data-aos-delay="550">
+            <div class="icon-circle"><i class="fa-regular fa-clock"></i></div>
+            <div class="info-detail">
+              <small>HOURS OF PRESENCE</small>
+              <p>Mon – Sat: 7-8 AM & 4-6 PM</p>
+            </div>
           </div>
         </div>
-        <div class="info-row" data-aos="fade-up" data-aos-delay="500">
-          <div class="icon-circle">
-            
-           <a href="https://maps.app.goo.gl/Bso3TJCkvqDSLWKP9" style="color: #2eb872;"> <i class="fa-solid fa-location-dot"></i></a></div>
-          <div class="info-detail">
-            <small>STUDIO SPACE</small>
-            <p>House No. 229, Roof-Top, Sector 46, Faridabad</p>
-          </div>
+
+        <div class="social-links-modern" data-aos="fade-up" data-aos-delay="600">
+          <a href="https://www.instagram.com/sutrahealth/" target="_blank" aria-label="Instagram" class="social-icon">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/people/Sutrahealth-Equal/" target="_blank" aria-label="Facebook" class="social-icon">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="https://www.youtube.com/@sutra-health" target="_blank" aria-label="YouTube" class="social-icon">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+          <a href="mailto:equal.society@gmail.com" aria-label="Email" class="social-icon">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="https://wa.me/919013103676" target="_blank" aria-label="WhatsApp" class="social-icon">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/equal-society-ngo" target="_blank" aria-label="LinkedIn" class="social-icon">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a href="https://medium.com/@equal.society" target="_blank" aria-label="Medium" class="social-icon">
+            <i class="fa-brands fa-medium"></i>
+          </a>
+          <a href="https://in.pinterest.com/equal_society/" target="_blank" aria-label="Pinterest" class="social-icon">
+            <i class="fa-brands fa-pinterest"></i>
+          </a>
         </div>
-        <div class="info-row" data-aos="fade-up" data-aos-delay="550">
-          <div class="icon-circle"><i class="fa-regular fa-clock"></i></div>
-          <div class="info-detail">
-            <small>HOURS OF PRESENCE</small>
-            <p>Mon – Sat: 7-8 AM & 4-6 PM</p>
-          </div>
+
+        <div class="feature-image" data-aos="fade-up" data-aos-delay="700">
+          <!-- <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1520&auto=format&fit=crop" alt="healing rooftop yoga">
+          <div class="floating-address">
+            <i class="fa-solid fa-tree"></i> 
+            <span>📍 Rooftop Sanctuary, Sector 46 — Faridabad 121010</span>
+          </div> -->
         </div>
       </div>
 
-      <!-- socials minimal but rich -->
-      <div class="social-links-modern" data-aos="fade-up" data-aos-delay="600">
-      <!-- Social Media Links -->
-<a href="https://www.instagram.com/sutrahealth/" target="_blank" aria-label="Instagram" class="social-icon">
-    <i class="fa-brands fa-instagram"></i>
-</a>
+      <!-- RIGHT COLUMN: Form -->
+      <div class="form-card" data-aos="fade-left" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+        <h2 class="form-title-modern" data-aos="fade-up" data-aos-delay="100">Send a whisper</h2>
+        <div class="form-sub" data-aos="fade-up" data-aos-delay="150">We reply within 24 hours — let's co-create your wellness map</div>
+        
+        <form id="healingForm" action="#" method="post">
+          <div class="input-group-new" data-aos="fade-up" data-aos-delay="200">
+            <label><i class="fa-regular fa-user"></i> Full name</label>
+            <input type="text" id="fullname" placeholder="e.g., Ananya Sharma" required>
+          </div>
+          <div class="input-group-new" data-aos="fade-up" data-aos-delay="250">
+            <label><i class="fa-regular fa-envelope"></i> Email address</label>
+            <input type="email" id="email" placeholder="hello@healing.com" required>
+          </div>
+          <div class="input-group-new" data-aos="fade-up" data-aos-delay="300">
+            <label><i class="fa-brands fa-whatsapp"></i> Phone / WhatsApp</label>
+            <input type="tel" id="phone" placeholder="+91 98765 43210">
+          </div>
+          
+          <button type="submit" class="btn-send" data-aos="fade-up" data-aos-delay="400">
+            <span>Send Message</span> <i class="fa-regular fa-paper-plane"></i>
+          </button>
+        </form>
 
-<a href="https://www.facebook.com/people/Sutrahealth-Equal/" target="_blank" aria-label="Facebook" class="social-icon">
-    <i class="fa-brands fa-facebook-f"></i>
-</a>
+        <div class="whatsapp-helper" data-aos="fade-up" data-aos-delay="450">
+          <a href="https://wa.me/919013103676" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i> Or reach us directly on WhatsApp
+          </a>
+        </div>
 
-<a href="https://www.youtube.com/@sutra-health" target="_blank" aria-label="YouTube" class="social-icon">
-    <i class="fa-brands fa-youtube"></i>
-</a>
-
-<a href="mailto:equal.society@gmail.com" aria-label="Email" class="social-icon">
-    <i class="fa-solid fa-envelope"></i>
-</a>
-
-<a href="https://wa.me/919013103676" target="_blank" aria-label="WhatsApp" class="social-icon">
-    <i class="fa-brands fa-whatsapp"></i>
-</a>
-
-<a href="https://www.linkedin.com/in/equal-society-ngo" target="_blank" aria-label="LinkedIn" class="social-icon">
-    <i class="fa-brands fa-linkedin"></i>
-</a>
-
-<a href="https://medium.com/@equal.society" target="_blank" aria-label="Medium" class="social-icon">
-    <i class="fa-brands fa-medium"></i>
-</a>
-
-<a href="https://in.pinterest.com/equal_society/" target="_blank" aria-label="Pinterest" class="social-icon">
-    <i class="fa-brands fa-pinterest"></i>
-</a>
-      </div>
-
-      <!-- image card with floating badge (fresh model) -->
-      <div class="feature-image" data-aos="fade-up" data-aos-delay="700">
-        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1520&auto=format&fit=crop" alt="healing rooftop yoga">
-        <div class="floating-address">
-          <i class="fa-solid fa-tree"></i> 
-          <span>📍 Rooftop Sanctuary, Sector 46 — Faridabad 121010</span>
+        <div id="successMessage" class="success-toast">
+          <i class="fa-regular fa-circle-check"></i>
+          <h4 style="color:#1F3A30; margin-bottom: 6px;">Message received</h4>
+          <p style="font-size: 0.85rem;">Thank you for reaching out. Our healing guide will contact you soon.</p>
         </div>
       </div>
     </div>
 
-    <!-- RIGHT COLUMN: form with AOS animation -->
-    <div class="form-card" data-aos="fade-left" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-      <h2 class="form-title-modern" data-aos="fade-up" data-aos-delay="100">Send a whisper</h2>
-      <div class="form-sub" data-aos="fade-up" data-aos-delay="150">We reply within 24 hours — let’s co-create your wellness map</div>
+    <!-- ── BOTTOM SECTION: Map + Newsletter (NEW) ── -->
+    <div class="bottom-section" data-aos="fade-up" data-aos-delay="800">
       
-      <form id="healingForm" action="#" method="post">
-        <div class="input-group-new" data-aos="fade-up" data-aos-delay="200">
-          <label><i class="fa-regular fa-user"></i> Full name</label>
-          <input type="text" id="fullname" placeholder="e.g., Ananya Sharma" required>
+      <!-- Map Wrapper -->
+      <div class="map-wrapper">
+        <div class="map-title">
+          <i class="fa-solid fa-location-dot"></i>
+          Find Us Here
         </div>
-        <div class="input-group-new" data-aos="fade-up" data-aos-delay="250">
-          <label><i class="fa-regular fa-envelope"></i> Email address</label>
-          <input type="email" id="email" placeholder="hello@healing.com" required>
-        </div>
-        <div class="input-group-new" data-aos="fade-up" data-aos-delay="300">
-          <label><i class="fa-brands fa-whatsapp"></i> Phone / WhatsApp</label>
-          <input type="tel" id="phone" placeholder="+91 98765 43210">
-        </div>
-        
-        <button type="submit" class="btn-send" data-aos="fade-up" data-aos-delay="400">
-          <span>Send Message</span> <i class="fa-regular fa-paper-plane"></i>
-        </button>
-      </form>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3508.488925408195!2d77.29599867601114!3d28.43467429303718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1fe57a810dd1%3A0x75e55aae4d53097b!2sSutra%20Health!5e0!3m2!1sen!2sin!4v1781511407911!5m2!1sen!2sin"
+          loading="lazy"
+          title="Sutra Health Location Map">
+        </iframe>
+      </div>
 
-      <div class="whatsapp-helper" data-aos="fade-up" data-aos-delay="450">
-        <a href="https://wa.me/919013103676" target="_blank">
-          <i class="fa-brands fa-whatsapp"></i> Or reach us directly on WhatsApp
+      <!-- Newsletter Wrapper -->
+      <div class="newsletter-wrapper">
+        <div class="footer-title">NEWSLETTER</div>
+        <p class="newsletter-text">
+          Weekly wisdom: Natural Healing tips, yoga science,
+          and wellness practices.
+        </p>
+        <a href="../Newsletter.html" class="newsletter-link">
+          <button class="send-btn">
+            <i class="fa-regular fa-paper-plane"></i> Newsletter
+          </button>
         </a>
       </div>
-
-      <!-- success message (dynamic) -->
-      <div id="successMessage" class="success-toast">
-        <i class="fa-regular fa-circle-check"></i>
-        <h4 style="color:#1F3A30; margin-bottom: 6px;">Message received</h4>
-        <p style="font-size: 0.85rem;">Thank you for reaching out. Our healing guide will contact you soon.</p>
-      </div>
     </div>
-  </div>
-</section>
-<div id="footer"></div>
+  </section>
 
-<!-- EmailJS SDK (version 3) -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <div id="footer"></div>
 
-<!-- AOS JS -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-<!-- main script for AOS init + EmailJS configuration and form handling (no content change, only functional) -->
-<script>
-  // Initialize AOS (Animate on Scroll)
-  AOS.init({
-    duration: 800,
-    once: true,
-    offset: 20,
-    easing: 'ease-out-cubic'
-  });
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 20,
+      easing: 'ease-out-cubic'
+    });
 
-  // ---------- EMAILJS SETUP ----------
-  
-  (function() {
-    
-    // To get your keys: https://www.emailjs.com/docs/rest-api/introduction/
-    const EMAILJS_PUBLIC_KEY = "sNMA6vcboIYLiSOgq";    
-    const SERVICE_ID = "service_rcoz3es";        
-    const TEMPLATE_ID = "template_dtmqblu";          
-    
-   
-    
-    let emailjsInitialized = false;
-    try {
-      if (EMAILJS_PUBLIC_KEY && EMAILJS_PUBLIC_KEY !== "YOUR_EMAILJS_PUBLIC_KEY") {
-        emailjs.init(EMAILJS_PUBLIC_KEY);
-        emailjsInitialized = true;
-        console.log("EmailJS initialized successfully.");
-      } else {
-        console.warn("EmailJS: Please set your valid public key in the script (replace YOUR_EMAILJS_PUBLIC_KEY). Form will simulate success and keep local logs. Get keys from emailjs.com.");
-      }
-    } catch (err) {
-      console.error("EmailJS init error:", err);
-    }
-    
-    const form = document.getElementById('healingForm');
-    const successDiv = document.getElementById('successMessage');
-    
-    // Helper to show validation toast without altering design/content
-    function showValidationToast(message) {
-      const toastHint = document.createElement('div');
-      toastHint.textContent = message;
-      toastHint.style.position = "fixed";
-      toastHint.style.bottom = "20px";
-      toastHint.style.left = "20px";
-      toastHint.style.background = "#F3E2D4";
-      toastHint.style.color = "#B45F3A";
-      toastHint.style.padding = "12px 20px";
-      toastHint.style.borderRadius = "40px";
-      toastHint.style.fontSize = "0.85rem";
-      toastHint.style.zIndex = "999";
-      toastHint.style.fontWeight = "500";
-      toastHint.style.boxShadow = "0 8px 20px rgba(0,0,0,0.1)";
-      document.body.appendChild(toastHint);
-      setTimeout(() => toastHint.remove(), 2500);
-    }
-    
-    // display success UI exactly as original but triggered by email send or simulation
-    function displaySuccessUI() {
-      successDiv.style.display = "block";
-      form.reset();
-      setTimeout(() => {
-        if (successDiv) {
-          successDiv.style.transition = "opacity 0.5s";
-          successDiv.style.opacity = "0.8";
-        }
-      }, 3000);
-      setTimeout(() => {
-        if (successDiv) {
-          successDiv.style.display = "none";
-          successDiv.style.opacity = "1";
-        }
-      }, 5800);
-      successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-    
-    // function to send email via emailjs if properly configured, else simulation for demo
-    async function sendEmailViaEmailJS(formData) {
-      if (emailjsInitialized && SERVICE_ID && TEMPLATE_ID && SERVICE_ID !== "service_healing_sanctuary" && TEMPLATE_ID !== "template_healing_contact") {
-        // prepared template params: ensure naming matches your emailjs template variables
-       const templateParams = {
-  patient_name: formData.name,
-  patient_email: formData.email,
-  patient_phone: formData.phone
-};
-        try {
-          const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams);
-          console.log("EmailJS success:", response);
-          return true;
-        } catch (err) {
-          console.error("EmailJS send error:", err);
-          showValidationToast("⚠️ Email service temporarily unavailable. Your message was recorded locally. We'll reach out.");
-          // fallback: still show success to user (graceful)
-          return true;
-        }
-      } else {
-        // simulation mode (when credentials not set), still works same user experience without breaking.
-        console.log("EmailJS simulation: message would be sent to", formData.email, "with content:", formData.message);
-        // Artificial delay to mimic network
-        await new Promise(resolve => setTimeout(resolve, 600));
-        return true;
-      }
-    }
-    
-    // event listener for form
-    if (form) {
-      form.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        // collect fields
-        const nameInput = document.getElementById('fullname');
-        const emailInput = document.getElementById('email');
-        const phoneInput = document.getElementById('phone');
-       
-        
-        let isValid = true;
-        
-        // validation style matching original (red border effect)
-        if (!nameInput.value.trim()) {
-          nameInput.style.borderColor = "#C8684A";
-          setTimeout(() => { nameInput.style.borderColor = "#EDE3D9"; }, 1500);
-          isValid = false;
+    (function() {
+      const EMAILJS_PUBLIC_KEY = "sNMA6vcboIYLiSOgq";    
+      const SERVICE_ID = "service_rcoz3es";        
+      const TEMPLATE_ID = "template_dtmqblu";          
+      
+      let emailjsInitialized = false;
+      try {
+        if (EMAILJS_PUBLIC_KEY && EMAILJS_PUBLIC_KEY !== "YOUR_EMAILJS_PUBLIC_KEY") {
+          emailjs.init(EMAILJS_PUBLIC_KEY);
+          emailjsInitialized = true;
+          console.log("EmailJS initialized successfully.");
         } else {
-          nameInput.style.borderColor = "#EDE3D9";
+          console.warn("EmailJS: Please set your valid public key.");
         }
-        
-        if (!emailInput.value.trim() || !emailInput.value.includes('@')) {
-          emailInput.style.borderColor = "#C8684A";
-          setTimeout(() => { emailInput.style.borderColor = "#EDE3D9"; }, 1500);
-          isValid = false;
-        } else {
-          emailInput.style.borderColor = "#EDE3D9";
-        }
-        
-        if (!isValid) {
-          showValidationToast("✨ Please fill name & valid email ✨");
-          return;
-        }
-        
-        // Disable button to avoid double submissions (UX)
-        const submitBtn = form.querySelector('.btn-send');
-        const originalBtnContent = submitBtn.innerHTML;
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = '<span>Sending...</span> <i class="fa-regular fa-spinner fa-pulse"></i>';
-        
-        // Prepare data for email
-        const formPayload = {
-          name: nameInput.value.trim(),
-          email: emailInput.value.trim(),
-          phone: phoneInput.value.trim(),
-         
-        };
-        
-        try {
-          const emailResult = await sendEmailViaEmailJS(formPayload);
-          if (emailResult) {
-            displaySuccessUI();
-          } else {
-            // rare case: but still user-friendly
-            displaySuccessUI();
+      } catch (err) {
+        console.error("EmailJS init error:", err);
+      }
+      
+      const form = document.getElementById('healingForm');
+      const successDiv = document.getElementById('successMessage');
+      
+      function showValidationToast(message) {
+        const toastHint = document.createElement('div');
+        toastHint.textContent = message;
+        toastHint.style.position = "fixed";
+        toastHint.style.bottom = "20px";
+        toastHint.style.left = "20px";
+        toastHint.style.background = "#F3E2D4";
+        toastHint.style.color = "#B45F3A";
+        toastHint.style.padding = "12px 20px";
+        toastHint.style.borderRadius = "14px";
+        toastHint.style.fontSize = "0.85rem";
+        toastHint.style.zIndex = "999";
+        toastHint.style.fontWeight = "500";
+        toastHint.style.boxShadow = "0 8px 20px rgba(0,0,0,0.10)";
+        document.body.appendChild(toastHint);
+        setTimeout(() => toastHint.remove(), 2500);
+      }
+      
+      function displaySuccessUI() {
+        successDiv.style.display = "block";
+        form.reset();
+        setTimeout(() => {
+          if (successDiv) {
+            successDiv.style.transition = "opacity 0.5s";
+            successDiv.style.opacity = "0.8";
           }
-        } catch (err) {
-          console.error("Unexpected error:", err);
-          showValidationToast("Something went wrong, but we've captured your inquiry. Please try again later.");
-         
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = originalBtnContent;
-          return;
-        } finally {
-          // Re-enable button only if success not triggered full reset? but after success we can reset anyway but not keep button disabled after success
-          if (successDiv.style.display !== 'block') {
+        }, 3000);
+        setTimeout(() => {
+          if (successDiv) {
+            successDiv.style.display = "none";
+            successDiv.style.opacity = "1";
+          }
+        }, 5800);
+        successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      
+      async function sendEmailViaEmailJS(formData) {
+        if (emailjsInitialized && SERVICE_ID && TEMPLATE_ID) {
+          const templateParams = {
+            patient_name: formData.name,
+            patient_email: formData.email,
+            patient_phone: formData.phone
+          };
+          try {
+            const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams);
+            console.log("EmailJS success:", response);
+            return true;
+          } catch (err) {
+            console.error("EmailJS send error:", err);
+            showValidationToast("⚠️ Email service temporarily unavailable. Your message was recorded locally.");
+            return true;
+          }
+        } else {
+          await new Promise(resolve => setTimeout(resolve, 600));
+          return true;
+        }
+      }
+      
+      if (form) {
+        form.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          
+          const nameInput = document.getElementById('fullname');
+          const emailInput = document.getElementById('email');
+          const phoneInput = document.getElementById('phone');
+          
+          let isValid = true;
+          
+          if (!nameInput.value.trim()) {
+            nameInput.style.borderColor = "#C8684A";
+            setTimeout(() => { nameInput.style.borderColor = "#E8DFD6"; }, 1500);
+            isValid = false;
+          } else {
+            nameInput.style.borderColor = "#E8DFD6";
+          }
+          
+          if (!emailInput.value.trim() || !emailInput.value.includes('@')) {
+            emailInput.style.borderColor = "#C8684A";
+            setTimeout(() => { emailInput.style.borderColor = "#E8DFD6"; }, 1500);
+            isValid = false;
+          } else {
+            emailInput.style.borderColor = "#E8DFD6";
+          }
+          
+          if (!isValid) {
+            showValidationToast("✨ Please fill name & valid email ✨");
+            return;
+          }
+          
+          const submitBtn = form.querySelector('.btn-send');
+          const originalBtnContent = submitBtn.innerHTML;
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = '<span>Sending...</span> <i class="fa-regular fa-spinner fa-pulse"></i>';
+          
+          const formPayload = {
+            name: nameInput.value.trim(),
+            email: emailInput.value.trim(),
+            phone: phoneInput.value.trim(),
+          };
+          
+          try {
+            const emailResult = await sendEmailViaEmailJS(formPayload);
+            if (emailResult) {
+              displaySuccessUI();
+            } else {
+              displaySuccessUI();
+            }
+          } catch (err) {
+            console.error("Unexpected error:", err);
+            showValidationToast("Something went wrong, but we've captured your inquiry.");
             submitBtn.disabled = false;
             submitBtn.innerHTML = originalBtnContent;
-          } else {
-            // after success UI, we revert after delay
-            setTimeout(() => {
+            return;
+          } finally {
+            if (successDiv.style.display !== 'block') {
               submitBtn.disabled = false;
               submitBtn.innerHTML = originalBtnContent;
-            }, 2000);
+            } else {
+              setTimeout(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnContent;
+              }, 2000);
+            }
           }
-        }
-      });
-    }
-    
-   
-    console.log("Healing contact redesigned with AOS + EmailJS integration ready");
-  })();
-</script>
+        });
+      }
+      
+      console.log("Healing contact redesigned with AOS + EmailJS integration ready");
+    })();
+  </script>
 
-
-<script>
-  if (typeof window.includeNavbar === 'undefined') {
-  
-    console.log("include.js not present, but page is fully functional.");
-  }
-</script>
-<script src="../js/include.js"></script>
+  <script src="../js/include.js"></script>
 </body>
 </html>
