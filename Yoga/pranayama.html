@@ -1,180 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
   <title>Pranayama Protocol</title>
-  <link rel="stylesheet" href="../styles/pranayama.css">
-  
-  <!-- AOS Animation Library -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  
-  <style>
-    /* Ensure AOS animations don't cause any layout shift or visual changes */
-    [data-aos] {
-      pointer-events: auto !important;
-    }
-  </style>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../styles/pranayama.css"/>
+
+  <!-- AOS -->
+  <link
+    href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+    rel="stylesheet"
+  />
 </head>
 
 <body>
 
+<div id="navbar"></div>
+
 <section class="pranayama-section">
 
-  <div id="navbar"></div>
+  <!-- Heading -->
+  <div class="section-title" data-aos="fade-up">
 
-  <div class="section-title">
-    <h2 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">Pranayama Protocol</h2>
-    <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">Traditional Yogic Breathing Practices for physical, mental and spiritual wellbeing.</p>
-  </div>
+    <span class="protocol-tag">
+      Yogic Breathing Science
+    </span>
 
-  <div class="pranayama-grid">
+    <h2>Pranayama Protocol</h2>
 
-    <!-- CARD 1 -->
-    <div class="pranayama-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="50">
-      <div class="pranayama-img">
-        <a href="https://youtube.com/shorts/-ZJ3Yhi8s_M?si=HA9yEGP8kdNdn9dX" target="_blank">
-          <img src="https://img.youtube.com/vi/-ZJ3Yhi8s_M/maxresdefault.jpg" alt="Shirshasana">
-        </a>
-      </div>
-      <div class="pranayama-content">
-        <h3>Shirshasana</h3>
-        <p>The topmost pose accomplished with effort and a helping hand.</p>
-        <a href="https://youtube.com/shorts/-ZJ3Yhi8s_M?si=HA9yEGP8kdNdn9dX" target="_blank" class="video-btn">Watch Video</a>
-      </div>
-    </div>
-
-    <!-- CARD 2 -->
-    <div class="pranayama-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-      <div class="pranayama-img">
-        <a href="https://youtu.be/aKdpdQyx-f4?si=BBGHQotcNt95ATaD" target="_blank">
-          <img src="https://img.youtube.com/vi/aKdpdQyx-f4/maxresdefault.jpg" alt="Yoga Video">
-        </a>
-      </div>
-      <div class="pranayama-content">
-        <h3>Yoga Asana, Pranayam with Rising Sun</h3>
-        <p>Join in for a daily practice to make you healthy and happy.</p>
-        <a href="https://youtu.be/aKdpdQyx-f4?si=BBGHQotcNt95ATaD" target="_blank" class="video-btn">Watch Video</a>
-      </div>
-    </div>
-
-    <!-- CARD 3 -->
-    <div class="pranayama-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
-      <div class="pranayama-img">
-        <a href="https://youtube.com/shorts/X6Iq6alj6rA?si=oexKJKLml-CG-c2i" target="_blank">
-          <img src="https://img.youtube.com/vi/X6Iq6alj6rA/maxresdefault.jpg" alt="Yoga Practice">
-        </a>
-      </div>
-      <div class="pranayama-content">
-        <h3>Yoga at Getty Museum, US</h3>
-        <p>Purifies energy channels and improves concentration.</p>
-        <a href="https://youtube.com/shorts/X6Iq6alj6rA?si=oexKJKLml-CG-c2i" target="_blank" class="video-btn">Watch Video</a>
-      </div>
-    </div>
-
-    <!-- CARD 4 -->
-    <div class="pranayama-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-      <div class="pranayama-img">
-        <a href="https://youtube.com/shorts/QnwUcLWGtv8?si=-EBn1MrYBaizL4ju" target="_blank">
-          <img src="https://img.youtube.com/vi/QnwUcLWGtv8/maxresdefault.jpg" alt="Lifestyle">
-        </a>
-      </div>
-      <div class="pranayama-content">
-        <h3>Reverse Long Standing Diseases</h3>
-        <p>Lifestyle can help reverse chronic conditions with proper guidance.</p>
-        <a href="https://youtube.com/shorts/QnwUcLWGtv8?si=-EBn1MrYBaizL4ju" target="_blank" class="video-btn">Watch Video</a>
-      </div>
-    </div>
-
-    <!-- CARD 5 -->
-    <div class="pranayama-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="250">
-      <div class="pranayama-img">
-        <a href="https://youtube.com/shorts/6YnuyzY5RYg?si=vTDaSArNlNftiVsK" target="_blank">
-          <img src="https://img.youtube.com/vi/6YnuyzY5RYg/maxresdefault.jpg" alt="Spices">
-        </a>
-      </div>
-      <div class="pranayama-content">
-        <h3>Wonder of Spices</h3>
-        <p>Better gut health, immunity boost and metabolism support.</p>
-        <a href="https://youtube.com/shorts/6YnuyzY5RYg?si=vTDaSArNlNftiVsK" target="_blank" class="video-btn">Watch Video</a>
-      </div>
-    </div>
-
-    <!-- CARD 6 -->
-    <div class="pranayama-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
-      <div class="pranayama-img">
-        <a href="https://youtube.com/shorts/o6QVnZSyByE?si=JYIaeF9p804pJuLP" target="_blank">
-          <img src="https://img.youtube.com/vi/o6QVnZSyByE/maxresdefault.jpg" alt="Tadasana">
-        </a>
-      </div>
-      <div class="pranayama-content">
-        <h3>Tadasana</h3>
-        <p>Useful for posture, spinal health and body alignment.</p>
-        <a href="https://youtube.com/shorts/o6QVnZSyByE?si=JYIaeF9p804pJuLP" target="_blank" class="video-btn">Watch Video</a>
-      </div>
-    </div>
-
-    <!-- CARD 7 -->
-    <div class="pranayama-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="350">
-      <div class="pranayama-img">
-        <a href="https://youtube.com/shorts/DXcniub8Y7U?si=4cyX0tGuuZ5Mmg-O" target="_blank">
-          <img src="https://img.youtube.com/vi/DXcniub8Y7U/maxresdefault.jpg" alt="Vriksha Asana">
-        </a>
-      </div>
-      <div class="pranayama-content">
-        <h3>Vriksha Asana</h3>
-        <p>Improves balance, focus and body stability.</p>
-        <a href="https://youtube.com/shorts/DXcniub8Y7U?si=4cyX0tGuuZ5Mmg-O" target="_blank" class="video-btn">Watch Video</a>
-      </div>
-    </div>
-    <div class="pranayama-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="350">
-      <div class="pranayama-img">
-        <a href="https://youtube.com/shorts/DXcniub8Y7U?si=4cyX0tGuuZ5Mmg-O" target="_blank">
-          <img src="https://img.youtube.com/vi/DXcniub8Y7U/maxresdefault.jpg" alt="Vriksha Asana">
-        </a>
-      </div>
-      <div class="pranayama-content">
-        <h3>Vriksha Asana</h3>
-        <p>Improves balance, focus and body stability.</p>
-        <a href="https://youtube.com/shorts/DXcniub8Y7U?si=4cyX0tGuuZ5Mmg-O" target="_blank" class="video-btn">Watch Video</a>
-      </div>
-    </div>
+    <p>
+      Traditional breathing practices for
+      physical, mental and spiritual wellbeing.
+    </p>
 
   </div>
+
+  <!-- Main Grid -->
+  <div class="protocol-grid">
+
+    <!-- LEFT -->
+    <div
+      class="protocol-card"
+      data-aos="fade-right"
+      data-aos-duration="1000"
+    >
+
+      <h3>Core Pranayama Practices</h3>
+
+      <div class="practice-list">
+
+        <div class="practice-item">
+          <span>01</span>
+          <h4>Kapalbhati</h4>
+        </div>
+
+        <div class="practice-item">
+          <span>02</span>
+          <h4>Anulom Vilom</h4>
+        </div>
+
+        <div class="practice-item">
+          <span>03</span>
+          <h4>Naadi Shodhan</h4>
+        </div>
+
+        <div class="practice-item">
+          <span>04</span>
+          <h4>Bhastrika</h4>
+        </div>
+
+        <div class="practice-item">
+          <span>05</span>
+          <h4>Ujjayi</h4>
+        </div>
+
+        <div class="practice-item">
+          <span>06</span>
+          <h4>Sheetali – Sheetkari</h4>
+        </div>
+
+        <div class="practice-item">
+          <span>07</span>
+
+          <div>
+            <h4>Brahmari</h4>
+
+            <p>
+              Close ears with both thumbs,
+              hear inner sound and produce
+              humming vibration.
+            </p>
+          </div>
+        </div>
+
+        <div class="practice-item">
+          <span>08</span>
+          <h4>Omkar</h4>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT -->
+
+    <!-- vedio 1 -->
+    <div
+      class="video-column"
+      data-aos="fade-left"
+      data-aos-duration="1000"
+    >
+
+      <div
+  class="video-card"
+  data-aos="zoom-in"
+  data-aos-delay="100"
+>
+
+  <div class="video-thumb">
+
+    <a
+      href="https://www.youtube.com/watch?v=R37-2JoGzmc"
+      target="_blank"
+    >
+
+      <img
+        src="https://img.youtube.com/vi/R37-2JoGzmc/maxresdefault.jpg"
+        alt="Pranayama Video"
+      />
+
+    </a>
+
+  </div>
+
+  <div class="video-content">
+
+    <h3>Morning Pranayama Session</h3>
+
+    <p>
+      Daily yogic breathing with rising sun
+      for energy and mindfulness.
+    </p>
+
+    <a
+      href="https://www.youtube.com/watch?v=R37-2JoGzmc"
+      target="_blank"
+      class="watch-btn"
+    >
+      Watch Video
+    </a>
+
+  </div>
+
+</div>
+
+      <!-- VIDEO 2 -->
+      <div
+  class="video-card"
+  data-aos="zoom-in"
+  data-aos-delay="250"
+>
+
+  <div class="video-thumb">
+
+    <a
+      href="https://youtu.be/cceUWFtyznk"
+      target="_blank"
+    >
+
+      <img
+        src="https://img.youtube.com/vi/cceUWFtyznk/maxresdefault.jpg"
+        alt="Healing Lifestyle"
+      />
+
+    </a>
+
+  </div>
+
+  <div class="video-content">
+
+    <h3>Healing Lifestyle Practice</h3>
+
+    <p>
+      Yogic lifestyle and breathing
+      practices for wellness.
+    </p>
+
+    <a
+      href="https://youtu.be/cceUWFtyznk"
+      target="_blank"
+      class="watch-btn"
+    >
+      Watch Video
+    </a>
+
+  </div>
+
+</div>
+
+    </div>
+
+  </div>
+
 </section>
 
 <footer id="footer"></footer>
 
 <script src="../js/include.js"></script>
 
-<!-- Initialize AOS -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    AOS.init({
-      duration: 1000,
-      once: false,
-      mirror: false,
-      offset: 80,
-      easing: 'ease-out-quad',
-      disable: false,
-      startEvent: 'DOMContentLoaded'
-    });
-    
-    // Refresh AOS after any dynamic content loads
-    setTimeout(function() {
-      AOS.refresh();
-    }, 300);
-  });
-</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-70BG55XT3Q"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-  gtag('config', 'G-70BG55XT3Q');
+<script>
+
+  AOS.init({
+
+    duration: 1000,
+
+    once: false,
+
+    offset: 100,
+
+    easing: 'ease-out-cubic'
+  });
+
 </script>
+
 </body>
 </html>

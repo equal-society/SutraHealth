@@ -1,96 +1,298 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:#F6F3EE;
+  color:#1F3A30;
+}
+
 .pranayama-section{
-  padding:80px 5%;
-  background:#f4f7fb;
+  padding:140px 7%;
 }
 
 .section-title{
   text-align:center;
-  margin-bottom:60px;
+  margin-bottom:70px;
+}
+
+.protocol-tag{
+
+  display:inline-block;
+
+  background:#E7F2EC;
+
+  color:#2A7A55;
+
+  padding:10px 20px;
+
+  border-radius:999px;
+
+  font-size:0.9rem;
+
+  font-weight:600;
+
+  margin-bottom:20px;
 }
 
 .section-title h2{
-  font-size:42px;
-  color:#111;
-  margin-bottom:15px;
+
+  font-size:3.5rem;
+
+  margin-bottom:20px;
+
+  line-height:1.1;
 }
 
 .section-title p{
-  color:#666;
+
   max-width:700px;
+
   margin:auto;
+
+  color:#5E6B66;
+
   line-height:1.8;
+
+  font-size:1.05rem;
 }
 
-.pranayama-grid{
+.protocol-grid{
+
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-  gap:35px;
+
+  grid-template-columns:1.1fr 0.9fr;
+
+  gap:50px;
+
+  align-items:start;
 }
 
-.pranayama-card{
+/* LEFT */
+
+.protocol-card{
+
   background:#fff;
-  border-radius:24px;
+
+  border-radius:32px;
+
+  padding:45px;
+
+  box-shadow:
+    0 12px 40px rgba(0,0,0,0.06);
+}
+
+.protocol-card h3{
+
+  font-size:2rem;
+
+  margin-bottom:35px;
+}
+
+.practice-list{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:18px;
+}
+
+.practice-item{
+
+  display:flex;
+
+  gap:20px;
+
+  align-items:flex-start;
+
+  padding:20px;
+
+  border-radius:20px;
+
+  background:#FAF8F4;
+
+  transition:0.35s ease;
+}
+
+.practice-item:hover{
+
+  transform:translateY(-3px);
+
+  background:#EEF7F1;
+}
+
+.practice-item span{
+
+  min-width:52px;
+
+  height:52px;
+
+  border-radius:50%;
+
+  background:#2A7A55;
+
+  color:white;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-weight:700;
+}
+
+.practice-item h4{
+
+  font-size:1.1rem;
+
+  margin-bottom:6px;
+}
+
+.practice-item p{
+
+  color:#65726D;
+
+  line-height:1.7;
+
+  font-size:0.95rem;
+}
+
+/* RIGHT */
+
+.video-column{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:30px;
+}
+
+.video-card{
+
+  background:#fff;
+
+  border-radius:30px;
+
   overflow:hidden;
-  box-shadow:0 10px 30px rgba(0,0,0,0.08);
-  transition:0.4s ease;
+
+  box-shadow:
+    0 12px 40px rgba(0,0,0,0.06);
+
+  transition:0.35s ease;
 }
 
-.pranayama-card:hover{
-  transform:translateY(-8px);
+.video-card:hover{
+
+  transform:translateY(-6px);
 }
 
-.pranayama-img{
-  height:240px;
-  overflow:hidden;
-}
+.video-thumb img{
 
-.pranayama-img img{
   width:100%;
-  height:100%;
+
+  height:260px;
+
   object-fit:cover;
-  transition:0.5s;
+
+  display:block;
 }
 
-.pranayama-card:hover img{
-  transform:scale(1.08);
-}
+.video-content{
 
-.pranayama-content{
   padding:28px;
 }
 
-.pranayama-content h3{
-  font-size:28px;
-  margin-bottom:15px;
-  color:#111;
+.video-content h3{
+
+  font-size:1.4rem;
+
+  margin-bottom:12px;
 }
 
-.pranayama-content p{
-  color:#666;
-  line-height:1.8;
-  margin-bottom:22px;
-  font-size:15px;
+.video-content p{
+
+  color:#68756F;
+
+  line-height:1.7;
+
+  margin-bottom:24px;
 }
 
-.video-btn{
-  display:inline-block;
-  padding:12px 24px;
-  background:#ff7a00;
-  color:#fff;
-  border-radius:50px;
-  font-weight:600;
-  transition:0.3s;
+.watch-btn{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  padding:14px 24px;
+
+  border-radius:14px;
+
   text-decoration:none;
+
+  background:#2A7A55;
+
+  color:#fff;
+
+  font-weight:600;
+
+  transition:0.3s ease;
 }
 
-.video-btn:hover{
-  background:#e56700;
+.watch-btn:hover{
+
+  background:#1C5A3E;
+
+  transform:translateY(-2px);
+}
+
+/* Responsive */
+
+@media(max-width:992px){
+
+  .protocol-grid{
+
+    grid-template-columns:1fr;
+  }
+
+  .section-title h2{
+
+    font-size:2.6rem;
+  }
 }
 
 @media(max-width:768px){
 
-  .section-title h2{
-    font-size:32px;
+  .pranayama-section{
+
+    padding:120px 20px 80px;
   }
 
+  .protocol-card{
+
+    padding:28px;
+  }
+
+  .practice-item{
+
+    flex-direction:column;
+  }
+
+  .video-thumb img{
+
+    height:220px;
+  }
+
+  .section-title h2{
+
+    font-size:2.1rem;
+  }
 }

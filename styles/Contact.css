@@ -426,6 +426,129 @@
       transform: translateY(-3px);
     }
 
+    .stay-wrapper{
+  background: #FFFFFF;
+      border-radius: 28px;
+      padding: 1.5rem;
+      box-shadow: 0 24px 48px -12px rgba(30, 45, 35, 0.08);
+      border: 1px solid #EDE6DD;
+      transition: transform 0.25s ease;
+}
+
+/* =========================
+   AIRBNB BUTTON STYLING
+========================= */
+
+.airbnb-link{
+  text-decoration:none;
+}
+
+.airbnb-btn{
+
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+
+  padding:16px 28px;
+
+  border:none;
+  border-radius:18px;
+
+  background:linear-gradient(
+    135deg,
+    #FF385C,
+    #E61E4D
+  );
+
+  color:#fff;
+
+  font-size:1rem;
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:all 0.35s ease;
+
+  box-shadow:
+    0 10px 30px rgba(230,30,77,0.25);
+
+  position:relative;
+  overflow:hidden;
+}
+
+/* Hover Effect */
+
+.airbnb-btn:hover{
+
+  transform:
+    translateY(-4px)
+    scale(1.02);
+
+  box-shadow:
+    0 18px 40px rgba(230,30,77,0.35);
+
+  background:linear-gradient(
+    135deg,
+    #FF4F70,
+    #D4145A
+  );
+}
+
+/* Click Effect */
+
+.airbnb-btn:active{
+
+  transform:scale(0.98);
+}
+
+/* Icon */
+
+.airbnb-btn i{
+
+  font-size:1.1rem;
+}
+
+/* Shine Animation */
+
+.airbnb-btn::before{
+
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:-120%;
+
+  width:60%;
+  height:100%;
+
+  background:rgba(255,255,255,0.25);
+
+  transform:skewX(-25deg);
+
+  transition:0.7s;
+}
+
+.airbnb-btn:hover::before{
+
+  left:130%;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+  .airbnb-btn{
+
+    width:100%;
+
+    padding:15px 20px;
+
+    font-size:0.95rem;
+  }
+}
+
     .map-wrapper iframe {
       width: 100%;
       height: 280px;
