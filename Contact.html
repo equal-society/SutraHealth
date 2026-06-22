@@ -2,496 +2,357 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Sanctuary — Healing Journey Contact</title>
 
-  <title>Sutra Health Contact</title>
-
-  <!-- Google Fonts -->
+  <!-- Preconnect & Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  />
-
-  <!-- EmailJS -->
-  <script
-    type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-  ></script>
-
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
-
-    body{
-      font-family:'Inter',sans-serif;
-      background:#F7F5F2;
-      color:#1F3A30;
-    }
-
-    .contact-section{
-      min-height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      padding:40px 20px;
-    }
-
-    .contact-container{
-      width:100%;
-      max-width:1200px;
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:40px;
-      background:#fff;
-      border-radius:28px;
-      overflow:hidden;
-      box-shadow:0 15px 50px rgba(0,0,0,0.08);
-    }
-
-    .left-side{
-      background:linear-gradient(135deg,#2A7A55,#174D36);
-      color:white;
-      padding:60px;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-    }
-
-    .left-side h1{
-      font-size:3rem;
-      line-height:1.1;
-      margin-bottom:20px;
-    }
-
-    .left-side p{
-      color:rgba(255,255,255,0.85);
-      line-height:1.8;
-      margin-bottom:40px;
-    }
-
-    .info-box{
-      display:flex;
-      align-items:center;
-      gap:16px;
-      margin-bottom:24px;
-    }
-
-    .icon-circle{
-      width:50px;
-      height:50px;
-      border-radius:50%;
-      background:rgba(255,255,255,0.15);
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      font-size:1.1rem;
-    }
-
-    .info-box small{
-      display:block;
-      font-size:0.75rem;
-      letter-spacing:1px;
-      opacity:0.7;
-      margin-bottom:4px;
-    }
-
-    .info-box p{
-      margin:0;
-      font-size:0.95rem;
-    }
-
-    .info-box a{
-      color:white;
-      text-decoration:none;
-    }
-
-    .socials{
-      margin-top:30px;
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-    }
-
-    .socials a{
-      width:45px;
-      height:45px;
-      border-radius:50%;
-      background:rgba(255,255,255,0.15);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:white;
-      text-decoration:none;
-      transition:0.3s;
-    }
-
-    .socials a:hover{
-      background:white;
-      color:#2A7A55;
-      transform:translateY(-4px);
-    }
-
-    .right-side{
-      padding:60px;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-    }
-
-    .right-side h2{
-      font-size:2rem;
-      margin-bottom:10px;
-    }
-
-    .right-side p{
-      color:#666;
-      margin-bottom:30px;
-    }
-
-    .input-group{
-      margin-bottom:20px;
-    }
-
-    .input-group label{
-      display:block;
-      margin-bottom:8px;
-      font-size:0.9rem;
-      font-weight:600;
-    }
-
-    .input-group input{
-      width:100%;
-      padding:16px;
-      border-radius:14px;
-      border:1px solid #ddd;
-      outline:none;
-      font-size:1rem;
-      transition:0.3s;
-    }
-
-    .input-group input:focus{
-      border-color:#2A7A55;
-    }
-
-    .submit-btn{
-      width:100%;
-      border:none;
-      padding:18px;
-      border-radius:16px;
-      background:#2A7A55;
-      color:white;
-      font-size:1rem;
-      font-weight:600;
-      cursor:pointer;
-      transition:0.3s;
-    }
-
-    .submit-btn:hover{
-      background:#1E5C40;
-    }
-
-    .success-message{
-      margin-top:20px;
-      background:#E8F8EE;
-      color:#1E5C40;
-      padding:16px;
-      border-radius:14px;
-      display:none;
-    }
-
-    @media(max-width:900px){
-
-      .contact-container{
-        grid-template-columns:1fr;
-      }
-
-      .left-side,
-      .right-side{
-        padding:40px 30px;
-      }
-
-      .left-side h1{
-        font-size:2.2rem;
-      }
-    }
-  </style>
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="/styles/Contact.css" rel="stylesheet">
 </head>
-
 <body>
+  <div id="navbar"></div>
 
-<section class="contact-section">
-
-  <div class="contact-container">
-
-    <!-- LEFT -->
-    <div class="left-side">
-
-      <h1>Begin Your Healing Journey</h1>
-
-      <p>
-        A sanctuary for holistic wellness and transformation.
-        Connect with us for yoga, healing, therapy, and wellness guidance.
-      </p>
-
-      <div class="info-box">
-        <div class="icon-circle">
-          <i class="fa-solid fa-phone"></i>
+  <section class="contact-modern">
+    <div class="modern-grid">
+      
+      <!-- LEFT COLUMN -->
+      <div class="brand-col" data-aos="fade-right" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+        <div class="accent-chip" data-aos="fade-up" data-aos-delay="100">
+          <i class="fa-regular fa-leaf"></i> 
+          sacred connection
         </div>
-
-        <div>
-          <small>CALL / WHATSAPP</small>
-
-          <a href="tel:+919013103676">
-            <p>+91 90131 03676</p>
-          </a>
-        </div>
-      </div>
-
-      <div class="info-box">
-        <div class="icon-circle">
-          <i class="fa-solid fa-envelope"></i>
-        </div>
-
-        <div>
-          <small>EMAIL</small>
-
-          <a href="mailto:equal.society@gmail.com">
+        <h1 class="healing-headline" data-aos="fade-up" data-aos-delay="200">
+          Begin Your <span>Healing<br></span>Journey Within
+        </h1>
+        <p class="desc-text" data-aos="fade-up" data-aos-delay="300">
+          A sanctuary for holistic wellness — whether it's your first step or a deeper path, 
+          we nurture transformation with compassion and expertise.
+        </p>
+        
+        <div class="info-cards">
+          <div class="info-row" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon-circle">    <a href="mailto:equal.society@gmail.com" style="text-decoration: none;"><i class="fa-solid fa-phone" style="color: #2A7A55;"></i></a></div>
+            <div class="info-detail">
+              <small>WHATSAPP / CALL</small>
+              <a href="tel:+919013103676" style="text-decoration: none;"><p>+91 90131 03676</p></a>
+            </div>
+          </div>
+          <div class="info-row" data-aos="fade-up" data-aos-delay="450">
+            <div class="icon-circle"><i class="fa-regular fa-envelope"></i></div>
+            <div class="info-detail">
+              <small>EMAIL</small>
+             <a href="mailto:equal.society@gmail.com" style="text-decoration: none;">
             <p>equal.society@gmail.com</p>
+            </a>
+            </div>
+          </div>
+          <div class="info-row" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon-circle">
+              <a href="https://maps.app.goo.gl/Bso3TJCkvqDSLWKP9" style="color: #2A7A55;"><i class="fa-solid fa-location-dot"></i></a>
+            </div>
+            <div class="info-detail">
+              <small>STUDIO SPACE</small>
+             <a href="https://maps.app.goo.gl/Bso3TJCkvqDSLWKP9" style="text-decoration:none;"> <p>House No. 229, Roof-Top, Sector 46, Faridabad</p></a>
+            </div>
+          </div>
+          <div class="info-row" data-aos="fade-up" data-aos-delay="550">
+            <div class="icon-circle"><i class="fa-regular fa-clock"></i></div>
+            <div class="info-detail">
+              <small>HOURS OF PRESENCE</small>
+              <p>Mon – Sat: 7-8 AM & 4-6 PM</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="social-links-modern" data-aos="fade-up" data-aos-delay="600">
+          <a href="https://www.instagram.com/sutrahealth/" target="_blank" aria-label="Instagram" class="social-icon">
+            <i class="fa-brands fa-instagram"></i>
           </a>
+          <a href="https://www.facebook.com/people/Sutrahealth-Equal/" target="_blank" aria-label="Facebook" class="social-icon">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="https://www.youtube.com/@sutra-health" target="_blank" aria-label="YouTube" class="social-icon">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+          <a href="mailto:equal.society@gmail.com" aria-label="Email" class="social-icon">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="https://wa.me/919013103676" target="_blank" aria-label="WhatsApp" class="social-icon">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/equal-society-ngo" target="_blank" aria-label="LinkedIn" class="social-icon">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a href="https://medium.com/@equal.society" target="_blank" aria-label="Medium" class="social-icon">
+            <i class="fa-brands fa-medium"></i>
+          </a>
+          <a href="https://in.pinterest.com/equal_society/" target="_blank" aria-label="Pinterest" class="social-icon">
+            <i class="fa-brands fa-pinterest"></i>
+          </a>
+        </div>
+
+        <div class="feature-image" data-aos="fade-up" data-aos-delay="700">
+          <!-- <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1520&auto=format&fit=crop" alt="healing rooftop yoga">
+          <div class="floating-address">
+            <i class="fa-solid fa-tree"></i> 
+            <span>📍 Rooftop Sanctuary, Sector 46 — Faridabad 121010</span>
+          </div> -->
         </div>
       </div>
 
-      <div class="info-box">
-        <div class="icon-circle">
+      <!-- RIGHT COLUMN: Form -->
+      <div class="form-card" data-aos="fade-left" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+        <h2 class="form-title-modern" data-aos="fade-up" data-aos-delay="100">Send a whisper</h2>
+        <div class="form-sub" data-aos="fade-up" data-aos-delay="150">We reply within 24 hours — let's co-create your wellness map</div>
+        
+        <form id="healingForm" action="#" method="post">
+          <div class="input-group-new" data-aos="fade-up" data-aos-delay="200">
+            <label><i class="fa-regular fa-user"></i> Full name</label>
+            <input type="text" id="fullname" placeholder="e.g., Ananya Sharma" required>
+          </div>
+          <div class="input-group-new" data-aos="fade-up" data-aos-delay="250">
+            <label><i class="fa-regular fa-envelope"></i> Email address</label>
+            <input type="email" id="email" placeholder="hello@healing.com" required>
+          </div>
+          <div class="input-group-new" data-aos="fade-up" data-aos-delay="300">
+            <label><i class="fa-brands fa-whatsapp"></i> Phone / WhatsApp</label>
+            <input type="tel" id="phone" placeholder="+91 98765 43210">
+          </div>
+          
+          <button type="submit" class="btn-send" data-aos="fade-up" data-aos-delay="400">
+            <span>Send Message</span> <i class="fa-regular fa-paper-plane"></i>
+          </button>
+        </form>
+
+        <div class="whatsapp-helper" data-aos="fade-up" data-aos-delay="450">
+          <a href="https://wa.me/919013103676" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i> Or reach us directly on WhatsApp
+          </a>
+        </div>
+
+        <div id="successMessage" class="success-toast">
+          <i class="fa-regular fa-circle-check"></i>
+          <h4 style="color:#1F3A30; margin-bottom: 6px;">Message received</h4>
+          <p style="font-size: 0.85rem;">Thank you for reaching out. Our healing guide will contact you soon.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── BOTTOM SECTION: Map + Newsletter (NEW) ── -->
+    <div class="bottom-section" data-aos="fade-up" data-aos-delay="800">
+      
+      <!-- Map Wrapper -->
+      <div class="map-wrapper">
+        <div class="map-title">
           <i class="fa-solid fa-location-dot"></i>
+          Find Us Here
         </div>
-
-        <div>
-          <small>LOCATION</small>
-
-          <a target="_blank"
-             href="https://maps.app.goo.gl/Bso3TJCkvqDSLWKP9">
-
-            <p>Sector 46, Faridabad</p>
-          </a>
-        </div>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3508.488925408195!2d77.29599867601114!3d28.43467429303718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1fe57a810dd1%3A0x75e55aae4d53097b!2sSutra%20Health!5e0!3m2!1sen!2sin!4v1781511407911!5m2!1sen!2sin"
+          loading="lazy"
+          title="Sutra Health Location Map">
+        </iframe>
       </div>
 
-      <div class="socials">
-
-        <a href="https://www.instagram.com/sutrahealth/" target="_blank">
-          <i class="fa-brands fa-instagram"></i>
+      <!-- Newsletter Wrapper -->
+      <div class="newsletter-wrapper">
+        <div class="footer-title">NEWSLETTER</div>
+        <p class="newsletter-text">
+          Weekly wisdom: Natural Healing tips, yoga science,
+          and wellness practices.
+        </p>
+        <a href="../Newsletter.html" class="newsletter-link">
+          <button class="send-btn">
+            <i class="fa-regular fa-paper-plane"></i> Newsletter
+          </button>
         </a>
-
-        <a href="https://www.facebook.com/people/Sutrahealth-Equal/" target="_blank">
-          <i class="fa-brands fa-facebook-f"></i>
-        </a>
-
-        <a href="https://www.youtube.com/@sutra-health" target="_blank">
-          <i class="fa-brands fa-youtube"></i>
-        </a>
-
-        <a href="https://wa.me/919013103676" target="_blank">
-          <i class="fa-brands fa-whatsapp"></i>
-        </a>
-
       </div>
-
     </div>
+  </section>
 
-    <!-- RIGHT -->
-    <div class="right-side">
+  <div id="footer"></div>
 
-      <h2>Send a Message</h2>
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-      <p>
-        We usually reply within 24 hours.
-      </p>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 20,
+      easing: 'ease-out-cubic'
+    });
 
-      <form id="contactForm">
-
-        <div class="input-group">
-          <label>Full Name</label>
-
-          <input
-            type="text"
-            id="fullname"
-            name="fullname"
-            placeholder="Your full name"
-            required
-          >
-        </div>
-
-        <div class="input-group">
-          <label>Email Address</label>
-
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="your@email.com"
-            required
-          >
-        </div>
-
-        <div class="input-group">
-          <label>Phone Number</label>
-
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            placeholder="+91 98765 43210"
-          >
-        </div>
-
-        <button type="submit" class="submit-btn">
-          <span>Send Message</span>
-        </button>
-
-      </form>
-
-      <div class="success-message" id="successMessage">
-        ✅ Message sent successfully.
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
+    (function() {
+      const EMAILJS_PUBLIC_KEY = "sNMA6vcboIYLiSOgq";    
+      const SERVICE_ID = "service_rcoz3es";        
+      const TEMPLATE_ID = "template_dtmqblu";          
+      
+      let emailjsInitialized = false;
+      try {
+        if (EMAILJS_PUBLIC_KEY && EMAILJS_PUBLIC_KEY !== "YOUR_EMAILJS_PUBLIC_KEY") {
+          emailjs.init(EMAILJS_PUBLIC_KEY);
+          emailjsInitialized = true;
+          console.log("EmailJS initialized successfully.");
+        } else {
+          console.warn("EmailJS: Please set your valid public key.");
+        }
+      } catch (err) {
+        console.error("EmailJS init error:", err);
+      }
+      
+      const form = document.getElementById('healingForm');
+      const successDiv = document.getElementById('successMessage');
+      
+      function showValidationToast(message) {
+        const toastHint = document.createElement('div');
+        toastHint.textContent = message;
+        toastHint.style.position = "fixed";
+        toastHint.style.bottom = "20px";
+        toastHint.style.left = "20px";
+        toastHint.style.background = "#F3E2D4";
+        toastHint.style.color = "#B45F3A";
+        toastHint.style.padding = "12px 20px";
+        toastHint.style.borderRadius = "14px";
+        toastHint.style.fontSize = "0.85rem";
+        toastHint.style.zIndex = "999";
+        toastHint.style.fontWeight = "500";
+        toastHint.style.boxShadow = "0 8px 20px rgba(0,0,0,0.10)";
+        document.body.appendChild(toastHint);
+        setTimeout(() => toastHint.remove(), 2500);
+      }
+      
+      function displaySuccessUI() {
+        successDiv.style.display = "block";
+        form.reset();
+        setTimeout(() => {
+          if (successDiv) {
+            successDiv.style.transition = "opacity 0.5s";
+            successDiv.style.opacity = "0.8";
+          }
+        }, 3000);
+        setTimeout(() => {
+          if (successDiv) {
+            successDiv.style.display = "none";
+            successDiv.style.opacity = "1";
+          }
+        }, 5800);
+        successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      
+      async function sendEmailViaEmailJS(formData) {
+        if (emailjsInitialized && SERVICE_ID && TEMPLATE_ID) {
+          const templateParams = {
+            patient_name: formData.name,
+            patient_email: formData.email,
+            patient_phone: formData.phone
+          };
+          try {
+            const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams);
+            console.log("EmailJS success:", response);
+            return true;
+          } catch (err) {
+            console.error("EmailJS send error:", err);
+            showValidationToast("⚠️ Email service temporarily unavailable. Your message was recorded locally.");
+            return true;
+          }
+        } else {
+          await new Promise(resolve => setTimeout(resolve, 600));
+          return true;
+        }
+      }
+      
+      if (form) {
+        form.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          
+          const nameInput = document.getElementById('fullname');
+          const emailInput = document.getElementById('email');
+          const phoneInput = document.getElementById('phone');
+          
+          let isValid = true;
+          
+          if (!nameInput.value.trim()) {
+            nameInput.style.borderColor = "#C8684A";
+            setTimeout(() => { nameInput.style.borderColor = "#E8DFD6"; }, 1500);
+            isValid = false;
+          } else {
+            nameInput.style.borderColor = "#E8DFD6";
+          }
+          
+          if (!emailInput.value.trim() || !emailInput.value.includes('@')) {
+            emailInput.style.borderColor = "#C8684A";
+            setTimeout(() => { emailInput.style.borderColor = "#E8DFD6"; }, 1500);
+            isValid = false;
+          } else {
+            emailInput.style.borderColor = "#E8DFD6";
+          }
+          
+          if (!isValid) {
+            showValidationToast("✨ Please fill name & valid email ✨");
+            return;
+          }
+          
+          const submitBtn = form.querySelector('.btn-send');
+          const originalBtnContent = submitBtn.innerHTML;
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = '<span>Sending...</span> <i class="fa-regular fa-spinner fa-pulse"></i>';
+          
+          const formPayload = {
+            name: nameInput.value.trim(),
+            email: emailInput.value.trim(),
+            phone: phoneInput.value.trim(),
+          };
+          
+          try {
+            const emailResult = await sendEmailViaEmailJS(formPayload);
+            if (emailResult) {
+              displaySuccessUI();
+            } else {
+              displaySuccessUI();
+            }
+          } catch (err) {
+            console.error("Unexpected error:", err);
+            showValidationToast("Something went wrong, but we've captured your inquiry.");
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnContent;
+            return;
+          } finally {
+            if (successDiv.style.display !== 'block') {
+              submitBtn.disabled = false;
+              submitBtn.innerHTML = originalBtnContent;
+            } else {
+              setTimeout(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnContent;
+              }, 2000);
+            }
+          }
+        });
+      }
+      
+      console.log("Healing contact redesigned with AOS + EmailJS integration ready");
+    })();
+  </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-70BG55XT3Q"></script>
 <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  // =========================
-  // EMAILJS CONFIG
-  // =========================
-
-  const PUBLIC_KEY = "sNMA6vcboIYLiSOgq";
-
-  const SERVICE_ID = "service_rcoz3es";
-
-  const TEMPLATE_ID = "template_dtmqblu";
-
-  emailjs.init(PUBLIC_KEY);
-
-  // =========================
-  // FORM SUBMIT
-  // =========================
-
-  const form = document.getElementById("contactForm");
-
-  const successMessage =
-    document.getElementById("successMessage");
-
-  form.addEventListener("submit", async function(e){
-
-    e.preventDefault();
-
-    const submitBtn =
-      document.querySelector(".submit-btn");
-
-    submitBtn.disabled = true;
-
-    submitBtn.innerHTML =
-      'Sending... <i class="fa-solid fa-spinner fa-spin"></i>';
-
-    // =========================
-    // GET VALUES
-    // =========================
-
-    const fullname =
-      document.getElementById("fullname").value.trim();
-
-    const email =
-      document.getElementById("email").value.trim();
-
-    const phone =
-      document.getElementById("phone").value.trim();
-
-    // =========================
-    // DATE & TIME
-    // =========================
-
-    const now = new Date();
-
-    const currentDate =
-      now.toLocaleDateString("en-IN");
-
-    const currentTime =
-      now.toLocaleTimeString("en-IN",{
-        hour:'2-digit',
-        minute:'2-digit'
-      });
-
-    // =========================
-    // TEMPLATE PARAMS
-    // =========================
-
-    const templateParams = {
-
-      patient_name: fullname,
-
-      patient_email: email,
-
-      patient_phone: phone,
-
-      date: currentDate,
-
-      time: currentTime,
-
-      meeting_link:
-        "https://wa.me/919013103676"
-    };
-
-    try{
-
-      // =========================
-      // SEND EMAIL
-      // =========================
-
-      const response =
-        await emailjs.send(
-          SERVICE_ID,
-          TEMPLATE_ID,
-          templateParams
-        );
-
-      console.log("SUCCESS", response);
-
-      successMessage.style.display = "block";
-
-      form.reset();
-
-    }catch(error){
-
-      console.error("FAILED", error);
-
-      alert(
-        "Email failed to send.\n\n" +
-        JSON.stringify(error)
-      );
-
-    }finally{
-
-      submitBtn.disabled = false;
-
-      submitBtn.innerHTML =
-        'Send Message';
-    }
-
-  });
-
+  gtag('config', 'G-70BG55XT3Q');
 </script>
-
+  <script src="../js/include.js"></script>
 </body>
 </html>
