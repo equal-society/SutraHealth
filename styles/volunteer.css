@@ -61,7 +61,7 @@
       color: #4a5a51;
       font-size: clamp(1rem, 3.8vw, 1.2rem);
       line-height: 1.65;
-      max-width: 95%;
+      max-width: 98%;
       margin-bottom: clamp(1.5rem, 5vw, 2.5rem);
     }
 

@@ -351,44 +351,56 @@
     /* ────────────────────────────────────────
        DECLARATION
     ──────────────────────────────────────── */
-    .declaration { background: var(--white);
-    justify-content: center; }
+    .declaration{
+    background: var(--white);
+    display: flex;
+    justify-content: center;
+}
 
-    .decl-inner {
-      display: grid;
-      /* grid-template-columns: 1fr auto; */
-      gap: clamp(32px,5vw,40px);
-      align-items: center;
-      background: var(--cream);
-      border-radius: var(--radius-lg);
-      padding: clamp(32px,5vw,64px);
-      border: 1px solid var(--border);
-    }
+.decl-inner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: clamp(32px,5vw,40px);
+    background: var(--cream);
+    border-radius: var(--radius-lg);
+    padding: clamp(32px,5vw,64px);
+    border: 1px solid var(--border);
+}
 
-    .decl-text h2 {
-      font-family: var(--ff-display);
-      font-size: var(--text-2xl);
-      font-weight: 600;
-      margin-bottom: 16px;
-    }
-    .decl-text p { font-size: var(--text-base); color: var(--muted); margin-bottom: 28px; max-width: 480px; }
+.decl-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.decl-text p{
+    font-size: var(--text-base);
+    color: var(--muted);
+    margin-bottom: 28px;
+    max-width: 600px;
+}
 
     .btn-outline {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      border: 1.5px solid var(--green);
-      color: var(--green);
-      padding: 11px 26px;
-      border-radius: 100px;
-      font-size: var(--text-sm);
-      font-weight: 600;
-      text-decoration: none;
-      transition: background .2s, color .2s;
-    }
-    .btn-outline:hover { background: var(--green); color: #fff; }
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1.5px solid var(--green);
+  color: var(--green);
+  padding: 11px 26px;
+  border-radius: 100px;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background .2s, color .2s;
+  margin: 0 auto; /* button center */
+}
 
-    
+.btn-outline:hover {
+  background: var(--green);
+  color: #fff;
+}
 
     /* ────────────────────────────────────────
        DONATE
@@ -644,7 +656,7 @@
           <div class="promoter-body">
             <h3>Dr. Rakesh Sarwal</h3>
             <span class="role">MBBS, MPH, DrPH</span>
-            <p>Gold medalist with extensive experience in public health and policy across national and international platforms.</p>
+            <p>Dr. Rakesh Sarwal's peer-reviewed publications, research talks, and academic CV are available at <a href="https://academic.lifequality.org.in/">here</a></p>
           </div>
         </div>
 
