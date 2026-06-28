@@ -1,6 +1,3 @@
-/* ═══════════════════════════════════════════════════════
-   GOOGLE FONTS
-════════════════════════════════════════════════════════ */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* ═══════════════════════════════════════════════════════
@@ -526,13 +523,24 @@ img { display: block; width: 100%; object-fit: cover; }
   overflow: hidden;
 }
 
+/* ── keyframe grow ── */
+@keyframes growBar {
+  from { width: 0; }
+  to   { width: var(--final-w); }
+}
+
 .bar-fill {
   height: 100%;
-  width: 0;
+  width: var(--final-w, 0%);
   background: linear-gradient(90deg, var(--green), var(--green-d));
   border-radius: 4px;
-  transition: width 1.4s cubic-bezier(.4,0,.2,1) .2s;
+  animation: growBar 1.4s cubic-bezier(.4,0,.2,1) .3s both;
 }
+
+/* individual widths */
+.bar-fill.w86  { --final-w: 86%; }
+.bar-fill.w14  { --final-w: 14%; }
+.bar-fill.w0   { --final-w: 0%;  animation: none; }
 
 /* Sub-ratings — now with mini bars */
 .sub-ratings {
@@ -571,11 +579,17 @@ img { display: block; width: 100%; object-fit: cover; }
 
 .sub-bar-fill {
   height: 100%;
-  width: 0;
+  width: var(--final-w, 0%);
   background: linear-gradient(90deg, var(--green), var(--green-d));
   border-radius: 3px;
-  transition: width 1.4s cubic-bezier(.4,0,.2,1) .3s;
+  animation: growBar 1.4s cubic-bezier(.4,0,.2,1) .4s both;
 }
+
+/* individual sub widths */
+.sub-bar-fill.w88 { --final-w: 88%; }
+.sub-bar-fill.w92 { --final-w: 92%; }
+.sub-bar-fill.w98 { --final-w: 98%; }
+.sub-bar-fill.w94 { --final-w: 94%; }
 
 .sub-r span:last-child {
   font-weight: 700;
