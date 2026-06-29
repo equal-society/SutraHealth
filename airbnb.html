@@ -1,522 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bimla's Retreat – Faridabad | Airbnb Listing</title>
-<link rel="stylesheet" href="./styles/airbnb.css"></link>
-<!-- AOS -->
-<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
-<!-- Lightbox -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wellness Programs – Bimla's Retreat</title>
+  <link rel="stylesheet" href="./styles/airbnb.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
 </head>
 <body>
-
 <div id="navbar"></div>
-<div class="slider-wrap" id="heroSlider">
-  <div class="slides" id="slidesTrack">
-    <div class="slide">
-      <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=90')"></div>
-      <div class="slide-overlay"></div>
-      <div class="slide-caption" data-aos="fade-up" data-aos-delay="200">✨ Spacious Living Room – Faridabad Retreat</div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-tag">🌿 Bimla's Retreat · Faridabad</span>
+      <h1>Wellness <em>Programs</em></h1>
+      <p>Eight curated pathways to healing — body, mind &amp; spirit</p>
     </div>
-    <div class="slide">
-      <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1600&q=90')"></div>
-      <div class="slide-overlay"></div>
-      <div class="slide-caption">🌅 Rooftop Terrace – Sunrise Yoga Under Open Sky</div>
-    </div>
-    <div class="slide">
-      <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1600&q=90')"></div>
-      <div class="slide-overlay"></div>
-      <div class="slide-caption">🛏 Double Bedroom with Attached Toilet</div>
-    </div>
-    <div class="slide">
-      <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600&q=90')"></div>
-      <div class="slide-overlay"></div>
-      <div class="slide-caption">🍳 Fully Equipped Modern Kitchen</div>
-    </div>
-    <div class="slide">
-      <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1600&q=90')"></div>
-      <div class="slide-overlay"></div>
-      <div class="slide-caption">🍽 Bright Dining Area</div>
-    </div>
-  </div>
+    <div class="hero-scroll">↓ Explore Programs</div>
+  </section>
 
-  <!-- Hero Text Overlay -->
-  <div class="hero-text" id="heroText">
-    <div class="hero-tag" data-aos="fade-down" data-aos-delay="100">🏆 Superhost · Faridabad, India</div>
-    <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">Bimla's Retreat</h1>
-    <p class="hero-sub" data-aos="fade-up" data-aos-delay="350">Serene 3BR near Aravallis · Yoga · Rooftop · City Views</p>
-    <div class="hero-stats" data-aos="fade-up" data-aos-delay="500">
-      <span>⭐ 4.86</span>
-      <span class="sep">|</span>
-      <span>7 Reviews</span>
-      <span class="sep">|</span>
-      <span>6 Guests</span>
-      <span class="sep">|</span>
-      <span>3 Beds</span>
-    </div>
-    <a class="hero-cta" data-aos="zoom-in" data-aos-delay="650" href="#amenities">Explore the Space ↓</a>
-  </div>
+  <!-- PROGRAMS -->
+  <main class="programs-wrap">
 
-  <button class="arrow prev" id="prevBtn">&#8592;</button>
-  <button class="arrow next" id="nextBtn">&#8594;</button>
-  <div class="dots" id="dotsWrap"></div>
-
-  <!-- Scroll indicator -->
-  <div class="scroll-indicator">
-    <div class="scroll-line"></div>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════
-     LISTING HEADER
-══════════════════════════════════════ -->
-<div class="listing-header">
-  <div class="badge-row" data-aos="fade-right" data-aos-delay="50">
-    <span class="badge">🏆 Superhost</span>
-    <span class="badge outline">Entire Apartment</span>
-    <span class="badge outline">Faridabad, India</span>
-  </div>
-  <h2 class="listing-title" data-aos="fade-up" data-aos-delay="100">Serene 3BR Retreat near Aravallis – Yoga, Terrace &amp; City Views</h2>
-  <div class="meta-row" data-aos="fade-up" data-aos-delay="150">
-    <span><span class="star">★</span><strong>4.86</strong> · 7 reviews</span>
-    <span>6 guests · 3 bedrooms · 6 beds · 3 baths</span>
-    <span class="green">✔ Self check-in · Free parking</span>
-  </div>
-  <div class="divider"></div>
-</div>
-
-<!-- ══════════════════════════════════════
-     TWO COLUMN
-══════════════════════════════════════ -->
-<div class="two-col">
-  <div>
-
-    <!-- Highlights -->
-    <div class="highlight-row">
-      <div class="highlight" data-aos="flip-left" data-aos-delay="0">
-        <div class="h-icon">🔒</div>
-        <div class="h-text">
-          <strong>Self check-in</strong>
-          <span>Lockbox — check in anytime after 3 PM</span>
-        </div>
+    <!-- 1. Physician Consultation -->
+    <article class="program" id="p1" data-aos="fade-up">
+      <div class="prog-image">
+        <img src="/images/cdc-zGzZvLO5Brs-unsplash (1).jpg" alt="Physician Consultation"/>
+        <span class="prog-number">01</span>
       </div>
-      <div class="highlight" data-aos="flip-left" data-aos-delay="100">
-        <div class="h-icon">🌳</div>
-        <div class="h-text">
-          <strong>Nature nearby</strong>
-          <span>Aravalli forests, temples &amp; cycling trails</span>
-        </div>
+      <div class="prog-content">
+        <span class="prog-tag">Medical Wellness</span>
+        <h2>Physician Consultation</h2>
+        <p>A personal health session with Dr. Bimla — an MBBS-qualified physician with deep expertise in lifestyle medicine. Discuss chronic conditions, receive evidence-based guidance, and leave with a clear, actionable plan tailored to your body.</p>
+        <ul class="prog-points">
+          <li>⚕️ Full health history &amp; lifestyle review</li>
+          <li>📋 Personalised clinical recommendations</li>
+          <li>💊 Guidance on medications &amp; supplements</li>
+          <li>🔁 Follow-up support via Sutra Health platform</li>
+        </ul>
+        <a class="prog-btn" href="https://wa.me/919013103676">Book a Consultation →</a>
       </div>
-      <div class="highlight" data-aos="flip-left" data-aos-delay="200">
-        <div class="h-icon">💻</div>
-        <div class="h-text">
-          <strong>Remote-work ready</strong>
-          <span>229 Mbps WiFi · Dedicated workspace</span>
-        </div>
+    </article>
+
+    <!-- 2. Dietary Advice -->
+    <article class="program reverse" id="p2" data-aos="fade-up">
+      <div class="prog-image">
+        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=900&q=85" alt="Dietary Advice"/>
+        <span class="prog-number">02</span>
       </div>
-    </div>
-
-    <!-- Description -->
-    <div class="description" data-aos="fade-up" data-aos-delay="50">
-      <p>Located next to the Aravallis, midway between Badkhal and Surajkund, this thoughtfully designed 3BR independent floor with a lift and dedicated parking offers a pristine experience of fresh air and spectacular sunrises from the rooftop across clear skies.</p>
-      <p>Appreciate the herbal garden, join Yoga classes under the sky led by the host — a qualified MBBS doctor and Yoga instructor — stroll or cycle in Aravalli forests, visit temples and parks nearby. Spread out in the study, read books in the reading nook, or relax in the living room.</p>
-      <p>Just 1.5 km from Asian Institute of Medical Sciences (AIMS), conveniently close to two metro stations with easy access to South Delhi and beyond. Wide, clean roads and lift access make this the perfect base for short or long stays.</p>
-    </div>
-
-    <!-- AMENITIES -->
-    <div class="mt" id="amenities">
-      <div class="section-title" data-aos="fade-right">What this place offers</div>
-      <div class="amenities-grid" style="margin-top:36px">
-        <div class="amenity" data-aos="zoom-in" data-aos-delay="0"><span class="ico">🌆</span> City skyline view</div>
-        <div class="amenity" data-aos="zoom-in" data-aos-delay="40"><span class="ico">🌿</span> Courtyard &amp; herbal garden</div>
-        <div class="amenity" data-aos="zoom-in" data-aos-delay="80"><span class="ico">🛁</span> Bath &amp; hot water</div>
-        <div class="amenity" data-aos="zoom-in" data-aos-delay="120"><span class="ico">💇</span> Hairdryer</div>
-        <div class="amenity" data-aos="zoom-in" data-aos-delay="160"><span class="ico">🧴</span> Shampoo &amp; body soap</div>
-        <div class="amenity" data-aos="zoom-in" data-aos-delay="200"><span class="ico">🧺</span> Free washer (in unit)</div>
-        <div class="amenity" data-aos="zoom-in" data-aos-delay="240"><span class="ico">🛏</span> Extra pillows &amp; blankets</div>
-        <div class="amenity" data-aos="zoom-in" data-aos-delay="280"><span class="ico">🔌</span> Ethernet connection</div>
-        <div class="amenity" data-aos="zoom-in" data-aos-delay="320"><span class="ico">📺</span> 46-inch TV</div>
-        <div class="amenity" data-aos="zoom-in" data-aos-delay="360"><span class="ico">🎹</span> Piano</div>
-        <div class="amenity" data-aos="zoom-in" data-aos-delay="400"><span class="ico">📚</span> Books &amp; reading material</div>
-        <div class="amenity" data-aos="zoom-in" data-aos-delay="440"><span class="ico">🍳</span> Full kitchen</div>
-        <div class="amenity" data-aos="zoom-in" data-aos-delay="480"><span class="ico">❄️</span> Fridge &amp; freezer</div>
-        <div class="amenity" data-aos="zoom-in" data-aos-delay="520"><span class="ico">🔥</span> Cooker &amp; oven</div>
-        <div class="amenity" data-aos="zoom-in" data-aos-delay="560"><span class="ico">☕</span> Kettle &amp; breadmaker</div>
-        <div class="amenity" data-aos="zoom-in" data-aos-delay="600"><span class="ico">🅿️</span> Free parking on premises</div>
-        <div class="amenity" data-aos="zoom-in" data-aos-delay="640"><span class="ico">🐾</span> Pets allowed</div>
-        <div class="amenity" data-aos="zoom-in" data-aos-delay="680"><span class="ico">🧒</span> Children's playroom</div>
-        <div class="amenity" data-aos="zoom-in" data-aos-delay="720"><span class="ico">🚲</span> Children's bikes</div>
-        <div class="amenity" data-aos="zoom-in" data-aos-delay="760"><span class="ico">❄️</span> AC split-type ductless</div>
-        <div class="amenity" data-aos="zoom-in" data-aos-delay="800"><span class="ico">📶</span> Fast WiFi – 229 Mbps</div>
-        <div class="amenity" data-aos="zoom-in" data-aos-delay="840"><span class="ico">🌄</span> Private terrace / rooftop</div>
-        <div class="amenity" data-aos="zoom-in" data-aos-delay="880"><span class="ico">🏡</span> Private back garden – fenced</div>
-        <div class="amenity" data-aos="zoom-in" data-aos-delay="920"><span class="ico">🔐</span> Lockbox self check-in</div>
-        <div class="amenity na" data-aos="zoom-in" data-aos-delay="960"><span class="ico">🚭</span> No smoke alarm</div>
-        <div class="amenity na" data-aos="zoom-in" data-aos-delay="1000"><span class="ico">🔥</span> No CO alarm</div>
-        <div class="amenity na" data-aos="zoom-in" data-aos-delay="1040"><span class="ico">🌡</span> No heating</div>
-        <div class="amenity na" data-aos="zoom-in" data-aos-delay="1080"><span class="ico">🔄</span> No tumble dryer</div>
+      <div class="prog-content">
+        <span class="prog-tag">Nutrition</span>
+        <h2>Dietary Advice</h2>
+        <p>Food is medicine. Dr. Bimla designs personalised nutrition plans rooted in Ayurvedic wisdom and modern nutritional science — addressing weight, gut health, energy, and disease prevention through what you eat every day.</p>
+        <ul class="prog-points">
+          <li>🥗 Personalised meal planning</li>
+          <li>🌾 Seasonal &amp; sattvic food guidance</li>
+          <li>🧬 Managing diabetes, PCOS, thyroid through diet</li>
+          <li>📓 Recipe suggestions &amp; pantry reset</li>
+        </ul>
+        <a class="prog-btn" href="https://wa.me/919013103676">Get a Diet Plan →</a>
       </div>
-    </div>
+    </article>
 
-    <!-- REVIEWS -->
-    <div class="mt" id="reviews" style="padding-top:12px">
-      <div class="section-title" data-aos="fade-right">Guest reviews</div>
-
-      <div class="rating-bar-wrap" style="margin-top:36px">
-        <div class="overall-score">4.86 <span>out of 5</span></div>
-        <div class="bar-row"><span style="width:30px">5★</span><div class="bar-bg"><div class="bar-fill w86"></div></div><span>86%</span></div>
-        <div class="bar-row"><span style="width:30px">4★</span><div class="bar-bg"><div class="bar-fill w14"></div></div><span>14%</span></div>
-        <div class="bar-row"><span style="width:30px">3★</span><div class="bar-bg"><div class="bar-fill w0"></div></div><span>0%</span></div>
-        <div class="bar-row"><span style="width:30px">2★</span><div class="bar-bg"><div class="bar-fill w0"></div></div><span>0%</span></div>
-        <div class="bar-row"><span style="width:30px">1★</span><div class="bar-bg"><div class="bar-fill w0"></div></div><span>0%</span></div>
-        <div class="sub-ratings">
-          <div class="sub-r"><span>Cleanliness</span><div class="sub-bar"><div class="sub-bar-fill w88"></div></div><span>4.4</span></div>
-          <div class="sub-r"><span>Accuracy</span><div class="sub-bar"><div class="sub-bar-fill w92"></div></div><span>4.6</span></div>
-          <div class="sub-r"><span>Check-in</span><div class="sub-bar"><div class="sub-bar-fill w98"></div></div><span>4.9</span></div>
-          <div class="sub-r"><span>Communication</span><div class="sub-bar"><div class="sub-bar-fill w98"></div></div><span>4.9</span></div>
-          <div class="sub-r"><span>Location</span><div class="sub-bar"><div class="sub-bar-fill w94"></div></div><span>4.7</span></div>
-          <div class="sub-r"><span>Value</span><div class="sub-bar"><div class="sub-bar-fill w94"></div></div><span>4.7</span></div>
-        </div>
+    <!-- 3. Shirodhara -->
+    <article class="program" id="p3" data-aos="fade-up">
+      <div class="prog-image">
+        <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=900&q=85" alt="Shirodhara"/>
+        <span class="prog-number">03</span>
       </div>
+      <div class="prog-content">
+        <span class="prog-tag">Ayurvedic Therapy</span>
+        <h2>Shirodhara</h2>
+        <p>The ancient Ayurvedic practice of gently streaming warm medicated oil over the forehead. Deeply calming for the nervous system, Shirodhara alleviates anxiety, insomnia, migraines and mental fatigue — leaving you in a state of profound stillness.</p>
+        <ul class="prog-points">
+          <li>🫙 Warm herbal oil therapy</li>
+          <li>🧠 Migraine &amp; anxiety relief</li>
+          <li>😴 Deep sleep restoration</li>
+          <li>⏱ 45–60 minute immersive session</li>
+        </ul>
+        <a class="prog-btn" href="https://wa.me/919013103676">Book Shirodhara →</a>
+      </div>
+    </article>
 
-      <div class="review-cards">
-        <div class="review-card" data-aos="fade-up" data-aos-delay="0">
-          <div class="review-top">
-            <div class="avatar">S</div>
-            <div><div class="rev-name">Sahil</div><div class="rev-date">December 2025 · 4 years on Airbnb</div></div>
-          </div>
-          <div class="rev-stars">★★★★★</div>
-          <p>Ideal for people visiting Faridabad from both short-term and long-term perspective. The home is thoughtfully designed so that you get more from the stay. The host has put up a nice reading section and a great terrace. Rakesh (host) is very responsive, accommodating for taking special requests.</p>
-        </div>
-        <div class="review-card" data-aos="fade-up" data-aos-delay="60">
-          <div class="review-top">
-            <div class="avatar">P</div>
-            <div><div class="rev-name">Puneet</div><div class="rev-date">March 2025 · 3 years on Airbnb</div></div>
-          </div>
-          <div class="rev-stars">★★★★★</div>
-          <p>Great place. The doctor-owner is an MBBS doctor with further education in Yoga and a great Yoga instructor. On request, he spent 1 hour daily teaching me and my son various Asanas. Actually a 3BHK with private parking — all amenities like a real home.</p>
-          <div class="host-reply"><strong>Response from Bimla · March 2025</strong>Appreciate your comments, Puneet, which show your positive attitude in life. Great to host you. Best wishes.</div>
-        </div>
-        <div class="review-card" data-aos="fade-up" data-aos-delay="120">
-          <div class="review-top">
-            <div class="avatar">S</div>
-            <div><div class="rev-name">Sudhanshu</div><div class="rev-date">April 2025 · 11 years on Airbnb</div></div>
-          </div>
-          <div class="rev-stars">★★★★★</div>
-          <p>Fantastic host and a huge place! Super humble and responsive, with no problems whatsoever. The apartment is quite spacious and the terrace is well maintained — a perfect spot for a bit of yoga or an evening coffee. Amenities are as described. 100% Recommended. Will definitely come back.</p>
-          <div class="host-reply"><strong>Response from Bimla · April 2025</strong>Appreciate your kind words, Sudhanshu. Great to have you. Welcome at all times.</div>
-        </div>
-        <div class="review-card" data-aos="fade-up" data-aos-delay="180">
-          <div class="review-top">
-            <div class="avatar">A</div>
-            <div><div class="rev-name">Astha</div><div class="rev-date">February 2025 · 10 years on Airbnb</div></div>
-          </div>
-          <div class="rev-stars">★★★★★</div>
-          <p>Booked this stay for my employees. From initial interaction to the end, everything was conducted smoothly. The host was professional and accommodating, ensuring a seamless experience. My team felt comfortable throughout, and all arrangements were well taken care of. Highly recommended!</p>
-        </div>
-        <div class="review-card" data-aos="fade-up" data-aos-delay="240">
-          <div class="review-top">
-            <div class="avatar">R</div>
-            <div><div class="rev-name">Ramji</div><div class="rev-date">January 2024 · 13 years on Airbnb</div></div>
-          </div>
-          <div class="rev-stars">★★★★★</div>
-          <p>The place was exactly as described. Very tastefully done up, with plenty of light. Conveniently located close to two metro stations. Wide roads and clean surroundings. Rakeshji is a gem of a host — very proactive and super responsive. A special mention for the generously stocked pantry. All in all — great stay and a fantastic host!</p>
-        </div>
-        <div class="review-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="review-top">
-            <div class="avatar">A</div>
-            <div><div class="rev-name">Avinash</div><div class="rev-date">July 2023 · 5 years on Airbnb</div></div>
-          </div>
-          <div class="rev-stars">★★★★<span style="color:#ccc">★</span></div>
-          <p>The place is nice and looks luxurious, though it needs proper maintenance. It felt more like couch surfing. Could have been a better staying experience.</p>
-        </div>
-        <div class="review-card" data-aos="fade-up" data-aos-delay="360">
-          <div class="review-top">
-            <div class="avatar">F</div>
-            <div><div class="rev-name">Florencia</div><div class="rev-date">April 2025 · Córdoba, Argentina</div></div>
-          </div>
-          <div class="rev-stars">★★★★★</div>
-          <p>Bimla is very friendly and accessible — she even invited me to join her morning Yoga practices on the terrace. ✨</p>
-        </div>
+    <!-- 4. My Buddy -->
+    <article class="program reverse" id="p4" data-aos="fade-up">
+      <div class="prog-image">
+        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=900&q=85" alt="My Buddy Program"/>
+        <span class="prog-number">04</span>
+      </div>
+      <div class="prog-content">
+        <span class="prog-tag">Companionship &amp; Support</span>
+        <h2>My Buddy</h2>
+        <p>Sometimes you just need someone in your corner. My Buddy pairs you with a caring wellness companion for daily check-ins, accountability, gentle motivation, and meaningful conversation — especially for solo travellers, elderly guests, or those navigating recovery.</p>
+        <ul class="prog-points">
+          <li>🤝 Daily check-in &amp; accountability partner</li>
+          <li>📞 WhatsApp-based support channel</li>
+          <li>🌟 Emotional wellbeing &amp; mindset nudges</li>
+          <li>🏃 Walk &amp; activity buddy in Aravallis</li>
+        </ul>
+        <a class="prog-btn" href="https://wa.me/919013103676">Meet Your Buddy →</a>
+      </div>
+    </article>
+
+    <!-- 5. Singing, Kirtan & Dance -->
+    <article class="program" id="p5" data-aos="fade-up">
+      <div class="prog-image">
+        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=900&q=85" alt="Singing Kirtan Dance"/>
+        <span class="prog-number">05</span>
+      </div>
+      <div class="prog-content">
+        <span class="prog-tag">Expressive Arts</span>
+        <h2>Singing, Kirtan &amp; Dance</h2>
+        <p>Sound and movement as medicine. Join our joyful Kirtan circles, ecstatic dance sessions, and communal singing on the rooftop terrace. These devotional arts dissolve stress, awaken joy, and connect you to something larger than yourself.</p>
+        <ul class="prog-points">
+          <li>🎵 Morning Kirtan on the rooftop</li>
+          <li>💃 Free-movement &amp; expressive dance</li>
+          <li>🎹 Piano &amp; harmonium available on-site</li>
+          <li>🌄 Sunset sessions with city-skyline backdrop</li>
+        </ul>
+        <a class="prog-btn" href="https://wa.me/919013103676">Join a Session →</a>
+      </div>
+    </article>
+
+    <!-- 6. Meditation (Dhyana) -->
+    <article class="program reverse" id="p6" data-aos="fade-up">
+      <div class="prog-image">
+        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=900&q=85" alt="Meditation Dhyana"/>
+        <span class="prog-number">06</span>
+      </div>
+      <div class="prog-content">
+        <span class="prog-tag">Mental Clarity</span>
+        <h2>Meditation <span class="hindi">(Dhyāna)</span></h2>
+        <p>Stillness is a skill. Our guided Dhyana sessions draw from classical Patanjali traditions, breath-anchored mindfulness, and visualisation techniques. Practice daily in the terrace garden as the city quiets and the Aravallis breathe with you.</p>
+        <ul class="prog-points">
+          <li>🕉 Patanjali &amp; mindfulness traditions</li>
+          <li>🌬 Breath-anchored awareness practices</li>
+          <li>🌿 Terrace garden &amp; herbal surroundings</li>
+          <li>⏱ 20–40 minute guided sessions</li>
+        </ul>
+        <a class="prog-btn" href="https://wa.me/919013103676">Start Meditating →</a>
+      </div>
+    </article>
+
+    <!-- 7. Pranayama -->
+    <article class="program" id="p7" data-aos="fade-up">
+      <div class="prog-image">
+        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=900&q=85" alt="Pranayama"/>
+        <span class="prog-number">07</span>
+      </div>
+      <div class="prog-content">
+        <span class="prog-tag">Breathwork</span>
+        <h2>Pranayama</h2>
+        <p>Breath is the bridge between body and mind. Dr. Bimla teaches classical Pranayama — Nadi Shodhana, Bhramari, Kapalbhati and more — scientifically shown to regulate the nervous system, boost lung capacity, and sharpen mental clarity.</p>
+        <ul class="prog-points">
+          <li>🌬 Nadi Shodhana &amp; alternate nostril breathing</li>
+          <li>🐝 Bhramari for headache &amp; anxiety</li>
+          <li>🔥 Kapalbhati for digestion &amp; energy</li>
+          <li>📈 Measurable lung-function improvement</li>
+        </ul>
+        <a class="prog-btn" href="https://wa.me/919013103676">Learn Pranayama →</a>
+      </div>
+    </article>
+
+    <!-- 8. Yoga Asana Protocol -->
+    <article class="program reverse" id="p8" data-aos="fade-up">
+      <div class="prog-image">
+        <img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=900&q=85" alt="Yoga Asana Protocol"/>
+        <span class="prog-number">08</span>
+      </div>
+      <div class="prog-content">
+        <span class="prog-tag">Movement &amp; Flexibility</span>
+        <h2>Yoga Asana Protocol</h2>
+        <p>A structured, medically informed Yoga Asana sequence designed by Dr. Bimla — tailored to your health goals, whether that's back pain relief, flexibility, stress reduction or post-recovery strengthening. Practice under open skies on the private rooftop terrace.</p>
+        <ul class="prog-points">
+          <li>🧘 Personalised asana sequence per guest</li>
+          <li>🩺 Medical safety screening before start</li>
+          <li>🌅 Sunrise sessions on the rooftop terrace</li>
+          <li>📖 Take-home protocol for continued practice</li>
+        </ul>
+        <a class="prog-btn" href="https://wa.me/919013103676">Start Your Protocol →</a>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- CTA FOOTER STRIP -->
+  <section class="cta-strip" data-aos="fade-up">
+    <div class="cta-inner">
+      <h3>Ready to begin your wellness journey?</h3>
+      <p>All programs available to guests staying at Bimla's Retreat, Faridabad</p>
+      <div class="cta-btns">
+        <a class="cta-primary" href="https://wa.me/919013103676">📱 WhatsApp Bimla</a>
+        <a class="cta-secondary" href="./airbnb.html">🏠 View the Retreat</a>
       </div>
     </div>
-
-    <!-- RULES & SAFETY -->
-    <div class="mt" style="padding-top:20px">
-      <div class="section-title" data-aos="fade-right">Things to know</div>
-      <div class="rules-grid" style="margin-top:36px">
-        <div class="rule-card" data-aos="flip-left" data-aos-delay="0">
-          <h4>🏠 House Rules</h4>
-          <ul>
-            <li><span class="ico">✔</span> Check-in after 3:00 PM</li>
-            <li><span class="ico">✔</span> Maximum 6 guests</li>
-            <li><span class="ico">✔</span> Pets allowed</li>
-          </ul>
-        </div>
-        <div class="rule-card" data-aos="flip-left" data-aos-delay="100">
-          <h4>🛡 Safety &amp; Property</h4>
-          <ul>
-            <li><span class="ico red">✗</span> No carbon monoxide alarm</li>
-            <li><span class="ico red">✗</span> No smoke alarm</li>
-            <li><span class="ico">📷</span> Exterior security cameras</li>
-          </ul>
-        </div>
-        <div class="rule-card" data-aos="flip-left" data-aos-delay="200">
-          <h4>❌ Cancellation</h4>
-          <ul>
-            <li><span class="ico">📅</span> Add trip dates to view full policy</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-  </div><!-- /left col -->
-</div><!-- /two-col -->
-
-<!-- ══════════════════════════════════════
-     PHOTO GALLERY — Masonry + Lightbox
-══════════════════════════════════════ -->
-<div class="section" id="photos">
-  <div class="section-title" data-aos="fade-right">All Photos</div>
-  <p class="gallery-hint" data-aos="fade-up" data-aos-delay="80">Click any photo to view full screen</p>
-
-  <div class="photo-grid" style="margin-top:36px">
-
-    <div class="photo-card tall" data-aos="fade-up" data-aos-delay="0">
-      <a href="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=90" data-lightbox="gallery" data-title="Spacious Living Room">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=85" alt="Living room"/>
-        <div class="photo-label">Living Room</div>
-      </a>
-    </div>
-
-    <div class="photo-card" data-aos="fade-up" data-aos-delay="60">
-      <a href="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1400&q=90" data-lightbox="gallery" data-title="Rooftop Terrace">
-        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=85" alt="Rooftop"/>
-        <div class="photo-label">Rooftop Terrace</div>
-      </a>
-    </div>
-
-    <div class="photo-card" data-aos="fade-up" data-aos-delay="120">
-      <a href="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1400&q=90" data-lightbox="gallery" data-title="Master Bedroom">
-        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=85" alt="Bedroom"/>
-        <div class="photo-label">Master Bedroom</div>
-      </a>
-    </div>
-
-    <div class="photo-card" data-aos="fade-up" data-aos-delay="180">
-      <a href="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1400&q=90" data-lightbox="gallery" data-title="Modern Kitchen">
-        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=85" alt="Kitchen"/>
-        <div class="photo-label">Modern Kitchen</div>
-      </a>
-    </div>
-
-    <div class="photo-card" data-aos="fade-up" data-aos-delay="240">
-      <a href="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1400&q=90" data-lightbox="gallery" data-title="Dining Area">
-        <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&q=85" alt="Dining"/>
-        <div class="photo-label">Dining Area</div>
-      </a>
-    </div>
-
-    <div class="photo-card tall" data-aos="fade-up" data-aos-delay="300">
-      <a href="https://images.unsplash.com/photo-1505693314120-0d443867891c?w=1400&q=90" data-lightbox="gallery" data-title="Bedroom 2">
-        <img src="https://images.unsplash.com/photo-1505693314120-0d443867891c?w=800&q=85" alt="Bedroom 2"/>
-        <div class="photo-label">Bedroom 2</div>
-      </a>
-    </div>
-
-    <div class="photo-card" data-aos="fade-up" data-aos-delay="60">
-      <a href="https://images.unsplash.com/photo-1556020685-ae41abfc9365?w=1400&q=90" data-lightbox="gallery" data-title="Study / Workspace">
-        <img src="https://images.unsplash.com/photo-1556020685-ae41abfc9365?w=600&q=85" alt="Study"/>
-        <div class="photo-label">Study / Workspace</div>
-      </a>
-    </div>
-
-    <div class="photo-card" data-aos="fade-up" data-aos-delay="120">
-      <a href="https://images.unsplash.com/photo-1518012312832-96aea3c91144?w=1400&q=90" data-lightbox="gallery" data-title="Bathroom">
-        <img src="https://images.unsplash.com/photo-1518012312832-96aea3c91144?w=600&q=85" alt="Bathroom"/>
-        <div class="photo-label">Bathroom</div>
-      </a>
-    </div>
-
-    <div class="photo-card" data-aos="fade-up" data-aos-delay="180">
-      <a href="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1400&q=90" data-lightbox="gallery" data-title="Cozy Reading Corner">
-        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=85" alt="Cozy corner"/>
-        <div class="photo-label">Reading Corner</div>
-      </a>
-    </div>
-
-    <div class="photo-card" data-aos="fade-up" data-aos-delay="240">
-      <a href="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=1400&q=90" data-lightbox="gallery" data-title="Bedroom 3">
-        <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=600&q=85" alt="Bedroom 3"/>
-        <div class="photo-label">Bedroom 3</div>
-      </a>
-    </div>
-
-    <div class="photo-card" data-aos="fade-up" data-aos-delay="300">
-      <a href="https://images.unsplash.com/photo-1554995207-c18c203602cb?w=1400&q=90" data-lightbox="gallery" data-title="Garden View">
-        <img src="https://images.unsplash.com/photo-1554995207-c18c203602cb?w=600&q=85" alt="Garden view"/>
-        <div class="photo-label">Garden View</div>
-      </a>
-    </div>
-
-    <div class="photo-card tall" data-aos="fade-up" data-aos-delay="0">
-      <a href="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1400&q=90" data-lightbox="gallery" data-title="Exterior">
-        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=85" alt="Exterior"/>
-        <div class="photo-label">Exterior</div>
-      </a>
-    </div>
-
-    <div class="photo-card" data-aos="fade-up" data-aos-delay="60">
-      <a href="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1400&q=90" data-lightbox="gallery" data-title="Balcony">
-        <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=600&q=85" alt="Balcony"/>
-        <div class="photo-label">Balcony</div>
-      </a>
-    </div>
-
-    <div class="photo-card" data-aos="fade-up" data-aos-delay="120">
-      <a href="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1400&q=90" data-lightbox="gallery" data-title="Sunrise View">
-        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&q=85" alt="Sunrise view"/>
-        <div class="photo-label">Sunrise View</div>
-      </a>
-    </div>
-
-    <div class="photo-card" data-aos="fade-up" data-aos-delay="180">
-      <a href="https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=1400&q=90" data-lightbox="gallery" data-title="Yoga Terrace">
-        <img src="https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=600&q=85" alt="Yoga terrace"/>
-        <div class="photo-label">Yoga Terrace</div>
-      </a>
-    </div>
-
-    <div class="photo-card" data-aos="fade-up" data-aos-delay="240">
-      <a href="https://images.unsplash.com/photo-1611048268330-53de574cae3b?w=1400&q=90" data-lightbox="gallery" data-title="Reading Nook">
-        <img src="https://images.unsplash.com/photo-1611048268330-53de574cae3b?w=600&q=85" alt="Reading nook"/>
-        <div class="photo-label">Reading Nook</div>
-      </a>
-    </div>
-
-    <div class="photo-card" data-aos="fade-up" data-aos-delay="300">
-      <a href="https://images.unsplash.com/photo-1615873968403-89e068629265?w=1400&q=90" data-lightbox="gallery" data-title="Bathroom 2">
-        <img src="https://images.unsplash.com/photo-1615873968403-89e068629265?w=600&q=85" alt="Bathroom 2"/>
-        <div class="photo-label">Bathroom 2</div>
-      </a>
-    </div>
-
-    <div class="photo-card tall" data-aos="fade-up" data-aos-delay="60">
-      <a href="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1400&q=90" data-lightbox="gallery" data-title="Open Plan Living">
-        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=85" alt="Open plan"/>
-        <div class="photo-label">Open Plan Living</div>
-      </a>
-    </div>
-
-    <div class="photo-card" data-aos="fade-up" data-aos-delay="120">
-      <a href="https://images.unsplash.com/photo-1577415124269-fc1140a69e91?w=1400&q=90" data-lightbox="gallery" data-title="Herbal Garden">
-        <img src="https://images.unsplash.com/photo-1577415124269-fc1140a69e91?w=600&q=85" alt="Herbal garden"/>
-        <div class="photo-label">Herbal Garden</div>
-      </a>
-    </div>
-
-    <div class="photo-card" data-aos="fade-up" data-aos-delay="180">
-      <a href="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=1400&q=90" data-lightbox="gallery" data-title="City Skyline">
-        <img src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=600&q=85" alt="City skyline"/>
-        <div class="photo-label">City Skyline</div>
-      </a>
-    </div>
-
-  </div>
-</div>
-
-<!-- HOST -->
-<div class="host-section" id="host" data-aos="fade-up" data-aos-delay="100">
-  <div class="host-avatar">B</div>
-  <div class="host-info">
-    <h3>Bimla</h3>
-    <div class="superhost">🏆 Superhost</div>
-    <div class="host-stats">
-      <span>⭐ 4.83 rating</span>
-      <span>💬 12 reviews</span>
-      <span>📅 4 years hosting</span>
-      <span>💌 Responds within an hour</span>
-      <span>✅ 100% response rate</span>
-    </div>
-    <p>Self-employed, passionate about fitness and wellbeing. I have this beautiful floor in a quiet &amp; green part of Faridabad that I would be happy to host you in. The doctor-host offers Yoga sessions, access to Sutra Health services for chronic diseases, and lifestyle guidance for migraine, anxiety, and headache management.</p>
-       <button class="btn-message"><a href="https://wa.me/919013103676">Contact Now</a></button>
-       <button class="btn-message"><a href="./pdf/brochure (1).pdf">Curriculum</a></button>
-  </div>
-</div>
-<div id="footer"></div>
-<script src="/js/include.js"></script>
-<!-- ══════════════════════════════════════
-     SCRIPTS
-══════════════════════════════════════ -->
-<!-- Lightbox -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
-
-<!-- SLIDER JS -->
-<script>
-  lightbox.option({
-    resizeDuration: 200,
-    wrapAround: true,
-    albumLabel: "Photo %1 of %2",
-    fadeDuration: 300
-  });
-
-  const track  = document.getElementById('slidesTrack');
-  const slides = track.querySelectorAll('.slide');
-  const dotsW  = document.getElementById('dotsWrap');
-  const total  = slides.length;
-  let current  = 0, timer;
-
-  slides.forEach((_, i) => {
-    const d = document.createElement('button');
-    d.className = 'dot' + (i === 0 ? ' active' : '');
-    d.onclick = () => goTo(i);
-    dotsW.appendChild(d);
-  });
-
-  function goTo(n) {
-    current = (n + total) % total;
-    track.style.transform = `translateX(-${current * 100}%)`;
-    dotsW.querySelectorAll('.dot').forEach((d, i) =>
-      d.classList.toggle('active', i === current));
-    resetTimer();
-  }
-
-  function resetTimer() {
-    clearInterval(timer);
-    timer = setInterval(() => goTo(current + 1), 5000);
-  }
-
-  document.getElementById('prevBtn').onclick = () => goTo(current - 1);
-  document.getElementById('nextBtn').onclick = () => goTo(current + 1);
-  resetTimer();
-
-  // Ken Burns effect — subtle zoom on each slide bg
-  function updateKenBurns() {
-    document.querySelectorAll('.slide-bg').forEach((bg, i) => {
-      bg.style.transform = i === current ? 'scale(1.07)' : 'scale(1)';
-    });
-  }
-  updateKenBurns();
-  const origGoTo = goTo;
-  window.goTo = function(n) { origGoTo(n); updateKenBurns(); };
-
-  // bars animated via CSS
-</script>
-
-<!-- AOS INIT -->
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 750,
-    easing: 'ease-out-cubic',
-    once: true,
-    offset: 80,
-    mirror: false,
-    anchorPlacement: 'top-bottom'
-  });
-</script>
-
+  </section>
+  <div id="footer"></div>
+  <script src="./js/include.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true, offset: 60 });
+  </script>
 </body>
 </html>
