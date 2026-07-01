@@ -21,6 +21,12 @@
   </url>
 
   <url>
+    <loc>https://academic.lifequality.org.in</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
     <loc>https://lifequality.org.in/programs/IntegrativeMedicine.html</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
