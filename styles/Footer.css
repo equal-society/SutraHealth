@@ -5,7 +5,7 @@
 .footer{
     background: linear-gradient(135deg, #061b14, #0f2e24);
     color: #eaf5ef;
-    padding: 80px 8% 30px;
+    padding: 50px 8% 50px;
     font-family: 'Inter', sans-serif;
     position: relative;
     overflow: hidden;
@@ -132,7 +132,7 @@
 
 .footer-title::after{
     content:"";
-    width:40px;
+    width:80px;
     height:2px;
     background:#2eb872;
     display:block;
