@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Navbar</title>
-</head>
-<body>
+
   <nav class="navbar">
 
     <div class="container">
@@ -133,9 +126,9 @@
         <a href="../volunteer.html">Volunteer</a>
         
         <div class="dropdown">
-           <a href="#">Contact ▼</a>
+           <a href="#">Contact</a>
         <div class="dropdown-menu">
-          <a href="../Contact.html">Contact Us</a>
+          <a href="../Contact.html">Contact</a>
         <a href="./retreat.html">Recharge Retreat </a>
         </div>
         </div>
@@ -154,33 +147,4 @@
 
   </nav>
 
-  
-</body>
-<script>
-  const menuBtn = document.getElementById('menuBtn');
-  const navLinks = document.querySelector('.nav-links');
-  const overlay = document.querySelector('.nav-overlay');
-
-  menuBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('show-menu');
-    overlay?.classList.toggle('show-overlay');
-    menuBtn.classList.toggle('active');
-  });
-
-  overlay?.addEventListener('click', () => {
-    navLinks.classList.remove('show-menu');
-    overlay.classList.remove('show-overlay');
-    menuBtn.classList.remove('active');
-  });
-
-  document.querySelectorAll('.dropdown > a').forEach(link => {
-    link.addEventListener('click', (e) => {
-      if (window.innerWidth <= 992) {
-        e.preventDefault();
-        link.parentElement.classList.toggle('open');
-      }
-    });
-  });
-</script>
-</html>
   
