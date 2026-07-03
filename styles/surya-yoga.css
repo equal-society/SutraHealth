@@ -132,7 +132,58 @@ section{
   margin:4px 0;
   font-weight:500;
 }
+ 
 
+ .box{
+    width:95%;
+    max-width:1000px;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.2);
+    Justify-content:center;
+    margin:0 auto;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:20px;
+    color:#15803d;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:#15803d;
+    color:white;
+    padding:15px;
+    border:2px solid #ddd;
+    font-size:18px;
+}
+
+td{
+    padding:14px;
+    border:2px solid #cbd5e1;
+    text-align:center;
+    color:#333;
+}
+
+tr:hover{
+    background:#f8fafc;
+}
+
+a{
+    color:#dc2626;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+a:hover{
+    text-decoration:underline;
+}
 /* =========================
    TABLET
 ========================= */
