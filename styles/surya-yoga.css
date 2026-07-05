@@ -13,10 +13,6 @@
   --transition:.4s ease;
 }
 
-/* =========================
-   RESET
-========================= */
-
 *{
   margin:0;
   padding:0;
@@ -44,10 +40,6 @@ a{
   text-decoration:none;
 }
 
-/* =========================
-   CONTAINER
-========================= */
-
 .yoga-container{
   width:90%;
   max-width:1200px;
@@ -57,14 +49,6 @@ a{
 section{
   padding:100px 0;
 }
-
-/* =========================
-   HERO SECTION
-========================= */
-
-/* =========================
-   HERO SECTION
-========================= */
 
 .yoga-hero{
   min-height:100vh;
@@ -132,61 +116,12 @@ section{
   margin:4px 0;
   font-weight:500;
 }
- 
-
- .box{
-    width:95%;
-    max-width:1000px;
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.2);
-    Justify-content:center;
-    margin:0 auto;
-}
 
 h1{
     text-align:center;
     margin-bottom:20px;
     color:#15803d;
 }
-
-table{
-    width:100%;
-    border-collapse:collapse;
-}
-
-th{
-    background:#15803d;
-    color:white;
-    padding:15px;
-    border:2px solid #ddd;
-    font-size:18px;
-}
-
-td{
-    padding:14px;
-    border:2px solid #cbd5e1;
-    text-align:center;
-    color:#333;
-}
-
-tr:hover{
-    background:#f8fafc;
-}
-
-a{
-    color:#dc2626;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-a:hover{
-    text-decoration:underline;
-}
-/* =========================
-   TABLET
-========================= */
 
 @media (max-width:768px){
 
@@ -203,10 +138,6 @@ a:hover{
     line-height:1.8;
   }
 }
-
-/* =========================
-   MOBILE
-========================= */
 
 @media (max-width:480px){
 
@@ -227,9 +158,6 @@ a:hover{
     font-size:1rem;
   }
 }
-/* =========================
-   SECTION TITLE
-========================= */
 
 .yoga-section-title{
   text-align:center;
@@ -247,10 +175,6 @@ a:hover{
   color:#666;
   font-size:clamp(.95rem,2vw,1.1rem);
 }
-
-/* =========================
-   GENERAL CARD
-========================= */
 
 .yoga-card{
   background:#fff;
@@ -277,73 +201,6 @@ a:hover{
   background:#fff;
 }
 
-/* =========================
-   YOGA ASANAS
-========================= */
-
-.yoga-asana-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-  gap:30px;
-}
-
-.yoga-asana-card{
-  background:#fff;
-  border-radius:30px;
-  overflow:hidden;
-  box-shadow:var(--shadow-md);
-  transition:var(--transition);
-}
-
-.yoga-asana-card:hover{
-  transform:translateY(-10px);
-}
-
-/* IMAGE SECTION */
-
-.yoga-asana-img{
-  width:100%;
-  height:260px;
-  overflow:hidden;
-  background:#eee;
-}
-
-.yoga-asana-img img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:.6s ease;
-}
-
-.yoga-asana-card:hover .yoga-asana-img img{
-  transform:scale(1.08);
-}
-
-/* CONTENT */
-
-.yoga-asana-content{
-  padding:30px;
-}
-
-.yoga-asana-content h3{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(1.6rem,3vw,2.2rem);
-  color:var(--primary);
-  margin-bottom:12px;
-}
-
-.yoga-asana-content h3 a{
-  color:inherit;
-}
-
-.yoga-asana-content p{
-  color:#666;
-  font-size:1rem;
-  margin-bottom:15px;
-}
-
-/* VIDEO BUTTON */
-
 .yoga-video-link{
   display:inline-block;
   padding:12px 20px;
@@ -359,9 +216,124 @@ a:hover{
   transform:translateY(-2px);
 }
 
-/* =========================
-   TABLET
-========================= */
+.yoga-video-link--disabled{
+  background:#d7d2c8;
+  color:#7a7468;
+  cursor:not-allowed;
+  pointer-events:none;
+}
+
+.yoga-video-link--disabled:hover{
+  transform:none;
+}
+
+/* =========================================================
+   ASANA SEQUENCE — alternating left/right rows
+   ========================================================= */
+
+.asana-list{
+  display:flex;
+  flex-direction:column;
+  gap:70px;
+}
+
+.asana-row{
+  display:flex;
+  align-items:center;
+  gap:60px;
+}
+
+.asana-row--reverse{
+  flex-direction:row-reverse;
+}
+
+.asana-row-media{
+  position:relative;
+  flex:1 1 46%;
+  min-width:0;
+  aspect-ratio:4/3;
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow-md);
+  background:var(--primary);
+}
+
+.asana-row-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.6s ease;
+}
+
+.asana-row:hover .asana-row-media img{
+  transform:scale(1.06);
+}
+
+.asana-row-media--placeholder{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,var(--primary),#1c3833);
+}
+
+.asana-placeholder-symbol{
+  font-family:'Cormorant Garamond',serif;
+  font-size:6rem;
+  color:var(--secondary-light);
+  opacity:.85;
+}
+
+.asana-badge{
+  position:absolute;
+  top:20px;
+  left:20px;
+  z-index:2;
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--primary);
+  color:var(--secondary-light);
+  font-family:'Cormorant Garamond',serif;
+  font-weight:700;
+  font-size:1.15rem;
+  border:2px solid var(--secondary);
+  box-shadow:var(--shadow-sm);
+}
+
+.asana-row-content{
+  flex:1 1 54%;
+  min-width:0;
+}
+
+.asana-eyebrow{
+  display:inline-block;
+  padding:6px 16px;
+  margin-bottom:16px;
+  border-radius:999px;
+  background:rgba(201,168,106,.15);
+  color:var(--secondary);
+  font-size:.78rem;
+  font-weight:600;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.asana-row-content h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.8rem,3vw,2.6rem);
+  color:var(--primary);
+  margin-bottom:16px;
+}
+
+.asana-row-content p{
+  color:#666;
+  font-size:1.05rem;
+  margin-bottom:24px;
+  max-width:480px;
+}
 
 @media (max-width:992px){
 
@@ -369,18 +341,14 @@ a:hover{
     padding:80px 0;
   }
 
-  .yoga-asana-grid{
-    gap:25px;
-  }
-
   .yoga-card{
     padding:30px;
   }
-}
 
-/* =========================
-   MOBILE
-========================= */
+  .asana-row{
+    gap:36px;
+  }
+}
 
 @media (max-width:768px){
 
@@ -397,31 +365,40 @@ a:hover{
     margin-bottom:40px;
   }
 
-  .yoga-asana-grid{
-    grid-template-columns:1fr;
+  section{
+    padding:70px 0;
   }
 
-  .yoga-asana-img{
-    height:220px;
+  .asana-list{
+    gap:50px;
   }
 
-  .yoga-asana-content{
-    padding:22px;
+  .asana-row,
+  .asana-row--reverse{
+    flex-direction:column;
+    gap:24px;
+  }
+
+  .asana-row-media{
+    width:100%;
+    flex:none;
+    aspect-ratio:16/10;
+  }
+
+  .asana-row-content{
+    flex:none;
+    text-align:left;
+  }
+
+  .asana-row-content p{
+    max-width:none;
   }
 
   .yoga-video-link{
     width:100%;
     text-align:center;
   }
-
-  section{
-    padding:70px 0;
-  }
 }
-
-/* =========================
-   SMALL MOBILE
-========================= */
 
 @media (max-width:480px){
 
@@ -429,20 +406,24 @@ a:hover{
     width:94%;
   }
 
-  .yoga-asana-img{
-    height:200px;
-  }
-
   .yoga-card{
-    padding:20px;
-  }
-
-  .yoga-asana-content{
     padding:20px;
   }
 
   .yoga-video-link{
     font-size:.95rem;
     padding:11px 16px;
+  }
+
+  .asana-badge{
+    width:38px;
+    height:38px;
+    font-size:1rem;
+    top:14px;
+    left:14px;
+  }
+
+  .asana-placeholder-symbol{
+    font-size:4rem;
   }
 }
