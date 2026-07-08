@@ -15,11 +15,11 @@
 <meta property="og:description" content="Integrative Medicine, Yoga, Lifestyle and Wellness.">
 <meta property="og:url" content="https://lifequality.org.in/">
 <meta property="og:image" content="https://lifequality.org.in/assets/images/og-image.jpg">
-  
+
   <!-- GSAP Core & Plugins for Premium Animations -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  
+
   <!-- AOS Animation Library -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -1146,6 +1146,28 @@ MOBILE
       border-left: 4px solid #E9C46A;
     }
 
+    /* placeholder section (Google Reviews) */
+    .google-reviews-section {
+      padding: clamp(70px, 10vw, 100px) 5%;
+      background: #fff;
+      text-align: center;
+    }
+    .google-reviews-section h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: var(--step-4);
+      color: #18301f;
+      margin-bottom: 16px;
+    }
+    .google-reviews-placeholder {
+      max-width: 700px;
+      margin: 0 auto;
+      background: #f8f6f1;
+      border: 2px dashed rgba(233,196,106,.6);
+      border-radius: 24px;
+      padding: 40px 30px;
+      color: #6b7a66;
+    }
+
     /* Responsive refinements */
     @media (max-width: 680px) {
       .feature-box {
@@ -1217,42 +1239,110 @@ MOBILE
     </div>
   </section>
 
-  <!-- NEW SECTION: Traffic Light Image Section -->
-  <section class="traffic-image-section" id="traffic">
-    <div class="traffic-image-container">
-      <div class="traffic-image-left" data-aos="fade-right" data-aos-duration="1000">
-        <h2>Traffic Light System for Health</h2>
-        <p>Our evidence-based approach uses a simple traffic light system to help you understand where you stand and what steps to take for optimal wellness.</p>
-        <div class="highlight-box">
-          <p style="font-weight:600; color:#18301f; font-size:1.1rem;">🔍 How it works:</p>
-          <p><span style="color:#2B7A3E; font-weight:700;">● Green</span> – You're on track! Maintain these optimal habits.</p>
-          <p><span style="color:#E9C46A; font-weight:700;">● Yellow</span> – Some adjustments needed. Small changes can make a big difference.</p>
-          <p><span style="color:#C44536; font-weight:700;">● Red</span> – Transformative shifts recommended. We'll guide you through.</p>
+  <!-- ================= 1. Our Scope & Work ================= -->
+  <section id="programs" class="scope-section">
+    <div class="container-premium">
+      <div class="scope-text" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="80" style="max-width:900px;margin:0 auto 40px;">
+        <h2>Our Scope & Work</h2>
+        <p>We work with the willing — those ready to take an active role in their own health — to help them adopt lifestyles that prevent disease, restore vitality, and build lasting wellness and longevity.</p>
+        <p>Our approach is grounded in an evidence-based protocol that brings together diet, Yoga, and lifestyle modification. Using a traffic light system, we guide and support meaningful, sustainable behavior change anchored to our <strong>21-point Health Building Guidelines</strong>. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12975079/" style="color:#B8873A;">Read the evidence here →</a></p>
+        <div class="evidence-badge">
+          <strong>✨ What's your Lifestyle score?</strong> Answer 21-point questions <a href="https://zenodo.org/records/15814357"> here.</a>
         </div>
-        <p style="margin-top:20px; font-style:italic; color:#6b7a66;">"Tailored 21-point guidelines empower sustainable change across sleep, digestion, movement, and mental wellness."</p>
+        <div class="evidence-badge">
+          <strong>✨Disclaimer:  </strong> Therapies presented in this site are not for emergency care and not a replacement for medical advice and treatment..
+        </div>
       </div>
-      <div class="traffic-image-right" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
-        <!-- Try to load the image -->
-        <img 
-          src="/images/price.jpeg" 
-          alt="Traffic Light System Guide" 
-          onerror="this.style.display='none'; this.parentElement.querySelector('.image-placeholder').style.display='block';"
+
+      <!-- supporting content for Scope & Work -->
+      <div class="protocol-grid">
+        <a style="text-decoration: none;" href="https://www.preprints.org/manuscript/202603.0183"><div class="protocol-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="50"><h4 >📖 Functional Bowel Disorders</h4><p style="color:#0f241c;">Improved gut health & reduced bloating</p></div></a>
+        <div class="protocol-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100"><h4>❤️ Hypertension</h4><p>Lower BP & reduced medication reliance</p></div>
+        <div class="protocol-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="150"><h4>🩸 Diabetes</h4><p>Stable glucose & insulin sensitivity</p></div>
+        <div class="protocol-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200"><h4>🌙 Menstrual Disorders</h4><p>Hormonal balance & pain reduction</p></div>
+        <div class="protocol-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="250"><h4>🧠 Migraine</h4><p>Less frequency & intensity</p></div>
+        <div class="protocol-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300"><h4>🦵 Arthritis</h4><p>Reduced inflammation & joint mobility</p></div>
+      </div>
+
+      <div class="conditions-list" data-aos="fade-up" data-aos-duration="1100" data-aos-offset="60">
+        <p style="font-size:1.3rem; font-weight:700;">✔ This protocol has shown real promise across a range of chronic conditions, including functional bowel disorders, hypertension, diabetes, menstrual disorders, migraines, and arthritis.</p>
+        <p style="margin-top: 20px;"><strong>🌟 3-weeks of diligent practice can get you:</strong></p>
+        <ul style="margin: 18px 0 0 30px; line-height: 1.7;">
+          <li>✅ Better digestive health</li>
+          <li>✅ Lower blood pressure, reducing reliance on medication</li>
+          <li>✅ Better sleep</li>
+          <li>✅ Boost energy and immunity</li>
+        </ul>
+      </div>
+
+      <div class="approach-highlight" data-aos="fade-up" data-aos-duration="900">
+        <div class="approach-item">🌿 Whole-person healing of body and mind</div>
+        <div class="approach-item">🎯 Targets root cause of ill health</div>
+        <div class="approach-item">🏡 You are in control — place, foods</div>
+        <div class="approach-item">📊 Results based — better health, bio-markers</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 2. Our Philosophy — Whole Person, Root Cause, Lasting Vitality ================= -->
+  <section id="our-philosophy" class="philosophy-section">
+    <div class="philosophy-container">
+      <div class="mission-card" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="80">
+        <p style="font-weight: 600; font-size: 1.3rem; margin-bottom: 16px;">Our Philosophy — Whole Person, Root Cause, Lasting Vitality</p>
+        <p>We work with the willing — those ready to take an active role in their own health — to help them adopt lifestyles that prevent disease, restore vitality, and build lasting wellness and longevity. Our protocol brings together diet, Yoga, and lifestyle modification using a traffic light system anchored to our 21-point Health Building Guidelines. This approach has shown real promise across functional bowel disorders, hypertension, diabetes, menstrual disorders, migraines, and arthritis.</p>
+        <p style="margin-top: 24px;"><strong>✨ 3-weeks of diligent practice can give you:</strong> Better digestive health, lower blood pressure reducing reliance on medication, better sleep, boosted energy & immunity.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 3. WHO WE ARE: Healing the Whole Person, Not Just the Symptom ================= -->
+  <section class="about-section">
+    <div class="about-container">
+      <!-- Image Column -->
+      <div class="about-image" data-aos="fade-right" data-aos-duration="1200" data-aos-offset="100">
+        <img
+          src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=1000&fit=crop&auto=format"
+          alt="Holistic healing and meditation"
         >
-        <!-- Fallback if image doesn't load -->
-        <div class="image-placeholder" style="display:none;">
-          <span class="emoji-big">🚦</span>
-          <h3>Traffic Light System</h3>
-          <div class="colors">
-            <span class="green"></span>
-            <span class="yellow"></span>
-            <span class="red"></span>
+      </div>
+
+      <!-- Content Column -->
+      <div class="about-content" data-aos="fade-left" data-aos-duration="1200" data-aos-offset="100">
+        <span class="section-tag">WHO WE ARE</span>
+        <h2>Healing the Whole Person, Not Just the Symptom</h2>
+        <p>
+          At Sutra Health, we merge evidence-based lifestyle medicine, yoga therapy, and modern clinical insights to help you reverse chronic conditions naturally.
+        </p>
+
+        <!-- Features Grid -->
+        <div class="features-grid">
+          <div class="feature-box" data-aos="fade-up" data-aos-duration="700" data-aos-delay="50">
+            <div class="icon-box">🌿</div>
+            <div>
+              <h4>Integrative Protocol</h4>
+              <p>Evidence-based diet & lifestyle modification</p>
+            </div>
           </div>
-          <p style="color:rgba(255,255,255,0.8); margin-top:15px;">Green • Yellow • Red</p>
+          <div class="feature-box" data-aos="fade-up" data-aos-duration="700" data-aos-delay="150">
+            <div class="icon-box">🧘</div>
+            <div>
+              <h4>Yoga Therapy</h4>
+              <p>Therapeutic movement & breathwork</p>
+            </div>
+          </div>
+          <div class="feature-box" data-aos="fade-up" data-aos-duration="700" data-aos-delay="250">
+            <div class="icon-box">📊</div>
+            <div>
+              <h4>Root-Cause Healing</h4>
+              <p>Targeting source of chronic illness</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ================= 4. Ancient Practice, Modern Transformation ================= -->
   <section class="section">
     <!-- LEFT SIDE -->
     <div class="left" data-aos="fade-right" data-aos-duration="1200" data-aos-offset="100">
@@ -1322,123 +1412,62 @@ MOBILE
     </div>
   </section>
 
-  <!-- Main Content: Full Scope, Evidence, Protocol -->
-  <section id="programs" class="scope-section">
-    <div class="container-premium">
-      <div class="intro-grid">
-        <div class="scope-text" data-aos="fade-right" data-aos-duration="1000" data-aos-offset="80">
-          <h2>Our Scope & Work</h2>
-          <p>We work with the willing — those ready to take an active role in their own health — to help them adopt lifestyles that prevent disease, restore vitality, and build lasting wellness and longevity.</p>
-          <p>Our approach is grounded in an evidence-based protocol that brings together diet, Yoga, and lifestyle modification. Using a traffic light system, we guide and support meaningful, sustainable behavior change anchored to our <strong>21-point Health Building Guidelines</strong>. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12975079/" style="color:#B8873A;">Read the evidence here →</a></p>
-          <div class="evidence-badge">
-            <strong>✨ What's your Lifestyle score?</strong> Answer 21-point questions <a href="https://zenodo.org/records/15814357"> here.</a>
-          </div>
-          <div class="evidence-badge">
-            <strong>✨Disclaimer:  </strong> Therapies presented in this site are not for emergency care and not a replacement for medical advice and treatment..
-          </div>
-          <a href="./score.html" class="score-btn">📋 Answer 21-point Questions →</a>
-          <div class="contact-message">
-            📞 <strong>Message +91-9013103676 for a free assessment</strong> — whole-person healing, root cause focus.
-          </div>
+  <!-- ================= 5. Traffic Light System for Health ================= -->
+  <section class="traffic-image-section" id="traffic">
+    <div class="traffic-image-container">
+      <div class="traffic-image-left" data-aos="fade-right" data-aos-duration="1000">
+        <h2>Traffic Light System for Health</h2>
+        <p>Our evidence-based approach uses a simple traffic light system to help you understand where you stand and what steps to take for optimal wellness.</p>
+        <div class="highlight-box">
+          <p style="font-weight:600; color:#18301f; font-size:1.1rem;">🔍 How it works:</p>
+          <p><span style="color:#2B7A3E; font-weight:700;">● Green</span> – You're on track! Maintain these optimal habits.</p>
+          <p><span style="color:#E9C46A; font-weight:700;">● Yellow</span> – Some adjustments needed. Small changes can make a big difference.</p>
+          <p><span style="color:#C44536; font-weight:700;">● Red</span> – Transformative shifts recommended. We'll guide you through.</p>
         </div>
-        
-        <div class="traffic-light" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100" data-aos-offset="80">
-          <h3>⚡ Traffic Light System</h3>
-          <p><span style="color:#2B7A3E;">● Green</span> – Optimal habits & nourishment<br>
-          <span style="color:#E9C46A;">● Yellow</span> – Mindful adjustments needed<br>
-          <span style="color:#C44536;">● Red</span> – Transformative shifts recommended</p>
-          <p style="margin-top: 16px;">Tailored 21‑point guidelines empower sustainable change across sleep, digestion, movement, and mental wellness.</p>
-        </div>
-        
+        <p style="margin-top:20px; font-style:italic; color:#6b7a66;">"Tailored 21-point guidelines empower sustainable change across sleep, digestion, movement, and mental wellness."</p>
       </div>
-
-      <!-- Protocol & chronic conditions grid -->
-      <div>
-        <div class="protocol-grid">
-          <a style="text-decoration: none;" href="https://www.preprints.org/manuscript/202603.0183"><div class="protocol-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="50"><h4 >📖 Functional Bowel Disorders</h4><p style="color:#0f241c;">Improved gut health & reduced bloating</p></div></a>
-          <div class="protocol-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100"><h4>❤️ Hypertension</h4><p>Lower BP & reduced medication reliance</p></div>
-          <div class="protocol-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="150"><h4>🩸 Diabetes</h4><p>Stable glucose & insulin sensitivity</p></div>
-          <div class="protocol-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200"><h4>🌙 Menstrual Disorders</h4><p>Hormonal balance & pain reduction</p></div>
-          <div class="protocol-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="250"><h4>🧠 Migraine</h4><p>Less frequency & intensity</p></div>
-          <div class="protocol-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300"><h4>🦵 Arthritis</h4><p>Reduced inflammation & joint mobility</p></div>
-        </div>
-        
-        <div class="conditions-list" data-aos="fade-up" data-aos-duration="1100" data-aos-offset="60">
-          <p style="font-size:1.3rem; font-weight:700;">✔ This protocol has shown real promise across a range of chronic conditions, including functional bowel disorders, hypertension, diabetes, menstrual disorders, migraines, and arthritis.</p>
-          <p style="margin-top: 20px;"><strong>🌟 3-weeks of diligent practice can get you:</strong></p>
-          <ul style="margin: 18px 0 0 30px; line-height: 1.7;">
-            <li>✅ Better digestive health</li>
-            <li>✅ Lower blood pressure, reducing reliance on medication</li>
-            <li>✅ Better sleep</li>
-            <li>✅ Boost energy and immunity</li>
-          </ul>
-        </div>
-
-        <div class="approach-highlight" data-aos="fade-up" data-aos-duration="900">
-          <div class="approach-item">🌿 Whole-person healing of body and mind</div>
-          <div class="approach-item">🎯 Targets root cause of ill health</div>
-          <div class="approach-item">🏡 You are in control — place, foods</div>
-          <div class="approach-item">📊 Results based — better health, bio-markers</div>
-        </div>
-
-        <div class="suitability-card" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="50">
-          <h3>Is Lifestyle approach suitable for me?</h3>
-          <div class="suitability-grid">
-            <div>✔ A whole of person healing, of body and mind.<br>✔ Targets root cause of ill health<br>✔ You are in control — place, foods<br>✔ Results based — better health, bio-markers<br>✔ Evidence-backed protocol across chronic conditions</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <section class="about-section">
-    <div class="about-container">
-      <!-- Image Column with Floating Card -->
-      <div class="about-image" data-aos="fade-right" data-aos-duration="1200" data-aos-offset="100">
-        <img
-          src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=1000&fit=crop&auto=format"
-          alt="Holistic healing and meditation"
+      <div class="traffic-image-right" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
+        <!-- Try to load the image -->
+        <img 
+          src="/images/price.jpeg" 
+          alt="Traffic Light System Guide" 
+          onerror="this.style.display='none'; this.parentElement.querySelector('.image-placeholder').style.display='block';"
         >
-      </div>
-
-      <!-- Content Column -->
-      <div class="about-content" data-aos="fade-left" data-aos-duration="1200" data-aos-offset="100">
-        <span class="section-tag">WHO WE ARE</span>
-        <h2>Healing the Whole Person, Not Just the Symptom</h2>
-        <p>
-          At Sutra Health, we merge evidence-based lifestyle medicine, yoga therapy, and modern clinical insights to help you reverse chronic conditions naturally.
-        </p>
-
-        <!-- Features Grid -->
-        <div class="features-grid">
-          <div class="feature-box" data-aos="fade-up" data-aos-duration="700" data-aos-delay="50">
-            <div class="icon-box">🌿</div>
-            <div>
-              <h4>Integrative Protocol</h4>
-              <p>Evidence-based diet & lifestyle modification</p>
-            </div>
+        <!-- Fallback if image doesn't load -->
+        <div class="image-placeholder" style="display:none;">
+          <span class="emoji-big">🚦</span>
+          <h3>Traffic Light System</h3>
+          <div class="colors">
+            <span class="green"></span>
+            <span class="yellow"></span>
+            <span class="red"></span>
           </div>
-          <div class="feature-box" data-aos="fade-up" data-aos-duration="700" data-aos-delay="150">
-            <div class="icon-box">🧘</div>
-            <div>
-              <h4>Yoga Therapy</h4>
-              <p>Therapeutic movement & breathwork</p>
-            </div>
-          </div>
-          <div class="feature-box" data-aos="fade-up" data-aos-duration="700" data-aos-delay="250">
-            <div class="icon-box">📊</div>
-            <div>
-              <h4>Root-Cause Healing</h4>
-              <p>Targeting source of chronic illness</p>
-            </div>
-          </div>
+          <p style="color:rgba(255,255,255,0.8); margin-top:15px;">Green • Yellow • Red</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Philosophy & Impact Section -->
-  <section class="philosophy-section">
+  <!-- ================= 6. ⚡ Traffic Light System ================= -->
+  <section id="traffic-light-system" class="scope-section" style="padding:60px 5%;">
+    <div class="container-premium">
+      <div class="traffic-light" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="80" style="max-width:700px;margin:0 auto;">
+        <h3>⚡ Traffic Light System</h3>
+        <p><span style="color:#2B7A3E;">● Green</span> – Optimal habits & nourishment<br>
+        <span style="color:#E9C46A;">● Yellow</span> – Mindful adjustments needed<br>
+        <span style="color:#C44536;">● Red</span> – Transformative shifts recommended</p>
+        <p style="margin-top: 16px;">Tailored 21‑point guidelines empower sustainable change across sleep, digestion, movement, and mental wellness.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 7. 📋 Answer 21-point Questions → ================= -->
+  <section id="answer-21-point" style="padding:50px 5%; text-align:center; background:#fdf8ee;">
+    <a href="./score.html" class="score-btn" data-aos="zoom-in" data-aos-duration="800">📋 Answer 21-point Questions →</a>
+  </section>
+
+  <!-- ================= 8. Our Evidence-Based Approach to Lasting Wellness ================= -->
+  <section id="evidence-based-approach" class="philosophy-section">
     <div class="philosophy-container">
       <h3 data-aos="fade-up" data-aos-duration="900">Our Evidence-Based Approach to Lasting Wellness</h3>
       <div class="stats-grid">
@@ -1455,14 +1484,29 @@ MOBILE
           <p>Health Building Guidelines</p>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="mission-card" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="80">
-        <p style="font-weight: 600; font-size: 1.3rem; margin-bottom: 16px;">Our Philosophy — Whole Person, Root Cause, Lasting Vitality</p>
-        <p>We work with the willing — those ready to take an active role in their own health — to help them adopt lifestyles that prevent disease, restore vitality, and build lasting wellness and longevity. Our protocol brings together diet, Yoga, and lifestyle modification using a traffic light system anchored to our 21-point Health Building Guidelines. This approach has shown real promise across functional bowel disorders, hypertension, diabetes, menstrual disorders, migraines, and arthritis.</p>
-        <p style="margin-top: 24px;"><strong>✨ 3-weeks of diligent practice can give you:</strong> Better digestive health, lower blood pressure reducing reliance on medication, better sleep, boosted energy & immunity.</p>
-        <div class="inner-highlight">
-          <p><strong>📞 Is Lifestyle approach suitable for you?</strong> A whole of person healing — you are in control. Message <strong>+91-9013103676</strong> for a free assessment.</p>
+  <!-- ================= 9. Google Reviews: Trusted By Patients (PLACEHOLDER — section did not exist in original file) ================= -->
+  
+
+  <!-- ================= 10. Is Lifestyle approach suitable for me? ================= -->
+  <section id="suitability" class="scope-section" style="padding:60px 5%;">
+    <div class="container-premium">
+      <div class="suitability-card" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="50">
+        <h3>Is Lifestyle approach suitable for me?</h3>
+        <div class="suitability-grid">
+          <div>✔ A whole of person healing, of body and mind.<br>✔ Targets root cause of ill health<br>✔ You are in control — place, foods<br>✔ Results based — better health, bio-markers<br>✔ Evidence-backed protocol across chronic conditions</div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 11. 📞 Message +91-9013103676 for a free assessment ================= -->
+  <section id="free-assessment" class="philosophy-section">
+    <div class="philosophy-container">
+      <div class="inner-highlight" data-aos="fade-up" data-aos-duration="900" style="text-align:left;max-width:700px;margin:0 auto;">
+        <p><strong>📞 Is Lifestyle approach suitable for you?</strong> A whole of person healing — you are in control. Message <strong>+91-9013103676</strong> for a free assessment.</p>
       </div>
     </div>
   </section>
@@ -1472,7 +1516,7 @@ MOBILE
   <div id="testimonials"></div>
 
   <div id="footer"></div>
-  
+
   <script src="js/include.js"></script>
 
   <!-- GSAP Animations + AOS Integration -->
@@ -1528,6 +1572,63 @@ MOBILE
   gtag('js', new Date());
 
   gtag('config', 'G-70BG55XT3Q');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["NGO", "MedicalBusiness"],
+  "@id": "https://lifequality.org.in/#organization",
+  "name": "Life Quality",
+  "alternateName": ["Sutra Health", "EQUAL Society - Effort For Quality of Life"],
+  "legalName": "Effort For Quality of Life (EQUAL) Society",
+  "url": "https://lifequality.org.in/",
+  "logo": "https://lifequality.org.in/assets/images/og-image.jpg",
+  "image": "https://lifequality.org.in/assets/images/og-image.jpg",
+  "description": "Life Quality (Sutra Health) is a Faridabad-based not-for-profit society helping people reverse chronic conditions such as obesity, hypertension, diabetes, migraine and joint pain through an evidence-based, 21-point integrative protocol combining Yoga therapy, nutrition, Ayurveda and modern medicine. Registered under the Societies Registration Act 1860, the organisation has supported over 1200 patients across 15 years of practice with a reported 98% success rate.",
+  "slogan": "Reverse Chronic Diseases Naturally",
+  "foundingDate": "1997-05-28",
+  "email": "info@lifequality.org.in",
+  "telephone": "+91-9013103676",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "House No. 229, Roof-Top, Sector 46",
+    "addressLocality": "Faridabad",
+    "addressRegion": "Haryana",
+    "postalCode": "121010",
+    "addressCountry": "IN"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "India"
+  },
+  "knowsAbout": [
+    "Integrative Lifestyle Medicine",
+    "Yoga Therapy",
+    "Pranayama",
+    "Ayurveda",
+    "Nutrition Counselling",
+    "Chronic Disease Reversal",
+    "Hypertension Management",
+    "Diabetes Management"
+  ],
+  "medicalSpecialty": ["Lifestyle Medicine", "Integrative Medicine"],
+  "nonprofitStatus": "https://schema.org/NonprofitANBI",
+  "sameAs": [
+    "https://www.linkedin.com/in/equal-society-ngo",
+    "https://wa.me/919013103676",
+    "https://www.linkedin.com/in/equal-society-ngo",
+    "https://in.pinterest.com/equal_society/",
+    "mailto:equal.society@gmail.com",
+    "https://www.instagram.com/sutrahealth/",
+    "https://www.facebook.com/people/Sutrahealth-Equal/",
+    "https://www.youtube.com/@sutra-health",
+    "https://lifequality.org.in/airbnb.html",
+    "https://maps.app.goo.gl/Bso3TJCkvqDSLWKP9",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12975079/",
+    "https://zenodo.org/records/15814357",
+    "https://www.preprints.org/manuscript/202603.0183/"
+  ]
+}
 </script>
 </body>
 </html>
