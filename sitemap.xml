@@ -13,11 +13,6 @@
     <changefreq>weekly</changefreq>
   </url>
 
-  <url>
-    <loc>https://sutra-health.medium.com/</loc>
-    <priority>1.0</priority>
-    <changefreq>weekly</changefreq>
-  </url>
 
   <url>
     <loc>https://lifequality.org.in/equal-society.html</loc>
@@ -73,11 +68,7 @@
     <changefreq>monthly</changefreq>
   </url>
 
-  <url>
-    <loc>https://archive.org/details/yoga-poses_202606</loc>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
+  
 
   <url>
     <loc>https://lifequality.org.in/Yoga/pranayama.html</loc>
@@ -133,16 +124,8 @@
     <changefreq>monthly</changefreq>
   </url>
 
-  <url>
-    <loc>https://bookretreats.com/r/6-day-rejuvenation-in-nature-moments-from-civilization-in-india</loc>
-    <priority>0.9</priority>
-    <changefreq>monthly</changefreq>
-  </url>
 
-  <url>
-    <loc>https://lifequality.org.in/airbnb.html</loc>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
+
+
 
 </urlset>
