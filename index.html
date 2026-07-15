@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Sutra Health | Evidence-Based Lifestyle Medicine</title>
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-70BG55XT3Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-70BG55XT3Q');
+  </script>
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,7 +56,7 @@ box-sizing:border-box;
 
 html{
 scroll-behavior:smooth;
-scroll-padding-top:90px;
+scroll-padding-top:100px;
 }
 
 body{
@@ -98,7 +107,7 @@ bottom:-150px;
 right:-100px;
 }
 
-.overlay{
+.hero-overlay{
 position:absolute;
 inset:0;
 background:rgba(0,0,0,.15);
@@ -122,13 +131,6 @@ background:rgba(255,255,255,.08);
 backdrop-filter:blur(12px);
 border:1px solid rgba(255,255,255,.1);
 margin-bottom:30px;
-}
-
-.dot{
-width:10px;
-height:10px;
-border-radius:50%;
-background:#2eb872;
 }
 
 .tagline span{
@@ -720,7 +722,7 @@ MOBILE
       height:249px;
     }
 
-    .overlay{
+    .card .overlay{
       position:absolute;
       inset:0;
       background:linear-gradient(to top, rgba(0,0,0,0.65), transparent);
@@ -800,11 +802,6 @@ MOBILE
         font-size:24px;
       }
 
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 100px;
     }
 
     /* ----- FLUID TYPOGRAPHY SYSTEM (ultra-premium scale) ----- */
@@ -1218,7 +1215,7 @@ MOBILE
 
   <!-- Hero Section -->
   <section id="home" class="hero-section">
-    <div class="overlay"></div>
+    <div class="hero-overlay"></div>
     <div class="hero-content">
       <div data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
         <div class="tagline">
@@ -1564,15 +1561,6 @@ MOBILE
       }, 500);
     });
   </script>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-70BG55XT3Q"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-70BG55XT3Q');
-</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -1616,7 +1604,6 @@ MOBILE
   "sameAs": [
     "https://www.linkedin.com/in/equal-society-ngo",
     "https://wa.me/919013103676",
-    "https://www.linkedin.com/in/equal-society-ngo",
     "https://in.pinterest.com/equal_society/",
     "mailto:equal.society@gmail.com",
     "https://www.instagram.com/sutrahealth/",
