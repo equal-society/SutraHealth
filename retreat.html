@@ -1,26 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sutra-Health Retreat · Faridabad | Premium Sanctuary</title>
+<title>Wellness Retreat Faridabad | Yoga &amp; Ayurveda Near Delhi</title>
+<meta name="description" content="Doctor-led wellness retreat in Faridabad near the Aravallis. Rooftop yoga, Shirodhara &amp; Ayurvedic diet plans in a serene 3BR stay, 30 min from South Delhi.">
+
+<!-- Technical / Local SEO -->
+<meta name="robots" content="index,follow, max-image-preview:large">
+<meta name="googlebot" content="index,follow">
+<meta name="author" content="Life Quality">
+<meta name="theme-color" content="#2E7D32">
+<meta name="geo.region" content="IN-HR">
+<meta name="geo.placename" content="Faridabad, Haryana">
+<meta name="geo.position" content="28.3980;77.3141">
+<meta name="ICBM" content="28.3980, 77.3141">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+<!-- Canonical: update to the real, final published URL for this page before going live -->
+<link rel="canonical" href="https://lifequality.org.in/airbnb.html">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sutra Health Retreat">
+<meta property="og:title" content="Wellness Retreat Faridabad | Yoga, Ayurveda &amp; Doctor-Led Stay Near Delhi">
+<meta property="og:description" content="Serene 3BR rooftop retreat near the Aravallis in Faridabad. Yoga, Shirodhara, Pranayama &amp; personalised Ayurvedic diet plans with an MBBS doctor-host. 30 min from South Delhi.">
+<meta property="og:image" content="https://lifequality.org.in/assets/images/og-image.jpg">
+<meta property="og:url" content="https://lifequality.org.in/airbnb.html">
+<meta property="og:locale" content="en_IN">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Wellness Retreat Faridabad | Yoga, Ayurveda &amp; Doctor-Led Stay Near Delhi">
+<meta name="twitter:description" content="Rooftop yoga, Shirodhara &amp; Ayurvedic diet plans in a serene 3BR near the Aravallis, 30 min from South Delhi. Rated 4.86★.">
+<meta name="twitter:image" content="https://lifequality.org.in/assets/images/og-image.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
-    
-    
-<link rel="canonical" href="https://lifequality.org.in/current-page.html">
 
-<meta name="robots" content="index,follow">
-
-<link rel="sitemap" type="application/xml" href="/sitemap.xml">
-
-<meta name="author" content="Life Quality">
-
-<meta name="theme-color" content="#2E7D32">
+<!-- Preload the first hero image for a faster LCP (largest contentful paint) -->
+<link rel="preload" as="image" href="/images/rooftop.avif" fetchpriority="high">
 
 <style>
 /* =====================================================
@@ -28,7 +50,7 @@
 ===================================================== */
 :root{
   --g1:#22a868; --g2:#178f55; --g3:#0e6b3e;
-  --g-glow:rgba(34,168,104,.16); --g-glow2:rgba(34,168,104,.07);
+  --g-glow:rgba(34,168,104,.16); --g-glow2:rgba(17, 122, 72, 0.07);
   --g-light:#e8f7f0; --g-mid:#b8ebd3;
 
   --ink:#16241d; --ink-soft:#3d4f46; --muted:#75887e;
@@ -69,7 +91,16 @@ img{max-width:100%; display:block;}
 }
 .slides{display:flex; width:100%; height:100%; transition:transform .9s cubic-bezier(.65,0,.35,1);}
 .slide{position:relative; flex:0 0 100%; height:100%;}
-.slide-bg{position:absolute; inset:0; background-size:cover; background-position:center; transform:scale(1.05);}
+.slide-bg {
+  position: absolute;
+  inset: 0;                    /* top:0; right:0; bottom:0; left:0; */
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1.05);
+}
 .slide.active .slide-bg{transform:scale(1); transition:transform 8s ease-out;}
 .slide-overlay{
   position:absolute; inset:0;
@@ -245,7 +276,7 @@ img{max-width:100%; display:block;}
   font-weight:700; font-size:.8rem; letter-spacing:.03em; padding:6px 13px; border-radius:999px; backdrop-filter:blur(4px);
 }
 .prog-tag{display:inline-block; font-size:.76rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--g3); background:var(--g-light); padding:6px 14px; border-radius:999px; margin-bottom:14px;}
-.prog-content h2{font-family:var(--serif); font-size:clamp(1.5rem, .4vw + 1.3rem, 1.9rem); font-weight:700; margin:0 0 14px; color:var(--ink);}
+.prog-content h3{font-family:var(--serif); font-size:clamp(1.5rem, .4vw + 1.3rem, 1.9rem); font-weight:700; margin:0 0 14px; color:var(--ink);}
 .prog-content .hindi{font-weight:400; color:var(--muted); font-size:.85em;}
 .prog-content p{font-size:1rem; color:var(--ink-soft); margin:0 0 18px; max-width:60ch;}
 .prog-points{display:flex; flex-direction:column; gap:9px; margin-bottom:22px;}
@@ -306,36 +337,31 @@ img{max-width:100%; display:block;}
 <div class="slider-wrap" id="heroSlider">
   <div class="slides" id="slidesTrack">
     <div class="slide active">
-      <div class="slide-bg" style="background-image:url('/images/rooftop.avif');object-fit:contain;"></div>
+      <div class="slide-bg" role="img" aria-label="Spacious rooftop living room at Sutra Health wellness retreat, Faridabad" style="background-image:url('/images/rooftop.avif');"></div>
       <div class="slide-overlay"></div>
       <div class="slide-caption">✨ Spacious Living Room – Faridabad Retreat</div>
     </div>
     <div class="slide">
-      <div class="slide-bg" style="background: url('/images/livingroom.webp');background-image:cover; background-repeat: no-repeat; background-position: center;" ></div>
+      <div class="slide-bg" role="img" aria-label="Rooftop terrace for sunrise yoga sessions near the Aravallis, Faridabad" style="background-image:url('/images/hall.webp');"></div>
       <div class="slide-overlay"></div>
       <div class="slide-caption">🌅 Rooftop Terrace – Sunrise Yoga Under Open Sky</div>
     </div>
     <div class="slide">
-      <div class="slide-bg" style="background-image:url('/images/bed1.webp');background-image:cover; background-repeat: no-repeat; background-position: center;"></div>
+      <div class="slide-bg" role="img" aria-label="Double bedroom with attached toilet at the Faridabad wellness retreat" style="background-image:url('/images/bed1.webp');"></div>
       <div class="slide-overlay"></div>
       <div class="slide-caption">🛏 Double Bedroom with Attached Toilet</div>
     </div>
-    <!-- <div class="slide">
-      <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1800&q=90')"></div>
+    <div class="slide">
+      <div class="slide-bg" role="img" aria-label="Fully equipped modern kitchen at the Faridabad wellness retreat" style="background-image:url('/images/livingroom.webp');"></div>
       <div class="slide-overlay"></div>
       <div class="slide-caption">🍳 Fully Equipped Modern Kitchen</div>
-    </div>x
-    <div class="slide">
-      <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1800&q=90')"></div>
-      <div class="slide-overlay"></div>
-      <div class="slide-caption">🍽 Bright Dining Area</div>
-    </div> -->
+    </div>
   </div>
 
   <div class="hero-text" id="heroText">
     <div class="hero-tag">🏆 Superhost · Faridabad, India</div>
     <h1 class="hero-title">Sutra Health<br>Retreat</h1>
-    <p class="hero-sub">Serene 3BR near Aravallis · Yoga · Rooftop · City Views</p>
+    <p class="hero-sub">Doctor-led wellness retreat near Delhi · Serene 3BR by the Aravallis · Yoga · Rooftop · City Views</p>
     <div class="hero-stats">
       <span>⭐ 4.86</span><span class="sep">|</span>
       <span>7 Reviews</span><span class="sep">|</span>
@@ -396,7 +422,7 @@ img{max-width:100%; display:block;}
 
     <!-- AMENITIES -->
     <div id="amenities">
-      <div class="section-title" data-aos="fade-right">What this place offers</div>
+      <h2 class="section-title" data-aos="fade-right">What This Wellness Retreat Offers</h2>
       <div class="amenities-grid">
         <div class="amenity" data-aos="fade-up" data-aos-delay="0"><span class="ico">🌆</span> City skyline view</div>
         <div class="amenity" data-aos="fade-up" data-aos-delay="20"><span class="ico">🌿</span> Courtyard &amp; herbal garden</div>
@@ -430,16 +456,16 @@ img{max-width:100%; display:block;}
     </div>
 
     <!-- PROGRAMS -->
-    <div class="section-title" data-aos="fade-right">Wellness programs</div>
+    <h2 class="section-title" data-aos="fade-right">Yoga, Ayurveda &amp; Wellness Programs</h2>
     <main class="programs-wrap">
       <article class="program" id="p1" data-aos="fade-up">
         <div class="prog-image">
-          <img src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?w=900&q=85" alt="Physician Consultation"/>
+          <img src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?w=900&q=85" alt="MBBS doctor consultation for lifestyle medicine at Sutra Health wellness retreat, Faridabad" loading="lazy"/>
           <span class="prog-number">01</span>
         </div>
         <div class="prog-content">
           <span class="prog-tag">Medical Wellness</span>
-          <h2>Physician Consultation</h2>
+          <h3>Physician Consultation</h3>
           <p>A personal health session with Dr. Rakesh — an MBBS-qualified physician with deep expertise in lifestyle medicine. Discuss chronic conditions, receive evidence-based guidance, and leave with a clear, actionable plan tailored to your body.</p>
           <ul class="prog-points">
             <li>⚕️ Full health history &amp; lifestyle review</li>
@@ -453,12 +479,12 @@ img{max-width:100%; display:block;}
 
       <article class="program reverse" id="p2" data-aos="fade-up">
         <div class="prog-image">
-          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=900&q=85" alt="Dietary Advice"/>
+          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=900&q=85" alt="Personalised Ayurvedic diet and nutrition planning session, Faridabad wellness retreat" loading="lazy"/>
           <span class="prog-number">02</span>
         </div>
         <div class="prog-content">
           <span class="prog-tag">Nutrition</span>
-          <h2>Dietary Advice</h2>
+          <h3>Dietary Advice</h3>
           <p>Food is medicine. Dr. Rakesh designs personalised nutrition plans rooted in Ayurvedic wisdom and modern nutritional science — addressing weight, gut health, energy, and disease prevention through what you eat every day.</p>
           <ul class="prog-points">
             <li>🥗 Personalised meal planning</li>
@@ -472,12 +498,12 @@ img{max-width:100%; display:block;}
 
       <article class="program" id="p3" data-aos="fade-up">
         <div class="prog-image">
-          <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=900&q=85" alt="Shirodhara"/>
+          <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=900&q=85" alt="Shirodhara Ayurvedic oil therapy for stress and insomnia relief near Delhi" loading="lazy"/>
           <span class="prog-number">03</span>
         </div>
         <div class="prog-content">
           <span class="prog-tag">Ayurvedic Therapy</span>
-          <h2>Shirodhara</h2>
+          <h3>Shirodhara</h3>
           <p>The ancient Ayurvedic practice of gently streaming warm medicated oil over the forehead. Deeply calming for the nervous system, Shirodhara alleviates anxiety, insomnia, migraines and mental fatigue — leaving you in a state of profound stillness.</p>
           <ul class="prog-points">
             <li>🫙 Warm herbal oil therapy</li>
@@ -491,12 +517,12 @@ img{max-width:100%; display:block;}
 
       <article class="program reverse" id="p4" data-aos="fade-up">
         <div class="prog-image">
-          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=900&q=85" alt="My Buddy Program"/>
+          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=900&q=85" alt="Wellness companion support program for solo travellers at the Faridabad retreat" loading="lazy"/>
           <span class="prog-number">04</span>
         </div>
         <div class="prog-content">
           <span class="prog-tag">Companionship &amp; Support</span>
-          <h2>My Buddy</h2>
+          <h3>My Buddy</h3>
           <p>Sometimes you just need someone in your corner. My Buddy pairs you with a caring wellness companion for daily check-ins, accountability, gentle motivation, and meaningful conversation — especially for solo travellers, elderly guests, or those navigating recovery.</p>
           <ul class="prog-points">
             <li>🤝 Daily check-in &amp; accountability partner</li>
@@ -510,12 +536,12 @@ img{max-width:100%; display:block;}
 
       <article class="program" id="p5" data-aos="fade-up">
         <div class="prog-image">
-          <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=900&q=85" alt="Singing Kirtan Dance"/>
+          <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=900&q=85" alt="Rooftop Kirtan singing and expressive dance session, Faridabad wellness retreat" loading="lazy"/>
           <span class="prog-number">05</span>
         </div>
         <div class="prog-content">
           <span class="prog-tag">Expressive Arts</span>
-          <h2>Singing, Kirtan &amp; Dance</h2>
+          <h3>Singing, Kirtan &amp; Dance</h3>
           <p>Sound and movement as medicine. Join our joyful Kirtan circles, ecstatic dance sessions, and communal singing on the rooftop terrace. These devotional arts dissolve stress, awaken joy, and connect you to something larger than yourself.</p>
           <ul class="prog-points">
             <li>🎵 Morning Kirtan on the rooftop</li>
@@ -529,12 +555,12 @@ img{max-width:100%; display:block;}
 
       <article class="program reverse" id="p6" data-aos="fade-up">
         <div class="prog-image">
-          <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=900&q=85" alt="Meditation Dhyana"/>
+          <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=900&q=85" alt="Guided meditation and Dhyana session in the terrace garden near the Aravallis" loading="lazy"/>
           <span class="prog-number">06</span>
         </div>
         <div class="prog-content">
           <span class="prog-tag">Mental Clarity</span>
-          <h2>Meditation <span class="hindi">(Dhyāna)</span></h2>
+          <h3>Meditation <span class="hindi">(Dhyāna)</span></h3>
           <p>Stillness is a skill. Our guided Dhyana sessions draw from classical Patanjali traditions, breath-anchored mindfulness, and visualisation techniques. Practice daily in the terrace garden as the city quiets and the Aravallis breathe with you.</p>
           <ul class="prog-points">
             <li>🕉 Patanjali &amp; mindfulness traditions</li>
@@ -548,12 +574,12 @@ img{max-width:100%; display:block;}
 
       <article class="program" id="p7" data-aos="fade-up">
         <div class="prog-image">
-          <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=900&q=85" alt="Pranayama"/>
+          <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=900&q=85" alt="Classical Pranayama breathwork practice at the Faridabad wellness retreat" loading="lazy"/>
           <span class="prog-number">07</span>
         </div>
         <div class="prog-content">
           <span class="prog-tag">Breathwork</span>
-          <h2>Pranayama</h2>
+          <h3>Pranayama</h3>
           <p>Breath is the bridge between body and mind. Dr. Rakesh teaches classical Pranayama — Nadi Shodhana, Bhramari, Kapalbhati and more — scientifically shown to regulate the nervous system, boost lung capacity, and sharpen mental clarity.</p>
           <ul class="prog-points">
             <li>🌬 Nadi Shodhana &amp; alternate nostril breathing</li>
@@ -567,12 +593,12 @@ img{max-width:100%; display:block;}
 
       <article class="program reverse" id="p8" data-aos="fade-up">
         <div class="prog-image">
-          <img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=900&q=85" alt="Yoga Asana Protocol"/>
+          <img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=900&q=85" alt="Personalised rooftop Yoga Asana protocol session near Delhi NCR" loading="lazy"/>
           <span class="prog-number">08</span>
         </div>
         <div class="prog-content">
           <span class="prog-tag">Movement &amp; Flexibility</span>
-          <h2>Yoga Asana Protocol</h2>
+          <h3>Yoga Asana Protocol</h3>
           <p>A structured, medically informed Yoga Asana sequence designed by Dr. Rakesh — tailored to your health goals, whether that's back pain relief, flexibility, stress reduction or post-recovery strengthening. Practice under open skies on the private rooftop terrace.</p>
           <ul class="prog-points">
             <li>🧘 Personalised asana sequence per guest</li>
@@ -587,7 +613,7 @@ img{max-width:100%; display:block;}
 
     <!-- REVIEWS -->
     <div id="reviews">
-      <div class="section-title" data-aos="fade-right">Guest reviews</div>
+      <h2 class="section-title" data-aos="fade-right">Guest Reviews</h2>
       <div class="rating-bar-wrap">
         <div class="overall-score">4.86 <span>out of 5</span></div>
         <div>
@@ -650,7 +676,7 @@ img{max-width:100%; display:block;}
 
     <div class="foot-cta" data-aos="fade-up">
       <h3>Ready for your retreat ?</h3>
-      <a href="/pdf/brochure (1).pdf" target="_blank"> Brochure  →</a>
+      <a href="/pdf/brochure%20(1).pdf" target="_blank" rel="noopener">Download Wellness Retreat Brochure →</a>
     </div>
   </div><!-- end left column -->
 
@@ -765,6 +791,59 @@ img{max-width:100%; display:block;}
     "https://pmc.ncbi.nlm.nih.gov/articles/PMC12975079/",
     "https://zenodo.org/records/15814357",
     "https://www.preprints.org/manuscript/202603.0183/"
+  ]
+}
+</script>
+
+<!-- LodgingBusiness schema with AggregateRating for rich results (star rating in search) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  "name": "Sutra Health Retreat",
+  "description": "Doctor-led wellness retreat in Faridabad near the Aravallis, offering a serene 3BR rooftop stay with Yoga, Ayurveda, Shirodhara and Pranayama programs, 30 minutes from South Delhi.",
+  "url": "https://lifequality.org.in/airbnb.html",
+  "image": "https://lifequality.org.in/assets/images/og-image.jpg",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "House No. 229, Roof-Top, Sector 46",
+    "addressLocality": "Faridabad",
+    "addressRegion": "Haryana",
+    "postalCode": "121010",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 28.3980,
+    "longitude": 77.3141
+  },
+  "telephone": "+91-9013103676",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.86",
+    "reviewCount": "7",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "amenityFeature": [
+    { "@type": "LocationFeatureSpecification", "name": "Rooftop terrace", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Self check-in", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Free WiFi (229 Mbps)", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Free parking", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Full kitchen", "value": true }
+  ]
+}
+</script>
+
+<!-- Breadcrumb schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lifequality.org.in/" },
+    { "@type": "ListItem", "position": 2, "name": "Wellness Retreat Faridabad", "item": "https://lifequality.org.in/airbnb.html" }
   ]
 }
 </script>
