@@ -16,8 +16,13 @@
 
 body{
   font-family: 'DM Sans', sans-serif;
+}
 
-  
+html,
+body{
+  overflow-x: hidden;
+  width: 100%;
+  scroll-behavior: smooth;
 }
 
 /* =========================
@@ -33,7 +38,7 @@ body{
 
   background: rgba(8, 13, 10, 0.95);
   border-bottom: 1px solid rgba(255,255,255,0.08);
-  transition: all 0.35s ease;
+  transition: background 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
   backdrop-filter: blur(12px);
 }
 
@@ -49,17 +54,18 @@ body.home .navbar{
   border-bottom: 1px solid rgba(255,255,255,0.14);
   box-shadow: 0 16px 35px rgba(0,0,0,0.25);
 }
+
 .container{
   max-width: 1450px;
   height: 78px;
 
   margin: auto;
-  padding: 0 22px;
+  padding: 0 clamp(14px, 2vw, 22px);
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: clamp(10px, 1.6vw, 20px);
 }
 
 /* =========================
@@ -87,35 +93,43 @@ body.home .navbar{
   justify-content: center;
 
   font-size: 18px;
+  flex-shrink: 0;
 }
 
 .logo span{
   color: #fff;
-  font-size: 24px;
-  font-weight:600;
+  font-size: clamp(17px, 1.6vw, 24px);
+  font-weight: 600;
 
   font-family: 'Playfair Display', serif;
+  white-space: nowrap;
 }
 
 /* =========================
    Nav Links
+   (fluid gap + fluid font-size so it never
+   feels "cramped" and never overflows badly
+   before the hamburger breakpoint kicks in)
 ========================= */
 
 .nav-links{
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: clamp(10px, 1.4vw, 24px);
+  flex: 1;
+  justify-content: flex-end;
+  min-width: 0;
 }
 
 .nav-links a{
   text-decoration: none;
 
   color: #fff;
-  font-size: 14px;
+  font-size: clamp(12.5px, 0.95vw, 14px);
   font-weight: 500;
 
   white-space: nowrap;
-  transition: 0.3s;
+  transition: color 0.3s ease, transform 0.2s ease;
   position: relative;
 }
 
@@ -143,7 +157,8 @@ body.home .navbar{
   bottom: -6px;
 
   background: #2eb872;
-  transition: 0.3s;
+  border-radius: 2px;
+  transition: width 0.3s ease;
 }
 
 .nav-links a:hover::after{
@@ -179,16 +194,18 @@ body.home .navbar{
   background: #111;
 
   border-radius: 14px;
-  padding: 12px;
+  padding: 10px;
 
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
 
-  transform: translateY(15px);
+  transform: translateY(12px);
 
-  transition: 0.3s ease;
+  transition: opacity 0.28s ease, transform 0.28s ease, visibility 0.28s ease;
 
   box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.06);
 
   z-index: 999;
 }
@@ -199,20 +216,24 @@ body.home .navbar{
   display: block;
   width: 100%;
 
-  padding: 13px 15px;
+  padding: 12px 15px;
 
   color: #fff;
   font-size: 14px;
 
   border-radius: 10px;
 
-  transition: 0.3s;
+  transition: background 0.25s ease, color 0.25s ease, padding-left 0.25s ease;
 }
 
 .dropdown-menu a:hover{
-  background: rgba(255,255,255,0.08);
+  background: rgba(46,184,114,0.12);
   color: #2eb872;
   padding-left: 20px;
+}
+
+.dropdown-menu a::after{
+  display: none;
 }
 
 /* Show Dropdown */
@@ -220,6 +241,7 @@ body.home .navbar{
 .dropdown:hover .dropdown-menu{
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
   transform: translateY(0);
 }
 
@@ -233,14 +255,15 @@ body.home .navbar{
   background: linear-gradient(135deg,#1f7a4d,#2eb872);
   color: #1E2417;
 
-  padding: 12px 22px;
+  padding: clamp(9px, 1vw, 12px) clamp(14px, 1.6vw, 22px);
   border-radius: 50px;
 
-  font-size: 14px;
+  font-size: clamp(12.5px, 0.9vw, 14px);
   font-weight: 600;
 
-  transition: 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .book-btn:hover{
@@ -248,34 +271,6 @@ body.home .navbar{
   box-shadow: 0 10px 24px rgba(46,184,114,0.28);
 }
 
-@media (max-width: 480px){
-
-  .container{
-    padding: 0 12px;
-  }
-
-  .logo span{
-    font-size: 16px;
-  }
-
-  .logo-icon{
-    width: 32px;
-    height: 32px;
-    font-size: 14px;
-  }
-
-  .menu-btn{
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
-  }
-
-}
-html,
-body{
-  overflow-x:hidden;
-  width:100%;
-}
 /* =========================
    Mobile Button
 ========================= */
@@ -297,23 +292,30 @@ body{
 
   align-items: center;
   justify-content: center;
+  transition: background 0.25s ease, transform 0.25s ease;
 
   z-index: 999999;
   position: relative;
+}
+
+.menu-btn:hover{
+  background: rgba(46,184,114,0.18);
 }
 
 /* =========================
    Responsive
 ========================= */
 
+/* Gradually tighten before switching to hamburger,
+   so it never looks squeezed right before the breakpoint */
 @media (max-width: 1200px){
 
   .nav-links{
-    gap: 16px;
+    gap: clamp(8px, 1.2vw, 16px);
   }
 
   .nav-links a{
-    font-size: 13px;
+    font-size: clamp(12px, 1.1vw, 13px);
   }
 
 }
@@ -333,7 +335,7 @@ body{
   }
 
   .logo span{
-    font-size: 20px;
+    font-size: clamp(18px, 4vw, 20px);
   }
 
   .nav-links{
@@ -349,13 +351,32 @@ body{
 
     flex-direction: column;
     align-items: flex-start;
+    justify-content: flex-start;
 
     padding: 30px;
+    gap: 6px;
 
     overflow-y: auto;
-    transition: 0.4s;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+
+    transition: left 0.4s ease;
 
     z-index: 9999;
+  }
+
+  /* Slim, stylish scrollbar for the mobile menu */
+  .nav-links::-webkit-scrollbar{
+    width: 5px;
+  }
+
+  .nav-links::-webkit-scrollbar-thumb{
+    background: rgba(46,184,114,0.45);
+    border-radius: 10px;
+  }
+
+  .nav-links::-webkit-scrollbar-track{
+    background: transparent;
   }
 
   .nav-links.show-menu{
@@ -363,7 +384,7 @@ body{
   }
 
   .nav-links a{
-    font-size: clamp(15px,4vw,18px);
+    font-size: clamp(15px, 4vw, 18px);
     width: 100%;
     padding: 12px 0;
   }
@@ -392,15 +413,21 @@ body{
 
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
     transform: none;
 
-    display: none;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+
+    transition: max-height 0.35s ease, padding 0.35s ease;
 
     border-radius: 12px;
   }
 
   .dropdown:hover .dropdown-menu{
-    display: block;
+    max-height: 500px;
+    padding: 10px;
   }
 
   .dropdown-menu a{
@@ -413,13 +440,33 @@ body{
 @media (max-width: 500px){
 
   .logo span{
-    font-size: 18px;
+    font-size: clamp(16px, 5vw, 18px);
   }
 
   .logo-icon{
     width: 35px;
     height: 35px;
     font-size: 16px;
+  }
+
+}
+
+@media (max-width: 480px){
+
+  .container{
+    padding: 0 12px;
+  }
+
+  .logo-icon{
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .menu-btn{
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
   }
 
 }
