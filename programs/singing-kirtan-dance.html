@@ -554,7 +554,8 @@
 }
 </script>
 
-<!-- ============ SERVICE / MEDICAL THERAPY SCHEMA (new, page-specific) ============ -->
+<!-- ============ SERVICE / MEDICAL THERAPY SCHEMA ============ -->
+<!-- FIXED: url now matches the canonical URL (was missing "/programs/" segment) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -569,12 +570,16 @@
     "@type": "City",
     "name": "Faridabad"
   },
-  "url": "https://lifequality.org.in/singing-kirtan-dance.html",
+  "url": "https://lifequality.org.in/programs/singing-kirtan-dance.html",
   "image": "https://lifequality.org.in/assets/images/og-image.jpg"
 }
 </script>
 
-<!-- ============ VIDEO SCHEMA (new — enables video rich results) ============ -->
+<!-- ============ VIDEO SCHEMA (enables video rich results) ============ -->
+<!-- FIXED: uploadDate now includes full ISO 8601 datetime + IST timezone offset (+05:30) -->
+<!-- ⚠️ IMPORTANT: "2024-01-01T09:00:00+05:30" is a placeholder — please replace with the ACTUAL -->
+<!-- YouTube publish date/time. Check it on the YouTube video page under "Show more" > "Published on". -->
+<!-- Also consider adding "duration" once known, e.g. "duration": "PT3M20S" (ISO 8601 duration format). -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -582,7 +587,7 @@
   "name": "Celebrating Joy at Every Age - Singing, Kirtan & Dance",
   "description": "Elderly community members rejoicing together through singing, dancing and collective celebration, promoting happiness, energy and wellness for everyone.",
   "thumbnailUrl": "https://i.ytimg.com/vi/ScMzIvxBSi4/hqdefault.jpg",
-  "uploadDate": "2024-01-01",
+  "uploadDate": "2024-01-01T09:00:00+05:30",
   "embedUrl": "https://www.youtube.com/embed/ScMzIvxBSi4",
   "publisher": {
     "@id": "https://lifequality.org.in/#organization"
@@ -590,7 +595,8 @@
 }
 </script>
 
-<!-- ============ BREADCRUMB SCHEMA (new) ============ -->
+<!-- ============ BREADCRUMB SCHEMA ============ -->
+<!-- FIXED: last item's url now matches the canonical URL (was missing "/programs/" segment) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -612,7 +618,7 @@
       "@type": "ListItem",
       "position": 3,
       "name": "Singing, Kirtan and Dance",
-      "item": "https://lifequality.org.in/singing-kirtan-dance.html"
+      "item": "https://lifequality.org.in/programs/singing-kirtan-dance.html"
     }
   ]
 }

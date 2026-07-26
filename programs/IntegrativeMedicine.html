@@ -276,7 +276,11 @@
 }
 </script>
 
-<!-- ══════════════ SEO: VideoObject schema for the embedded YouTube video (new) ══════════════ -->
+<!-- ══════════════ SEO: VideoObject schema for the embedded YouTube video ══════════════ -->
+<!-- FIXED: uploadDate now includes full ISO 8601 datetime + IST timezone offset (+05:30) -->
+<!-- ⚠️ IMPORTANT: "2023-01-01T09:00:00+05:30" is a placeholder — please replace with the ACTUAL -->
+<!-- YouTube publish date/time. Check it on the YouTube video page under "Show more" > "Published on". -->
+<!-- Also add the real "duration" once known, e.g. "duration": "PT8M42S" (ISO 8601 duration format). -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -284,13 +288,13 @@
   "name": "Dr. B.M. Hegde on Natural Healing",
   "description": "Dr. B.M. Hegde discusses natural healing and integrative approaches to health, featured by Sutra Health / EQUAL Society.",
   "thumbnailUrl": "https://img.youtube.com/vi/HzTvEK1sVi0/maxresdefault.jpg",
-  "uploadDate": "2023-01-01",
+  "uploadDate": "2023-01-01T09:00:00+05:30",
   "embedUrl": "https://www.youtube.com/embed/HzTvEK1sVi0",
   "contentUrl": "https://youtu.be/HzTvEK1sVi0"
 }
 </script>
 
-<!-- ══════════════ SEO: Breadcrumb schema (new) ══════════════ -->
+<!-- ══════════════ SEO: Breadcrumb schema ══════════════ -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
