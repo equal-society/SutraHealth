@@ -7,10 +7,10 @@
   <!-- ══════════════ SEO: TITLE (keyword-optimized, ~60 chars) ══════════════ -->
   <title>About EQUAL Society | Chronic Disease Reversal NGO, Faridabad</title>
 
-  <!-- ══════════════ SEO: META DESCRIPTION (was missing) ══════════════ -->
+  <!-- ══════════════ SEO: META DESCRIPTION ══════════════ -->
   <meta name="description" content="EQUAL Society (Life Quality) is a Faridabad-based NGO helping reverse chronic diseases like diabetes, obesity & hypertension through Yoga, Ayurveda & integrative medicine since 1997. 80G registered.">
 
-  <!-- ══════════════ SEO: KEYWORDS (secondary signal, low weight but harmless) ══════════════ -->
+  <!-- ══════════════ SEO: KEYWORDS ══════════════ -->
   <meta name="keywords" content="chronic disease reversal Faridabad, integrative healthcare NGO India, yoga therapy Ayurveda Faridabad, diabetes reversal natural treatment, NGO health family welfare Haryana, 80G registered NGO Faridabad, TCIH declaration">
 
   <!-- ══════════════ SEO: ROBOTS & CANONICAL ══════════════ -->
@@ -18,7 +18,7 @@
   <link rel="canonical" href="https://lifequality.org.in/equal-society.html">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
-  <!-- ══════════════ SEO: LOCAL / GEO TAGS (helps local search relevance) ══════════════ -->
+  <!-- ══════════════ SEO: LOCAL / GEO TAGS ══════════════ -->
   <meta name="geo.region" content="IN-HR">
   <meta name="geo.placename" content="Faridabad">
   <meta name="geo.position" content="28.4089;77.3178">
@@ -28,7 +28,7 @@
   <meta name="theme-color" content="#2E7D32">
   <meta name="google-site-verification" content="YB30kQv11tWVKTi5jzv4woqVbUDmAkWP4CXK8nVGAKw" />
 
-  <!-- ══════════════ SEO: OPEN GRAPH (was missing — needed for WhatsApp/FB/LinkedIn share previews) ══════════════ -->
+  <!-- ══════════════ SEO: OPEN GRAPH ══════════════ -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="EQUAL Society - Life Quality">
   <meta property="og:title" content="About EQUAL Society | Chronic Disease Reversal NGO, Faridabad">
@@ -37,7 +37,7 @@
   <meta property="og:url" content="https://lifequality.org.in/equal-society.html">
   <meta property="og:locale" content="en_IN">
 
-  <!-- ══════════════ SEO: TWITTER CARD (was missing) ══════════════ -->
+  <!-- ══════════════ SEO: TWITTER CARD ══════════════ -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="About EQUAL Society | Chronic Disease Reversal NGO, Faridabad">
   <meta name="twitter:description" content="Faridabad-based NGO reversing chronic diseases through Yoga, Ayurveda & integrative medicine since 1997.">
@@ -99,6 +99,140 @@
     img { width: 100%; display: block; }
     .wrap { width: min(var(--max-w), 100% - var(--section-h) * 2); margin-inline: auto; }
     section { padding-block: var(--section-v); }
+
+    /* ============================================================
+       FLOATING WHATSAPP BUTTON — Responsive & Fixed
+    ============================================================ */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: clamp(56px, 10vw, 72px);
+      height: clamp(56px, 10vw, 72px);
+      background: #25D366;
+      border-radius: 50%;
+      box-shadow: 0 6px 30px rgba(37, 211, 102, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.10) translateY(-3px);
+      box-shadow: 0 8px 40px rgba(37, 211, 102, 0.5);
+    }
+    .whatsapp-float svg {
+      width: 55%;
+      height: 55%;
+      fill: white;
+      display: block;
+    }
+    @media (max-width: 480px) {
+      .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 56px;
+        height: 56px;
+      }
+    }
+    @media (max-width: 380px) {
+      .whatsapp-float {
+        bottom: 16px;
+        right: 16px;
+        width: 48px;
+        height: 48px;
+      }
+    }
+
+    /* ============================================================
+       FAQ SECTION STYLES
+    ============================================================ */
+    .faq-section {
+      background: var(--white);
+    }
+    .faq-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .faq-section .sec-head h2 {
+      font-family: var(--ff-display);
+      font-size: var(--text-2xl);
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .faq-section .sec-head p {
+      color: var(--muted);
+      font-size: var(--text-lg);
+    }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .faq-item {
+      background: var(--cream);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: box-shadow 0.3s ease;
+    }
+    .faq-item:hover {
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    }
+    .faq-question {
+      width: 100%;
+      padding: clamp(16px, 2.5vw, 22px) clamp(18px, 3vw, 24px);
+      background: none;
+      border: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-size: var(--text-base);
+      font-weight: 600;
+      color: var(--ink);
+      text-align: left;
+      font-family: var(--ff-body);
+      transition: background 0.3s ease;
+      gap: 14px;
+      line-height: 1.4;
+    }
+    .faq-question:hover {
+      background: rgba(46,184,114,0.06);
+    }
+    .faq-question .icon {
+      font-size: var(--text-sm);
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+      color: var(--lime);
+      font-weight: 700;
+    }
+    .faq-item.active .faq-question .icon {
+      transform: rotate(180deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      padding: 0 clamp(18px, 3vw, 24px);
+    }
+    .faq-item.active .faq-answer {
+      max-height: 500px;
+      padding: 0 clamp(18px, 3vw, 24px) clamp(18px, 2.5vw, 24px);
+    }
+    .faq-answer p {
+      font-size: var(--text-sm);
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    @media (max-width: 700px) {
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
     .eyebrow {
       display: inline-flex; align-items: center; gap: 8px;
@@ -234,7 +368,6 @@
       .about-grid { grid-template-columns: 1fr; }
       .about-img-badge { right: 0; }
       .decl-inner { grid-template-columns: 1fr; }
-      .decl-qr { width: 140px; height: 140px; }
     }
     @media (max-width: 600px) {
       .hero-content h1 { letter-spacing: 0; }
@@ -244,15 +377,13 @@
       .donate { background-attachment: scroll; }
     }
     @media (max-width: 400px) { .about-stat-row { grid-template-columns: 1fr; } }
-    .mt-8  { margin-top:  8px; }
-    .mt-16 { margin-top: 16px; }
   </style>
 </head>
 <body>
 
   <div id="navbar"></div>
 
-  <!-- ══════════════ SEO: added visually-hidden breadcrumb for crawlability ══════════════ -->
+  <!-- ══════════════ SEO: visually-hidden breadcrumb for crawlability ══════════════ -->
   <nav aria-label="Breadcrumb" style="position:absolute; left:-9999px;">
     <a href="/">Home</a> &gt; <span>About EQUAL Society</span>
   </nav>
@@ -263,7 +394,6 @@
     <div class="wrap">
       <div class="hero-content" data-aos="fade-up" data-aos-duration="900">
         <span class="eyebrow">EQUAL Society | Faridabad NGO</span>
-        <!-- SEO: H1 now carries primary keyword + location -->
         <h1>Effort For<br><em>Quality of Life</em> — Chronic Disease Reversal, Faridabad</h1>
         <p>A not-for-profit organization dedicated to reversing chronic diseases and advancing holistic health, family welfare, education, wellness and human dignity through integrative and compassionate service.</p>
         <a href="/equal-society.html" class="btn-primary">
@@ -475,12 +605,170 @@
     </div>
   </section>
 
+  <!-- ════════════════════════════════════════════════════════════════════
+       ✅ FAQ SECTION — 10 Frequently Asked Questions
+  ════════════════════════════════════════════════════════════════════ -->
+  <section class="faq-section" id="faq" aria-labelledby="faq-heading">
+    <div class="wrap">
+      <div class="sec-head sec-head--center" data-aos="fade-up">
+        <span class="eyebrow">FAQs</span>
+        <h2 id="faq-heading">Frequently Asked Questions</h2>
+        <p>Answers to common questions about EQUAL Society, chronic disease reversal, and our integrative approach.</p>
+      </div>
+
+      <div class="faq-grid">
+
+        <!-- FAQ 1 -->
+        <div class="faq-item active" data-aos="fade-up" data-aos-duration="600">
+          <button class="faq-question" aria-expanded="true">
+            <span>What is EQUAL Society?</span>
+            <span class="icon">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>EQUAL (Effort For Quality of Life) Society is a Faridabad-based not-for-profit NGO registered in 1997 under the Societies Registration Act, 1860. We work to reverse chronic diseases through evidence-based integrative medicine, Yoga therapy, Ayurveda, and lifestyle modification.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="50">
+          <button class="faq-question" aria-expanded="false">
+            <span>Where is EQUAL Society located?</span>
+            <span class="icon">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>EQUAL Society is located at House No. 229, Roof-Top, Sector 46, Faridabad, Haryana 121010. We also offer online consultations for patients across India.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+          <button class="faq-question" aria-expanded="false">
+            <span>Is EQUAL Society an 80G registered NGO?</span>
+            <span class="icon">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, EQUAL Society is registered under Sections 12A and 80G of the Income Tax Act. Donations made to us are eligible for 50% tax deduction under Section 80G.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
+          <button class="faq-question" aria-expanded="false">
+            <span>What chronic diseases do you help reverse?</span>
+            <span class="icon">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>We specialize in reversing lifestyle-related chronic conditions including diabetes, hypertension, obesity, arthritis, migraine, functional bowel disorders, menstrual disorders, and joint pain through our 21-point integrative protocol.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="faq-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+          <button class="faq-question" aria-expanded="false">
+            <span>What is the TCIH Declaration?</span>
+            <span class="icon">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>TCIH stands for Traditional Complementary Integrative Healthcare. EQUAL Society is a proud signatory to this declaration, affirming our commitment to inclusive, evidence-based health practices that integrate traditional and modern medicine.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 6 -->
+        <div class="faq-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="250">
+          <button class="faq-question" aria-expanded="false">
+            <span>How can I donate to EQUAL Society?</span>
+            <span class="icon">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>You can donate via bank transfer to RBL Bank, Sector 21-C, Faridabad — IFSC: RATN0000493, Account: 309017789765. You can also scan the QR code on this page for UPI payments. All donations are 80G exempt.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 7 -->
+        <div class="faq-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
+          <button class="faq-question" aria-expanded="false">
+            <span>Do you offer online consultations?</span>
+            <span class="icon">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, we offer online lifestyle medicine and yoga therapy consultations for patients across India. You can reach us via WhatsApp at +91-9013103676 or email at equal.society@gmail.com.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 8 -->
+        <div class="faq-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="350">
+          <button class="faq-question" aria-expanded="false">
+            <span>How long does it take to see results?</span>
+            <span class="icon">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>Most patients notice improvements in energy, sleep, and digestion within 3 weeks of following our 21-point Health Building Guidelines. Significant changes in blood pressure and blood glucose typically appear within 6-12 weeks.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 9 -->
+        <div class="faq-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
+          <button class="faq-question" aria-expanded="false">
+            <span>Who founded EQUAL Society?</span>
+            <span class="icon">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>EQUAL Society was founded by Dr. Rakesh Sarwal (MBBS, MPH, DrPH) in 1997. He is a public health expert with peer-reviewed publications on chronic disease reversal and integrative medicine.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 10 -->
+        <div class="faq-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="450">
+          <button class="faq-question" aria-expanded="false">
+            <span>Is this approach safe for everyone?</span>
+            <span class="icon">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>Our integrative approach is safe for most individuals with chronic conditions. However, we always recommend consulting with your primary healthcare provider before starting any new health program. Our protocols work alongside, not replace, conventional medical care.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <div id="footer"></div>
+
+  <!-- ✅ FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/919013103676?text=Hi%20Sutra%20Health%2C%20I%20want%20to%20know%20more%20about%20your%20lifestyle%20medicine%20programs." 
+     class="whatsapp-float" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     aria-label="Chat with Sutra Health on WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="../js/include.js"></script>
   <script>
     AOS.init({ duration: 750, once: true, offset: 60 });
+
+    // FAQ Accordion functionality
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      const button = item.querySelector('.faq-question');
+      button.addEventListener('click', function() {
+        const isActive = item.classList.contains('active');
+        // Close all FAQ items
+        faqItems.forEach(otherItem => {
+          otherItem.classList.remove('active');
+          otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+        // Toggle clicked item
+        if (!isActive) {
+          item.classList.add('active');
+          item.querySelector('.faq-question').setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
         const t = document.querySelector(a.getAttribute('href'));
@@ -498,7 +786,7 @@
     gtag('config', 'G-70BG55XT3Q');
   </script>
 
-  <!-- ══════════════ SEO: Organization/NGO schema — fixed nonprofitStatus enum, added service + breadcrumb schema ══════════════ -->
+  <!-- ══════════════ SEO: Organization/NGO schema ══════════════ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -561,14 +849,14 @@
   }
   </script>
 
-  <!-- ══════════════ SEO: Breadcrumb schema (new, improves SERP breadcrumb display) ══════════════ -->
+  <!-- ══════════════ SEO: Breadcrumb schema ══════════════ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lifequality.org.in/" },
-      { "@type": "ListItem", "position": 2, "name": "About EQUAL Society", "item": "https://lifequality.org.in/about-equal-society.html" }
+      { "@type": "ListItem", "position": 2, "name": "About EQUAL Society", "item": "https://lifequality.org.in/equal-society.html" }
     ]
   }
   </script>

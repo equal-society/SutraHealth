@@ -62,6 +62,42 @@ img{max-width:100%;display:block;}
 .wrap{max-width:var(--container);margin:0 auto;padding-left:var(--gutter);padding-right:var(--gutter);}
 
 /* =====================================================
+   FLOATING WHATSAPP BUTTON
+===================================================== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(56px, 10vw, 72px);
+  height: clamp(56px, 10vw, 72px);
+  background: #25D366;
+  border-radius: 50%;
+  box-shadow: 0 6px 30px rgba(37, 211, 102, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+}
+.whatsapp-float:hover {
+  transform: scale(1.10) translateY(-3px);
+  box-shadow: 0 8px 40px rgba(37, 211, 102, 0.5);
+}
+.whatsapp-float svg {
+  width: 55%;
+  height: 55%;
+  fill: white;
+  display: block;
+}
+@media (max-width: 480px) {
+  .whatsapp-float { bottom: 20px; right: 20px; width: 56px; height: 56px; }
+}
+@media (max-width: 380px) {
+  .whatsapp-float { bottom: 16px; right: 16px; width: 48px; height: 48px; }
+}
+
+/* =====================================================
    HERO SLIDER
 ===================================================== */
 .slider-wrap{
@@ -82,8 +118,6 @@ img{max-width:100%;display:block;}
     linear-gradient(90deg,rgba(8,30,20,.80) 0%,rgba(8,30,20,.40) 42%,rgba(8,30,20,.10) 65%),
     linear-gradient(0deg,rgba(8,26,18,.60) 0%,rgba(8,26,18,0) 40%);
 }
-
-/* Per-slide content panel */
 .slide-content-panel{
   position:absolute;left:var(--gutter);bottom:70px;
   z-index:5;color:#fff;width:min(600px,86%);
@@ -120,14 +154,11 @@ img{max-width:100%;display:block;}
   background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
   backdrop-filter:blur(6px);
 }
-
-/* Progress bar */
 #slideProgress{
   position:absolute;bottom:0;left:0;height:3px;width:0%;
   background:var(--g1);border-radius:0 2px 2px 0;z-index:10;
   transition:width .1s linear;
 }
-
 .arrow{
   position:absolute;top:50%;transform:translateY(-50%);
   width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.28);
@@ -137,7 +168,6 @@ img{max-width:100%;display:block;}
 }
 .arrow:hover{background:var(--g1);transform:translateY(-50%) scale(1.08);}
 .arrow.prev{left:var(--gutter);} .arrow.next{right:var(--gutter);}
-
 .dots{position:absolute;bottom:26px;right:var(--gutter);display:flex;gap:9px;z-index:6;}
 .dot{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.4);border:none;cursor:pointer;transition:background .2s ease,transform .2s ease;}
 .dot.active{background:var(--g1);transform:scale(1.3);}
@@ -275,7 +305,11 @@ img{max-width:100%;display:block;}
 .foot-cta{margin-top:60px;padding:50px var(--gutter);border-radius:var(--radius-lg);background:linear-gradient(135deg,var(--g3),var(--g2));color:#fff;text-align:center;}
 .foot-cta h3{font-family:var(--serif);font-size:clamp(1.6rem,1vw + 1.3rem,2.4rem);margin:0 0 12px;}
 .foot-cta p{opacity:.9;margin:0 0 24px;}
-.foot-cta a{display:inline-block;background:#fff;color:var(--g3);font-weight:700;padding:14px 32px;border-radius:999px;}
+.foot-cta .btn-group{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;}
+.foot-cta a{display:inline-block;background:#fff;color:var(--g3);font-weight:700;padding:14px 32px;border-radius:999px;transition:transform .2s,box-shadow .2s;}
+.foot-cta a:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.2);}
+.foot-cta .btn-outline-white{background:transparent;border:2px solid rgba(255,255,255,.5);color:#fff;}
+.foot-cta .btn-outline-white:hover{background:rgba(255,255,255,.15);border-color:#fff;}
 </style>
 </head>
 <body>
@@ -340,7 +374,7 @@ img{max-width:100%;display:block;}
 
     <!-- Slide 4 -->
     <div class="slide">
-      <div class="slide-bg" role="img" aria-label="Fully equipped modern kitchen at the Faridabad wellness retreat" style="background-image:url('/images/kitchen.webp');"></div>
+      <div class="slide-bg" role="img" aria-label="Fully equipped modern kitchen at the Faridabad wellness retreat" style="background-image:url('/images/Shirodhara.webp');"></div>
       <div class="slide-overlay"></div>
       <div class="slide-content-panel">
         <div class="slide-num">04 / 04</div>
@@ -451,6 +485,7 @@ img{max-width:100%;display:block;}
     <h2 class="section-title" data-aos="fade-right">Yoga, Ayurveda &amp; Wellness Programs</h2>
     <main class="programs-wrap">
 
+      <!-- Program 1: Physician Consultation -->
       <article class="program" id="p1" data-aos="fade-up">
         <div class="prog-image">
           <img src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?w=900&q=85" alt="MBBS doctor consultation for lifestyle medicine at Sutra Health wellness retreat, Faridabad" loading="lazy"/>
@@ -466,10 +501,11 @@ img{max-width:100%;display:block;}
             <li>💊 Guidance on medications &amp; supplements</li>
             <li>🔁 Follow-up support via Sutra Health platform</li>
           </ul>
-          <a class="prog-btn" href="https://wa.me/919013103676">Book a Consultation →</a>
+          <a class="prog-btn" href="./Contact.html">Book a Consultation →</a>
         </div>
       </article>
 
+      <!-- Program 2: Dietary Advice -->
       <article class="program reverse" id="p2" data-aos="fade-up">
         <div class="prog-image">
           <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=900&q=85" alt="Personalised Ayurvedic diet and nutrition planning session, Faridabad wellness retreat" loading="lazy"/>
@@ -485,10 +521,11 @@ img{max-width:100%;display:block;}
             <li>🧬 Managing diabetes, PCOS, thyroid through diet</li>
             <li>📓 Recipe suggestions &amp; pantry reset</li>
           </ul>
-          <a class="prog-btn" href="https://wa.me/919013103676">Get a Diet Plan →</a>
+          <a class="prog-btn" href="./Contact.html">Get a Diet Plan →</a>
         </div>
       </article>
 
+      <!-- Program 3: Shirodhara -->
       <article class="program" id="p3" data-aos="fade-up">
         <div class="prog-image">
           <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=900&q=85" alt="Shirodhara Ayurvedic oil therapy for stress and insomnia relief near Delhi" loading="lazy"/>
@@ -504,10 +541,11 @@ img{max-width:100%;display:block;}
             <li>😴 Deep sleep restoration</li>
             <li>⏱ 45–60 minute immersive session</li>
           </ul>
-          <a class="prog-btn" href="https://wa.me/919013103676">Book Shirodhara →</a>
+          <a class="prog-btn" href="./Contact.html">Book Shirodhara →</a>
         </div>
       </article>
 
+      <!-- Program 4: My Buddy -->
       <article class="program reverse" id="p4" data-aos="fade-up">
         <div class="prog-image">
           <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=900&q=85" alt="Wellness companion support program for solo travellers at the Faridabad retreat" loading="lazy"/>
@@ -523,10 +561,11 @@ img{max-width:100%;display:block;}
             <li>🌟 Emotional wellbeing &amp; mindset nudges</li>
             <li>🏃 Walk &amp; activity buddy in Aravallis</li>
           </ul>
-          <a class="prog-btn" href="https://wa.me/919013103676">Meet Your Buddy →</a>
+          <a class="prog-btn" href="./Contact.html">Meet Your Buddy →</a>
         </div>
       </article>
 
+      <!-- Program 5: Kirtan & Dance -->
       <article class="program" id="p5" data-aos="fade-up">
         <div class="prog-image">
           <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=900&q=85" alt="Rooftop Kirtan singing and expressive dance session, Faridabad wellness retreat" loading="lazy"/>
@@ -542,10 +581,11 @@ img{max-width:100%;display:block;}
             <li>🎹 Piano &amp; harmonium available on-site</li>
             <li>🌄 Sunset sessions with city-skyline backdrop</li>
           </ul>
-          <a class="prog-btn" href="https://wa.me/919013103676">Join a Session →</a>
+          <a class="prog-btn" href="./Contact.html">Join a Session →</a>
         </div>
       </article>
 
+      <!-- Program 6: Meditation -->
       <article class="program reverse" id="p6" data-aos="fade-up">
         <div class="prog-image">
           <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=900&q=85" alt="Guided meditation and Dhyana session in the terrace garden near the Aravallis" loading="lazy"/>
@@ -561,10 +601,11 @@ img{max-width:100%;display:block;}
             <li>🌿 Terrace garden &amp; herbal surroundings</li>
             <li>⏱ 20–40 minute guided sessions</li>
           </ul>
-          <a class="prog-btn" href="https://wa.me/919013103676">Start Meditating →</a>
+          <a class="prog-btn" href="./Contact.html">Start Meditating →</a>
         </div>
       </article>
 
+      <!-- Program 7: Pranayama -->
       <article class="program" id="p7" data-aos="fade-up">
         <div class="prog-image">
           <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=900&q=85" alt="Classical Pranayama breathwork practice at the Faridabad wellness retreat" loading="lazy"/>
@@ -580,10 +621,11 @@ img{max-width:100%;display:block;}
             <li>🔥 Kapalbhati for digestion &amp; energy</li>
             <li>📈 Measurable lung-function improvement</li>
           </ul>
-          <a class="prog-btn" href="https://wa.me/919013103676">Learn Pranayama →</a>
+          <a class="prog-btn" href="./Contact.html">Learn Pranayama →</a>
         </div>
       </article>
 
+      <!-- Program 8: Yoga Asana -->
       <article class="program reverse" id="p8" data-aos="fade-up">
         <div class="prog-image">
           <img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=900&q=85" alt="Personalised rooftop Yoga Asana protocol session near Delhi NCR" loading="lazy"/>
@@ -599,7 +641,7 @@ img{max-width:100%;display:block;}
             <li>🌅 Sunrise sessions on the rooftop terrace</li>
             <li>📖 Take-home protocol for continued practice</li>
           </ul>
-          <a class="prog-btn" href="https://wa.me/919013103676">Start Your Protocol →</a>
+          <a class="prog-btn" href="./Contact.html">Start Your Protocol →</a>
         </div>
       </article>
 
@@ -670,7 +712,11 @@ img{max-width:100%;display:block;}
 
     <div class="foot-cta" data-aos="fade-up">
       <h3>Ready for your retreat?</h3>
-      <a href="/pdf/brochure%20(1).pdf" target="_blank" rel="noopener">Download Wellness Retreat Brochure →</a>
+      <div class="btn-group">
+        <!-- Book Retreat Button - Directs to BookRetreats.com -->
+        <a href="https://bookretreats.com/r/6-day-rejuvenation-in-nature-moments-from-civilization-in-india/preview" target="_blank" rel="noopener noreferrer">📅 Book Your Retreat</a>
+        <a href="/pdf/brochure%20(1).pdf" target="_blank" rel="noopener" class="btn-outline-white">📄 Download Brochure</a>
+      </div>
     </div>
 
   </div><!-- end left column -->
@@ -680,7 +726,8 @@ img{max-width:100%;display:block;}
     <div class="side-card" data-aos="fade-left">
       <h4>Plan your stay</h4>
       <p>6 guests · 3 bedrooms · 6 beds · 3 baths<br>Self check-in after 3 PM</p>
-      <a class="btn" href="https://wa.me/919013103676">Check availability</a>
+      <!-- Side Rail Book Button -->
+      <a class="btn" href="https://bookretreats.com/r/6-day-rejuvenation-in-nature-moments-from-civilization-in-india/preview" target="_blank" rel="noopener noreferrer">Book Your Retreat</a>
     </div>
     <div class="side-card" data-aos="fade-left" data-aos-delay="80">
       <h4>Meet your host</h4>
@@ -690,14 +737,24 @@ img{max-width:100%;display:block;}
 </div>
 
 <div id="footer"></div>
-<script src="/js/include.js"></script>
 
+<!-- Floating WhatsApp Button - now links to Contact page -->
+<a href="https://wa.me/919013103676" 
+   class="whatsapp-float" 
+   aria-label="Contact Sutra Health">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script src="/js/include.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 <script>lightbox.option({resizeDuration:200,wrapAround:true,albumLabel:"Photo %1 of %2",fadeDuration:300});</script>
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
   AOS.init({duration:750,easing:'ease-out-cubic',once:true,offset:80,mirror:false});
 
+  // ===== SLIDER =====
   const track    = document.getElementById('slidesTrack');
   const slides   = track.querySelectorAll('.slide');
   const dotsW    = document.getElementById('dotsWrap');
@@ -749,6 +806,7 @@ img{max-width:100%;display:block;}
   gtag('config', 'G-70BG55XT3Q');
 </script>
 
+<!-- Schema.org structured data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

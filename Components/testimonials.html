@@ -789,18 +789,19 @@
 }
 </script>
 
-<!-- ============ SERVICE + REVIEW SCHEMA (new) ============ -->
+<!-- ============ SERVICE + REVIEW SCHEMA (FIXED) ============ -->
 <!--
-  IMPORTANT: Google does NOT show star-rating rich snippets for reviews
-  marked up against an Organization/LocalBusiness on your own site — this
-  is treated as "self-serving" and can flag guideline issues. The compliant
-  workaround is to attach reviews to a specific reviewable Service instead
-  of the business entity itself. That's what this block does.
+  ROOT CAUSE of "Invalid object type for field <parent_node>":
+  Google does NOT support "Service" as a parent type for Review/AggregateRating
+  rich results. Supported parent types include LocalBusiness, Organization,
+  Product, Event, Course, Recipe, SoftwareApplication, etc. — but not plain
+  "Service". Fix: declare the type as an array so it's BOTH Service (accurate
+  description) AND LocalBusiness (Google-supported parent for reviews).
 -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
+  "@type": ["Service", "LocalBusiness"],
   "name": "Yoga Therapy & Integrative Medicine Consultation",
   "serviceType": "Yoga Therapy, Ayurveda & Integrative Medicine Consultation",
   "provider": {

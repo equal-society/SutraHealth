@@ -178,7 +178,7 @@
           <a href="https://www.linkedin.com/in/equal-society-ngo" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon">
             <i class="fa-brands fa-linkedin"></i>
           </a>
-          <a href="https://equal-society.medium.com/" target="_blank" rel="noopener noreferrer" aria-label="Medium" class="social-icon">
+          <a href="https://sutra-health.medium.com/" target="_blank" rel="noopener noreferrer" aria-label="Medium" class="social-icon">
             <i class="fa-brands fa-medium"></i>
           </a>
           <a href="https://in.pinterest.com/equal_society/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest" class="social-icon">
@@ -204,7 +204,7 @@
           We reply within 24 hours — let's co-create your wellness map
         </div>
 
-        <!-- WhatsApp-powered form -->
+        <!-- Email-powered form -->
         <form id="healingForm" action="#" method="get" novalidate>
 
           <div class="input-group-new" data-aos="fade-up" data-aos-delay="200">
@@ -237,7 +237,7 @@
 
           <button type="submit" class="btn-send" data-aos="fade-up" data-aos-delay="400">
             <span>Send Message</span>
-            <i class="fa-brands fa-whatsapp"></i>
+            <i class="fa-regular fa-envelope"></i>
           </button>
 
         </form>
@@ -316,6 +316,13 @@
 
   <!-- AOS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- ══════════════ EmailJS SDK ══════════════ -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    // Replace YOUR_PUBLIC_KEY with the Public Key from your EmailJS account (Account > General)
+    emailjs.init({ publicKey: "YOUR_PUBLIC_KEY" });
+  </script>
 
   <!-- ══════════════ FIX: Google Analytics — removed duplicate block, kept only one ══════════════ -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-70BG55XT3Q"></script>
@@ -435,11 +442,16 @@
       easing: 'ease-out-cubic'
     });
 
-    /* ── Form → WhatsApp ── */
+    /* ── Form → Direct Email via EmailJS ── */
     (function () {
       const form        = document.getElementById('healingForm');
       const successDiv  = document.getElementById('successMessage');
-      const phoneNumber = '919013103676';
+      const sendBtn     = form.querySelector('.btn-send');
+      const btnLabel     = sendBtn.querySelector('span');
+
+      // Replace these with your own EmailJS Service ID and Template ID
+      const SERVICE_ID  = 'service_rcoz3es';
+      const TEMPLATE_ID = 'template_dtmqblu';
 
       function showToast(message) {
         const toast = document.createElement('div');
@@ -497,15 +509,29 @@
           return;
         }
 
-        let msg  = '🌿 *Sanctuary Healing Inquiry* 🌿\n\n';
-        msg     += `*Name:* ${name}\n`;
-        msg     += `*Email:* ${email}\n`;
-        if (phone)  msg += `*Phone/WhatsApp:* ${phone}\n`;
-        if (reason) msg += `*Reason:* ${reason}\n`;
-        msg     += '\n— Sent from Sanctuary Contact Form';
+        const templateParams = {
+          to_email:   'equal.society@gmail.com',
+          from_name:  name,
+          from_email: email,
+          phone:      phone || 'Not provided',
+          reason:     reason || 'Not provided'
+        };
 
-        window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(msg)}`, '_blank');
-        displaySuccess();
+        sendBtn.disabled = true;
+        btnLabel.textContent = 'Sending...';
+
+        emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams)
+          .then(function () {
+            displaySuccess();
+          })
+          .catch(function (err) {
+            console.error('EmailJS error:', err);
+            showToast('⚠️ Message could not be sent, please try again');
+          })
+          .finally(function () {
+            sendBtn.disabled = false;
+            btnLabel.textContent = 'Send Message';
+          });
       });
     })();
   </script>
