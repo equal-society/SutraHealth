@@ -319,12 +319,8 @@
 
   <!-- ══════════════ EmailJS SDK ══════════════ -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script>
-    // Replace YOUR_PUBLIC_KEY with the Public Key from your EmailJS account (Account > General)
-    emailjs.init({ publicKey: "YOUR_PUBLIC_KEY" });
-  </script>
-
-  <!-- ══════════════ FIX: Google Analytics — removed duplicate block, kept only one ══════════════ -->
+  
+  <!-- ══════════════ FIXED: Google Analytics ══════════════ -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-70BG55XT3Q"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -447,11 +443,22 @@
       const form        = document.getElementById('healingForm');
       const successDiv  = document.getElementById('successMessage');
       const sendBtn     = form.querySelector('.btn-send');
-      const btnLabel     = sendBtn.querySelector('span');
+      const btnLabel    = sendBtn.querySelector('span');
 
-      // Replace these with your own EmailJS Service ID and Template ID
+      // ══════════════ EMAILJS CONFIGURATION ══════════════
+      // 🔑 IMPORTANT: Replace YOUR_PUBLIC_KEY with your actual EmailJS Public Key
+      // Go to: https://dashboard.emailjs.com/admin/account
+      const PUBLIC_KEY  = 'sNMA6vcboIYLiSOgq';  // <-- CHANGE THIS TO YOUR ACTUAL PUBLIC KEY
+      
       const SERVICE_ID  = 'service_rcoz3es';
       const TEMPLATE_ID = 'template_dtmqblu';
+
+      // Initialize EmailJS with your public key
+      emailjs.init({
+        publicKey: PUBLIC_KEY,
+        // Do not block on failed initialization
+        blockHeadless: false,
+      });
 
       function showToast(message) {
         const toast = document.createElement('div');
@@ -461,14 +468,21 @@
           background: '#F3E2D4', color: '#B45F3A',
           padding: '12px 20px', borderRadius: '14px',
           fontSize: '0.85rem', zIndex: '9999',
-          fontWeight: '500', boxShadow: '0 8px 20px rgba(0,0,0,0.10)'
+          fontWeight: '500', boxShadow: '0 8px 20px rgba(0,0,0,0.10)',
+          maxWidth: '90%',
+          fontFamily: 'Inter, sans-serif'
         });
         document.body.appendChild(toast);
-        setTimeout(() => toast.remove(), 2500);
+        setTimeout(() => {
+          toast.style.opacity = '0';
+          toast.style.transition = 'opacity 0.3s';
+          setTimeout(() => toast.remove(), 400);
+        }, 3000);
       }
 
       function displaySuccess() {
         successDiv.style.display = 'block';
+        successDiv.style.opacity = '1';
         form.reset();
         successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
         setTimeout(() => {
@@ -483,7 +497,10 @@
       }
 
       function setError(id, hasError) {
-        document.getElementById(id).style.borderColor = hasError ? '#C8684A' : '#E8DFD6';
+        const element = document.getElementById(id);
+        if (element) {
+          element.style.borderColor = hasError ? '#C8684A' : '#E8DFD6';
+        }
       }
 
       form.addEventListener('submit', function (e) {
@@ -519,18 +536,45 @@
 
         sendBtn.disabled = true;
         btnLabel.textContent = 'Sending...';
+        sendBtn.style.opacity = '0.7';
+
+        // Log the attempt for debugging
+        console.log('📧 Sending email via EmailJS...');
+        console.log('Service ID:', SERVICE_ID);
+        console.log('Template ID:', TEMPLATE_ID);
+        console.log('Params:', templateParams);
 
         emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams)
-          .then(function () {
+          .then(function (response) {
+            console.log('✅ Email sent successfully!', response);
             displaySuccess();
           })
           .catch(function (err) {
-            console.error('EmailJS error:', err);
-            showToast('⚠️ Message could not be sent, please try again');
+            console.error('❌ EmailJS error details:', err);
+            
+            // Show more specific error message
+            let errorMessage = '⚠️ Message could not be sent, please try again';
+            if (err.status === 403) {
+              errorMessage = '⚠️ Authentication failed. Please check your EmailJS Public Key.';
+            } else if (err.status === 400) {
+              errorMessage = '⚠️ Invalid request. Please check your Service & Template IDs.';
+            } else if (err.text) {
+              // Try to extract more info from the error
+              try {
+                const errorData = JSON.parse(err.text);
+                if (errorData.message) {
+                  errorMessage = '⚠️ ' + errorData.message;
+                }
+              } catch (e) {
+                // If parsing fails, use the fallback message
+              }
+            }
+            showToast(errorMessage);
           })
           .finally(function () {
             sendBtn.disabled = false;
             btnLabel.textContent = 'Send Message';
+            sendBtn.style.opacity = '1';
           });
       });
     })();
