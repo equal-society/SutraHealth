@@ -1,12 +1,12 @@
 /* =========================
    PREMIUM FOOTER DESIGN (IMPROVED)
 ========================= */
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap');
 .footer{
     background: linear-gradient(135deg, #061b14, #0f2e24);
     color: #eaf5ef;
     padding: 50px 8% 50px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     position: relative;
     overflow: hidden;
 }
@@ -75,6 +75,7 @@
 }
 
 .footer-brand h2{
+    font-family: 'Playfair Display', serif;
     font-size:26px;
     font-weight:700;
 }
