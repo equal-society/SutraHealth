@@ -326,14 +326,61 @@
     .decl-text{ display: flex; flex-direction: column; align-items: center; }
     .decl-text p{ font-size: var(--text-base); color: var(--muted); margin-bottom: 28px; max-width: 600px; }
 
-    .btn-outline {
-      display: inline-flex; align-items: center; gap: 8px;
-      border: 1.5px solid var(--green); color: var(--green);
-      padding: 11px 26px; border-radius: 100px;
-      font-size: var(--text-sm); font-weight: 600; text-decoration: none;
-      transition: background .2s, color .2s; margin: 0 auto;
+    /* ══════════════ DECLARATION BUTTONS — updated ══════════════ */
+    .decl-btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 4px;
     }
-    .btn-outline:hover { background: var(--green); color: #fff; }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1.5px solid var(--green);
+      color: var(--green);
+      background: transparent;
+      padding: 11px 26px;
+      border-radius: 100px;
+      font-size: var(--text-sm);
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background .25s ease, color .25s ease, transform .25s ease, box-shadow .25s ease;
+    }
+
+    .btn-outline i {
+      font-size: 1em;
+      transition: transform .25s ease;
+    }
+
+    .btn-outline:hover {
+      background: var(--green);
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(26,102,69,.25);
+    }
+
+    .btn-outline:hover i {
+      transform: translateX(3px);
+    }
+
+    .btn-outline:active {
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 480px) {
+      .decl-btn-row {
+        flex-direction: column;
+        width: 100%;
+      }
+      .btn-outline {
+        justify-content: center;
+        width: 100%;
+      }
+    }
 
     .donate {
       background:
@@ -544,9 +591,15 @@
           <span class="eyebrow">TCIH</span>
           <h2>Declaration</h2>
           <p>We are a proud signatory to the Traditional Complementary Integrative Healthcare (TCIH) Declaration, affirming our commitment to inclusive, evidence-based health practices.</p>
-          <a href="/tcih-declaration.html" class="btn-outline">
-            Read the TCIH Declaration <i class="ri-arrow-right-line"></i>
-          </a>
+
+          <div class="decl-btn-row">
+            <a href="https://tcih.org/wp-content/uploads/2022/09/2022.03.09_TCIH-Declaration_English.pdf" class="btn-outline">
+              Read the TCIH Declaration <i class="ri-arrow-right-line"></i>
+            </a>
+            <a href="https://www.tcih.org/organisational-signatories/?search_fields%5B30%5D=Country+level&search_fields%5B28%5D=NGO%2FOther&search_fields%5B12%5D&search_fields%5B20%5D&view_id=1630&pagenum=2" class="btn-outline">
+              View TCIH Signatories <i class="ri-arrow-right-line"></i>
+            </a>
+          </div>
         </div>
       </div>
     </div>
