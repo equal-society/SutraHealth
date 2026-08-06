@@ -73,7 +73,7 @@ img{
 
   background:
   linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.6)),
-  url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=1800&auto=format&fit=crop');
+  url('/images/diet.jpeg');
 
   background-size:cover;
   background-position:center;
