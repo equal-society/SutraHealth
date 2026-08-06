@@ -47,6 +47,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://img.youtube.com">
+  <link rel="preconnect" href="https://www.youtube.com">
   <link rel="preload" as="image" href="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=1800&auto=format&fit=crop">
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&display=swap" rel="stylesheet">
@@ -321,6 +323,59 @@
     .promoter-body .role { display: block; font-size: var(--text-xs); font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--lime); margin-bottom: 12px; }
     .promoter-body p { font-size: var(--text-sm); color: var(--muted); line-height: 1.75; }
 
+    /* ============================================================
+       VIDEO SECTION — lite/facade YouTube embed
+    ============================================================ */
+    .video-section { background: var(--white); }
+    .video-frame-outer {
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0,0,0,.14);
+      border: 1px solid var(--border);
+    }
+    .yt-facade {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #000 center/cover no-repeat;
+      cursor: pointer;
+      overflow: hidden;
+    }
+    .yt-facade iframe {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+    .yt-facade::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,.05) 0%, rgba(0,0,0,.45) 100%);
+      transition: background .25s;
+    }
+    .yt-facade:hover::after { background: linear-gradient(180deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.55) 100%); }
+    .yt-play-btn {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: clamp(64px, 9vw, 88px); height: clamp(64px, 9vw, 88px);
+      border-radius: 50%;
+      background: var(--lime);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 10px 34px rgba(46,184,114,.5);
+      z-index: 2;
+      transition: transform .25s, background .25s;
+    }
+    .yt-facade:hover .yt-play-btn { transform: translate(-50%, -50%) scale(1.08); background: #fff; }
+    .yt-play-btn i { font-size: clamp(26px, 3.4vw, 34px); color: var(--forest); margin-left: 4px; }
+    .yt-facade-caption {
+      position: absolute; left: 0; right: 0; bottom: 0; z-index: 2;
+      padding: clamp(16px,3vw,28px);
+      color: #fff;
+    }
+    .yt-facade-caption h3 { font-family: var(--ff-display); font-size: var(--text-lg); font-weight: 600; margin-bottom: 4px; }
+    .yt-facade-caption span { font-size: var(--text-xs); color: rgba(255,255,255,.75); letter-spacing: .06em; text-transform: uppercase; }
+
     .declaration{ background: var(--white); display: flex; justify-content: center; }
     .decl-inner{ display: flex; justify-content: center; align-items: center; text-align: center; gap: clamp(32px,5vw,40px); background: var(--cream); border-radius: var(--radius-lg); padding: clamp(32px,5vw,64px); border: 1px solid var(--border); }
     .decl-text{ display: flex; flex-direction: column; align-items: center; }
@@ -583,6 +638,41 @@
     </div>
   </section>
 
+  <!-- ════════════════════════════════════════════════════════════════════
+       ✅ VIDEO SECTION — YouTube embed with thumbnail facade
+       Video: https://youtu.be/izgvAGiWhA0
+       Uses a "lite embed" pattern (thumbnail image + play button; the real
+       <iframe> is injected only on click) so the page doesn't pay YouTube's
+       ~1MB embed cost on first load — good for Core Web Vitals / SEO.
+  ════════════════════════════════════════════════════════════════════ -->
+  <section class="video-section" id="video">
+    <div class="wrap">
+      <div class="sec-head sec-head--center" data-aos="fade-up">
+        <span class="eyebrow">Watch</span>
+        <h2>EQUAL Society — Video</h2>
+        <p>See our chronic disease reversal work and integrative health approach in action.</p>
+      </div>
+
+      <div class="video-frame-outer" data-aos="fade-up" data-aos-delay="100">
+        <div
+          class="yt-facade"
+          id="ytFacade"
+          data-video-id="izgvAGiWhA0"
+          role="button"
+          tabindex="0"
+          aria-label="Play video: EQUAL Society"
+          style="background-image:url('https://img.youtube.com/vi/izgvAGiWhA0/maxresdefault.jpg');"
+        >
+          <div class="yt-play-btn"><i class="ri-play-fill" aria-hidden="true"></i></div>
+          <div class="yt-facade-caption">
+            <span>EQUAL Society</span>
+            <h3>Chair Persons </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ── DECLARATION ── -->
   <section class="declaration">
     <div class="wrap">
@@ -828,6 +918,38 @@
         if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
       });
     });
+
+    // ══════════════ YouTube "lite embed" facade ══════════════
+    // Loads the real iframe only after a click/keypress, so the page
+    // doesn't load YouTube's player JS on first paint (better LCP/CLS,
+    // still fully crawlable because we also ship VideoObject schema below).
+    (function () {
+      const facade = document.getElementById('ytFacade');
+      if (!facade) return;
+
+      function loadVideo() {
+        const videoId = facade.getAttribute('data-video-id');
+        const iframe = document.createElement('iframe');
+        iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`);
+        iframe.setAttribute('title', 'EQUAL Society video');
+        iframe.setAttribute('frameborder', '0');
+        iframe.setAttribute('loading', 'lazy');
+        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+        iframe.setAttribute('allowfullscreen', '');
+        facade.innerHTML = '';
+        facade.appendChild(iframe);
+        facade.removeAttribute('role');
+        facade.removeAttribute('tabindex');
+      }
+
+      facade.addEventListener('click', loadVideo, { once: true });
+      facade.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          loadVideo();
+        }
+      }, { once: true });
+    })();
   </script>
 
   <!-- Google Analytics -->
@@ -911,6 +1033,39 @@
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lifequality.org.in/" },
       { "@type": "ListItem", "position": 2, "name": "About EQUAL Society", "item": "https://lifequality.org.in/equal-society.html" }
     ]
+  }
+  </script>
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       ✅ SEO: VideoObject schema — for Google Video rich results & indexing
+       ⚠️ REPLACE the placeholders below (uploadDate, duration) with the
+       video's ACTUAL upload date and length before publishing — Google
+       Search Console will flag "missing field" warnings for VideoObject
+       if these are wrong or left as placeholders.
+  ════════════════════════════════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "EQUAL Society — Chronic Disease Reversal, Faridabad",
+    "description": "A video from EQUAL Society (Life Quality), a Faridabad-based NGO reversing chronic diseases like diabetes, obesity and hypertension through Yoga therapy, Ayurveda and integrative medicine.",
+    "thumbnailUrl": [
+      "https://img.youtube.com/vi/izgvAGiWhA0/maxresdefault.jpg",
+      "https://img.youtube.com/vi/izgvAGiWhA0/hqdefault.jpg"
+    ],
+    "uploadDate": "2024-01-01T00:00:00+05:30",
+    "duration": "PT5M",
+    "contentUrl": "https://youtu.be/izgvAGiWhA0",
+    "embedUrl": "https://www.youtube.com/embed/izgvAGiWhA0",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Life Quality / EQUAL Society",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://lifequality.org.in/assets/images/og-image.jpg"
+      }
+    },
+    "isFamilyFriendly": true
   }
   </script>
 
