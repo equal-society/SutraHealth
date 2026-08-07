@@ -247,13 +247,35 @@
       overflow:hidden;
       box-shadow:0 20px 50px rgba(0,0,0,0.12);
       aspect-ratio:16/9;
+      background:#000;
     }
 
-    .skd-video-box iframe{
+    .skd-video-box iframe,
+    .skd-video-box video{
       width:100%;
       height:100%;
       border:none;
       display:block;
+      object-fit:cover;
+    }
+
+    /* Two-video row */
+    .skd-video-row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    .skd-video-item h3{
+      font-size:22px;
+      color:#116149;
+      margin-bottom:16px;
+    }
+
+    .skd-video-item .skd-video-box{
+      max-width:100%;
     }
 
     /* CTA */
@@ -311,6 +333,10 @@
     @media(max-width:991px){
 
       .skd-section-wrapper{
+        grid-template-columns:1fr;
+      }
+
+      .skd-video-row{
         grid-template-columns:1fr;
       }
 
@@ -436,20 +462,41 @@
     </div>
   </section>
 
-  <!-- VIDEO SECTION -->
+  <!-- VIDEO SECTION: BOTH VIDEOS -->
   <section class="skd-video-section">
     <h2 data-aos="fade-up" data-aos-duration="800">Celebrating Joy at Every Age</h2>
     <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
       Sharing moments of elderly people rejoicing together through singing, dancing and collective celebration,
       promoting happiness, energy and wellness for everyone.
     </p>
-    <div class="skd-video-box" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="150">
-      <iframe
-        src="/images/vedio.mp4"
-        title="Elderly community singing, Kirtan and dance celebration at Life Quality"
-        loading="lazy"
-        allowfullscreen>
-      </iframe>
+
+    <div class="skd-video-row">
+
+      <!-- VIDEO 1: Locally hosted mp4 -->
+      <div class="skd-video-item" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="150">
+        <h3>From Our Own Sessions</h3>
+        <div class="skd-video-box">
+          <video controls preload="metadata" poster="/images/vedio-poster.jpg">
+            <source src="/images/vedio.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+      <!-- VIDEO 2: YouTube video -->
+      <div class="skd-video-item" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="250">
+        <h3>Watch on YouTube</h3>
+        <div class="skd-video-box">
+          <iframe
+            src="https://www.youtube.com/embed/ScMzIvxBSi4"
+            title="Elderly community singing, Kirtan and dance celebration"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -555,7 +602,6 @@
 </script>
 
 <!-- ============ SERVICE / MEDICAL THERAPY SCHEMA ============ -->
-<!-- FIXED: url now matches the canonical URL (was missing "/programs/" segment) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -575,11 +621,31 @@
 }
 </script>
 
-<!-- ============ VIDEO SCHEMA (enables video rich results) ============ -->
-<!-- FIXED: uploadDate now includes full ISO 8601 datetime + IST timezone offset (+05:30) -->
-<!-- ⚠️ IMPORTANT: "2024-01-01T09:00:00+05:30" is a placeholder — please replace with the ACTUAL -->
-<!-- YouTube publish date/time. Check it on the YouTube video page under "Show more" > "Published on". -->
-<!-- Also consider adding "duration" once known, e.g. "duration": "PT3M20S" (ISO 8601 duration format). -->
+<!-- ============ VIDEO SCHEMA #1: Locally hosted mp4 ============ -->
+<!-- ⚠️ TODO: replace uploadDate and duration below with the REAL values for this clip. -->
+<!-- uploadDate = the date this video was first published/uploaded on YOUR site, in -->
+<!-- YYYY-MM-DDTHH:MM:SS+05:30 format. duration = ISO 8601 format, e.g. PT3M20S for 3 min 20 sec. -->
+<!-- Also add a real thumbnailUrl (a static jpg/png frame from the video) at /images/vedio-poster.jpg -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Celebrating Joy at Every Age - Singing, Kirtan & Dance (Session Recording)",
+  "description": "Elderly community members from Life Quality rejoicing together through singing, dancing and collective celebration during an in-person session.",
+  "thumbnailUrl": "https://lifequality.org.in/images/vedio-poster.jpg",
+  "uploadDate": "TODO_REPLACE_WITH_REAL_DATE_e.g._2024-03-15T10:00:00+05:30",
+  "duration": "TODO_REPLACE_e.g._PT3M20S",
+  "contentUrl": "https://lifequality.org.in/images/vedio.mp4",
+  "publisher": {
+    "@id": "https://lifequality.org.in/#organization"
+  }
+}
+</script>
+
+<!-- ============ VIDEO SCHEMA #2: YouTube video ============ -->
+<!-- ⚠️ TODO: replace uploadDate and duration below with the REAL values from YouTube. -->
+<!-- Check https://youtu.be/ScMzIvxBSi4 -> click "...more" under the video (or YouTube Studio) -->
+<!-- for the exact publish date/time, and the player for the exact duration. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -587,7 +653,8 @@
   "name": "Celebrating Joy at Every Age - Singing, Kirtan & Dance",
   "description": "Elderly community members rejoicing together through singing, dancing and collective celebration, promoting happiness, energy and wellness for everyone.",
   "thumbnailUrl": "https://i.ytimg.com/vi/ScMzIvxBSi4/hqdefault.jpg",
-  "uploadDate": "2024-01-01T09:00:00+05:30",
+  "uploadDate": "TODO_REPLACE_WITH_REAL_DATE_e.g._2024-01-10T09:00:00+05:30",
+  "duration": "TODO_REPLACE_e.g._PT4M12S",
   "embedUrl": "https://www.youtube.com/embed/ScMzIvxBSi4",
   "publisher": {
     "@id": "https://lifequality.org.in/#organization"
@@ -596,7 +663,6 @@
 </script>
 
 <!-- ============ BREADCRUMB SCHEMA ============ -->
-<!-- FIXED: last item's url now matches the canonical URL (was missing "/programs/" segment) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
