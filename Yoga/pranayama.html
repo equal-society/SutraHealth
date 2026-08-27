@@ -190,7 +190,6 @@
       Visit Our Archive
     </a>
 </div>
-</section>
 
 <section aria-labelledby="how-to-heading" class="content-section" id="how-to-practice-pranayama">
 <div class="content-copy">
@@ -301,6 +300,9 @@
           Visit Our Archive
         </a>
 </section>
+</section>
+
+
 <footer id="footer"></footer>
 <script src="../js/include.js"></script>
 <!-- AOS -->
@@ -502,5 +504,42 @@
       }
     }
   ]
-}</script></body>
+}</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  faqItems.forEach(function (item) {
+
+    const button = item.querySelector(".faq-question");
+
+    button.addEventListener("click", function () {
+
+      const isOpen = item.classList.contains("active");
+
+      // Close all FAQs
+      faqItems.forEach(function (otherItem) {
+        otherItem.classList.remove("active");
+
+        const otherButton = otherItem.querySelector(".faq-question");
+        if (otherButton) {
+          otherButton.setAttribute("aria-expanded", "false");
+        }
+      });
+
+      // Open clicked FAQ
+      if (!isOpen) {
+        item.classList.add("active");
+        button.setAttribute("aria-expanded", "true");
+      }
+
+    });
+
+  });
+
+});
+</script>
+
+</body>
 </html>
