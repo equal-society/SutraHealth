@@ -48,7 +48,7 @@
   <link rel="preconnect" href="https://www.googletagmanager.com">
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles/Index.css">
+  <link rel="stylesheet" href="./styles/index.css">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-70BG55XT3Q"></script>
   <script>
@@ -81,24 +81,30 @@
   aria-label="Sutra Health — Lifestyle Medicine & Yoga Therapy Faridabad"
 >
   <!--
-    YouTube background: youtu.be/L-nso_FkKZ0, starts at 3s, muted +
-    looped + autoplaying, controls/branding suppressed as much as
-    YouTube allows. Wrapped in .hero-video-wrap so the iframe can be
-    oversized and centered to fill the section the way object-fit:
-    cover does for a native <video> (iframes don't support that
-    property directly).
+    Primary source: your real archive.org footage.
+    Second <source> is a backup — if the archive.org file ever 404s
+    or is slow, the browser automatically tries the next one instead
+    of showing nothing. If both fail, the JS below removes the
+    <video> tag entirely and the CSS background image shows instead.
   -->
-  <div class="hero-video-wrap" id="heroVideoWrap">
-    <iframe
-      id="heroYoutube"
-      class="hero-video-frame"
-      src="https://www.youtube.com/embed/L-nso_FkKZ0?autoplay=1&mute=1&loop=1&playlist=L-nso_FkKZ0&start=3&controls=0&modestbranding=1&rel=0&showinfo=0&playsinline=1&iv_load_policy=3&enablejsapi=1"
-      title="Sutra Health hero background video"
-      frameborder="0"
-      allow="autoplay; encrypted-media"
-      referrerpolicy="strict-origin-when-cross-origin"
-    ></iframe>
-  </div>
+  <video
+    id="heroVideo"
+    class="hero-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="auto"
+  >
+    <source
+      src="./images/bannervideo.mp4"
+      type="video/mp4"
+    >
+    <!-- <source
+      src="https://assets.mixkit.co/videos/4420/4420-720.mp4"
+      type="video/mp4"
+    > -->
+  </video>
 
   <div class="hero-overlay" aria-hidden="true"></div>
 
@@ -551,75 +557,54 @@
   <!-- HERO VIDEO RELIABILITY -->
   <script>
     (function () {
-      const wrap = document.getElementById('heroVideoWrap');
-      const frame = document.getElementById('heroYoutube');
-      if (!wrap || !frame) return;
+      const video = document.getElementById('heroVideo');
+      if (!video) return;
 
-      let player = null;
-      let apiFailed = false;
+      // Fade the video in only once it has an actual frame ready,
+      // so refresh never shows a flash of black before the fallback
+      // background image is covered.
+      function markReady() { video.classList.add('is-ready'); }
+      video.addEventListener('loadeddata', markReady);
+      video.addEventListener('canplay', markReady);
 
-      // Fade the embed in once the YouTube player actually confirms
-      // it's ready, so refresh never shows a flash of an empty box
-      // before the fallback background image is covered.
-      function markReady() { wrap.classList.add('is-ready'); }
-
-      // Load the YouTube IFrame API script and wire up the player
-      // once it's available.
-      const apiScript = document.createElement('script');
-      apiScript.src = 'https://www.youtube.com/iframe_api';
-      document.head.appendChild(apiScript);
-
-      // If the API script itself fails to load (network block,
-      // ad-blocker, etc.), don't leave the hero stuck waiting —
-      // show the embed as-is after a short timeout.
-      const apiTimeout = setTimeout(function () {
-        if (!player) { apiFailed = true; markReady(); }
-      }, 4000);
-
-      window.onYouTubeIframeAPIReady = function () {
-        player = new YT.Player('heroYoutube', {
-          events: {
-            onReady: function () {
-              clearTimeout(apiTimeout);
-              markReady();
-            },
-            onError: function () {
-              // Video unavailable/removed/blocked — drop the whole
-              // embed so the CSS background image shows cleanly.
-              wrap.remove();
-            }
-          }
-        });
-      };
-
+      // Some browsers (mobile Safari especially) can leave a muted
+      // autoplay video paused after a refresh, a cached back/forward
+      // navigation, or a tab coming back into focus. Force play in
+      // all of those cases.
       function tryPlay() {
-        if (player && typeof player.playVideo === 'function') player.playVideo();
+        const p = video.play();
+        if (p && typeof p.catch === 'function') p.catch(() => {});
       }
-      function tryPause() {
-        if (player && typeof player.pauseVideo === 'function') player.pauseVideo();
-      }
-
-      // Some browsers can leave a muted autoplay embed paused after
-      // a refresh, a cached back/forward navigation, or a tab coming
-      // back into focus. Force play in all of those cases.
+      document.addEventListener('DOMContentLoaded', tryPlay);
       window.addEventListener('pageshow', tryPlay);
       document.addEventListener('visibilitychange', function () {
-        if (!document.hidden) tryPlay();
+        if (!document.hidden && video.paused) tryPlay();
       });
 
       // SCROLL-LINKED PLAYBACK: only run the video while the hero
       // is actually on screen. Pause the instant it scrolls out of
-      // view, resume the instant it scrolls back in.
+      // view, resume the instant it scrolls back in. Saves battery
+      // and CPU on mobile, and means the video is always at the
+      // right point when the user scrolls back up to it.
       if ('IntersectionObserver' in window) {
         const heroObserver = new IntersectionObserver(function (entries) {
           entries.forEach(function (entry) {
-            if (apiFailed) return; // no player object to control
-            if (entry.isIntersecting) tryPlay();
-            else tryPause();
+            if (entry.isIntersecting) {
+              tryPlay();
+            } else {
+              video.pause();
+            }
           });
         }, { threshold: 0.15 });
-        heroObserver.observe(wrap);
+        heroObserver.observe(video);
       }
+
+      // If the video source ever fails to load, remove the <video>
+      // element entirely so the hero's CSS background-image shows
+      // cleanly instead of a broken video box.
+      video.addEventListener('error', function () {
+        video.remove();
+      });
     })();
   </script>
 
