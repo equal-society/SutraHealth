@@ -38,7 +38,7 @@ body{
   margin-bottom:20px;
 }
 
-.section-title h2{
+.section-title h1{
 
   font-size:3.5rem;
 
@@ -85,7 +85,7 @@ body{
     0 12px 40px rgba(0,0,0,0.06);
 }
 
-.protocol-card h3{
+.protocol-card h2{
 
   font-size:2rem;
 
@@ -146,7 +146,7 @@ body{
   font-weight:700;
 }
 
-.practice-item h4{
+.practice-item h3{
 
   font-size:1.1rem;
 
@@ -263,7 +263,7 @@ body{
     grid-template-columns:1fr;
   }
 
-  .section-title h2{
+  .section-title h1{
 
     font-size:2.6rem;
   }
@@ -291,8 +291,81 @@ body{
     height:220px;
   }
 
-  .section-title h2{
+  .section-title h1{
 
+    font-size:2.1rem;
+  }
+}
+
+/* ================= SEO CONTENT SECTIONS =================
+   Uses the existing visual language; no layout redesign.
+========================================================== */
+
+.pranayama-overview{
+  margin-top: 2rem;
+}
+
+.pranayama-overview h2{
+  font-size: 2rem;
+  margin: 14px 0 18px;
+  line-height: 1.2;
+}
+
+.pranayama-overview p{
+  color:#65726D;
+  line-height:1.8;
+  font-size:0.98rem;
+  margin-bottom:14px;
+}
+
+.seo-faq-list{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  margin-top:24px;
+}
+
+.seo-faq-item{
+  padding:20px;
+  border-radius:20px;
+  background:#FAF8F4;
+}
+
+.seo-faq-item h3{
+  font-size:1.08rem;
+  margin-bottom:8px;
+  color:#1F3A30;
+}
+
+.seo-faq-item p{
+  margin:0;
+  font-size:0.95rem;
+}
+
+.practice-item h3{
+  font-size:1.1rem;
+  margin-bottom:6px;
+}
+
+.practice-item p{
+  color:#65726D;
+  line-height:1.7;
+  font-size:0.95rem;
+  margin:0;
+}
+
+.video-content h3{
+  font-size:1.4rem;
+}
+
+@media(max-width:992px){
+  .section-title h1{
+    font-size:2.6rem;
+  }
+}
+
+@media(max-width:768px){
+  .section-title h1{
     font-size:2.1rem;
   }
 }
