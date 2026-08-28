@@ -33,10 +33,9 @@ text-align:center;
 
 background:
 linear-gradient(rgba(0,0,0,.40),rgba(0,0,0,.40)),
-url('/images/Gemini_Generated_Image_jqyw4yjqyw4yjqyw.png');
-
+url('/images/meditation-hero.jpg') no-repeat;
 background-size:cover;
-background-position:center;
+
 }
 
 .dhyana-hero h1{
@@ -135,4 +134,153 @@ font-size:36px;
 padding:70px 0;
 }
 
+}
+
+/* ============================================================
+   SEO CONTENT + FAQ — DHYANA MEDITATION
+   Added without changing the existing visual direction.
+============================================================ */
+
+.dhyana-hero .dhyana-container{
+  padding:40px 0;
+}
+
+.dhyana-seo-intro{
+  padding:90px 0;
+  background:#fff;
+}
+
+.dhyana-seo-header{
+  max-width:850px;
+  margin:0 auto 45px;
+  text-align:center;
+}
+
+.dhyana-seo-header > span,
+.dhyana-faq .dhyana-title > span{
+  display:inline-block;
+  color:var(--gold);
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:1.5px;
+  margin-bottom:14px;
+}
+
+.dhyana-seo-header h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:52px;
+  color:var(--primary);
+  margin-bottom:16px;
+}
+
+.dhyana-seo-header p{
+  color:#5d6665;
+  font-size:18px;
+  line-height:1.85;
+}
+
+.dhyana-seo-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+.dhyana-seo-grid article{
+  padding:30px;
+  border-radius:24px;
+  background:var(--bg);
+  border:1px solid rgba(201,168,106,.2);
+}
+
+.dhyana-seo-grid h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:28px;
+  color:var(--primary);
+  margin-bottom:10px;
+}
+
+.dhyana-seo-grid p{
+  color:#5d6665;
+  line-height:1.8;
+}
+
+.dhyana-title > p{
+  max-width:720px;
+  margin:14px auto 0;
+  color:#66706f;
+  line-height:1.8;
+}
+
+.dhyana-faq{
+  padding:100px 0;
+  background:#fff;
+}
+
+.dhyana-faq-list{
+  max-width:900px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.dhyana-faq-list details{
+  background:var(--bg);
+  border-radius:16px;
+  padding:0 25px;
+  border:1px solid rgba(201,168,106,.18);
+}
+
+.dhyana-faq-list summary{
+  cursor:pointer;
+  list-style:none;
+  padding:22px 0;
+  color:var(--primary);
+  font-weight:600;
+  font-size:17px;
+}
+
+.dhyana-faq-list summary::-webkit-details-marker{
+  display:none;
+}
+
+.dhyana-faq-list summary::after{
+  content:"+";
+  float:right;
+  color:var(--gold);
+  font-size:24px;
+}
+
+.dhyana-faq-list details[open] summary::after{
+  content:"−";
+}
+
+.dhyana-faq-list details p{
+  color:#5d6665;
+  line-height:1.8;
+  padding:0 0 22px;
+  margin:0;
+}
+
+@media(max-width:768px){
+  .dhyana-seo-intro,
+  .dhyana-faq{
+    padding:70px 0;
+  }
+
+  .dhyana-seo-header h2{
+    font-size:38px;
+  }
+
+  .dhyana-seo-grid{
+    grid-template-columns:1fr;
+  }
+
+  .dhyana-seo-header p{
+    font-size:16px;
+  }
+
+  .dhyana-faq-list details{
+    padding:0 18px;
+  }
 }
