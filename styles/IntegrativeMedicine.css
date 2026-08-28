@@ -1,4 +1,4 @@
-```css
+
 *{
   margin:0;
   padding:0;
@@ -525,4 +525,326 @@ FEATURE SECTION
   }
 
 }
-```
+
+
+
+/* SEO CTA — preserves existing design */
+.watch-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;margin-top:8px;padding:12px 18px;border-radius:12px;background:#0b4d43;color:#fff;text-decoration:none;font-size:.88rem;font-weight:700;transition:background .25s ease,transform .25s ease}.watch-btn:hover{background:#083a33;transform:translateY(-2px)}
+@media(max-width:768px){.watch-btn{width:100%}}
+
+
+/* ============================================================
+   SEO + ONLINE CONSULTATION CONTENT
+   Visual language follows existing IntegrativeMedicine.css.
+============================================================ */
+
+.hero-cta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:10px;
+}
+
+.primary-cta,
+.secondary-cta{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:50px;
+  padding:13px 22px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:700;
+  transition:.3s ease;
+}
+
+.primary-cta{
+  background:#0b4d43;
+  color:#fff;
+}
+
+.primary-cta:hover{
+  background:#083a33;
+  transform:translateY(-2px);
+}
+
+.secondary-cta{
+  background:#dceee7;
+  color:#0b4d43;
+}
+
+.secondary-cta:hover{
+  background:#cbe3da;
+  transform:translateY(-2px);
+}
+
+.seo-content-section{
+  padding:110px 0;
+  background:#f7f5f1;
+}
+
+.seo-content-header{
+  max-width:850px;
+  margin:0 auto 55px;
+  text-align:center;
+}
+
+.seo-content-header > span{
+  display:inline-block;
+  padding:9px 18px;
+  background:#dceee7;
+  color:#0b4d43;
+  border-radius:50px;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.8px;
+  margin-bottom:18px;
+}
+
+.seo-content-header h2{
+  font-family:'Playfair Display',serif;
+  font-size:52px;
+  line-height:1.2;
+  color:#0a2d28;
+  margin-bottom:18px;
+}
+
+.seo-content-header p{
+  color:#666;
+  line-height:1.9;
+  font-size:18px;
+}
+
+.seo-content-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+.seo-content-card{
+  background:#fff;
+  padding:32px;
+  border-radius:25px;
+  box-shadow:0 12px 35px rgba(0,0,0,.06);
+  border:1px solid transparent;
+  transition:.3s ease;
+}
+
+.seo-content-card:hover{
+  transform:translateY(-5px);
+  border-color:#d8ebe4;
+}
+
+.seo-content-card h3{
+  font-family:'Playfair Display',serif;
+  color:#0b4d43;
+  font-size:25px;
+  margin-bottom:12px;
+}
+
+.seo-content-card p{
+  color:#555;
+  line-height:1.8;
+  font-size:16px;
+}
+
+.seo-info-block{
+  max-width:950px;
+  margin:35px auto 0;
+  background:#fff;
+  padding:38px;
+  border-radius:28px;
+  box-shadow:0 12px 35px rgba(0,0,0,.05);
+}
+
+.seo-info-block h2{
+  font-family:'Playfair Display',serif;
+  color:#0a2d28;
+  font-size:34px;
+  margin-bottom:14px;
+}
+
+.seo-info-block p{
+  color:#555;
+  line-height:1.9;
+  font-size:17px;
+}
+
+.consultation-section{
+  padding:110px 0;
+  background:#fff;
+}
+
+.consultation-grid{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:55px;
+  align-items:center;
+}
+
+.consultation-content > span{
+  display:inline-block;
+  padding:9px 18px;
+  background:#dceee7;
+  color:#0b4d43;
+  border-radius:50px;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.8px;
+  margin-bottom:20px;
+}
+
+.consultation-content h2{
+  font-family:'Playfair Display',serif;
+  font-size:52px;
+  line-height:1.2;
+  color:#0a2d28;
+  margin-bottom:22px;
+}
+
+.consultation-content p{
+  color:#555;
+  line-height:1.9;
+  font-size:17px;
+  margin-bottom:18px;
+}
+
+.consultation-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:28px;
+}
+
+.consultation-box{
+  background:#f7f5f1;
+  padding:38px;
+  border-radius:30px;
+  box-shadow:0 15px 40px rgba(0,0,0,.07);
+}
+
+.consultation-box h3{
+  font-family:'Playfair Display',serif;
+  color:#0b4d43;
+  font-size:28px;
+  margin-bottom:20px;
+}
+
+.consultation-box ul{
+  padding-left:20px;
+  margin:0 0 22px;
+}
+
+.consultation-box li{
+  color:#555;
+  line-height:1.8;
+  margin-bottom:10px;
+}
+
+.consultation-note{
+  border-left:3px solid #0b4d43;
+  padding-left:15px;
+  color:#666;
+  line-height:1.7;
+  font-size:14px;
+}
+
+.integrative-faq{
+  padding:110px 0;
+  background:#f7f5f1;
+}
+
+.faq-grid{
+  max-width:950px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.faq-grid details{
+  background:#fff;
+  border-radius:18px;
+  padding:0 25px;
+  box-shadow:0 8px 25px rgba(0,0,0,.05);
+}
+
+.faq-grid summary{
+  cursor:pointer;
+  padding:22px 0;
+  color:#0a2d28;
+  font-weight:700;
+  font-size:17px;
+  list-style:none;
+}
+
+.faq-grid summary::-webkit-details-marker{
+  display:none;
+}
+
+.faq-grid summary:after{
+  content:'+';
+  float:right;
+  color:#0b4d43;
+  font-size:25px;
+  line-height:1;
+}
+
+.faq-grid details[open] summary:after{
+  content:'−';
+}
+
+.faq-grid details p{
+  color:#555;
+  line-height:1.8;
+  padding:0 0 22px;
+  margin:0;
+}
+
+@media(max-width:991px){
+  .seo-content-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .consultation-grid{
+    grid-template-columns:1fr;
+  }
+
+  .seo-content-header h2,
+  .consultation-content h2{
+    font-size:42px;
+  }
+}
+
+@media(max-width:768px){
+  .hero-cta,
+  .consultation-actions{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .primary-cta,
+  .secondary-cta{
+    width:100%;
+  }
+
+  .seo-content-section,
+  .consultation-section,
+  .integrative-faq{
+    padding:80px 0;
+  }
+
+  .seo-content-grid{
+    grid-template-columns:1fr;
+  }
+
+  .seo-content-header h2,
+  .consultation-content h2{
+    font-size:34px;
+  }
+
+  .seo-info-block,
+  .consultation-box{
+    padding:28px;
+  }
+}
