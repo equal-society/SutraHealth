@@ -522,7 +522,14 @@ body {
    • This lets image's natural aspect ratio determine height
    • Grid row height is then driven by the tallest cell in that row
 ---------------------------------------------------------------- */
-.side-image-top,
+.side-image-top{
+  overflow: hidden;
+  border-radius: 20px;
+  padding: 0 50px 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.09);
+  line-height: 0;           /* removes invisible gap under img */
+  text-align: center;
+}
 .side-image-bottom {
   overflow: hidden;
   border-radius: 20px;
@@ -532,12 +539,18 @@ body {
   transition: transform 0.25s ease;
 }
 
-.side-image-top:hover,
 .side-image-bottom:hover {
   transform: translateY(-3px);
 }
 
-.side-image-top img,
+.side-image-top img{
+  width: 100%;
+  height: auto;             /* natural ratio — no cropping */
+  display: block;
+  position: static;         /* out of absolute positioning */
+  object-fit: unset;        /* not needed with auto height */
+  margin-bottom: 30px;
+}
 .side-image-bottom img {
   width: 100%;
   height: auto;             /* natural ratio — no cropping */
@@ -547,7 +560,6 @@ body {
   transition: transform 0.55s ease;
 }
 
-.side-image-top:hover img,
 .side-image-bottom:hover img {
   transform: scale(1.04);
 }
