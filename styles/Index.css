@@ -58,7 +58,6 @@ img { max-width: 100%; height: auto; }
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat;
   padding-top: 80px;
   padding-bottom: 140px;
 }
@@ -119,9 +118,12 @@ img { max-width: 100%; height: auto; }
   position: relative;
   z-index: 10;
   text-align: center;
-  max-width: 950px;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: clamp(40px,8vw,100px) clamp(16px,4vw,20px);
+  margin-top: 50px;
 }
 
 .tagline {
@@ -149,6 +151,7 @@ img { max-width: 100%; height: auto; }
   font-size: var(--step-7);
   line-height: 1.1;
   color: #fff;
+  width: 100% !important;
   margin-bottom: clamp(18px,3vw,25px);
 }
 .hero-content h1 span { color: #2eb872; }
@@ -650,6 +653,78 @@ img { max-width: 100%; height: auto; }
 .cm-success i { font-size:2.4rem; color:#2eb872; margin-bottom:10px; }
 .cm-success h4 { font-family:'Playfair Display',serif; color:#18301f; margin-bottom:8px; font-size:var(--step-2); }
 .cm-success p { color:#6b7a66; font-size:var(--step--1); }
+
+/* ============================================================
+   DOCTOR-LED HERO
+   The homepage starts with the clinician and consultation, not a
+   generic catalogue of wellness services.
+============================================================ */
+.hero-section {
+  min-height: min(920px, 100svh);
+  padding: 110px clamp(20px, 6vw, 88px) 132px;
+  justify-content: stretch;
+  background: #0d251c;
+}
+.hero-overlay { background: linear-gradient(90deg, rgba(7, 23, 16, .96) 0%, rgba(9, 31, 21, .88) 48%, rgba(8, 28, 19, .48) 100%); }
+.hero-layout {
+  position: relative;
+  z-index: 2;
+  width: min(1280px, 100%);
+  margin: auto;
+  display: grid;
+  grid-template-columns: minmax(0, .94fr) minmax(350px, .86fr);
+  gap: clamp(36px, 6vw, 96px);
+  align-items: center;
+}
+.hero-content.hero-copy { max-width: 650px; padding: 0; text-align: left; }
+.hero-eyebrow {
+  color: #d8e9cf !important;
+  font-size: var(--step--2) !important;
+  font-weight: 700;
+  letter-spacing: .12em;
+  line-height: 1.4;
+  margin-bottom: 18px !important;
+  text-transform: uppercase;
+}
+.hero-content h1 { max-width: fit-content; font-size: clamp(3rem, 5.1vw, 5.65rem); margin: auto; letter-spacing: -.04em; }
+.hero-content h1 span { color: #c8dba6; }
+.hero-lead { max-width: 590px !important; margin: 0 0 24px !important; font-size: var(--step-1) !important; line-height: 1.65; }
+.hero-doctor-line { display: flex; align-items: flex-start; gap: 12px; color: #f6f5ed; font-size: var(--step--1); line-height: 1.5; margin: 0 0 30px; }
+.doctor-mark { color: #d8b55d; font-size: 1.2rem; padding-top: 2px; }
+.hero-buttons { justify-content: flex-start; }
+.hero-buttons .btn-secondary { background: transparent; }
+.hero-contact-links { display: flex; flex-wrap: wrap; gap: 22px; margin-top: 22px; }
+.hero-contact-links a { color: #e9f2e5; font-size: var(--step--1); text-decoration-color: rgba(216, 233, 207, .45); text-underline-offset: 5px; }
+.hero-portrait { position: relative; margin: 0; align-self: stretch; min-height: 470px; overflow: hidden; border-radius: 2px 46px 2px 46px; box-shadow: 28px 28px 0 rgba(200, 219, 166, .15); }
+.hero-portrait::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 44%, rgba(8, 27, 18, .86) 100%); }
+.hero-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 56% center; display: block; }
+.hero-portrait figcaption { position: absolute; z-index: 1; left: clamp(20px, 4vw, 34px); right: 22px; bottom: clamp(20px, 4vw, 32px); color: #fff; }
+.hero-portrait figcaption span { display: block; margin-bottom: 8px; color: #d8e9cf; font-size: var(--step--2); font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.hero-portrait figcaption strong { display: block; max-width: 320px; font-family: 'Playfair Display', serif; font-size: clamp(1.3rem, 2vw, 1.9rem); line-height: 1.25; }
+.stats-container.hero-proof { gap: 0; width: min(1120px, calc(100% - 40px)); bottom: 26px; padding: 0; flex-wrap: nowrap; border: 1px solid rgba(226, 238, 219, .2); border-radius: 2px; background: rgba(9, 31, 21, .72); }
+.hero-proof .stat-box { min-width: 0; max-width: none; flex: 1; padding: 14px clamp(10px, 2vw, 26px); border: 0; border-radius: 0; background: none; backdrop-filter: none; }
+.hero-proof .stat-box + .stat-box { border-left: 1px solid rgba(226, 238, 219, .18); }
+.hero-proof .stat-box h2 { color: #d8e9cf; font-family: 'Playfair Display', serif; font-size: var(--step-2); }
+
+@media (max-width: 820px) {
+  .hero-section { min-height: auto; padding: 108px 20px 190px; }
+  .hero-layout { grid-template-columns: 1fr; gap: 40px; }
+  .hero-content.hero-copy { max-width: 680px; }
+  .hero-portrait { min-height: min(110vw, 500px); width: min(620px, calc(100% - 18px)); margin: 0 0 0 auto; border-radius: 2px 34px 2px 34px; }
+  .stats-container.hero-proof { width: calc(100% - 32px); bottom: 24px; }
+}
+@media (max-width: 540px) {
+  .hero-section { padding: 104px 18px 210px; }
+  .hero-content h1 { font-size: clamp(2.65rem, 13vw, 4rem); }
+  .hero-buttons { display: grid; grid-template-columns: 1fr; width: 100%; }
+  .hero-buttons .btn-primary, .hero-buttons .btn-secondary { width: 100%; justify-content: center; white-space: normal; text-align: center; }
+  .hero-contact-links { gap: 16px; }
+  .hero-portrait { min-height: 390px; width: calc(100% - 10px); box-shadow: 14px 14px 0 rgba(200, 219, 166, .15); }
+  .stats-container.hero-proof { display: grid; grid-template-columns: 1fr; width: calc(100% - 36px); }
+  .hero-proof .stat-box { padding: 10px 16px; display: flex; gap: 12px; align-items: baseline; text-align: left; }
+  .hero-proof .stat-box + .stat-box { border-left: 0; border-top: 1px solid rgba(226, 238, 219, .18); }
+  .hero-proof .stat-box h2 { margin: 0; white-space: nowrap; }
+}
 
 /* ============================================================
    ACCESSIBILITY: REDUCED MOTION
