@@ -32,28 +32,64 @@
 <link href="../styles/pranayama.css" rel="stylesheet">
 <!-- AOS -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-</link></link></head>
+</head>
+
+
 <body>
 <div id="navbar"></div>
-<section class="pranayama-section">
-<!-- Heading -->
-<div class="section-title" data-aos="fade-up">
-<span class="protocol-tag">
+
+<!-- HERO SECTION -->
+<section class="pranayama-hero">
+
+  <!-- YouTube Background Video -->
+  <div class="hero-video-bg" aria-hidden="true">
+    <iframe
+      src="https://www.youtube.com/embed/pnwRXEGGB_I?autoplay=1&mute=1&controls=0&loop=1&playlist=pnwRXEGGB_I&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3"
+      title=""
+      tabindex="-1"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      referrerpolicy="strict-origin-when-cross-origin">
+    </iframe>
+  </div>
+
+  <!-- Dark Overlay -->
+  <div class="hero-overlay"></div>
+
+  <!-- Hero Content -->
+  <div class="hero-content">
+
+    <span class="hero-label">
       Yogic Breathing Science
     </span>
-<!-- SEO: changed h2 -> h1 (this is the only true page heading; tag changed, text unchanged) -->
-<h1>Pranayama: Breathing Exercises &amp; Techniques</h1>
-<p class="hero-description">Explore traditional yogic breathing practices, including eight core pranayama techniques, beginner guidance, potential benefits, safety considerations and guided videos.</p>
 
-<div aria-label="Pranayama page topics" class="hero-points">
-<span>8 Core Practices</span>
-<span>Breathing Techniques</span>
-<span>Beginner Guidance</span>
-<span>Guided Videos</span>
-</div>
-</div>
+    <h1>
+      Pranayama: Breathing<br>
+      Exercises &amp; Techniques
+    </h1>
+
+    <p>
+      Explore traditional yogic breathing practices, including eight core
+      pranayama techniques, beginner guidance, potential benefits,
+      safety considerations and guided videos.
+    </p>
+
+    <div class="hero-tags">
+      <span>8 Core Practices</span>
+      <span>Breathing Techniques</span>
+      <span>Beginner Guidance</span>
+      <span>Guided Videos</span>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="pranayama-section">
+
+
+
 <!-- Main Grid -->
-
 <section aria-label="Pranayama overview" class="overview-grid">
 <article class="overview-card">
 <div aria-hidden="true" class="overview-icon">08</div>
@@ -296,7 +332,6 @@
           Visit Our Archive
         </a>
 </section>
-</section>
 
 
 <footer id="footer"></footer>
@@ -325,6 +360,24 @@
 
   gtag('config', 'G-70BG55XT3Q');
 </script>
+
+<script>
+function fullBleedHero() {
+  var el = document.querySelector(".hero-video-wrap");
+  if (!el) return;
+  el.style.width = "";
+  el.style.marginLeft = "0px";
+  el.style.marginRight = "0px";
+  var rect = el.getBoundingClientRect();
+  var vw = document.documentElement.clientWidth;
+  el.style.marginLeft = (-rect.left) + "px";
+  el.style.width = vw + "px";
+  el.style.marginRight = "0px";
+}
+window.addEventListener("load", fullBleedHero);
+window.addEventListener("resize", fullBleedHero);
+</script>
+
 <!-- ================= SEO: Existing Organization/MedicalBusiness schema (kept as-is) ================= -->
 <script type="application/ld+json">
 {
@@ -535,6 +588,26 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 });
+
+// Force the hero video section to true full viewport width.
+// The pure-CSS 100vw/negative-margin trick only works if every ancestor is
+// exactly as wide as the viewport; if any wrapper on the page is narrower
+// (e.g. a centered container), that trick falls short on one side, which is
+// what was happening. This measures the real gap and corrects for it.
+function fullBleedHero() {
+  var el = document.querySelector(".hero-video-wrap");
+  if (!el) return;
+  el.style.width = "";
+  el.style.marginLeft = "0px";
+  el.style.marginRight = "0px";
+  var rect = el.getBoundingClientRect();
+  var vw = document.documentElement.clientWidth;
+  el.style.marginLeft = (-rect.left) + "px";
+  el.style.width = vw + "px";
+  el.style.marginRight = "0px";
+}
+window.addEventListener("load", fullBleedHero);
+window.addEventListener("resize", fullBleedHero);
 </script>
 
 </body>
