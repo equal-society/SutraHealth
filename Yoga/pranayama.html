@@ -29,7 +29,7 @@
 <meta content="Learn what pranayama is, explore traditional breathing techniques, potential benefits and safe guided practices." name="twitter:description"/>
 <meta content="https://lifequality.org.in/assets/images/og-image.jpg" name="twitter:image"/>
 <!-- CSS -->
-<link href="/styles/pranayama.css" rel="stylesheet">
+<link href="/styles/pranayama.css?v=20260901" rel="stylesheet">
 <!-- AOS -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
@@ -44,7 +44,7 @@
   <!-- YouTube Background Video -->
   <div class="hero-video-bg" aria-hidden="true">
     <iframe
-      src="https://www.youtube.com/embed/pnwRXEGGB_I?autoplay=1&mute=1&controls=0&loop=1&playlist=pnwRXEGGB_I&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3"
+      src="https://www.youtube.com/embed/pnwRXEGGB_I?autoplay=1&mute=1&controls=0&loop=1&playlist=pnwRXEGGB_I&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3" loading="eager"
       title=""
       tabindex="-1"
       frameborder="0"
@@ -359,23 +359,6 @@
   gtag('js', new Date());
 
   gtag('config', 'G-70BG55XT3Q');
-</script>
-
-<script>
-function fullBleedHero() {
-  var el = document.querySelector(".hero-video-wrap");
-  if (!el) return;
-  el.style.width = "";
-  el.style.marginLeft = "0px";
-  el.style.marginRight = "0px";
-  var rect = el.getBoundingClientRect();
-  var vw = document.documentElement.clientWidth;
-  el.style.marginLeft = (-rect.left) + "px";
-  el.style.width = vw + "px";
-  el.style.marginRight = "0px";
-}
-window.addEventListener("load", fullBleedHero);
-window.addEventListener("resize", fullBleedHero);
 </script>
 
 <!-- ================= SEO: Existing Organization/MedicalBusiness schema (kept as-is) ================= -->
