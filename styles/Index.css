@@ -658,7 +658,7 @@ img { max-width: 100%; height: auto; }
    DOCTOR-LED HERO
    The homepage starts with the clinician and consultation, not a
    generic catalogue of wellness services.
-============================================================ */
+=========================================================== */
 .hero-section {
   min-height: min(920px, 100svh);
   padding: 110px clamp(20px, 6vw, 88px) 132px;
