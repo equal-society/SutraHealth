@@ -1,1097 +1,1525 @@
 /* ============================================================
-   PRANAYAMA PAGE — SCOPED STYLES
-   Add this AFTER the existing pranayama.css rules.
-   All selectors are scoped to .pranayama-section so Index.css
-   cannot affect the page.
-============================================================ */
+   SUTRA HEALTH — PRANAYAMA PAGE
+   Clean production CSS
+   ============================================================ */
 
-/* Page wrapper */
-.pranayama-section{
-  padding:140px 7%;
-  background:#F6F3EE;
-  color:#1F3A30;
-}
-
-/* Hero */
-.pranayama-section .section-title{
-  text-align:center;
-  max-width:900px;
-  margin:0 auto 70px;
-}
-
-.pranayama-section .protocol-tag{
-  display:inline-block;
-  background:#E7F2EC;
-  color:#2A7A55;
-  padding:10px 20px;
-  border-radius:999px;
-  font-size:.9rem;
-  font-weight:600;
-  margin-bottom:20px;
-}
-
-.pranayama-section .section-title h1{
-  font-size:clamp(2.4rem,5vw,3.5rem);
-  line-height:1.1;
-  margin:0 0 20px;
-  color:#1F3A30;
-}
-
-.pranayama-section .hero-description{
-  max-width:700px;
-  margin:0 auto;
-  color:#5E6B66;
-  line-height:1.8;
-  font-size:1.05rem;
-}
-
-.pranayama-section .hero-points{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top:24px;
-}
-
-.pranayama-section .hero-points span{
-  display:inline-flex;
-  align-items:center;
-  background:#E7F2EC;
-  color:#2A7A55;
-  padding:8px 14px;
-  border-radius:999px;
-  font-size:.85rem;
-  font-weight:600;
-}
-
-/* Overview cards */
-.pranayama-section .overview-grid{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:20px;
-  margin:0 0 55px;
-}
-
-.pranayama-section .overview-card{
-  display:flex;
-  gap:16px;
-  align-items:flex-start;
-  background:#fff;
-  padding:24px;
-  border-radius:24px;
-  box-shadow:0 12px 35px rgba(0,0,0,.06);
-  border:1px solid rgba(42,122,85,.08);
-}
-
-.pranayama-section .overview-icon{
-  width:48px;
-  min-width:48px;
-  height:48px;
-  border-radius:50%;
-  background:#E7F2EC;
-  color:#2A7A55;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:800;
-}
-
-.pranayama-section .overview-card h2{
-  font-size:1.15rem;
-  line-height:1.3;
-  margin:0 0 6px;
-}
-
-.pranayama-section .overview-card p{
-  color:#65726D;
-  line-height:1.7;
-  font-size:.95rem;
-  margin:0;
-}
-
-/* Text information sections */
-.pranayama-section .content-section{
-  display:grid;
-  grid-template-columns:minmax(0,1fr) 300px;
-  gap:40px;
-  align-items:center;
-  margin:0 0 55px;
-}
-
-.pranayama-section .content-copy{
-  min-width:0;
-}
-
-.pranayama-section .eyebrow{
-  display:inline-block;
-  color:#2A7A55;
-  font-size:.82rem;
-  font-weight:700;
-  letter-spacing:1.5px;
-  text-transform:uppercase;
-  margin-bottom:10px;
-}
-
-.pranayama-section .content-copy h2,
-.pranayama-section .section-heading-left h2,
-.pranayama-section .card-heading h2{
-  color:#1F3A30;
-  font-size:clamp(1.8rem,3vw,2.2rem);
-  line-height:1.25;
-  margin:0 0 16px;
-}
-
-.pranayama-section .content-copy p,
-.pranayama-section .section-heading-left p{
-  color:#65726D;
-  line-height:1.8;
-  font-size:1rem;
-  margin:0 0 16px;
-}
-
-.pranayama-section .content-highlight{
-  background:#E7F2EC;
-  border-radius:24px;
-  padding:30px;
-}
-
-.pranayama-section .highlight-number{
-  display:block;
-  color:#2A7A55;
-  font-size:3rem;
-  font-weight:800;
-  line-height:1;
-  margin-bottom:10px;
-}
-
-.pranayama-section .content-highlight strong{
-  display:block;
-  color:#1F3A30;
-  margin-bottom:8px;
-}
-
-.pranayama-section .content-highlight p{
-  color:#65726D;
-  line-height:1.7;
-  margin:0;
-}
-
-/* Main practice/video layout */
-.pranayama-section .protocol-grid{
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:50px;
-  align-items:start;
-  margin:0 0 55px;
-}
-
-.pranayama-section .protocol-card{
-  background:#fff;
-  border-radius:32px;
-  padding:45px;
-  box-shadow:0 12px 40px rgba(0,0,0,.06);
-  min-width:0;
-  border:1px solid rgba(42,122,85,.06);
-}
-
-.pranayama-section .card-heading{
-  margin:0 0 30px;
-}
-
-.pranayama-section .card-heading p{
-  color:#65726D;
-  line-height:1.7;
-  margin:0;
-}
-
-/* Practice list */
-.pranayama-section .practice-list{
-  display:flex;
-  flex-direction:column;
-  gap:18px;
-}
-
-.pranayama-section .practice-item{
-  display:flex;
-  gap:20px;
-  align-items:flex-start;
-  padding:20px;
-  border-radius:20px;
-  background:#FAF8F4;
-  transition:transform .35s ease,background .35s ease;
-}
-
-.pranayama-section .practice-item:hover{
-  transform:translateY(-3px);
-  background:#EEF7F1;
-}
-
-.pranayama-section .practice-item > span{
-  min-width:52px;
-  width:52px;
-  height:52px;
-  border-radius:50%;
-  background:#2A7A55;
-  color:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:700;
-  flex-shrink:0;
-}
-
-.pranayama-section .practice-item h3{
-  color:#1F3A30;
-  font-size:1.1rem;
-  line-height:1.3;
-  margin:0 0 6px;
-}
-
-.pranayama-section .practice-item p{
-  color:#65726D;
-  line-height:1.7;
-  font-size:.95rem;
-  margin:0;
-}
-
-/* Video cards */
-.pranayama-section .video-column{
-  display:flex;
-  flex-direction:column;
-  gap:30px;
-  min-width:0;
-}
-
-.pranayama-section .video-card{
-  background:#fff;
-  border-radius:30px;
-  overflow:hidden;
-  box-shadow:0 12px 40px rgba(0,0,0,.06);
-  transition:transform .35s ease,box-shadow .35s ease;
-}
-
-.pranayama-section .video-card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 18px 45px rgba(0,0,0,.1);
-}
-
-.pranayama-section .video-thumb{
-  position:relative;
-  overflow:hidden;
-}
-
-.pranayama-section .video-thumb a{
-  display:block;
-}
-
-.pranayama-section .video-thumb img{
-  width:100%;
-  height:260px;
-  object-fit:cover;
-  display:block;
-  transition:transform .5s ease;
-}
-
-.pranayama-section .video-card:hover .video-thumb img{
-  transform:scale(1.03);
-}
 
-.pranayama-section .video-content{
-  padding:28px;
-}
-
-.pranayama-section .video-label{
-  display:inline-block;
-  color:#2A7A55;
-  font-size:.78rem;
-  font-weight:700;
-  letter-spacing:1.2px;
-  text-transform:uppercase;
-  margin-bottom:8px;
-}
-
-.pranayama-section .video-content h3{
-  color:#1F3A30;
-  font-size:1.4rem;
-  line-height:1.3;
-  margin:0 0 12px;
-}
-
-.pranayama-section .video-content p{
-  color:#68756F;
-  line-height:1.7;
-  margin:0 0 24px;
-}
-
-/* Benefits / safety */
-.pranayama-section .medical-section{
-  background:#fff;
-  border-radius:32px;
-  padding:42px;
-  margin:0 0 55px;
-  box-shadow:0 12px 40px rgba(0,0,0,.05);
-}
-
-.pranayama-section .section-heading-left{
-  margin-bottom:28px;
-}
-
-.pranayama-section .medical-grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:20px;
-}
-
-.pranayama-section .medical-grid > div{
-  background:#FAF8F4;
-  border-radius:20px;
-  padding:22px;
-}
-
-.pranayama-section .medical-grid h3{
-  color:#1F3A30;
-  font-size:1.15rem;
-  line-height:1.35;
-  margin:0 0 8px;
-}
-
-.pranayama-section .medical-grid p{
-  color:#65726D;
-  line-height:1.7;
-  margin:0;
-}
-
-.pranayama-section .safety-note{
-  margin-top:24px;
-  padding:20px;
-  background:#FFF8E8;
-  border-left:4px solid #D4AF37;
-  border-radius:14px;
-}
-
-.pranayama-section .safety-note strong{
-  color:#4C432C;
-}
-
-.pranayama-section .safety-note p{
-  color:#5E5B4F;
-  line-height:1.7;
-  margin:6px 0 0;
-}
-
-/* FAQ */
-.pranayama-section .faq-section{
-  background:transparent;
-  padding:0;
-  margin:0 0 55px;
-}
-
-.pranayama-section .faq-inner{
-  max-width:900px;
-  margin:0 auto;
-}
-
-.pranayama-section .faq-head{
-  text-align:center;
-  margin-bottom:35px;
-}
-
-.pranayama-section .faq-head h2{
-  color:#1F3A30;
-  font-size:clamp(1.8rem,3vw,2.4rem);
-  line-height:1.25;
-  margin:0 0 12px;
-}
-
-.pranayama-section .faq-head p{
-  color:#65726D;
-  line-height:1.7;
-  margin:0;
-}
-
-.pranayama-section .faq-list{
-  display:flex;
-  flex-direction:column;
-  gap:16px;
-}
-
-.pranayama-section .faq-item{
-  background:#fff;
-  border-radius:16px;
-  overflow:hidden;
-  box-shadow:0 4px 20px rgba(0,0,0,.06);
-  border:1px solid rgba(233,196,106,.2);
-}
-
-.pranayama-section .faq-question{
-  width:100%;
-  padding:22px 28px;
-  background:none;
-  border:0;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
-  cursor:pointer;
-  text-align:left;
-  color:#18301f;
-  font-family:'Inter',sans-serif;
-  font-size:1rem;
-  font-weight:600;
-}
-
-.pranayama-section .faq-icon{
-  width:10px;
-  height:10px;
-  border-right:2px solid #2A7A55;
-  border-bottom:2px solid #2A7A55;
-  transform:rotate(45deg);
-  transition:transform .3s ease;
-  flex-shrink:0;
-}
-
-.pranayama-section .faq-item.active .faq-icon{
-  transform:rotate(225deg);
-}
-
-.pranayama-section .faq-answer{
-  max-height:0;
-  overflow:hidden;
-  padding:0 28px;
-  transition:max-height .4s ease,padding .3s ease;
-}
-
-.pranayama-section .faq-item.active .faq-answer{
-  max-height:400px;
-  padding:0 28px 24px;
-}
-
-.pranayama-section .faq-answer p{
-  color:#4A5A4A;
-  line-height:1.8;
-  margin:0;
-}
-
-/* Final CTA */
-.pranayama-section .final-cta{
-  max-width:900px;
-  margin:0 auto;
-  text-align:center;
-  background:#E7F2EC;
-  border-radius:32px;
-  padding:48px 28px;
-}
-
-.pranayama-section .final-cta h2{
-  color:#1F3A30;
-  font-size:clamp(1.8rem,3vw,2.2rem);
-  line-height:1.25;
-  margin:0 0 12px;
-}
-
-.pranayama-section .final-cta p{
-  max-width:650px;
-  margin:0 auto 24px;
-  color:#65726D;
-  line-height:1.7;
-}
+/* ============================================================
+   1. GLOBAL SAFETY / PAGE ISOLATION
+   ============================================================ */
 
-/* Existing button — preserve original visual style */
-.pranayama-section .watch-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:14px 24px;
-  border-radius:14px;
-  text-decoration:none;
-  background:#2A7A55;
-  color:#fff;
-  font-weight:600;
-  transition:transform .3s ease,background .3s ease;
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
-.pranayama-section .watch-btn:hover{
-  background:#1C5A3E;
-  transform:translateY(-2px);
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-/* Prevent global Index.css from changing these elements */
-.pranayama-section h1,
-.pranayama-section h2,
-.pranayama-section h3,
-.pranayama-section p{
-  max-width:none;
+img,
+video,
+iframe,
+svg {
+  max-width: 100%;
 }
-
-.pranayama-section img{
-  max-width:100%;
-}
-
-/* Responsive */
-@media (max-width:992px){
-  .pranayama-section .protocol-grid,
-  .pranayama-section .content-section{
-    grid-template-columns:1fr;
-  }
-
-  .pranayama-section .overview-grid{
-    grid-template-columns:1fr;
-  }
-
-  .pranayama-section .content-highlight{
-    max-width:100%;
-  }
-}
-
-@media (max-width:768px){
-  .pranayama-section{
-    padding:120px 20px 80px;
-  }
-
-  .pranayama-section .section-title{
-    margin-bottom:45px;
-  }
-
-  .pranayama-section .protocol-card,
-  .pranayama-section .medical-section{
-    padding:28px;
-  }
-
-  .pranayama-section .practice-item{
-    flex-direction:row;
-  }
-
-  .pranayama-section .video-thumb img{
-    height:220px;
-  }
-
-  .pranayama-section .medical-grid{
-    grid-template-columns:1fr;
-  }
-
-  .pranayama-section .faq-question{
-    padding:18px 20px;
-  }
-
-  .pranayama-section .faq-item.active .faq-answer{
-    padding:0 20px 20px;
-  }
-}
-
-@media (max-width:480px){
-  .pranayama-section{
-    padding:100px 16px 60px;
-  }
-
-  .pranayama-section .protocol-card,
-  .pranayama-section .medical-section{
-    padding:22px;
-    border-radius:24px;
-  }
-
-  .pranayama-section .practice-item{
-    gap:14px;
-    padding:16px;
-  }
-
-  .pranayama-section .practice-item > span{
-    min-width:44px;
-    width:44px;
-    height:44px;
-  }
 
-  .pranayama-section .video-content{
-    padding:22px;
-  }
+.pranayama-page {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 
 /* ============================================================
-   FINAL OVERRIDE — FIX FAQ HEADING / SECTION VISIBILITY
-   Put this at the VERY END of pranayama.css
-============================================================ */
+   2. PRANAYAMA CONTENT WRAPPER
+   ============================================================ */
 
-.pranayama-section .faq-section{
-  position:relative;
-  display:block;
-  width:100%;
-  clear:both;
-  overflow:visible;
-  padding:0;
-  margin:0 0 70px;
-}
-
-.pranayama-section .faq-inner{
-  display:block;
-  width:100%;
-  max-width:900px;
-  margin:0 auto;
-  overflow:visible;
-}
-
-.pranayama-section .faq-head{
-  display:block;
-  width:100%;
-  max-width:900px;
-  height:auto;
-  min-height:0;
-  margin:0 auto 35px;
-  padding:0;
-  text-align:center;
-  overflow:visible;
-  position:relative;
-  z-index:2;
-}
-
-.pranayama-section .faq-head h2{
-  display:block !important;
-  width:100% !important;
-  max-width:900px !important;
-  height:auto !important;
-  min-height:0 !important;
-  margin:0 0 14px !important;
-  padding:0 !important;
-  position:relative !important;
-  top:auto !important;
-  bottom:auto !important;
-  left:auto !important;
-  right:auto !important;
-  transform:none !important;
-  overflow:visible !important;
-  white-space:normal !important;
-  word-break:normal !important;
-  overflow-wrap:normal !important;
-  text-align:center !important;
-  color:#1F3A30 !important;
-  font-size:clamp(1.8rem,3vw,2.4rem) !important;
-  line-height:1.25 !important;
-  visibility:visible !important;
-  opacity:1 !important;
-}
-
-.pranayama-section .faq-head p{
-  display:block !important;
-  width:100% !important;
-  max-width:760px !important;
-  height:auto !important;
-  margin:0 auto !important;
-  padding:0 !important;
-  text-align:center !important;
-  color:#65726D !important;
-  line-height:1.7 !important;
-  visibility:visible !important;
-  opacity:1 !important;
-}
-
-/* Prevent global heading rules from clipping FAQ content */
-.pranayama-section .faq-section h2,
-.pranayama-section .faq-section p{
-  clip:unset !important;
-  clip-path:none !important;
-  text-indent:0 !important;
-}
-
-/* Keep FAQ cards below the heading */
-.pranayama-section .faq-list{
-  display:flex;
-  flex-direction:column;
-  gap:16px;
-  width:100%;
-  position:relative;
-  z-index:1;
-}
-
-.pranayama-section .faq-item{
-  width:100%;
-  position:relative;
-  overflow:hidden;
-}
-
-/* Remove the default browser focus border while retaining accessible focus */
-.pranayama-section .faq-question:focus{
-  outline:2px solid #2A7A55;
-  outline-offset:-2px;
-}
-
-.pranayama-section .faq-question:focus:not(:focus-visible){
-  outline:none;
-}
-
-/* Mobile */
-@media (max-width:768px){
-  .pranayama-section .faq-head h2{
-    font-size:1.8rem !important;
-    line-height:1.3 !important;
-  }
-
-  .pranayama-section .faq-head p{
-    font-size:.95rem !important;
-  }
-}
-
-/* =========================================================
-   PRANAYAMA HERO
-   ========================================================= */
-
-.pranayama-hero {
-  position: relative;
+.pranayama-section {
   width: 100%;
-  min-height: 680px;
-  height: 78vh;
-  max-height: 820px;
+  max-width: 100%;
+  margin: 0;
+  padding: 110px 7% 90px;
+
+  background: #f6f3ee;
+  color: #1f3a30;
 
   overflow: hidden;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  isolation: isolate;
-
-  background: #173b32;
 }
 
 
-/* =========================================================
-   YOUTUBE BACKGROUND
-   ========================================================= */
+/* ============================================================
+   3. HERO
+   ============================================================ */
 
-.pranayama-hero .hero-video-bg {
-  position: absolute;
-  inset: 0;
+section.pranayama-hero {
+  position: relative !important;
 
-  width: 100%;
-  height: 100%;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 
-  overflow: hidden;
+  width: 100% !important;
+  max-width: none !important;
 
-  z-index: -3;
+  min-height: 680px !important;
+  height: 78vh !important;
+  max-height: 820px !important;
 
-  pointer-events: none;
+  margin: 0 !important;
+  padding: 0 !important;
+
+  overflow: hidden !important;
+
+  background: #173b32 !important;
+
+  isolation: isolate !important;
+}
+
+
+/* ============================================================
+   4. HERO VIDEO BACKGROUND
+   ============================================================ */
+
+section.pranayama-hero .hero-video-bg {
+  position: absolute !important;
+
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  overflow: hidden !important;
+
+  z-index: -3 !important;
+
+  pointer-events: none !important;
 }
 
 
 /*
-   The iframe is intentionally oversized.
+   YouTube is 16:9.
 
-   YouTube videos normally have a 16:9 ratio.
-   Oversizing prevents empty areas when the hero
-   has a different aspect ratio.
+   The iframe is deliberately oversized so that
+   the entire hero remains covered at every aspect ratio.
 */
 
-.pranayama-hero .hero-video-bg iframe {
-  position: absolute;
+section.pranayama-hero .hero-video-bg iframe {
+  position: absolute !important;
 
-  top: 50%;
-  left: 50%;
+  top: 50% !important;
+  left: 50% !important;
 
-  width: 100vw;
-  height: 56.25vw;
+  width: 100vw !important;
+  height: 56.25vw !important;
 
-  min-width: 177.78vh;
-  min-height: 100vh;
+  min-width: 177.78vh !important;
+  min-height: 100vh !important;
 
-  transform: translate(-50%, -50%);
+  max-width: none !important;
 
-  border: 0;
+  margin: 0 !important;
+  padding: 0 !important;
 
-  pointer-events: none;
+  border: 0 !important;
+
+  transform: translate(-50%, -50%) !important;
+
+  pointer-events: none !important;
 }
 
 
-/* =========================================================
-   DARK OVERLAY
-   ========================================================= */
+/* ============================================================
+   5. HERO OVERLAY
+   ============================================================ */
 
-.pranayama-hero .hero-overlay {
-  position: absolute;
+section.pranayama-hero .hero-overlay {
+  position: absolute !important;
 
-  inset: 0;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
 
-  z-index: -2;
+  width: 100% !important;
+  height: 100% !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  z-index: -2 !important;
 
   background:
     linear-gradient(
       90deg,
-      rgba(0, 0, 0, 0.62) 0%,
-      rgba(0, 0, 0, 0.48) 45%,
-      rgba(0, 0, 0, 0.30) 100%
-    );
+      rgba(0, 0, 0, 0.68) 0%,
+      rgba(0, 0, 0, 0.52) 42%,
+      rgba(0, 0, 0, 0.32) 100%
+    ) !important;
 }
 
 
-/* =========================================================
-   HERO CONTENT
-   ========================================================= */
+/* ============================================================
+   6. HERO CONTENT
+   ============================================================ */
 
-.pranayama-hero .hero-content {
-  position: relative;
+section.pranayama-hero .hero-content {
+  position: relative !important;
 
-  z-index: 2;
+  z-index: 2 !important;
 
-  width: min(1180px, 100%);
+  width: min(1180px, 100%) !important;
+  max-width: 1180px !important;
 
-  margin: 0 auto;
+  margin: 0 auto !important;
+  padding: 80px 40px !important;
 
-  padding: 80px 40px;
+  color: #ffffff !important;
 
-  text-align: left;
-
-  color: #ffffff;
+  text-align: left !important;
 }
 
 
-/* =========================================================
-   LABEL
-   ========================================================= */
+/* ============================================================
+   7. HERO LABEL
+   ============================================================ */
 
-.pranayama-hero .hero-label {
-  display: inline-flex;
+section.pranayama-hero .hero-label {
+  display: inline-flex !important;
 
-  align-items: center;
+  align-items: center !important;
 
-  padding: 11px 22px;
+  margin: 0 0 25px !important;
+  padding: 11px 22px !important;
 
-  margin-bottom: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 999px !important;
 
-  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16) !important;
 
-  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff !important;
 
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-family:
+    "DM Sans",
+    Arial,
+    sans-serif !important;
 
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
 
-  color: #ffffff;
+  letter-spacing: 0.2px !important;
 
-  font-size: 15px;
-
-  font-weight: 600;
-
-  line-height: 1.2;
-
-  letter-spacing: 0.2px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 
-/* =========================================================
-   H1
-   ========================================================= */
+/* ============================================================
+   8. HERO HEADING
+   ============================================================ */
 
-.pranayama-hero .hero-content h1 {
-  max-width: 900px;
+section.pranayama-hero .hero-content h1 {
+  display: block !important;
 
-  margin: 0 0 24px;
+  width: 100% !important;
+  max-width: 900px !important;
 
-  color: #ffffff;
+  margin: 0 0 24px !important;
+  padding: 0 !important;
+
+  color: #ffffff !important;
 
   font-family:
     "Playfair Display",
     Georgia,
-    serif;
+    serif !important;
 
-  font-size: clamp(42px, 5vw, 76px);
+  font-size: clamp(42px, 5vw, 76px) !important;
 
-  font-weight: 700;
+  font-weight: 700 !important;
 
-  line-height: 1.08;
+  line-height: 1.08 !important;
 
-  letter-spacing: -1.5px;
+  letter-spacing: -1.5px !important;
+
+  text-align: left !important;
 
   text-shadow:
     0 3px 18px rgba(0, 0, 0, 0.35);
 }
 
 
-/* =========================================================
-   DESCRIPTION
-   ========================================================= */
+/* ============================================================
+   9. HERO DESCRIPTION
+   ============================================================ */
 
-.pranayama-hero .hero-content p {
-  max-width: 850px;
+section.pranayama-hero .hero-content p {
+  display: block !important;
 
-  margin: 0 0 30px;
+  width: 100% !important;
+  max-width: 850px !important;
 
-  color: rgba(255, 255, 255, 0.94);
+  margin: 0 0 30px !important;
+  padding: 0 !important;
+
+  color: rgba(255, 255, 255, 0.94) !important;
 
   font-family:
     "DM Sans",
     Arial,
-    sans-serif;
+    sans-serif !important;
 
-  font-size: clamp(17px, 1.6vw, 21px);
+  font-size: clamp(17px, 1.6vw, 21px) !important;
 
-  font-weight: 400;
+  font-weight: 400 !important;
 
-  line-height: 1.65;
+  line-height: 1.65 !important;
+
+  text-align: left !important;
 
   text-shadow:
     0 2px 10px rgba(0, 0, 0, 0.35);
 }
 
 
-/* =========================================================
-   HERO TAGS
-   ========================================================= */
+/* ============================================================
+   10. HERO TAGS
+   ============================================================ */
 
-.pranayama-hero .hero-tags {
-  display: flex;
+section.pranayama-hero .hero-tags {
+  display: flex !important;
 
-  flex-wrap: wrap;
+  flex-wrap: wrap !important;
 
-  gap: 12px;
+  align-items: center !important;
+
+  justify-content: flex-start !important;
+
+  gap: 12px !important;
+
+  width: 100% !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
+section.pranayama-hero .hero-tags span {
+  display: inline-flex !important;
 
-.pranayama-hero .hero-tags span {
-  display: inline-flex;
+  align-items: center !important;
 
-  align-items: center;
+  min-height: 40px !important;
 
-  min-height: 40px;
+  margin: 0 !important;
+  padding: 9px 17px !important;
 
-  padding: 9px 17px;
+  border: 1px solid rgba(255, 255, 255, 0.17) !important;
+  border-radius: 999px !important;
 
-  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15) !important;
 
-  background: rgba(255, 255, 255, 0.16);
-
-  border: 1px solid rgba(255, 255, 255, 0.16);
-
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-
-  color: #ffffff;
+  color: #ffffff !important;
 
   font-family:
     "DM Sans",
     Arial,
+    sans-serif !important;
+
+  font-size: 14px !important;
+
+  font-weight: 600 !important;
+
+  line-height: 1.2 !important;
+
+  white-space: nowrap !important;
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+
+/* ============================================================
+   11. SECTION TITLE
+   ============================================================ */
+
+.pranayama-section .section-title {
+  width: 100%;
+  max-width: 900px;
+
+  margin: 0 auto 70px;
+
+  text-align: center;
+}
+
+.pranayama-section .protocol-tag {
+  display: inline-block;
+
+  margin-bottom: 20px;
+  padding: 10px 20px;
+
+  border-radius: 999px;
+
+  background: #e7f2ec;
+  color: #2a7a55;
+
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.pranayama-section .section-title h1 {
+  margin: 0 0 20px;
+
+  color: #1f3a30;
+
+  font-size: clamp(2.4rem, 5vw, 3.5rem);
+  line-height: 1.1;
+}
+
+.pranayama-section .hero-description {
+  max-width: 700px;
+
+  margin: 0 auto;
+
+  color: #5e6b66;
+
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.pranayama-section .hero-points {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 24px;
+}
+
+.pranayama-section .hero-points span {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 8px 14px;
+
+  border-radius: 999px;
+
+  background: #e7f2ec;
+  color: #2a7a55;
+
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+
+/* ============================================================
+   12. OVERVIEW CARDS
+   ============================================================ */
+
+.pranayama-section .overview-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 20px;
+
+  width: 100%;
+
+  margin: 0 0 55px;
+}
+
+.pranayama-section .overview-card {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 16px;
+
+  min-width: 0;
+
+  padding: 24px;
+
+  border: 1px solid rgba(42, 122, 85, 0.08);
+
+  border-radius: 24px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.06);
+}
+
+.pranayama-section .overview-icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  min-width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  background: #e7f2ec;
+  color: #2a7a55;
+
+  font-weight: 800;
+}
+
+.pranayama-section .overview-card h2 {
+  margin: 0 0 6px;
+
+  color: #1f3a30;
+
+  font-size: 1.15rem;
+  line-height: 1.3;
+}
+
+.pranayama-section .overview-card p {
+  margin: 0;
+
+  color: #65726d;
+
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+
+/* ============================================================
+   13. CONTENT SECTION
+   ============================================================ */
+
+.pranayama-section .content-section {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr) 300px;
+
+  align-items: center;
+
+  gap: 40px;
+
+  width: 100%;
+
+  margin: 0 0 55px;
+}
+
+.pranayama-section .content-copy {
+  min-width: 0;
+}
+
+.pranayama-section .eyebrow {
+  display: inline-block;
+
+  margin-bottom: 10px;
+
+  color: #2a7a55;
+
+  font-size: 0.82rem;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+}
+
+.pranayama-section .content-copy h2,
+.pranayama-section .section-heading-left h2,
+.pranayama-section .card-heading h2 {
+  margin: 0 0 16px;
+
+  color: #1f3a30;
+
+  font-size: clamp(1.8rem, 3vw, 2.2rem);
+
+  line-height: 1.25;
+}
+
+.pranayama-section .content-copy p,
+.pranayama-section .section-heading-left p {
+  margin: 0 0 16px;
+
+  color: #65726d;
+
+  font-size: 1rem;
+
+  line-height: 1.8;
+}
+
+
+/* ============================================================
+   14. CONTENT HIGHLIGHT
+   ============================================================ */
+
+.pranayama-section .content-highlight {
+  padding: 30px;
+
+  border-radius: 24px;
+
+  background: #e7f2ec;
+}
+
+.pranayama-section .highlight-number {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #2a7a55;
+
+  font-size: 3rem;
+  font-weight: 800;
+
+  line-height: 1;
+}
+
+.pranayama-section .content-highlight strong {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #1f3a30;
+}
+
+.pranayama-section .content-highlight p {
+  margin: 0;
+
+  color: #65726d;
+
+  line-height: 1.7;
+}
+
+
+/* ============================================================
+   15. PRACTICE + VIDEO GRID
+   ============================================================ */
+
+.pranayama-section .protocol-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.1fr)
+    minmax(0, 0.9fr);
+
+  align-items: start;
+
+  gap: 50px;
+
+  width: 100%;
+
+  margin: 0 0 55px;
+}
+
+.pranayama-section .protocol-card {
+  min-width: 0;
+
+  padding: 45px;
+
+  border: 1px solid rgba(42, 122, 85, 0.06);
+
+  border-radius: 32px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.06);
+}
+
+.pranayama-section .card-heading {
+  margin: 0 0 30px;
+}
+
+.pranayama-section .card-heading p {
+  margin: 0;
+
+  color: #65726d;
+
+  line-height: 1.7;
+}
+
+
+/* ============================================================
+   16. PRACTICE LIST
+   ============================================================ */
+
+.pranayama-section .practice-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+.pranayama-section .practice-item {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 20px;
+
+  padding: 20px;
+
+  border-radius: 20px;
+
+  background: #faf8f4;
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease;
+}
+
+.pranayama-section .practice-item:hover {
+  transform: translateY(-3px);
+
+  background: #eef7f1;
+}
+
+.pranayama-section .practice-item > span {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 52px;
+  min-width: 52px;
+  height: 52px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #2a7a55;
+  color: #ffffff;
+
+  font-weight: 700;
+}
+
+.pranayama-section .practice-item h3 {
+  margin: 0 0 6px;
+
+  color: #1f3a30;
+
+  font-size: 1.1rem;
+  line-height: 1.3;
+}
+
+.pranayama-section .practice-item p {
+  margin: 0;
+
+  color: #65726d;
+
+  font-size: 0.95rem;
+
+  line-height: 1.7;
+}
+
+
+/* ============================================================
+   17. VIDEO CARDS
+   ============================================================ */
+
+.pranayama-section .video-column {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 30px;
+
+  min-width: 0;
+}
+
+.pranayama-section .video-card {
+  overflow: hidden;
+
+  border-radius: 30px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.06);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.pranayama-section .video-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.1);
+}
+
+.pranayama-section .video-thumb {
+  position: relative;
+
+  overflow: hidden;
+}
+
+.pranayama-section .video-thumb a {
+  display: block;
+}
+
+.pranayama-section .video-thumb img {
+  display: block;
+
+  width: 100%;
+  height: 260px;
+
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+.pranayama-section .video-card:hover
+.video-thumb img {
+  transform: scale(1.03);
+}
+
+.pranayama-section .video-content {
+  padding: 28px;
+}
+
+.pranayama-section .video-label {
+  display: inline-block;
+
+  margin-bottom: 8px;
+
+  color: #2a7a55;
+
+  font-size: 0.78rem;
+  font-weight: 700;
+
+  letter-spacing: 1.2px;
+
+  text-transform: uppercase;
+}
+
+.pranayama-section .video-content h3 {
+  margin: 0 0 12px;
+
+  color: #1f3a30;
+
+  font-size: 1.4rem;
+
+  line-height: 1.3;
+}
+
+.pranayama-section .video-content p {
+  margin: 0 0 24px;
+
+  color: #68756f;
+
+  line-height: 1.7;
+}
+
+
+/* ============================================================
+   18. MEDICAL / SAFETY SECTION
+   ============================================================ */
+
+.pranayama-section .medical-section {
+  width: 100%;
+
+  margin: 0 0 55px;
+
+  padding: 42px;
+
+  border-radius: 32px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.05);
+}
+
+.pranayama-section .section-heading-left {
+  margin-bottom: 28px;
+}
+
+.pranayama-section .medical-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+.pranayama-section .medical-grid > div {
+  padding: 22px;
+
+  border-radius: 20px;
+
+  background: #faf8f4;
+}
+
+.pranayama-section .medical-grid h3 {
+  margin: 0 0 8px;
+
+  color: #1f3a30;
+
+  font-size: 1.15rem;
+
+  line-height: 1.35;
+}
+
+.pranayama-section .medical-grid p {
+  margin: 0;
+
+  color: #65726d;
+
+  line-height: 1.7;
+}
+
+
+/* ============================================================
+   19. SAFETY NOTE
+   ============================================================ */
+
+.pranayama-section .safety-note {
+  margin-top: 24px;
+
+  padding: 20px;
+
+  border-left: 4px solid #d4af37;
+
+  border-radius: 14px;
+
+  background: #fff8e8;
+}
+
+.pranayama-section .safety-note strong {
+  color: #4c432c;
+}
+
+.pranayama-section .safety-note p {
+  margin: 6px 0 0;
+
+  color: #5e5b4f;
+
+  line-height: 1.7;
+}
+
+
+/* ============================================================
+   20. FAQ
+   ============================================================ */
+
+.pranayama-section .faq-section {
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+
+  margin: 0 0 55px;
+  padding: 0;
+
+  clear: both;
+
+  overflow: visible;
+}
+
+.pranayama-section .faq-inner {
+  display: block;
+
+  width: 100%;
+  max-width: 900px;
+
+  margin: 0 auto;
+}
+
+.pranayama-section .faq-head {
+  display: block;
+
+  width: 100%;
+  max-width: 900px;
+
+  margin: 0 auto 35px;
+
+  padding: 0;
+
+  text-align: center;
+
+  overflow: visible;
+}
+
+.pranayama-section .faq-head h2 {
+  display: block;
+
+  width: 100%;
+
+  margin: 0 0 14px;
+
+  color: #1f3a30;
+
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+
+  line-height: 1.25;
+
+  text-align: center;
+}
+
+.pranayama-section .faq-head p {
+  display: block;
+
+  width: 100%;
+  max-width: 760px;
+
+  margin: 0 auto;
+
+  color: #65726d;
+
+  line-height: 1.7;
+
+  text-align: center;
+}
+
+.pranayama-section .faq-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 16px;
+
+  width: 100%;
+}
+
+.pranayama-section .faq-item {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(233, 196, 106, 0.2);
+
+  border-radius: 16px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.pranayama-section .faq-question {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 16px;
+
+  width: 100%;
+
+  padding: 22px 28px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #18301f;
+
+  cursor: pointer;
+
+  font-family:
+    "Inter",
+    Arial,
     sans-serif;
 
-  font-size: 14px;
+  font-size: 1rem;
 
   font-weight: 600;
 
-  line-height: 1.2;
+  text-align: left;
+}
 
-  white-space: nowrap;
+.pranayama-section .faq-question:focus {
+  outline: 2px solid #2a7a55;
+
+  outline-offset: -2px;
+}
+
+.pranayama-section .faq-question:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.pranayama-section .faq-icon {
+  width: 10px;
+  height: 10px;
+
+  flex-shrink: 0;
+
+  border-right: 2px solid #2a7a55;
+  border-bottom: 2px solid #2a7a55;
+
+  transform: rotate(45deg);
+
+  transition: transform 0.3s ease;
+}
+
+.pranayama-section .faq-item.active .faq-icon {
+  transform: rotate(225deg);
+}
+
+.pranayama-section .faq-answer {
+  max-height: 0;
+
+  overflow: hidden;
+
+  padding: 0 28px;
+
+  transition:
+    max-height 0.4s ease,
+    padding 0.3s ease;
+}
+
+.pranayama-section .faq-item.active .faq-answer {
+  max-height: 400px;
+
+  padding: 0 28px 24px;
+}
+
+.pranayama-section .faq-answer p {
+  margin: 0;
+
+  color: #4a5a4a;
+
+  line-height: 1.8;
 }
 
 
-/* =========================================================
-   TABLET
-   ========================================================= */
+/* ============================================================
+   21. FINAL CTA
+   ============================================================ */
 
-@media (max-width: 900px) {
+.pranayama-section .final-cta {
+  width: 100%;
+  max-width: 900px;
 
-  .pranayama-hero {
-    min-height: 600px;
-    height: 72vh;
-  }
+  margin: 0 auto;
 
-  .pranayama-hero .hero-content {
-    padding: 70px 30px;
-  }
+  padding: 48px 28px;
 
-  .pranayama-hero .hero-content h1 {
-    font-size: clamp(40px, 7vw, 60px);
-  }
+  border-radius: 32px;
 
+  background: #e7f2ec;
+
+  text-align: center;
+}
+
+.pranayama-section .final-cta h2 {
+  margin: 0 0 12px;
+
+  color: #1f3a30;
+
+  font-size: clamp(1.8rem, 3vw, 2.2rem);
+
+  line-height: 1.25;
+}
+
+.pranayama-section .final-cta p {
+  max-width: 650px;
+
+  margin: 0 auto 24px;
+
+  color: #65726d;
+
+  line-height: 1.7;
 }
 
 
-/* =========================================================
-   MOBILE
-   ========================================================= */
+/* ============================================================
+   22. BUTTON
+   ============================================================ */
 
-@media (max-width: 600px) {
+.pranayama-section .watch-btn {
+  display: inline-flex;
 
-  .pranayama-hero {
-    min-height: 620px;
-    height: auto;
+  align-items: center;
+  justify-content: center;
 
-    padding: 0;
+  padding: 14px 24px;
 
-    align-items: center;
+  border-radius: 14px;
+
+  background: #2a7a55;
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.pranayama-section .watch-btn:hover {
+  transform: translateY(-2px);
+
+  background: #1c5a3e;
+}
+
+
+/* ============================================================
+   23. CONTENT PROTECTION FROM GLOBAL INDEX.CSS
+   ============================================================ */
+
+.pranayama-section h1,
+.pranayama-section h2,
+.pranayama-section h3,
+.pranayama-section p {
+  max-width: none;
+}
+
+.pranayama-section img {
+  max-width: 100%;
+}
+
+
+/* ============================================================
+   24. TABLET
+   ============================================================ */
+
+@media (max-width: 992px) {
+
+  .pranayama-section {
+    padding-left: 5%;
+    padding-right: 5%;
   }
 
-  .pranayama-hero .hero-content {
-    width: 100%;
-
-    padding: 100px 22px 80px;
-
-    text-align: center;
+  .pranayama-section .overview-grid {
+    grid-template-columns: 1fr;
   }
 
-  .pranayama-hero .hero-label {
-    margin-bottom: 20px;
-
-    padding: 9px 16px;
-
-    font-size: 13px;
+  .pranayama-section .content-section {
+    grid-template-columns: 1fr;
   }
 
-  .pranayama-hero .hero-content h1 {
-    margin-bottom: 20px;
-
-    font-size: clamp(36px, 10vw, 48px);
-
-    line-height: 1.12;
-
-    letter-spacing: -0.8px;
+  .pranayama-section .protocol-grid {
+    grid-template-columns: 1fr;
   }
 
-  .pranayama-hero .hero-content p {
-    margin-left: auto;
-    margin-right: auto;
-
-    font-size: 16px;
-
-    line-height: 1.6;
+  .pranayama-section .content-highlight {
+    max-width: 100%;
   }
 
-  .pranayama-hero .hero-tags {
-    justify-content: center;
-
-    gap: 8px;
+  section.pranayama-hero {
+    min-height: 600px !important;
+    height: 72vh !important;
   }
 
-  .pranayama-hero .hero-tags span {
-    font-size: 12px;
-
-    padding: 8px 12px;
-
-    min-height: 36px;
+  section.pranayama-hero .hero-content {
+    padding: 70px 30px !important;
   }
 
-  .pranayama-hero .hero-overlay {
+  section.pranayama-hero .hero-content h1 {
+    font-size: clamp(40px, 7vw, 60px) !important;
+  }
+}
+
+
+/* ============================================================
+   25. MOBILE
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+  .pranayama-section {
+    padding: 80px 20px 60px;
+  }
+
+
+  /* HERO */
+
+  section.pranayama-hero {
+    width: 100% !important;
+
+    min-height: 620px !important;
+
+    height: auto !important;
+    max-height: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  section.pranayama-hero .hero-content {
+    width: 100% !important;
+    max-width: 600px !important;
+
+    padding: 100px 22px 80px !important;
+
+    text-align: center !important;
+  }
+
+  section.pranayama-hero .hero-label {
+    margin-bottom: 20px !important;
+
+    padding: 9px 16px !important;
+
+    font-size: 13px !important;
+  }
+
+  section.pranayama-hero .hero-content h1 {
+    max-width: 560px !important;
+
+    margin: 0 auto 20px !important;
+
+    font-size: clamp(36px, 10vw, 48px) !important;
+
+    line-height: 1.12 !important;
+
+    letter-spacing: -0.8px !important;
+
+    text-align: center !important;
+  }
+
+  section.pranayama-hero .hero-content p {
+    max-width: 600px !important;
+
+    margin: 0 auto 26px !important;
+
+    font-size: 16px !important;
+
+    line-height: 1.6 !important;
+
+    text-align: center !important;
+  }
+
+  section.pranayama-hero .hero-tags {
+    justify-content: center !important;
+
+    gap: 8px !important;
+  }
+
+  section.pranayama-hero .hero-tags span {
+    min-height: 36px !important;
+
+    padding: 8px 12px !important;
+
+    font-size: 12px !important;
+  }
+
+  section.pranayama-hero .hero-overlay {
     background:
       linear-gradient(
         180deg,
-        rgba(0, 0, 0, 0.40) 0%,
-        rgba(0, 0, 0, 0.58) 55%,
-        rgba(0, 0, 0, 0.68) 100%
-      );
+        rgba(0, 0, 0, 0.42) 0%,
+        rgba(0, 0, 0, 0.56) 55%,
+        rgba(0, 0, 0, 0.72) 100%
+      ) !important;
   }
 
+
+  /* CONTENT */
+
+  .pranayama-section .section-title {
+    margin-bottom: 45px;
+  }
+
+  .pranayama-section .protocol-card,
+  .pranayama-section .medical-section {
+    padding: 28px;
+  }
+
+  .pranayama-section .medical-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pranayama-section .video-thumb img {
+    height: 220px;
+  }
+
+  .pranayama-section .faq-question {
+    padding: 18px 20px;
+  }
+
+  .pranayama-section .faq-item.active .faq-answer {
+    padding: 0 20px 20px;
+  }
+
+  .pranayama-section .faq-head h2 {
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+
+  .pranayama-section .faq-head p {
+    font-size: 0.95rem;
+  }
 }
 
 
-/* =========================================================
-   REDUCE MOTION
-   ========================================================= */
+/* ============================================================
+   26. SMALL MOBILE
+   ============================================================ */
+
+@media (max-width: 480px) {
+
+  .pranayama-section {
+    padding: 70px 16px 50px;
+  }
+
+  section.pranayama-hero {
+    min-height: 570px !important;
+  }
+
+  section.pranayama-hero .hero-content {
+    padding:
+      90px 18px
+      70px !important;
+  }
+
+  section.pranayama-hero .hero-content h1 {
+    font-size: clamp(34px, 10vw, 44px) !important;
+
+    line-height: 1.08 !important;
+  }
+
+  section.pranayama-hero .hero-content p {
+    font-size: 15px !important;
+  }
+
+  section.pranayama-hero .hero-tags span {
+    font-size: 11px !important;
+
+    padding: 7px 10px !important;
+  }
+
+  .pranayama-section .protocol-card,
+  .pranayama-section .medical-section {
+    padding: 22px;
+
+    border-radius: 24px;
+  }
+
+  .pranayama-section .practice-item {
+    gap: 14px;
+
+    padding: 16px;
+  }
+
+  .pranayama-section .practice-item > span {
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+  }
+
+  .pranayama-section .video-content {
+    padding: 22px;
+  }
+}
+
+
+/* ============================================================
+   27. VERY SMALL PHONES
+   ============================================================ */
+
+@media (max-width: 360px) {
+
+  section.pranayama-hero {
+    min-height: 540px !important;
+  }
+
+  section.pranayama-hero .hero-content {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  section.pranayama-hero .hero-content h1 {
+    font-size: 32px !important;
+  }
+
+  section.pranayama-hero .hero-content p {
+    font-size: 14px !important;
+  }
+
+  section.pranayama-hero .hero-tags {
+    gap: 6px !important;
+  }
+
+  section.pranayama-hero .hero-tags span {
+    font-size: 10px !important;
+    padding: 6px 9px !important;
+  }
+}
+
+
+/* ============================================================
+   28. REDUCED MOTION
+   ============================================================ */
 
 @media (prefers-reduced-motion: reduce) {
 
-  .pranayama-hero .hero-video-bg {
-    display: none;
+  section.pranayama-hero .hero-video-bg {
+    display: none !important;
   }
 
-  .pranayama-hero {
-    background:
-      #173b32;
+  section.pranayama-hero {
+    background: #173b32 !important;
   }
 
+  .pranayama-section .practice-item,
+  .pranayama-section .video-card,
+  .pranayama-section .video-thumb img,
+  .pranayama-section .watch-btn,
+  .pranayama-section .faq-icon {
+    transition: none !important;
+  }
 }
+
+
+/* ============================================================
+   29. WHATSAPP FLOAT
+   ============================================================ */
+
+.whatsapp-float {
+  position: fixed !important;
+
+  right: 16px !important;
+  bottom:
+    calc(
+      16px +
+      env(safe-area-inset-bottom)
+    ) !important;
+
+  z-index: 99999 !important;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 52px !important;
+  height: 52px !important;
+
+  border-radius: 50%;
+}
+
+.whatsapp-float svg {
+  width: 27px;
+  height: 27px;
+}
+
+
+/* ============================================================
+   END
+   ============================================================ */
