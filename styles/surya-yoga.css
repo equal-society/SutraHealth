@@ -506,3 +506,190 @@ section{
   /* Prevent inherited visual effects */
   filter: none !important;
 }
+
+
+/* =========================================================
+   YOGA ASANA HERO — SAME HERO STYLE AS PRANAYAMA
+   ========================================================= */
+
+.yoga-hero{
+  position:relative !important;
+  isolation:isolate !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:100% !important;
+  min-height:680px !important;
+  height:78vh !important;
+  max-height:820px !important;
+  margin:0 !important;
+  padding:0 20px !important;
+  overflow:hidden !important;
+  text-align:center;
+  background:#152f27 !important;
+  color:#fff !important;
+}
+
+/* YouTube background */
+.yoga-hero .hero-video-bg{
+  position:absolute !important;
+  inset:0 !important;
+  z-index:0 !important;
+  width:100% !important;
+  height:100% !important;
+  overflow:hidden !important;
+  pointer-events:none !important;
+  background:#152f27 !important;
+}
+
+.yoga-hero .hero-video-bg iframe{
+  position:absolute !important;
+  top:50% !important;
+  left:50% !important;
+  width:177.78vh !important;
+  height:56.25vw !important;
+  min-width:100% !important;
+  min-height:100% !important;
+  transform:translate(-50%,-50%) !important;
+  border:0 !important;
+  pointer-events:none !important;
+}
+
+/* Dark overlay */
+.yoga-hero .yoga-hero-overlay{
+  position:absolute !important;
+  inset:0 !important;
+  z-index:1 !important;
+  background:rgba(0,0,0,.48) !important;
+  pointer-events:none !important;
+}
+
+/* Hero content */
+.yoga-hero .hero-content{
+  position:relative !important;
+  z-index:10 !important;
+  width:100% !important;
+  max-width:950px !important;
+  margin:0 auto !important;
+  padding:clamp(40px,8vw,100px) clamp(16px,4vw,20px) !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+  text-align:center !important;
+}
+
+/* Small premium label */
+.yoga-hero .hero-label{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 22px;
+  margin-bottom:24px;
+  border-radius:999px;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.18);
+  color:#fff;
+  font-size:clamp(.72rem,.9vw,.86rem);
+  font-weight:600;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+/* Main heading */
+.yoga-hero .hero-content h1{
+  font-family:'Cormorant Garamond',serif !important;
+  font-size:clamp(42px,6vw,78px) !important;
+  line-height:1.05 !important;
+  color:#fff !important;
+  margin:0 0 22px !important;
+}
+
+/* Description */
+.yoga-hero .hero-content > p{
+  max-width:760px !important;
+  margin:0 auto 30px !important;
+  color:rgba(255,255,255,.9) !important;
+  font-size:clamp(1rem,1.2vw + .45rem,1.25rem) !important;
+  line-height:1.7 !important;
+}
+
+/* Topic tags */
+.yoga-hero .hero-tags{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  position:relative;
+  z-index:11;
+}
+
+.yoga-hero .hero-tags span{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:9px 15px;
+  border-radius:999px;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.16);
+  color:#fff;
+  font-size:clamp(.7rem,.8vw,.82rem);
+  line-height:1.2;
+}
+
+/* Mobile */
+@media (max-width:768px){
+  .yoga-hero{
+    min-height:600px !important;
+    height:82vh !important;
+    padding:0 14px !important;
+  }
+
+  .yoga-hero .hero-content{
+    padding:50px 14px !important;
+  }
+
+  .yoga-hero .hero-label{
+    margin-bottom:18px;
+    padding:8px 15px;
+    font-size:10px;
+    letter-spacing:1.5px;
+  }
+
+  .yoga-hero .hero-content h1{
+    font-size:clamp(40px,10vw,54px) !important;
+    line-height:1.08 !important;
+    margin-bottom:18px !important;
+  }
+
+  .yoga-hero .hero-content > p{
+    font-size:15px !important;
+    line-height:1.6 !important;
+    margin-bottom:24px !important;
+  }
+
+  .yoga-hero .hero-tags{
+    gap:7px;
+  }
+
+  .yoga-hero .hero-tags span{
+    font-size:10px;
+    padding:7px 10px;
+  }
+}
+
+@media (max-width:360px){
+  .yoga-hero{
+    min-height:540px !important;
+  }
+
+  .yoga-hero .hero-content h1{
+    font-size:34px !important;
+  }
+
+  .yoga-hero .hero-content > p{
+    font-size:14px !important;
+  }
+}
+
