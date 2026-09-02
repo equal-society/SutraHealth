@@ -310,6 +310,16 @@ img{max-width:100%;display:block;}
 .foot-cta a:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.2);}
 .foot-cta .btn-outline-white{background:transparent;border:2px solid rgba(255,255,255,.5);color:#fff;}
 .foot-cta .btn-outline-white:hover{background:rgba(255,255,255,.15);border-color:#fff;}
+
+/* Conversion enhancements */
+.hero-cta-group{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}.hero-cta{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:13px 22px;border-radius:999px;font-weight:800;font-size:.92rem;transition:.2s ease}.hero-cta.primary{background:var(--g1);color:#fff;box-shadow:0 8px 24px rgba(0,0,0,.18)}.hero-cta.primary:hover{background:var(--g2);transform:translateY(-2px)}.hero-cta.secondary{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.45);color:#fff;backdrop-filter:blur(8px)}.hero-cta.secondary:hover{background:rgba(255,255,255,.22);transform:translateY(-2px)}
+.retreat-intro{margin:0 0 30px;padding:26px 28px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--g-light)}.retreat-intro h2{font-family:var(--serif);font-size:clamp(1.5rem,.6vw + 1.3rem,2.1rem);margin:0 0 10px;color:var(--g3)}.retreat-intro p{margin:0;color:var(--ink-soft);max-width:72ch}
+.include-grid,.audience-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:0 0 12px}.include-card,.audience-card{padding:20px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--paper-2);box-shadow:var(--shadow-sm)}.include-card strong,.audience-card strong{display:block;margin-bottom:5px;color:var(--ink)}.include-card span,.audience-card span{font-size:.88rem;color:var(--muted);line-height:1.5}
+.inline-cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;margin:36px 0;padding:24px 26px;border-radius:var(--radius-md);background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm)}.inline-cta h3{font-family:var(--serif);font-size:1.35rem;margin:0 0 3px}.inline-cta p{margin:0;color:var(--muted);font-size:.9rem}.inline-cta a{display:inline-flex;align-items:center;justify-content:center;background:var(--g1);color:#fff;font-weight:800;padding:12px 22px;border-radius:999px}.inline-cta a:hover{background:var(--g2)}
+.faq-list{display:flex;flex-direction:column;gap:10px;margin-bottom:10px}.faq-list details{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius-sm);padding:0 18px}.faq-list summary{cursor:pointer;font-weight:700;padding:17px 0;color:var(--ink)}.faq-list details p{margin:0 0 17px;color:var(--ink-soft);font-size:.92rem}
+.mobile-cta{display:none;position:fixed;left:14px;right:14px;bottom:14px;z-index:9998;padding:10px;background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:999px;box-shadow:0 8px 30px rgba(0,0,0,.16);backdrop-filter:blur(10px)}.mobile-cta a{display:flex;align-items:center;justify-content:center;background:var(--g1);color:#fff;min-height:46px;border-radius:999px;font-weight:800}
+@media(max-width:760px){.include-grid,.audience-grid{grid-template-columns:1fr}}@media(max-width:1080px){.mobile-cta{display:block}}
+
 </style>
 </head>
 <body>
@@ -334,6 +344,10 @@ img{max-width:100%;display:block;}
           <span class="spill">🧘 Yoga Classes</span>
           <span class="spill">🌄 Sunrise Views</span>
           <span class="spill">🌿 Herbal Garden</span>
+        </div>
+        <div class="hero-cta-group">
+          <a class="hero-cta primary" href="https://bookretreats.com/r/6-day-rejuvenation-in-nature-moments-from-civilization-in-india" target="_blank" rel="noopener noreferrer" onclick="trackRetreatClick('hero_booking')">Check Availability →</a>
+          <a class="hero-cta secondary" href="#retreat-experience">Explore the Retreat</a>
         </div>
       </div>
     </div>
@@ -364,8 +378,8 @@ img{max-width:100%;display:block;}
       <div class="slide-content-panel">
         <div class="slide-num">03 / 03</div>
         <div class="slide-tag">🫙 Natural Therapy · Shirodhara</div>
-        <h2 class="slide-headline">Shirodhara Therapy<br>Deep Relaxation &amp; Nervous System Reset</h2>
-        <p class="slide-body">Experience the ancient Natural practice of gently streaming warm medicated oil over the forehead — deeply calming for anxiety, insomnia, migraines, and mental fatigue.</p>
+        <h2 class="slide-headline">Shirodhara Therapy<br>Shirodhara &amp; Deep Relaxation</h2>
+        <p class="slide-body">Experience a traditional practice involving the gentle streaming of warm oil over the forehead. It is presented here as a relaxation-focused wellness experience; suitability should be discussed with the qualified team.</p>
         <div class="slide-pills">
           <span class="spill">🫙 Warm Herbal Oil</span>
           <span class="spill">🧠 Migraine Relief</span>
@@ -391,7 +405,7 @@ img{max-width:100%;display:block;}
     <span class="badge outline">Entire Apartment</span>
     <span class="badge outline">Faridabad, India</span>
   </div>
-  <h2 class="listing-title">Serene 3BR Retreat near Aravallis — Yoga, Terrace &amp; City Views</h2>
+  <h2 class="listing-title">Wellness Retreat Near Delhi NCR — Yoga, Lifestyle Wellness &amp; Aravalli Views</h2>
   <div class="meta-row">
     <span><span class="star">★</span><strong>4.86</strong> · 7 reviews</span>
     <span class="dot-sep"></span>
@@ -407,6 +421,23 @@ img{max-width:100%;display:block;}
 ===================================================== -->
 <div class="page-grid">
   <div>
+
+    <section class="retreat-intro" id="retreat-experience" data-aos="fade-up">
+      <h2>A Wellness Stay, Not Just a Place to Stay</h2>
+      <p>Take a quieter break near the Aravallis with a comfortable private stay and access to guided wellness experiences such as Yoga, meditation, Pranayama and lifestyle-focused support. Choose the experience that fits your visit.</p>
+    </section>
+
+    <h2 class="section-title" data-aos="fade-right">What Your Retreat Can Include</h2>
+    <div class="include-grid">
+      <div class="include-card"><strong>🏡 Comfortable Stay</strong><span>3-bedroom private accommodation with rooftop terrace, garden, kitchen and parking.</span></div>
+      <div class="include-card"><strong>🧘 Guided Wellness</strong><span>Yoga, meditation and Pranayama sessions can be arranged as part of the retreat experience.</span></div>
+      <div class="include-card"><strong>🌿 Nature &amp; Recovery</strong><span>Enjoy the rooftop, herbal garden and nearby Aravalli surroundings at a relaxed pace.</span></div>
+    </div>
+
+    <div class="inline-cta">
+      <div><h3>Planning a wellness stay?</h3><p>Check dates and ask about the retreat experience before you book.</p></div>
+      <a href="https://bookretreats.com/r/6-day-rejuvenation-in-nature-moments-from-civilization-in-india" target="_blank" rel="noopener noreferrer" onclick="trackRetreatClick('inline_booking')">Check Availability →</a>
+    </div>
 
     <!-- Highlights -->
     <div class="highlight-row">
@@ -466,6 +497,14 @@ img{max-width:100%;display:block;}
       </div>
     </div>
 
+    <!-- WHO IT'S FOR -->
+    <h2 class="section-title" data-aos="fade-right">Who This Retreat Is For</h2>
+    <div class="audience-grid">
+      <div class="audience-card"><strong>🌿 A Quiet Break</strong><span>For people looking to step away from a busy routine and spend time in a calmer setting.</span></div>
+      <div class="audience-card"><strong>🧘 Yoga &amp; Mindfulness</strong><span>For beginners and regular practitioners interested in guided Yoga, breathing or meditation.</span></div>
+      <div class="audience-card"><strong>🥗 Healthier Habits</strong><span>For guests who want to explore practical lifestyle, nutrition and wellness guidance during their stay.</span></div>
+    </div>
+
     <!-- PROGRAMS -->
     <h2 class="section-title" data-aos="fade-right">Yoga, Ayurveda &amp; Wellness Programs</h2>
     <main class="programs-wrap">
@@ -499,11 +538,11 @@ img{max-width:100%;display:block;}
         <div class="prog-content">
           <span class="prog-tag">Nutrition</span>
           <h3>Dietary Advice</h3>
-          <p>Food is medicine. Dr. Rakesh designs personalised nutrition plans rooted in Natural wisdom and modern nutritional science — addressing weight, gut health, energy, and disease prevention through what you eat every day.</p>
+          <p>Dr. Rakesh can provide personalised nutrition guidance drawing on traditional food practices and modern nutritional principles, with recommendations adapted to individual needs.</p>
           <ul class="prog-points">
             <li>🥗 Personalised meal planning</li>
             <li>🌾 Seasonal &amp; sattvic food guidance</li>
-            <li>🧬 Managing diabetes, PCOS, thyroid through diet</li>
+            <li>🧬 Condition-specific nutrition guidance where appropriate</li>
             <li>📓 Recipe suggestions &amp; pantry reset</li>
           </ul>
           <a class="prog-btn" href="./Contact.html">Get a Diet Plan →</a>
@@ -519,11 +558,11 @@ img{max-width:100%;display:block;}
         <div class="prog-content">
           <span class="prog-tag">Natural Therapy</span>
           <h3>Shirodhara</h3>
-          <p>The ancient Natural practice of gently streaming warm medicated oil over the forehead. Deeply calming for the nervous system, Shirodhara alleviates anxiety, insomnia, migraines and mental fatigue — leaving you in a state of profound stillness.</p>
+          <p>A traditional oil-based wellness practice involving the gentle streaming of warm oil over the forehead. It may be offered as a relaxation-focused session; suitability should be discussed with the qualified team.</p>
           <ul class="prog-points">
             <li>🫙 Warm herbal oil therapy</li>
-            <li>🧠 Migraine &amp; anxiety relief</li>
-            <li>😴 Deep sleep restoration</li>
+            <li>🧠 Relaxation-focused session</li>
+            <li>😴 Relaxation &amp; rest</li>
             <li>⏱ 45–60 minute immersive session</li>
           </ul>
           <a class="prog-btn" href="./Contact.html">Book Shirodhara →</a>
@@ -599,12 +638,12 @@ img{max-width:100%;display:block;}
         <div class="prog-content">
           <span class="prog-tag">Breathwork</span>
           <h3>Pranayama</h3>
-          <p>Breath is the bridge between body and mind. Dr. Rakesh teaches classical Pranayama — Nadi Shodhana, Bhramari, Kapalbhati and more — scientifically shown to regulate the nervous system, boost lung capacity, and sharpen mental clarity.</p>
+          <p>Breath is a practical part of many Yoga traditions. Dr. Rakesh teaches classical Pranayama practices such as Nadi Shodhana, Bhramari and Kapalbhati, with practice adapted to the individual where appropriate.</p>
           <ul class="prog-points">
             <li>🌬 Nadi Shodhana &amp; alternate nostril breathing</li>
-            <li>🐝 Bhramari for headache &amp; anxiety</li>
-            <li>🔥 Kapalbhati for digestion &amp; energy</li>
-            <li>📈 Measurable lung-function improvement</li>
+            <li>🐝 Bhramari breathing practice</li>
+            <li>🔥 Kapalbhati breathing practice</li>
+            <li>📈 Guided breathing practice</li>
           </ul>
           <a class="prog-btn" href="./Contact.html">Learn Pranayama →</a>
         </div>
@@ -619,7 +658,7 @@ img{max-width:100%;display:block;}
         <div class="prog-content">
           <span class="prog-tag">Movement &amp; Flexibility</span>
           <h3>Yoga Asana Protocol</h3>
-          <p>A structured, medically informed Yoga Asana sequence designed by Dr. Rakesh — tailored to your health goals, whether that's back pain relief, flexibility, stress reduction or post-recovery strengthening. Practice under open skies on the private rooftop terrace.</p>
+          <p>A structured Yoga Asana sequence designed with attention to your individual goals and experience level. Practice under open skies on the private rooftop terrace, with appropriate guidance where needed.</p>
           <ul class="prog-points">
             <li>🧘 Personalised asana sequence per guest</li>
             <li>🩺 Medical safety screening before start</li>
@@ -631,6 +670,19 @@ img{max-width:100%;display:block;}
       </article>
 
     </main>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <h2 class="section-title" data-aos="fade-right">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <details><summary>How do I check availability?</summary><p>Use the “Check Availability” button to open the retreat booking page. You can also contact Sutra Health directly through WhatsApp for questions about your stay.</p></details>
+        <details><summary>How many guests can stay?</summary><p>The accommodation is described as a 3-bedroom stay for up to 6 guests, with 6 beds and 3 baths.</p></details>
+        <details><summary>Is Yoga included with the stay?</summary><p>Yoga and other wellness sessions are presented as part of the retreat experience. Confirm the exact sessions and schedule before booking.</p></details>
+        <details><summary>Is this suitable for beginners?</summary><p>Beginners can ask about suitable Yoga, breathing and meditation options before attending. Individual needs should be discussed with the qualified team where appropriate.</p></details>
+        <details><summary>Where is the retreat located?</summary><p>The retreat is in Faridabad, Haryana, near the Aravalli area, with access toward Badkhal and Surajkund and convenient access to South Delhi.</p></details>
+        <details><summary>Can I ask about a personalised wellness program?</summary><p>Yes. Use WhatsApp or the booking/contact route to discuss your goals and confirm which services are currently available.</p></details>
+      </div>
+    </section>
 
     <!-- REVIEWS -->
     <div id="reviews">
@@ -747,6 +799,8 @@ img{max-width:100%;display:block;}
   </aside>
 </div>
 
+<div class="mobile-cta"><a href="https://bookretreats.com/r/6-day-rejuvenation-in-nature-moments-from-civilization-in-india" target="_blank" rel="noopener noreferrer" onclick="trackRetreatClick('mobile_booking')">📅 Check Retreat Availability</a></div>
+
 <div id="footer"></div>
 
 <!-- Floating WhatsApp Button - Direct WhatsApp -->
@@ -760,6 +814,11 @@ img{max-width:100%;display:block;}
   </svg>
 </a>
 
+<script>
+function trackRetreatClick(label){
+  if(typeof gtag==='function'){gtag('event','retreat_cta_click',{event_category:'retreat',event_label:label,page_location:window.location.href});}
+}
+</script>
 <script src="/js/include.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 <script>lightbox.option({resizeDuration:200,wrapAround:true,albumLabel:"Photo %1 of %2",fadeDuration:300});</script>
@@ -831,8 +890,8 @@ img{max-width:100%;display:block;}
   "url": "https://lifequality.org.in/",
   "logo": "https://lifequality.org.in/assets/images/og-image.jpg",
   "image": "https://lifequality.org.in/assets/images/og-image.jpg",
-  "description": "Life Quality (Sutra Health) is a Faridabad-based not-for-profit society helping people reverse chronic conditions such as obesity, hypertension, diabetes, migraine and joint pain through an evidence-based, 21-point integrative protocol combining Yoga therapy, nutrition, Ayurveda and modern medicine.",
-  "slogan": "Reverse Chronic Diseases Naturally",
+  "description": "Life Quality (Sutra Health) is a Faridabad-based not-for-profit society focused on integrative lifestyle healthcare, including Yoga therapy, nutrition, lifestyle education and behaviour change.",
+  "slogan": "Integrative Lifestyle Healthcare",
   "foundingDate": "1997-05-28",
   "email": "info@lifequality.org.in",
   "telephone": "+91-9013103676",
