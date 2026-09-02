@@ -1,0 +1,739 @@
+/* =========================================================
+   LIFESTYLE COACHING PAGE
+   Page-specific CSS only.
+   Navbar/footer/global home.css are intentionally untouched.
+   ========================================================= */
+
+:root {
+  --lc-heading: "Playfair Display", Georgia, "Times New Roman", serif;
+  --lc-body: "Nunito Sans", sans-serif;
+  --lc-green: #2a7a55;
+  --lc-dark: #17382d;
+  --lc-text: #68756f;
+  --lc-soft: #eaf6f0;
+  --lc-cream: #faf8f4;
+  --lc-border: #e5ece8;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: var(--lc-body);
+  color: #1f3a30;
+  background: #fff;
+}
+
+.lifestyle-section {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px 90px;
+}
+
+/* ================= HERO ================= */
+
+.section-title {
+  position: relative;
+  width: 100vw;
+  min-height: 560px;
+  margin: 0 0 55px;
+  margin-left: calc(50% - 50vw);
+  padding: 100px max(32px, calc((100vw - 1180px) / 2));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  text-align: left;
+  background:
+    linear-gradient(90deg, rgba(10,45,36,.88) 0%, rgba(10,45,36,.70) 48%, rgba(10,45,36,.25) 100%),
+    url("https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1800&q=85") center/cover no-repeat;
+}
+
+.section-title > * {
+  position: relative;
+  z-index: 2;
+}
+
+.protocol-tag,
+.eyebrow {
+  display: inline-block;
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.protocol-tag {
+  margin-bottom: 20px;
+  padding: 9px 16px;
+  color: #e2f5ea;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.32);
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+}
+
+.section-title h1 {
+  max-width: 820px;
+  margin: 0 0 22px;
+  color: #fff;
+  font-family: var(--lc-heading);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.04;
+  letter-spacing: -.04em;
+  text-shadow: 0 3px 20px rgba(0,0,0,.3);
+}
+
+.hero-description {
+  max-width: 700px;
+  margin: 0 0 26px;
+  color: rgba(255,255,255,.94);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  text-shadow: 0 2px 10px rgba(0,0,0,.25);
+}
+
+.hero-points {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.hero-points span {
+  padding: 9px 14px;
+  color: #fff;
+  background: rgba(18,51,43,.56);
+  border: 1px solid rgba(255,255,255,.28);
+  border-radius: 999px;
+  font-size: .84rem;
+  font-weight: 600;
+  backdrop-filter: blur(6px);
+}
+
+/* ================= OVERVIEW ================= */
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 55px;
+}
+
+.overview-card {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  min-height: 120px;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid #edf0ed;
+  border-radius: 22px;
+  box-shadow: 0 8px 28px rgba(0,0,0,.045);
+}
+
+.overview-icon,
+.practice-item > span,
+.support-card > span,
+.benefit-item > span,
+.audience-card > span {
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #dff4e9;
+  color: var(--lc-green);
+  font-size: .72rem;
+  font-weight: 800;
+}
+
+.overview-card h2 {
+  margin: 2px 0 7px;
+  color: #1f3a30;
+  font-size: 1.08rem;
+}
+
+.overview-card p {
+  margin: 0;
+  color: var(--lc-text);
+  font-size: .9rem;
+  line-height: 1.6;
+}
+
+/* ================= COMMON CONTENT ================= */
+
+.eyebrow { color: var(--lc-green); }
+
+.content-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 330px;
+  gap: 35px;
+  align-items: center;
+  margin-bottom: 55px;
+  padding: 48px;
+  border-radius: 30px;
+  background: var(--lc-soft);
+  border: 1px solid #dceee4;
+}
+
+.content-copy h2,
+.card-heading h2,
+.support-intro h2,
+.section-heading-left h2,
+.section-heading-center h2,
+.faq-head h2,
+.final-cta h2 {
+  margin: 8px 0 14px;
+  color: var(--lc-dark);
+  font-family: var(--lc-heading);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  line-height: 1.15;
+  letter-spacing: -.025em;
+}
+
+.content-copy p,
+.card-heading p,
+.support-intro p,
+.section-heading-left p,
+.section-heading-center p,
+.final-cta p {
+  color: var(--lc-text);
+  line-height: 1.75;
+}
+
+.content-copy p {
+  max-width: 760px;
+  margin: 0 0 12px;
+}
+
+.content-highlight {
+  padding: 28px;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,.045);
+}
+
+.highlight-number {
+  display: block;
+  color: var(--lc-green);
+  font-size: 3.2rem;
+  line-height: 1;
+  font-weight: 800;
+}
+
+.content-highlight strong {
+  display: block;
+  margin: 10px 0 7px;
+  color: #1f3a30;
+}
+
+.content-highlight p {
+  margin: 0;
+  color: var(--lc-text);
+  font-size: .88rem;
+  line-height: 1.6;
+}
+
+/* ================= LEARNING GRID ================= */
+
+.learning-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(320px, .82fr);
+  gap: 32px;
+  align-items: start;
+  margin-bottom: 55px;
+}
+
+.protocol-card {
+  width: 100%;
+  padding: 38px;
+  background: #fff;
+  border: 1px solid #edf0ed;
+  border-radius: 28px;
+  box-shadow: 0 12px 40px rgba(0,0,0,.055);
+}
+
+.card-heading { margin-bottom: 27px; }
+
+.practice-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.practice-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  min-height: 130px;
+  padding: 18px;
+  background: var(--lc-cream);
+  border: 1px solid transparent;
+  border-radius: 18px;
+  transition: transform .25s ease, background .25s ease, border-color .25s ease;
+}
+
+.practice-item:hover {
+  transform: translateY(-3px);
+  background: #eef7f1;
+  border-color: #d8ebe0;
+}
+
+.practice-item > span {
+  flex-basis: 38px;
+  width: 38px;
+  height: 38px;
+  background: var(--lc-green);
+  color: #fff;
+}
+
+.practice-item h3 {
+  margin: 1px 0 6px;
+  color: #1f3a30;
+  font-size: 1rem;
+}
+
+.practice-item p {
+  margin: 0;
+  color: var(--lc-text);
+  font-size: .86rem;
+  line-height: 1.6;
+}
+
+/* ================= SUPPORT ================= */
+
+.support-column {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.support-intro { padding: 2px 4px 8px; }
+
+.support-card {
+  padding: 22px;
+  background: #fff;
+  border: 1px solid #edf0ed;
+  border-radius: 20px;
+  box-shadow: 0 8px 28px rgba(0,0,0,.045);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.support-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 34px rgba(0,0,0,.07);
+}
+
+.support-card > span,
+.benefit-item > span,
+.audience-card > span {
+  display: inline-grid;
+  margin-bottom: 10px;
+  flex-basis: auto;
+  width: 34px;
+  height: 34px;
+  background: #e7f2ec;
+}
+
+.support-card h3,
+.benefit-item h3,
+.audience-card h3 {
+  margin: 0 0 7px;
+  color: #1f3a30;
+  font-size: 1.03rem;
+}
+
+.support-card p,
+.benefit-item p,
+.audience-card p {
+  margin: 0;
+  color: var(--lc-text);
+  font-size: .87rem;
+  line-height: 1.6;
+}
+
+/* ================= LIFESTYLE AREAS ================= */
+
+.medical-section {
+  margin-bottom: 55px;
+}
+
+.medical-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 30px 0;
+}
+
+.medical-grid > div {
+  padding: 23px;
+  border-radius: 19px;
+  background: var(--lc-cream);
+}
+
+.medical-grid h3 {
+  margin: 0 0 8px;
+  color: #1f3a30;
+  font-size: 1.05rem;
+}
+
+.medical-grid p {
+  margin: 0;
+  color: var(--lc-text);
+  font-size: .9rem;
+  line-height: 1.65;
+}
+
+.safety-note {
+  margin: 22px 0 25px;
+  padding: 18px 20px;
+  border-left: 4px solid var(--lc-green);
+  border-radius: 12px;
+  background: #eef7f1;
+}
+
+.safety-note strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #1f3a30;
+}
+
+.safety-note p {
+  margin: 0;
+  color: var(--lc-text);
+  font-size: .9rem;
+}
+
+/* ================= BENEFITS ================= */
+
+.benefits-section {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 45px;
+  align-items: start;
+  margin-bottom: 55px;
+  padding: 10px 4px;
+}
+
+.section-heading-left p {
+  max-width: 470px;
+  margin: 0;
+}
+
+.benefit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.benefit-item {
+  padding: 22px;
+  background: #fff;
+  border: 1px solid #edf0ed;
+  border-radius: 20px;
+  box-shadow: 0 8px 26px rgba(0,0,0,.04);
+}
+
+/* ================= AUDIENCE ================= */
+
+.audience-section {
+  margin-bottom: 55px;
+  padding: 10px 0;
+}
+
+.section-heading-center {
+  max-width: 760px;
+  margin: 0 auto 30px;
+  text-align: center;
+}
+
+.audience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.audience-card {
+  padding: 25px;
+  background: var(--lc-cream);
+  border: 1px solid #edf0ed;
+  border-radius: 22px;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.audience-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0,0,0,.05);
+}
+
+/* ================= FAQ ================= */
+
+.faq-section {
+  margin-bottom: 55px;
+}
+
+.faq-inner {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.faq-head {
+  margin-bottom: 26px;
+  text-align: center;
+}
+
+.faq-head p {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.faq-list {
+  border-top: 1px solid #e4ebe7;
+}
+
+.faq-item {
+  border-bottom: 1px solid #e4ebe7;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 22px 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border: 0;
+  background: transparent;
+  color: #1f3a30;
+  font: 700 1rem var(--lc-body);
+  text-align: left;
+  cursor: pointer;
+}
+
+.faq-icon {
+  position: relative;
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.faq-icon::before,
+.faq-icon::after {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: 2px;
+  width: 16px;
+  height: 2px;
+  background: var(--lc-green);
+  transition: transform .25s ease;
+}
+
+.faq-icon::after { transform: rotate(90deg); }
+
+.faq-item.open .faq-icon::after { transform: rotate(0); }
+
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows .3s ease;
+}
+
+.faq-item.open .faq-answer {
+  grid-template-rows: 1fr;
+}
+
+.faq-answer-inner {
+  overflow: hidden;
+}
+
+.faq-answer p {
+  margin: 0;
+  padding: 0 45px 22px 4px;
+  color: var(--lc-text);
+  line-height: 1.7;
+}
+
+/* ================= CTA ================= */
+
+.final-cta {
+  padding: 55px 30px;
+  text-align: center;
+  border-radius: 30px;
+  background: var(--lc-dark);
+  color: #fff;
+}
+
+.final-cta .eyebrow { color: #9ce0bd; }
+
+.final-cta h2 {
+  max-width: 700px;
+  margin: 10px auto 13px;
+  color: #fff;
+}
+
+.final-cta p {
+  max-width: 680px;
+  margin: 0 auto 24px;
+  color: #d4e2dc;
+}
+
+.watch-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: #3bad78;
+  color: #fff;
+  text-decoration: none;
+  font-size: .88rem;
+  font-weight: 700;
+  transition: background .25s ease, transform .25s ease;
+}
+
+.watch-btn:hover {
+  background: #2a9564;
+  transform: translateY(-2px);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1050px) {
+  .lifestyle-section {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .learning-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .overview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .content-section,
+  .benefits-section {
+    grid-template-columns: 1fr;
+  }
+
+  .medical-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .audience-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .section-title {
+    min-height: 520px;
+    padding: 70px 24px;
+    margin-bottom: 40px;
+    background:
+      linear-gradient(180deg, rgba(10,45,36,.68) 0%, rgba(10,45,36,.82) 55%, rgba(10,45,36,.92) 100%),
+      url("https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1200&q=85") center/cover no-repeat;
+  }
+
+  .section-title h1 {
+    font-size: clamp(2.1rem, 10vw, 3.2rem);
+  }
+
+  .hero-description {
+    font-size: .95rem;
+    line-height: 1.65;
+  }
+
+  .lifestyle-section {
+    padding: 0 16px 65px;
+  }
+
+  .content-section {
+    padding: 30px 23px;
+    border-radius: 24px;
+  }
+
+  .protocol-card {
+    padding: 26px 20px;
+    border-radius: 23px;
+  }
+
+  .practice-list,
+  .benefit-grid,
+  .medical-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .practice-item {
+    min-height: auto;
+  }
+
+  .final-cta {
+    padding: 42px 22px;
+    border-radius: 24px;
+  }
+
+  .watch-btn {
+    width: 100%;
+  }
+
+  .faq-answer p {
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 430px) {
+  .section-title {
+    min-height: 500px;
+    padding: 60px 20px;
+  }
+
+  .section-title h1 {
+    font-size: 2.15rem;
+  }
+
+  .hero-description {
+    font-size: .9rem;
+  }
+
+  .lifestyle-section {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 55px;
+  }
+
+  .overview-card,
+  .support-card,
+  .benefit-item,
+  .audience-card {
+    padding: 19px;
+  }
+
+  .protocol-card {
+    padding: 23px 17px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
