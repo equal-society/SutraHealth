@@ -1,4 +1,9 @@
 
+/* =========================================================
+   Sutra Health — Positive Thinking Premium Page Style
+   Same visual language as the Nature Walks / Lifestyle design.
+   Navbar + footer are intentionally untouched.
+========================================================= */
 
 *{
   margin:0;
@@ -6,9 +11,7 @@
   box-sizing:border-box;
 }
 
-html{
-  scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth;}
 
 body{
   font-family:'DM Sans',sans-serif;
@@ -23,10 +26,6 @@ img{
   display:block;
 }
 
-/* =========================
-   CONTAINER
-========================= */
-
 .positive-container{
   width:90%;
   max-width:1250px;
@@ -39,38 +38,43 @@ img{
 
 .positive-hero{
   min-height:100vh;
-
   background:
-  linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.68)),
-  url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1800&auto=format&fit=crop');
-
-  background-size:cover;
-  background-position:center;
-
+    linear-gradient(90deg,rgba(14,39,27,.88),rgba(23,54,36,.68),rgba(23,54,36,.38)),
+    url('https://images.unsplash.com/photo-1499209974431-9dddcece7f88?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
   display:flex;
   align-items:center;
-
   padding:160px 0 100px;
+  position:relative;
+  isolation:isolate;
+}
+
+.positive-hero::after{
+  content:"";
+  position:absolute;
+  inset:auto 0 0;
+  height:150px;
+  background:linear-gradient(transparent,rgba(247,245,241,.18));
+  pointer-events:none;
 }
 
 .hero-content{
-  max-width:760px;
+  max-width:800px;
+  position:relative;
+  z-index:2;
 }
 
 .hero-content span{
   display:inline-block;
-
   padding:10px 24px;
   border-radius:40px;
-
-  background:rgba(255,255,255,0.1);
-  border:1px solid rgba(255,255,255,0.18);
-
-  color:#2eb872;
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.25);
+  color:#6ed39d;
   letter-spacing:2px;
   font-size:14px;
-
+  font-weight:700;
   margin-bottom:24px;
+  backdrop-filter:blur(8px);
 }
 
 .hero-content h1{
@@ -79,46 +83,47 @@ img{
   line-height:1.08;
   color:#fff;
   margin-bottom:28px;
+  letter-spacing:-.025em;
 }
 
 .hero-content p{
-  color:rgba(255,255,255,0.88);
+  color:rgba(255,255,255,.90);
   font-size:1.1rem;
   max-width:700px;
 }
 
 /* =========================
-   QUOTE SECTION
+   QUOTE / IMAGE SECTION
 ========================= */
 
 .quote-section{
-  padding:110px 0 40px;
+  padding:110px 0 45px;
 }
 
 .quote-grid{
   display:grid;
-  grid-template-columns:1.2fr 0.8fr;
+  grid-template-columns:1fr;
   gap:35px;
-  align-items:stretch;
 }
 
 .quote-card{
   overflow:hidden;
   border-radius:30px;
-
-  box-shadow:0 18px 45px rgba(0,0,0,0.1);
-
   background:#fff;
+  box-shadow:0 18px 45px rgba(0,0,0,.10);
+  border:1px solid #ece7dc;
 }
 
 .quote-card img{
+  width:100%;
   height:100%;
+  min-height:480px;
   object-fit:cover;
-  transition:0.5s;
+  transition:transform .55s ease;
 }
 
 .quote-card:hover img{
-  transform:scale(1.03);
+  transform:scale(1.025);
 }
 
 .large{
@@ -126,7 +131,7 @@ img{
 }
 
 /* =========================
-   SECTION
+   CONTENT SECTIONS
 ========================= */
 
 .positive-section{
@@ -135,47 +140,48 @@ img{
 
 .section-title{
   text-align:center;
-  margin-bottom:70px;
+  margin:0 auto 65px;
+  max-width:850px;
 }
 
 .section-title h2{
   font-family:'Playfair Display',serif;
   font-size:clamp(34px,5vw,58px);
+  line-height:1.15;
   margin-bottom:18px;
   color:#1E2A1C;
+  letter-spacing:-.02em;
 }
 
 .section-title p{
   max-width:760px;
   margin:auto;
   color:#566452;
+  font-size:17px;
 }
 
 /* =========================
-   MINDSET GRID
+   MINDSET CARDS
 ========================= */
 
 .mindset-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  grid-template-columns:repeat(3,1fr);
   gap:30px;
 }
 
 .mindset-card{
   background:#fff;
-
   padding:38px 34px;
   border-radius:30px;
-
-  box-shadow:0 16px 40px rgba(0,0,0,0.06);
-
-  transition:0.35s ease;
-
+  box-shadow:0 16px 40px rgba(0,0,0,.06);
   border:1px solid #ece7dc;
+  transition:transform .35s ease,box-shadow .35s ease;
 }
 
 .mindset-card:hover{
   transform:translateY(-8px);
+  box-shadow:0 22px 48px rgba(0,0,0,.10);
 }
 
 .step-number{
@@ -184,21 +190,31 @@ img{
   color:#2eb872;
   line-height:1;
   margin-bottom:20px;
-
   font-family:'Playfair Display',serif;
 }
 
 .mindset-card h3{
   font-size:1.7rem;
+  line-height:1.25;
   margin-bottom:18px;
   color:#1E2A1C;
-
   font-family:'Playfair Display',serif;
 }
 
 .mindset-card p{
   color:#52614e;
   margin-bottom:16px;
+}
+
+.mindset-card p:last-child{
+  margin-bottom:0;
+}
+
+.mindset-card a{
+  color:#1e7c4f;
+  font-weight:600;
+  text-decoration:underline;
+  text-underline-offset:3px;
 }
 
 .wide-card{
@@ -212,44 +228,47 @@ img{
 .cta-box{
   padding:90px 40px;
   border-radius:40px;
-
   background:
-  linear-gradient(135deg,#1d3620,#2f5534);
-
+    radial-gradient(circle at 85% 15%,rgba(110,211,157,.18),transparent 28%),
+    linear-gradient(135deg,#1d3620,#2f5534);
   text-align:center;
   color:#fff;
+  box-shadow:0 20px 55px rgba(0,0,0,.14);
 }
 
 .cta-box h2{
   font-family:'Playfair Display',serif;
   font-size:clamp(36px,5vw,60px);
+  line-height:1.15;
   margin-bottom:22px;
+  color:#fff;
 }
 
 .cta-box p{
   max-width:760px;
   margin:auto auto 35px;
-  color:rgba(255,255,255,0.88);
+  color:rgba(255,255,255,.88);
+  font-size:17px;
 }
 
 .cta-btn{
-  display:inline-block;
-
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:54px;
   text-decoration:none;
-
   background:#2eb872;
-  color:#1E2A1C;
-
+  color:#14251a;
   padding:15px 36px;
   border-radius:50px;
-
-  font-weight:600;
-  transition:0.3s;
+  font-weight:700;
+  transition:transform .3s ease,background .3s ease,box-shadow .3s ease;
 }
 
 .cta-btn:hover{
   transform:translateY(-3px);
-  background:#1e7c4f;
+  background:#63d394;
+  box-shadow:0 12px 28px rgba(0,0,0,.18);
 }
 
 /* =========================
@@ -258,12 +277,12 @@ img{
 
 @media(max-width:992px){
 
-  .quote-grid{
-    grid-template-columns:1fr;
+  .mindset-grid{
+    grid-template-columns:repeat(2,1fr);
   }
 
   .wide-card{
-    grid-column:span 1;
+    grid-column:span 2;
   }
 
 }
@@ -271,20 +290,49 @@ img{
 @media(max-width:768px){
 
   .positive-hero{
+    min-height:82vh;
     text-align:center;
-    padding-top:140px;
+    padding:140px 0 90px;
+    background:
+      linear-gradient(rgba(14,39,27,.72),rgba(14,39,27,.90)),
+      url('../images/image5.png') center/cover no-repeat;
+  }
+
+  .hero-content{
+    margin:auto;
+  }
+
+  .hero-content p{
+    margin:auto;
   }
 
   .quote-section{
-    padding:80px 0 20px;
+    padding:75px 0 20px;
+  }
+
+  .quote-card img{
+    min-height:360px;
   }
 
   .positive-section{
-    padding:80px 0;
+    padding:75px 0;
+  }
+
+  .section-title{
+    margin-bottom:45px;
+  }
+
+  .mindset-grid{
+    grid-template-columns:1fr;
+    gap:22px;
+  }
+
+  .wide-card{
+    grid-column:span 1;
   }
 
   .mindset-card{
-    padding:28px;
+    padding:30px 27px;
   }
 
   .cta-box{
@@ -295,17 +343,59 @@ img{
 
 @media(max-width:500px){
 
+  .positive-container{
+    width:calc(100% - 28px);
+  }
+
   .hero-content h1{
     font-size:50px;
+  }
+
+  .hero-content span{
+    font-size:12px;
+    padding:9px 18px;
+  }
+
+  .hero-content p{
+    font-size:1rem;
   }
 
   .large{
     min-height:auto;
   }
 
+  .quote-card img{
+    min-height:280px;
+  }
+
   .step-number{
     font-size:3rem;
   }
 
+  .mindset-card h3{
+    font-size:1.5rem;
+  }
+
+  .cta-box{
+    border-radius:28px;
+  }
+
 }
 
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+@media(prefers-reduced-motion:reduce){
+
+  html{scroll-behavior:auto;}
+
+  *,
+  *::before,
+  *::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+  }
+
+}
