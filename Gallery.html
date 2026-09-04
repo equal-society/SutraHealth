@@ -3,292 +3,2157 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Sutra Health - Video Gallery</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
+/* =========================================================
+   SUTRA HEALTH VIDEO GALLERY
+   ========================================================= */
+
 .sh-gallery{
-  --sh-teal-900:#0b4a45;--sh-teal-700:#0F766E;--sh-teal-500:#1a9e94;
-  --sh-teal-100:#e6f4f2;--sh-sand-50:#f6f8fa;--sh-ink-900:#1c2b2a;
-  --sh-ink-500:#6b7c7a;--sh-line:#e6ebe9;--sh-amber:#f2a341;--sh-gold:#d4af6a;
-  font-family:Inter,sans-serif;background:var(--sh-sand-50);color:var(--sh-ink-900);
-  display:block;width:100%;
+  --sh-teal-900:#0b4a45;
+  --sh-teal-700:#0F766E;
+  --sh-teal-500:#1a9e94;
+  --sh-teal-100:#e6f4f2;
+  --sh-sand-50:#f6f8fa;
+  --sh-ink-900:#1c2b2a;
+  --sh-ink-500:#6b7c7a;
+  --sh-line:#e6ebe9;
+  --sh-amber:#f2a341;
+  --sh-gold:#d4af6a;
+
+  font-family:'Inter',sans-serif;
+  background:var(--sh-sand-50);
+  color:var(--sh-ink-900);
+  display:block;
+  width:100%;
 }
-.sh-gallery,.sh-gallery *{box-sizing:border-box}
-.sh-gallery p,.sh-gallery h1,.sh-gallery h2,.sh-gallery h3{margin:0;padding:0}
+
+.sh-gallery,
+.sh-gallery *{
+  box-sizing:border-box;
+}
+
+.sh-gallery p,
+.sh-gallery h1,
+.sh-gallery h2,
+.sh-gallery h3{
+  margin:0;
+  padding:0;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
 .sh-gallery .sh-hero{
-  background:radial-gradient(circle at 15% 15%,rgba(212,175,106,.2),transparent 45%),
-  radial-gradient(circle at 85% 25%,rgba(255,255,255,.14),transparent 50%),
-  linear-gradient(135deg,var(--sh-teal-900),var(--sh-teal-700) 55%,var(--sh-teal-500));
-  color:#fff;padding:76px 20px 68px;text-align:center;position:relative;overflow:hidden
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(212,175,106,.20),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 85% 25%,
+      rgba(255,255,255,.14),
+      transparent 50%
+    ),
+    linear-gradient(
+      135deg,
+      var(--sh-teal-900) 0%,
+      var(--sh-teal-700) 55%,
+      var(--sh-teal-500) 100%
+    );
+
+  color:#fff;
+  padding:76px 20px 68px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
 }
-.sh-gallery .sh-hero h1{font-family:'Playfair Display',serif;font-size:clamp(32px,4.4vw,48px);margin:0 0 14px;line-height:1.18;position:relative}
-.sh-gallery .sh-hero-eyebrow{display:inline-flex;gap:8px;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--sh-gold);font-weight:600;margin-bottom:14px;position:relative}
-.sh-gallery .sh-hero-eyebrow:before,.sh-gallery .sh-hero-eyebrow:after{content:"";width:22px;height:1px;background:var(--sh-gold);opacity:.7;margin-top:7px}
-.sh-gallery .sh-hero-sub{opacity:.92;font-size:17px;color:#eafaf7;max-width:620px;margin:0 auto;line-height:1.6;position:relative}
-.sh-gallery .sh-hero-actions{position:relative;margin-top:30px;display:flex;justify-content:center}
-.sh-gallery .sh-drive-link{display:inline-flex;align-items:center;background:rgba(255,255,255,.97);color:var(--sh-teal-900);font-weight:600;font-size:14.5px;padding:12px 22px;border-radius:999px;text-decoration:none;box-shadow:0 8px 22px rgba(0,0,0,.18)}
-.sh-gallery .sh-container{max-width:1240px;margin:0 auto;padding:54px 20px 64px;width:100%}
-.sh-gallery .sh-sync-bar{display:flex;align-items:center;gap:10px;justify-content:center;margin-bottom:40px;font-size:14px;color:var(--sh-ink-500);flex-wrap:wrap}
-.sh-gallery .sh-dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.15);display:inline-block}
-.sh-gallery .sh-dot.loading{background:var(--sh-amber);animation:sh-pulse 1.2s infinite}
-.sh-gallery .sh-dot.error{background:#ef4444}
-@keyframes sh-pulse{0%,100%{opacity:1}50%{opacity:.4}}
-.sh-gallery .sh-refresh-btn,.sh-more-btn{border:1px solid var(--sh-teal-700);background:#fff;color:var(--sh-teal-700);font-weight:600;font-size:13px;padding:8px 16px;border-radius:999px;cursor:pointer}
-.sh-gallery .sh-refresh-btn:hover,.sh-more-btn:hover{background:var(--sh-teal-700);color:#fff}
-.sh-category{margin-bottom:48px}
-.sh-category-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:16px;gap:16px}
-.sh-category-title{color:var(--sh-teal-900);font-family:'Playfair Display',serif;font-size:28px;line-height:1.2}
-.sh-category-subtitle{margin-top:5px!important;color:var(--sh-ink-500);font-size:13px}
-.sh-category-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
-.sh-video-card{background:#fff;border-radius:16px;padding:10px;box-shadow:0 1px 2px rgba(15,118,110,.04),0 14px 32px rgba(15,118,110,.09);border:1px solid var(--sh-line);transition:.22s}
-.sh-video-card:hover{transform:translateY(-5px);box-shadow:0 24px 44px rgba(15,118,110,.16)}
-.sh-video-card h3{color:var(--sh-teal-900);margin:4px 0 10px!important;font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.sh-player{border-radius:14px;overflow:hidden;background:#071514;aspect-ratio:16/9;width:100%;position:relative}
-.sh-player video,.sh-player img{width:100%;height:100%;display:block;object-fit:cover}
-.sh-player video{position:absolute;inset:0}
-.sh-media-name{margin:7px 2px 0;color:var(--sh-ink-500);font-size:10.5px;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.sh-category-empty{padding:28px;background:#fff;border:1px dashed var(--sh-line);border-radius:16px;color:var(--sh-ink-500);text-align:center}
-.sh-more-wrap{display:flex;justify-content:center;margin-top:20px}
-.sh-more-btn{padding:9px 20px}
-.sh-loading{padding:24px;text-align:center;color:var(--sh-ink-500)}
-.sh-image-link{display:block;height:100%}
-.sh-fallback-poster{position:absolute;inset:0;display:none;align-items:center;justify-content:center;text-align:center;padding:20px;color:#d9efeb;font-size:12px;background:linear-gradient(135deg,#0b4a45,#123f3c)}
-@media(max-width:1000px){.sh-category-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+.sh-gallery .sh-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.05) 1px,
+      transparent 1px
+    );
+
+  background-size:36px 36px;
+
+  mask-image:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(0,0,0,.6),
+      transparent 70%
+    );
+}
+
+.sh-gallery .sh-hero-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+
+  font-size:12.5px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+
+  color:var(--sh-gold);
+  font-weight:600;
+
+  margin-bottom:14px;
+
+  position:relative;
+}
+
+.sh-gallery .sh-hero-eyebrow::before,
+.sh-gallery .sh-hero-eyebrow::after{
+  content:"";
+
+  width:22px;
+  height:1px;
+
+  background:var(--sh-gold);
+  opacity:.7;
+}
+
+.sh-gallery .sh-hero h1{
+  font-family:'Playfair Display',serif;
+
+  font-size:clamp(
+    32px,
+    4.4vw,
+    48px
+  );
+
+  margin-bottom:14px;
+
+  letter-spacing:-.01em;
+  line-height:1.18;
+
+  position:relative;
+  color:#fff;
+}
+
+.sh-gallery .sh-hero-sub{
+  opacity:.92;
+
+  font-size:17px;
+  color:#eafaf7;
+
+  max-width:650px;
+
+  margin:0 auto;
+
+  line-height:1.6;
+
+  position:relative;
+}
+
+.sh-gallery .sh-hero-actions{
+  position:relative;
+
+  margin-top:30px;
+
+  display:flex;
+  justify-content:center;
+}
+
+.sh-gallery .sh-archive-link{
+  display:inline-flex;
+
+  align-items:center;
+  justify-content:center;
+
+  background:rgba(255,255,255,.97);
+
+  color:var(--sh-teal-900);
+
+  font-weight:600;
+  font-size:14.5px;
+
+  padding:12px 22px;
+
+  border-radius:999px;
+
+  text-decoration:none;
+
+  box-shadow:
+    0 8px 22px rgba(0,0,0,.18);
+
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease;
+}
+
+.sh-gallery .sh-archive-link:hover{
+  transform:translateY(-2px);
+
+  box-shadow:
+    0 12px 28px rgba(0,0,0,.24);
+}
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.sh-gallery .sh-container{
+  max-width:1240px;
+
+  margin:0 auto;
+
+  padding:54px 20px 64px;
+
+  width:100%;
+}
+
+/* =========================================================
+   SYNC BAR
+   ========================================================= */
+
+.sh-gallery .sh-sync-bar{
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  gap:10px;
+
+  margin-bottom:42px;
+
+  font-size:14px;
+
+  color:var(--sh-ink-500);
+
+  flex-wrap:wrap;
+}
+
+.sh-gallery .sh-dot{
+  width:8px;
+  height:8px;
+
+  border-radius:50%;
+
+  background:#22c55e;
+
+  box-shadow:
+    0 0 0 4px rgba(34,197,94,.15);
+
+  display:inline-block;
+}
+
+.sh-gallery .sh-dot.loading{
+  background:var(--sh-amber);
+
+  box-shadow:
+    0 0 0 4px rgba(242,163,65,.18);
+
+  animation:sh-pulse 1.2s infinite;
+}
+
+.sh-gallery .sh-dot.error{
+  background:#ef4444;
+
+  box-shadow:
+    0 0 0 4px rgba(239,68,68,.15);
+}
+
+@keyframes sh-pulse{
+  0%,100%{
+    opacity:1;
+  }
+
+  50%{
+    opacity:.4;
+  }
+}
+
+.sh-gallery .sh-refresh-btn{
+  border:1px solid var(--sh-line);
+
+  background:#fff;
+
+  color:var(--sh-teal-700);
+
+  font-weight:600;
+
+  font-size:13px;
+
+  padding:7px 16px;
+
+  border-radius:20px;
+
+  cursor:pointer;
+
+  transition:
+    background .15s ease,
+    color .15s ease,
+    box-shadow .15s ease;
+}
+
+.sh-gallery .sh-refresh-btn:hover{
+  background:var(--sh-teal-700);
+
+  color:#fff;
+
+  box-shadow:
+    0 6px 16px rgba(15,118,110,.25);
+}
+
+/* =========================================================
+   CATEGORY
+   ========================================================= */
+
+.sh-category{
+  margin-bottom:56px;
+}
+
+.sh-category-head{
+  display:flex;
+
+  justify-content:space-between;
+  align-items:flex-end;
+
+  gap:20px;
+
+  margin-bottom:18px;
+}
+
+.sh-category-title{
+  color:var(--sh-teal-900);
+
+  font-family:'Playfair Display',serif;
+
+  font-size:28px;
+
+  line-height:1.2;
+}
+
+.sh-category-subtitle{
+  margin-top:6px !important;
+
+  color:var(--sh-ink-500);
+
+  font-size:13px;
+}
+
+/* =========================================================
+   GRID
+   ========================================================= */
+
+.sh-category-grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,minmax(0,1fr));
+
+  gap:18px;
+}
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.sh-video-card{
+  background:#fff;
+
+  border-radius:16px;
+
+  padding:10px;
+
+  border:1px solid var(--sh-line);
+
+  box-shadow:
+    0 1px 2px rgba(15,118,110,.04),
+    0 14px 32px rgba(15,118,110,.09);
+
+  transition:
+    transform .22s ease,
+    box-shadow .22s ease,
+    border-color .22s ease;
+
+  min-width:0;
+}
+
+.sh-video-card:hover{
+  transform:translateY(-5px);
+
+  border-color:
+    rgba(15,118,110,.25);
+
+  box-shadow:
+    0 1px 2px rgba(15,118,110,.06),
+    0 24px 44px rgba(15,118,110,.16);
+}
+
+.sh-video-card h3{
+  color:var(--sh-teal-900);
+
+  font-size:14px;
+
+  font-weight:600;
+
+  margin:
+    4px 0 10px !important;
+
+  white-space:nowrap;
+
+  overflow:hidden;
+
+  text-overflow:ellipsis;
+}
+
+/* =========================================================
+   MEDIA
+   ========================================================= */
+
+.sh-player{
+  position:relative;
+
+  width:100%;
+
+  aspect-ratio:16 / 9;
+
+  overflow:hidden;
+
+  border-radius:14px;
+
+  background:#071514;
+}
+
+.sh-player video{
+  position:absolute;
+
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  display:block;
+
+  object-fit:cover;
+
+  background:#071514;
+}
+
+.sh-player img{
+  position:absolute;
+
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  display:block;
+
+  object-fit:cover;
+}
+
+/* =========================================================
+   CUSTOM THUMBNAIL
+   ========================================================= */
+
+.sh-custom-thumb{
+  position:absolute;
+
+  inset:0;
+
+  z-index:3;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  cursor:pointer;
+
+  transition:
+    opacity .25s ease,
+    transform .35s ease;
+}
+
+.sh-custom-thumb:hover{
+  transform:scale(1.025);
+}
+
+/* =========================================================
+   PLAY BUTTON
+   ========================================================= */
+
+.sh-play-overlay{
+  position:absolute;
+
+  inset:0;
+
+  z-index:4;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  cursor:pointer;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,.02),
+      rgba(0,0,0,.28)
+    );
+
+  transition:
+    background .2s ease;
+}
+
+.sh-play-overlay:hover{
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,.04),
+      rgba(0,0,0,.38)
+    );
+}
+
+.sh-play-button{
+  width:58px;
+  height:58px;
+
+  border-radius:50%;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  background:
+    rgba(255,255,255,.95);
+
+  color:var(--sh-teal-900);
+
+  font-size:20px;
+
+  padding-left:4px;
+
+  box-shadow:
+    0 8px 24px rgba(0,0,0,.30);
+
+  transition:
+    transform .18s ease,
+    background .18s ease;
+}
+
+.sh-play-overlay:hover .sh-play-button{
+  transform:scale(1.08);
+
+  background:var(--sh-gold);
+
+  color:#fff;
+}
+
+/* =========================================================
+   THUMBNAIL LABEL
+   ========================================================= */
+
+.sh-thumb-label{
+  position:absolute;
+
+  left:10px;
+  bottom:10px;
+
+  z-index:5;
+
+  background:
+    rgba(0,0,0,.60);
+
+  color:#fff;
+
+  padding:5px 9px;
+
+  border-radius:999px;
+
+  font-size:10px;
+
+  backdrop-filter:blur(5px);
+}
+
+/* =========================================================
+   FILE NAME
+   ========================================================= */
+
+.sh-media-name{
+  margin:7px 2px 0;
+
+  color:var(--sh-ink-500);
+
+  font-size:10.5px;
+
+  line-height:1.35;
+
+  white-space:nowrap;
+
+  overflow:hidden;
+
+  text-overflow:ellipsis;
+}
+
+/* =========================================================
+   MORE BUTTON
+   ========================================================= */
+
+.sh-more-wrap{
+  display:flex;
+
+  justify-content:center;
+
+  margin-top:22px;
+}
+
+.sh-more-btn{
+  border:
+    1px solid var(--sh-teal-700);
+
+  background:#fff;
+
+  color:var(--sh-teal-700);
+
+  font-weight:600;
+
+  font-size:13px;
+
+  padding:9px 20px;
+
+  border-radius:999px;
+
+  cursor:pointer;
+
+  transition:
+    background .18s ease,
+    color .18s ease;
+}
+
+.sh-more-btn:hover{
+  background:var(--sh-teal-700);
+
+  color:#fff;
+}
+
+/* =========================================================
+   EMPTY / ERROR
+   ========================================================= */
+
+.sh-category-empty{
+  padding:30px;
+
+  background:#fff;
+
+  border:
+    1px dashed var(--sh-line);
+
+  border-radius:16px;
+
+  color:var(--sh-ink-500);
+
+  text-align:center;
+
+  font-size:14px;
+
+  line-height:1.7;
+}
+
+.sh-category-empty a{
+  color:var(--sh-teal-700);
+
+  font-weight:600;
+
+  text-decoration:none;
+}
+
+.sh-category-empty a:hover{
+  text-decoration:underline;
+}
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.sh-loading{
+  text-align:center;
+
+  padding:40px 20px;
+
+  color:var(--sh-ink-500);
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:1000px){
+
+  .sh-category-grid{
+    grid-template-columns:
+      repeat(2,minmax(0,1fr));
+  }
+
+}
+
 @media(max-width:640px){
-  .sh-gallery .sh-hero{padding:52px 20px 44px}.sh-gallery .sh-hero h1{font-size:28px}
-  .sh-gallery .sh-container{padding:38px 16px 44px}.sh-category-grid{grid-template-columns:1fr}
+
+  .sh-gallery .sh-hero{
+    padding:52px 20px 44px;
+  }
+
+  .sh-gallery .sh-hero h1{
+    font-size:28px;
+  }
+
+  .sh-gallery .sh-container{
+    padding:38px 16px 44px;
+  }
+
+  .sh-category-grid{
+    grid-template-columns:1fr;
+  }
+
+  .sh-category-head{
+    align-items:flex-start;
+
+    flex-direction:column;
+  }
+
+  .sh-player{
+    aspect-ratio:16 / 10;
+  }
 }
 </style>
 </head>
+
 <body>
+
+<!-- =========================================================
+     NAVBAR
+     ========================================================= -->
 
 <div id="navbar"></div>
 
-<div class="sh-gallery">
-<section class="sh-hero">
-  <span class="sh-hero-eyebrow">Sutra Health</span>
-  <h1>Video Gallery</h1>
-  <p class="sh-hero-sub">Watch our wellness and lifestyle programs directly on our website — synced automatically from Internet Archive.</p>
-  <div class="sh-hero-actions">
-    <a class="sh-drive-link" href="https://archive.org/details/@sutra_health" target="_blank" rel="noopener">Visit Our Archive ↗</a>
-  </div>
-</section>
 
-<div class="sh-container">
-  <div class="sh-sync-bar">
-    <span class="sh-dot loading" id="shSyncDot"></span>
-    <span id="shSyncText">Connecting to Internet Archive…</span>
-    <button class="sh-refresh-btn" id="shRefreshBtn" type="button">↻ Refresh</button>
+<!-- =========================================================
+     GALLERY
+     ========================================================= -->
+
+<div class="sh-gallery">
+
+  <!-- HERO -->
+
+  <section class="sh-hero">
+
+    <span class="sh-hero-eyebrow">
+      Sutra Health
+    </span>
+
+    <h1>
+      Video Gallery
+    </h1>
+
+    <p class="sh-hero-sub">
+      Watch our wellness and lifestyle programs directly on our website — synced automatically from Internet Archive.
+    </p>
+
+    <div class="sh-hero-actions">
+
+      <a
+        class="sh-archive-link"
+        href="https://archive.org/details/@sutra_health"
+        target="_blank"
+        rel="noopener"
+      >
+        Visit Our Archive ↗
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTENT -->
+
+  <div class="sh-container">
+
+    <div class="sh-sync-bar">
+
+      <span
+        class="sh-dot loading"
+        id="shSyncDot"
+      ></span>
+
+      <span id="shSyncText">
+        Connecting to Internet Archive…
+      </span>
+
+      <button
+        class="sh-refresh-btn"
+        id="shRefreshBtn"
+        type="button"
+      >
+        ↻ Refresh
+      </button>
+
+    </div>
+
+
+    <div id="shCategoryContainer"></div>
+
   </div>
-  <div id="shCategoryContainer"></div>
+
 </div>
-</div>
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
 
 <div id="footer"></div>
+
+
 <script src="/js/include.js"></script>
+
 
 <script>
 (function(){
+
+/* =========================================================
+   CATEGORY CONFIGURATION
+   ========================================================= */
+
+const CATEGORIES = [
+
+
+
+  {
+    title:"Yoga",
+    subtitle:"Yoga sequences and practice",
+    id:"yoga-sequence",
+
+    knownFiles:[
+      "Yoga/yoga_asana/2026-06-13_shashankasana.mp4"
+    ]
+  },
+
+
+
+  {
+    title:"Lifestyle · Food",
+    subtitle:"Food and healthy lifestyle content",
+    id:"sutra_health_lifestyle_food",
+
+    knownFiles:[]
+  },
+
+
+
+  {
+    title:"Clinic",
+    subtitle:"Clinic videos",
+    id:"lifestyle_clinic",
+
+    knownFiles:[
+      "Clinic/2025-07-05.mp4"
+    ]
+  },
+
+  {
+    title:"Practitioner Experiences",
+    subtitle:"Follower and practitioner experiences",
+    id:"lifestyle-practitioners-experience",
+
+    knownFiles:[
+      "follower-experience/arthritis_2025-04-09-2.mp4"
+    ]
+  }
+
+];
+
+
+/* =========================================================
+   CUSTOM THUMBNAILS
+   =========================================================
+
+   ADD YOUR OWN THUMBNAIL HERE.
+
+   Format:
+
+   "ArchiveItemID/path/to/video.mp4":
+      "/images/gallery/my-thumbnail.jpg"
+
+   Example:
+
+   "yoga-sequence/Yoga/yoga_asana/2026-06-13_shashankasana.mp4":
+      "/images/gallery/shashankasana.jpg"
+
+   You can use JPG, PNG or WEBP.
+
+   If you don't add a thumbnail here,
+   Internet Archive thumbnail fallback is used.
+*/
+
+const CUSTOM_THUMBNAILS = {
+
   /*
-    Exact public Archive files supplied by the site owner are listed first.
-    The metadata API then discovers additional supported media in each item.
+  "yoga-sequence/Yoga/yoga_asana/2026-06-13_shashankasana.mp4":
+    "/images/gallery/shashankasana.jpg",
+
+  "lifestyle_clinic/Clinic/2025-07-05.mp4":
+    "/images/gallery/clinic-2025-07-05.jpg",
+
+  "lifestyle-practitioners-experience/follower-experience/arthritis_2025-04-09-2.mp4":
+    "/images/gallery/arthritis.jpg",
+
+  "30-06-2026_202609/clinic/02-04-2026-2.mp4":
+    "/images/gallery/clinic-02-04-2026.jpg",
+
+  "sutra_health_lifestyle_nature/sutra_health_nature_02-07-2026.mp4":
+    "/images/gallery/nature-02-07-2026.jpg"
   */
-  const CATEGORIES = [
-    {
-      title:"Nature", subtitle:"Nature and outdoor wellness", id:"nature_202609",
-      knownFiles:[]
-    },
-    {
-      title:"Yoga", subtitle:"Yoga sequences and practice", id:"yoga-sequence",
-      knownFiles:["Yoga/yoga_asana/2026-06-13_shashankasana.mp4"]
-    },
-    {
-      title:"Lifestyle · Nature", subtitle:"Sutra Health lifestyle and nature", id:"sutra_health_lifestyle_nature",
-      knownFiles:["sutra_health_nature_02-07-2026.mp4"]
-    },
-    {
-      title:"Lifestyle · Food", subtitle:"Food and healthy lifestyle content", id:"sutra_health_lifestyle_food",
-      knownFiles:[]
-    },
-    {
-      title:"Clinic & Wellness", subtitle:"Clinic, wellness and program videos", id:"30-06-2026_202609",
-      knownFiles:["clinic/02-04-2026-2.mp4"]
-    },
-    {
-      title:"Clinic", subtitle:"Clinic videos", id:"lifestyle_clinic",
-      knownFiles:["Clinic/2025-07-05.mp4"]
-    },
-    {
-      title:"Practitioner Experiences", subtitle:"Follower and practitioner experiences", id:"lifestyle-practitioners-experience",
-      knownFiles:["follower-experience/arthritis_2025-04-09-2.mp4"]
-    }
-  ];
 
-  const INITIAL=4, STEP=4;
-  const container=document.getElementById("shCategoryContainer");
-  const dot=document.getElementById("shSyncDot");
-  const statusText=document.getElementById("shSyncText");
-  const refresh=document.getElementById("shRefreshBtn");
+};
 
-  function status(state,msg){dot.className="sh-dot "+(state||"");statusText.textContent=msg}
-  function esc(v){return String(v||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[c]))}
-  function mediaUrl(id,file){return "https://archive.org/download/"+encodeURIComponent(id)+"/"+file.split("/").map(encodeURIComponent).join("/")}
-  function archiveItemUrl(id){return "https://archive.org/details/"+encodeURIComponent(id)}
-  function thumbUrl(id){return "https://archive.org/services/img/"+encodeURIComponent(id)}
-  function thumbFileUrl(id){return mediaUrl(id,"__ia_thumb.jpg")}
-  function isVideo(name){return /\.(mp4|webm|mov|m4v|ogv)$/i.test(name)}
-  function isImage(name){return /\.(jpg|jpeg|png|webp|gif|avif)$/i.test(name)}
 
-  async function getItem(id){
-    const r=await fetch("https://archive.org/metadata/"+encodeURIComponent(id),{
-      cache:"no-store",headers:{Accept:"application/json"}
+/* =========================================================
+   SETTINGS
+   ========================================================= */
+
+const INITIAL = 4;
+
+const STEP = 4;
+
+
+/* =========================================================
+   DOM
+   ========================================================= */
+
+const container =
+  document.getElementById("shCategoryContainer");
+
+const dot =
+  document.getElementById("shSyncDot");
+
+const statusText =
+  document.getElementById("shSyncText");
+
+const refresh =
+  document.getElementById("shRefreshBtn");
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+function status(state,message){
+
+  dot.className =
+    "sh-dot " + (state || "");
+
+  statusText.textContent =
+    message;
+
+}
+
+
+/* =========================================================
+   ESCAPE HTML
+   ========================================================= */
+
+function esc(value){
+
+  return String(value || "")
+    .replace(/[&<>"']/g,function(char){
+
+      return {
+
+        "&":"&amp;",
+        "<":"&lt;",
+        ">":"&gt;",
+        "\"":"&quot;",
+        "'":"&#039;"
+
+      }[char];
+
     });
-    if(!r.ok)throw new Error(id+" HTTP "+r.status);
-    return r.json();
+
+}
+
+
+/* =========================================================
+   INTERNET ARCHIVE URL
+   ========================================================= */
+
+function mediaUrl(identifier,filename){
+
+  return (
+    "https://archive.org/download/" +
+    encodeURIComponent(identifier) +
+    "/" +
+    filename
+      .split("/")
+      .map(encodeURIComponent)
+      .join("/")
+  );
+
+}
+
+
+/* =========================================================
+   ARCHIVE ITEM URL
+   ========================================================= */
+
+function archiveItemUrl(identifier){
+
+  return (
+    "https://archive.org/details/" +
+    encodeURIComponent(identifier)
+  );
+
+}
+
+
+/* =========================================================
+   ARCHIVE THUMBNAIL
+   ========================================================= */
+
+function archiveThumbUrl(identifier){
+
+  return (
+    "https://archive.org/services/img/" +
+    encodeURIComponent(identifier)
+  );
+
+}
+
+
+/* =========================================================
+   ARCHIVE THUMBNAIL FILE
+   ========================================================= */
+
+function archiveThumbFileUrl(identifier){
+
+  return mediaUrl(
+    identifier,
+    "__ia_thumb.jpg"
+  );
+
+}
+
+
+/* =========================================================
+   FILE TYPE
+   ========================================================= */
+
+function isVideo(filename){
+
+  return /\.(mp4|webm|mov|m4v|ogv)$/i
+    .test(filename);
+
+}
+
+
+function isImage(filename){
+
+  return /\.(jpg|jpeg|png|webp|gif|avif)$/i
+    .test(filename);
+
+}
+
+
+/* =========================================================
+   GET METADATA
+   ========================================================= */
+
+async function getItem(identifier){
+
+  const url =
+    "https://archive.org/metadata/" +
+    encodeURIComponent(identifier);
+
+  let lastError;
+
+  for(let attempt=0;attempt<3;attempt++){
+
+    try{
+
+      const response =
+        await fetch(
+          url,
+          {
+            method:"GET",
+            cache:"no-store",
+            headers:{
+              Accept:"application/json"
+            }
+          }
+        );
+
+      if(!response.ok){
+
+        throw new Error(
+          identifier +
+          " HTTP " +
+          response.status
+        );
+
+      }
+
+      const text =
+        await response.text();
+
+      if(!text.trim()){
+
+        throw new Error(
+          identifier +
+          " returned empty response"
+        );
+
+      }
+
+      return JSON.parse(text);
+
+    }
+
+    catch(error){
+
+      lastError = error;
+
+      await new Promise(
+        resolve =>
+          setTimeout(
+            resolve,
+            700 * (attempt + 1)
+          )
+      );
+
+    }
+
   }
 
-  function placeholder(card,label){
-    const p=card.querySelector(".sh-fallback-poster");
-    if(p){p.style.display="flex";p.textContent=label||"Sutra Health media"}
-  }
+  throw (
+    lastError ||
+    new Error(
+      "Could not load " +
+      identifier
+    )
+  );
 
-  function makeCard(item,file){
-    const id=item.metadata?.identifier||item.identifier;
-    const itemTitle=item.metadata?.title||id;
-    const filename=file.name.split("/").pop();
-    const url=mediaUrl(id,file.name);
-    const card=document.createElement("article");
-    card.className="sh-video-card";
+}
 
-    if(isVideo(file.name)){
-      card.innerHTML=
-        '<h3 title="'+esc(itemTitle)+'">'+esc(itemTitle)+'</h3>'+
-        '<div class="sh-player">'+
-          '<video controls playsinline preload="metadata" poster="'+esc(thumbUrl(id))+'">'+
-            '<source src="'+esc(url)+'">'+
-          '</video>'+
-          '<div class="sh-fallback-poster"></div>'+
-        '</div>'+
-        '<div class="sh-media-name" title="'+esc(file.name)+'">'+esc(filename)+'</div>';
 
-      const video=card.querySelector("video");
-      const fallback=card.querySelector(".sh-fallback-poster");
+/* =========================================================
+   GET CUSTOM THUMBNAIL
+   ========================================================= */
 
-      // Try Archive item thumbnail first, then the common __ia_thumb.jpg.
-      const test=new Image();
-      test.onload=()=>{video.poster=thumbUrl(id)};
-      test.onerror=()=>{
-        const test2=new Image();
-        test2.onload=()=>{video.poster=thumbFileUrl(id)};
-        test2.onerror=()=>{fallback.style.display="flex"};
-        test2.src=thumbFileUrl(id);
+function getCustomThumbnail(
+  identifier,
+  filename
+){
+
+  const key =
+    identifier +
+    "/" +
+    filename;
+
+  return CUSTOM_THUMBNAILS[key] || null;
+
+}
+
+
+/* =========================================================
+   THUMBNAIL TEST
+   ========================================================= */
+
+function testImage(url){
+
+  return new Promise(function(resolve){
+
+    const image =
+      new Image();
+
+    image.onload =
+      function(){
+
+        resolve(true);
+
       };
-      test.src=thumbUrl(id);
 
-      video.addEventListener("error",()=>{
-        fallback.style.display="flex";
-        fallback.textContent="Video unavailable — open on Internet Archive ↗";
-        fallback.style.cursor="pointer";
-        fallback.onclick=()=>window.open(archiveItemUrl(id),"_blank","noopener");
+    image.onerror =
+      function(){
+
+        resolve(false);
+
+      };
+
+    image.src = url;
+
+  });
+
+}
+
+
+/* =========================================================
+   CREATE VIDEO CARD
+   ========================================================= */
+
+function makeVideoCard(
+  item,
+  file
+){
+
+  const identifier =
+    item.metadata?.identifier ||
+    item.identifier;
+
+  const title =
+    item.metadata?.title ||
+    identifier;
+
+  const filename =
+    file.name
+      .split("/")
+      .pop();
+
+  const videoUrl =
+    mediaUrl(
+      identifier,
+      file.name
+    );
+
+  const customThumbnail =
+    getCustomThumbnail(
+      identifier,
+      file.name
+    );
+
+
+  const card =
+    document.createElement("article");
+
+  card.className =
+    "sh-video-card";
+
+
+  card.innerHTML = `
+
+    <h3
+      title="${esc(title)}"
+    >
+      ${esc(title)}
+    </h3>
+
+    <div class="sh-player">
+
+      <video
+        controls
+        playsinline
+        preload="metadata"
+        poster="${esc(
+          customThumbnail ||
+          archiveThumbUrl(identifier)
+        )}"
+      >
+
+        <source
+          src="${esc(videoUrl)}"
+        >
+
+        Your browser does not support HTML5 video.
+
+      </video>
+
+      <div
+        class="sh-fallback-poster"
+        style="
+          position:absolute;
+          inset:0;
+          display:none;
+          align-items:center;
+          justify-content:center;
+          text-align:center;
+          padding:20px;
+          color:#d9efeb;
+          font-size:12px;
+          background:linear-gradient(
+            135deg,
+            #0b4a45,
+            #123f3c
+          );
+          z-index:2;
+        "
+      >
+        Video thumbnail unavailable
+      </div>
+
+      <div
+        class="sh-play-overlay"
+        aria-hidden="true"
+      >
+
+        <span class="sh-play-button">
+          ▶
+        </span>
+
+      </div>
+
+      ${
+        customThumbnail
+        ?
+        `<span class="sh-thumb-label">
+          Custom thumbnail
+        </span>`
+        :
+        ""
+      }
+
+    </div>
+
+    <div
+      class="sh-media-name"
+      title="${esc(file.name)}"
+    >
+      ${esc(filename)}
+    </div>
+
+  `;
+
+
+  const video =
+    card.querySelector("video");
+
+  const overlay =
+    card.querySelector(
+      ".sh-play-overlay"
+    );
+
+  const fallback =
+    card.querySelector(
+      ".sh-fallback-poster"
+    );
+
+
+  /* =====================================================
+     PLAY OVERLAY
+     ===================================================== */
+
+  overlay.addEventListener(
+    "click",
+    function(){
+
+      overlay.style.display =
+        "none";
+
+      video.play()
+        .catch(function(){});
+
+    }
+  );
+
+
+  video.addEventListener(
+    "play",
+    function(){
+
+      overlay.style.display =
+        "none";
+
+    }
+  );
+
+
+  video.addEventListener(
+    "pause",
+    function(){
+
+      if(
+        video.currentTime === 0
+      ){
+
+        overlay.style.display =
+          "flex";
+
+      }
+
+    }
+  );
+
+
+  /* =====================================================
+     VIDEO ERROR
+     ===================================================== */
+
+  video.addEventListener(
+    "error",
+    function(){
+
+      fallback.style.display =
+        "flex";
+
+      fallback.textContent =
+        "Video unavailable — open on Internet Archive ↗";
+
+      fallback.style.cursor =
+        "pointer";
+
+      fallback.onclick =
+        function(){
+
+          window.open(
+            archiveItemUrl(identifier),
+            "_blank",
+            "noopener"
+          );
+
+        };
+
+    }
+  );
+
+
+  return card;
+
+}
+
+
+/* =========================================================
+   CREATE IMAGE CARD
+   ========================================================= */
+
+function makeImageCard(
+  item,
+  file
+){
+
+  const identifier =
+    item.metadata?.identifier ||
+    item.identifier;
+
+  const title =
+    item.metadata?.title ||
+    identifier;
+
+  const filename =
+    file.name
+      .split("/")
+      .pop();
+
+  const imageUrl =
+    mediaUrl(
+      identifier,
+      file.name
+    );
+
+
+  const card =
+    document.createElement("article");
+
+  card.className =
+    "sh-video-card";
+
+
+  card.innerHTML = `
+
+    <h3
+      title="${esc(title)}"
+    >
+      ${esc(title)}
+    </h3>
+
+    <a
+      href="${esc(imageUrl)}"
+      target="_blank"
+      rel="noopener"
+      class="sh-player"
+      style="display:block;"
+    >
+
+      <img
+        src="${esc(imageUrl)}"
+        loading="lazy"
+        alt="${esc(title)}"
+      >
+
+    </a>
+
+    <div
+      class="sh-media-name"
+      title="${esc(file.name)}"
+    >
+      ${esc(filename)}
+    </div>
+
+  `;
+
+
+  const image =
+    card.querySelector("img");
+
+
+  image.addEventListener(
+    "error",
+    function(){
+
+      image.style.display =
+        "none";
+
+    }
+  );
+
+
+  return card;
+
+}
+
+
+/* =========================================================
+   MAKE MEDIA CARD
+   ========================================================= */
+
+function makeCard(
+  item,
+  file
+){
+
+  if(
+    isVideo(file.name)
+  ){
+
+    return makeVideoCard(
+      item,
+      file
+    );
+
+  }
+
+
+  if(
+    isImage(file.name)
+  ){
+
+    return makeImageCard(
+      item,
+      file
+    );
+
+  }
+
+
+  return null;
+
+}
+
+
+/* =========================================================
+   MERGE KNOWN FILES + DISCOVERED FILES
+   ========================================================= */
+
+function mergeFiles(
+  item,
+  category
+){
+
+  const discovered =
+    (item.files || [])
+      .filter(function(file){
+
+        return (
+          file &&
+          file.name &&
+          !/^__ia_thumb\.jpg$/i.test(
+            file.name
+          ) &&
+          (
+            isVideo(file.name) ||
+            isImage(file.name)
+          )
+        );
+
       });
-    }else{
-      card.innerHTML=
-        '<h3 title="'+esc(itemTitle)+'">'+esc(itemTitle)+'</h3>'+
-        '<a class="sh-player sh-image-link" href="'+esc(url)+'" target="_blank" rel="noopener">'+
-          '<img src="'+esc(url)+'" loading="lazy" alt="'+esc(itemTitle)+'">'+
-        '</a>'+
-        '<div class="sh-media-name" title="'+esc(file.name)+'">'+esc(filename)+'</div>';
-      const img=card.querySelector("img");
-      img.onerror=()=>{img.style.display="none";placeholder(card,"Image unavailable — open on Internet Archive ↗")};
-    }
-    return card;
-  }
 
-  function emptySection(category,msg){
-    const sec=document.createElement("section");
-    sec.className="sh-category";
-    sec.innerHTML='<div class="sh-category-head"><div><h2 class="sh-category-title">'+esc(category.title)+'</h2><p class="sh-category-subtitle">'+esc(category.subtitle)+'</p></div></div>'+
-      '<div class="sh-category-empty">'+msg+'</div>';
-    return sec;
-  }
 
-  function buildSection(category,media){
-    const sec=document.createElement("section");
-    sec.className="sh-category";
-    sec.innerHTML='<div class="sh-category-head"><div><h2 class="sh-category-title">'+esc(category.title)+'</h2><p class="sh-category-subtitle">'+esc(category.subtitle)+'</p></div></div>'+
-      '<div class="sh-category-grid"></div><div class="sh-more-wrap"></div>';
-    const grid=sec.querySelector(".sh-category-grid"),more=sec.querySelector(".sh-more-wrap");
-    let shown=0;
+  const map =
+    new Map(
+      discovered.map(
+        file => [
+          file.name,
+          file
+        ]
+      )
+    );
 
-    function renderMore(){
-      const end=Math.min(shown+(shown===0?INITIAL:STEP),media.length);
-      media.slice(shown,end).forEach(x=>grid.appendChild(makeCard(x.item,x.file)));
-      shown=end;
-      more.innerHTML="";
-      if(shown<media.length){
-        const btn=document.createElement("button");
-        btn.type="button";btn.className="sh-more-btn";
-        btn.textContent="More "+category.title+" ("+(media.length-shown)+")";
-        btn.onclick=renderMore;more.appendChild(btn);
+
+  const result = [];
+
+
+  /* -------------------------------------------------------
+     Put manually specified files first
+     ------------------------------------------------------- */
+
+  (category.knownFiles || [])
+    .forEach(function(filename){
+
+      if(
+        map.has(filename)
+      ){
+
+        result.push(
+          map.get(filename)
+        );
+
+        map.delete(filename);
+
       }
-    }
-    renderMore();
-    return sec;
-  }
 
-  function mergeFiles(item,category){
-    const discovered=(item.files||[]).filter(f=>f&&f.name&&!/^__ia_thumb\.jpg$/i.test(f.name)&&(isVideo(f.name)||isImage(f.name)));
-    const map=new Map(discovered.map(f=>[f.name,f]));
-    const result=[];
-    (category.knownFiles||[]).forEach(name=>{
-      if(map.has(name)){result.push(map.get(name));map.delete(name)}
-      else result.push({name});
+      else{
+
+        /*
+          Even if metadata doesn't currently
+          return the file, keep it.
+        */
+
+        result.push({
+          name:filename
+        });
+
+      }
+
     });
-    Array.from(map.values()).sort((a,b)=>String(a.name).localeCompare(String(b.name))).forEach(f=>result.push(f));
-    return result;
-  }
 
-  async function load(){
-    status("loading","Fetching videos & photos from Internet Archive…");
-    refresh.disabled=true;container.innerHTML="";
-    let total=0,successful=0;
 
-    for(const category of CATEGORIES){
-      try{
-        const item=await getItem(category.id);
-        const files=mergeFiles(item,category);
-        if(files.length){
-          container.appendChild(buildSection(category,files.map(file=>({item,file}))));
-          total+=files.length;successful++;
-        }else{
-          container.appendChild(emptySection(category,"No supported video/photo files found in this Archive item."));
+  /* -------------------------------------------------------
+     Add automatically discovered files
+     ------------------------------------------------------- */
+
+  Array.from(
+    map.values()
+  )
+  .sort(
+    function(a,b){
+
+      return String(a.name)
+        .localeCompare(
+          String(b.name)
+        );
+
+    }
+  )
+  .forEach(function(file){
+
+    result.push(file);
+
+  });
+
+
+  return result;
+
+}
+
+
+/* =========================================================
+   CATEGORY SECTION
+   ========================================================= */
+
+function buildSection(
+  category,
+  media
+){
+
+  const section =
+    document.createElement("section");
+
+  section.className =
+    "sh-category";
+
+
+  section.innerHTML = `
+
+    <div class="sh-category-head">
+
+      <div>
+
+        <h2 class="sh-category-title">
+          ${esc(category.title)}
+        </h2>
+
+        <p class="sh-category-subtitle">
+          ${esc(category.subtitle)}
+        </p>
+
+      </div>
+
+      <a
+        class="sh-more-btn"
+        href="${archiveItemUrl(category.id)}"
+        target="_blank"
+        rel="noopener"
+      >
+        Open Archive ↗
+      </a>
+
+    </div>
+
+    <div
+      class="sh-category-grid"
+    ></div>
+
+    <div
+      class="sh-more-wrap"
+    ></div>
+
+  `;
+
+
+  const grid =
+    section.querySelector(
+      ".sh-category-grid"
+    );
+
+  const more =
+    section.querySelector(
+      ".sh-more-wrap"
+    );
+
+
+  let shown = 0;
+
+
+  function renderMore(){
+
+    const count =
+      shown === 0
+      ? INITIAL
+      : STEP;
+
+
+    const end =
+      Math.min(
+        shown + count,
+        media.length
+      );
+
+
+    media
+      .slice(
+        shown,
+        end
+      )
+      .forEach(function(data){
+
+        const card =
+          makeCard(
+            data.item,
+            data.file
+          );
+
+        if(card){
+
+          grid.appendChild(
+            card
+          );
+
         }
-      }catch(error){
-        console.error("Internet Archive error:",category.id,error);
-        // If metadata is temporarily unavailable, still show exact known files.
-        if((category.knownFiles||[]).length){
-          const fallbackItem={metadata:{identifier:category.id,title:category.title}};
-          const media=category.knownFiles.map(name=>({item:fallbackItem,file:{name}}));
-          container.appendChild(buildSection(category,media));
-          total+=media.length;successful++;
-        }else{
-          container.appendChild(emptySection(category,
-            'Could not read this Archive item right now.<br><a href="'+archiveItemUrl(category.id)+'" target="_blank" rel="noopener">Open on Internet Archive ↗</a>'
-          ));
-        }
-      }
+
+      });
+
+
+    shown = end;
+
+
+    more.innerHTML = "";
+
+
+    if(
+      shown < media.length
+    ){
+
+      const button =
+        document.createElement(
+          "button"
+        );
+
+      button.type =
+        "button";
+
+      button.className =
+        "sh-more-btn";
+
+      button.textContent =
+        "More " +
+        category.title +
+        " (" +
+        (media.length - shown) +
+        ")";
+
+
+      button.addEventListener(
+        "click",
+        renderMore
+      );
+
+
+      more.appendChild(
+        button
+      );
+
     }
 
-    status(successful?"":"error",successful?
-      "Synced — "+total+" media file(s) across "+successful+" categories":
-      "Internet Archive data could not be loaded");
-    refresh.disabled=false;
   }
 
-  refresh.addEventListener("click",load);
-  load();
+
+  renderMore();
+
+
+  return section;
+
+}
+
+
+/* =========================================================
+   EMPTY SECTION
+   ========================================================= */
+
+function emptySection(
+  category
+){
+
+  const section =
+    document.createElement(
+      "section"
+    );
+
+  section.className =
+    "sh-category";
+
+
+  section.innerHTML = `
+
+    <div class="sh-category-head">
+
+      <div>
+
+        <h2 class="sh-category-title">
+          ${esc(category.title)}
+        </h2>
+
+        <p class="sh-category-subtitle">
+          ${esc(category.subtitle)}
+        </p>
+
+      </div>
+
+      <a
+        class="sh-more-btn"
+        href="${archiveItemUrl(category.id)}"
+        target="_blank"
+        rel="noopener"
+      >
+        Open Archive ↗
+      </a>
+
+    </div>
+
+    <div class="sh-category-empty">
+
+      No supported video/photo files found
+      in this Archive item.
+
+    </div>
+
+  `;
+
+
+  return section;
+
+}
+
+
+/* =========================================================
+   LOAD GALLERY
+   ========================================================= */
+
+async function load(){
+
+  status(
+    "loading",
+    "Fetching videos & photos from Internet Archive…"
+  );
+
+
+  refresh.disabled =
+    true;
+
+
+  container.innerHTML = "";
+
+
+  let total = 0;
+
+  let successful = 0;
+
+
+  for(
+    const category of CATEGORIES
+  ){
+
+    try{
+
+      const item =
+        await getItem(
+          category.id
+        );
+
+
+      const files =
+        mergeFiles(
+          item,
+          category
+        );
+
+
+      if(files.length){
+
+        const media =
+          files.map(
+            function(file){
+
+              return {
+                item:item,
+                file:file
+              };
+
+            }
+          );
+
+
+        container.appendChild(
+          buildSection(
+            category,
+            media
+          )
+        );
+
+
+        total +=
+          files.length;
+
+        successful++;
+
+      }
+
+      else{
+
+        container.appendChild(
+          emptySection(
+            category
+          )
+        );
+
+      }
+
+    }
+
+    catch(error){
+
+      console.error(
+        "Internet Archive error:",
+        category.id,
+        error
+      );
+
+
+      /*
+        Important:
+
+        Even when metadata fails,
+        manually supplied known files
+        can still be displayed.
+      */
+
+      if(
+        (category.knownFiles || [])
+          .length
+      ){
+
+        const fallbackItem = {
+
+          metadata:{
+            identifier:
+              category.id,
+
+            title:
+              category.title
+
+          }
+
+        };
+
+
+        const media =
+          category.knownFiles
+            .map(function(filename){
+
+              return {
+
+                item:
+                  fallbackItem,
+
+                file:{
+                  name:
+                    filename
+                }
+
+              };
+
+            });
+
+
+        container.appendChild(
+          buildSection(
+            category,
+            media
+          )
+        );
+
+
+        total +=
+          media.length;
+
+        successful++;
+
+      }
+
+      else{
+
+        const section =
+          document.createElement(
+            "section"
+          );
+
+        section.className =
+          "sh-category";
+
+
+        section.innerHTML = `
+
+          <div class="sh-category-head">
+
+            <div>
+
+              <h2 class="sh-category-title">
+                ${esc(category.title)}
+              </h2>
+
+              <p class="sh-category-subtitle">
+                ${esc(category.subtitle)}
+              </p>
+
+            </div>
+
+            <a
+              class="sh-more-btn"
+              href="${archiveItemUrl(category.id)}"
+              target="_blank"
+              rel="noopener"
+            >
+              Open Archive ↗
+            </a>
+
+          </div>
+
+          <div class="sh-category-empty">
+
+            Could not read this Archive item
+            right now.
+
+            <br><br>
+
+            <a
+              href="${archiveItemUrl(category.id)}"
+              target="_blank"
+              rel="noopener"
+            >
+              Open on Internet Archive ↗
+            </a>
+
+          </div>
+
+        `;
+
+
+        container.appendChild(
+          section
+        );
+
+      }
+
+    }
+
+  }
+
+
+  if(successful){
+
+    status(
+      "",
+      "Synced — " +
+      total +
+      " media file(s) across " +
+      successful +
+      " categories"
+    );
+
+  }
+
+  else{
+
+    status(
+      "error",
+      "Internet Archive data could not be loaded"
+    );
+
+  }
+
+
+  refresh.disabled =
+    false;
+
+}
+
+
+/* =========================================================
+   REFRESH
+   ========================================================= */
+
+refresh.addEventListener(
+  "click",
+  load
+);
+
+
+/* =========================================================
+   START
+   ========================================================= */
+
+load();
+
 })();
 </script>
+
 </body>
 </html>
