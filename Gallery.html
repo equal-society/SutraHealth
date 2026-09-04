@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sutra Health - Video Gallery</title>
+<title>Sutra Health - Archive</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
@@ -398,6 +398,118 @@
     0 24px 44px rgba(15,118,110,.16);
 }
 
+
+/* =========================================================
+   FOLDER-STYLE ARCHIVE CARD
+   ========================================================= */
+
+.sh-gallery .sh-archive-card{
+  padding:0;
+  overflow:hidden;
+}
+
+.sh-gallery .sh-archive-card-link{
+  display:block;
+  color:inherit;
+  text-decoration:none;
+}
+
+.sh-gallery .sh-archive-thumb{
+  position:relative;
+  width:100%;
+  aspect-ratio:16 / 10;
+  overflow:hidden;
+  background:#e9efed;
+}
+
+.sh-gallery .sh-archive-thumb img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  transition:transform .35s ease;
+}
+
+.sh-gallery .sh-archive-card:hover .sh-archive-thumb img{
+  transform:scale(1.045);
+}
+
+.sh-gallery .sh-archive-card-body{
+  padding:14px 14px 16px;
+  background:#fff;
+}
+
+.sh-gallery .sh-archive-card-body h3{
+  margin:0 !important;
+  color:var(--sh-teal-900);
+  font-family:'Playfair Display',serif;
+  font-size:16px;
+  line-height:1.35;
+  font-weight:600;
+  white-space:normal;
+  overflow:hidden;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+}
+
+.sh-gallery .sh-archive-card-subtitle{
+  margin:6px 0 0 !important;
+  color:var(--sh-ink-500);
+  font-size:12px;
+  line-height:1.45;
+}
+
+.sh-gallery .sh-archive-open{
+  position:absolute;
+  left:12px;
+  bottom:12px;
+  z-index:2;
+  padding:7px 11px;
+  border-radius:999px;
+  background:rgba(7,21,20,.78);
+  color:#fff;
+  font-size:11px;
+  font-weight:600;
+  backdrop-filter:blur(6px);
+  opacity:0;
+  transform:translateY(5px);
+  transition:opacity .2s ease, transform .2s ease;
+}
+
+.sh-gallery .sh-archive-card:hover .sh-archive-open{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.sh-gallery .sh-no-thumbnail{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:
+    linear-gradient(
+      135deg,
+      var(--sh-teal-900),
+      var(--sh-teal-700)
+    );
+}
+
+.sh-gallery .sh-no-thumbnail::after{
+  content:"Sutra Health";
+  color:rgba(255,255,255,.9);
+  font-family:'Playfair Display',serif;
+  font-size:20px;
+}
+
+@media(max-width:640px){
+
+  .sh-gallery .sh-archive-open{
+    opacity:1;
+    transform:none;
+  }
+
+}
+
 .sh-video-card h3{
   color:var(--sh-teal-900);
 
@@ -764,11 +876,11 @@
     </span>
 
     <h1>
-      Video Gallery
+      Sutra Health Archive
     </h1>
 
     <p class="sh-hero-sub">
-      Watch our wellness and lifestyle programs directly on our website — synced automatically from Internet Archive.
+      Explore our wellness, lifestyle, clinic and publication resources in one place.
     </p>
 
     <div class="sh-hero-actions">
@@ -838,96 +950,61 @@
    ========================================================= */
 
 const CATEGORIES = [
-
-
-
   {
-    title:"Yoga",
-    subtitle:"Yoga sequences and practice",
-    id:"yoga-sequence",
-
-    knownFiles:[
-      "Yoga/yoga_asana/2026-06-13_shashankasana.mp4"
-    ]
+    title:"Nature",
+    subtitle:"Nature and wellness",
+    id:"sutra-health-nature",
+    url:"https://archive.org/details/sutra-health-nature"
   },
-
-
-
   {
-    title:"Lifestyle · Food",
-    subtitle:"Food and healthy lifestyle content",
-    id:"sutra_health_lifestyle_food",
-
-    knownFiles:[]
+    title:"Lifestyle Pearls",
+    subtitle:"Lifestyle and health guidance",
+    id:"Lifestyle-pearls",
+    url:"https://archive.org/details/Lifestyle-pearls"
   },
-
-
-
+  {
+    title:"Lifestyle Doctor",
+    subtitle:"Doctor and lifestyle content",
+    id:"Lifestyle-doctor",
+    url:"https://archive.org/details/Lifestyle-doctor"
+  },
+  {
+    title:"Principal Crude Herbal Drugs of India",
+    subtitle:"Yoga books and academic resources",
+    id:"yoga-books",
+    url:"https://archive.org/details/yoga-books/Academic/Principal_Crude_Herbal_Drugs_of_Indi/"
+  },
+  {
+    title:"Sutra Health Brochure",
+    subtitle:"Brochures and publications",
+    id:"sutra_health",
+    url:"https://archive.org/details/sutra_health/Sutra-Health/brochure/"
+  },
   {
     title:"Clinic",
-    subtitle:"Clinic videos",
+    subtitle:"Clinic resources",
     id:"lifestyle_clinic",
-
-    knownFiles:[
-      "Clinic/2025-07-05.mp4"
-    ]
+    url:"https://archive.org/details/lifestyle_clinic"
   },
-
   {
     title:"Practitioner Experiences",
-    subtitle:"Follower and practitioner experiences",
+    subtitle:"Practitioner and follower experiences",
     id:"lifestyle-practitioners-experience",
-
-    knownFiles:[
-      "follower-experience/arthritis_2025-04-09-2.mp4"
-    ]
+    url:"https://archive.org/details/lifestyle-practitioners-experience"
+  },
+  {
+    title:"Sutra Clinic",
+    subtitle:"Sutra Health clinic resources",
+    id:"sutra_clinic",
+    url:"https://archive.org/details/sutra_clinic"
+  },
+  {
+    title:"Lifestyle Food",
+    subtitle:"Food and healthy lifestyle",
+    id:"sutra_health_lifestyle_food",
+    url:"https://archive.org/details/sutra_health_lifestyle_food"
   }
-
 ];
-
-
-/* =========================================================
-   CUSTOM THUMBNAILS
-   =========================================================
-
-   ADD YOUR OWN THUMBNAIL HERE.
-
-   Format:
-
-   "ArchiveItemID/path/to/video.mp4":
-      "/images/gallery/my-thumbnail.jpg"
-
-   Example:
-
-   "yoga-sequence/Yoga/yoga_asana/2026-06-13_shashankasana.mp4":
-      "/images/gallery/shashankasana.jpg"
-
-   You can use JPG, PNG or WEBP.
-
-   If you don't add a thumbnail here,
-   Internet Archive thumbnail fallback is used.
-*/
-
-const CUSTOM_THUMBNAILS = {
-
-  /*
-  "yoga-sequence/Yoga/yoga_asana/2026-06-13_shashankasana.mp4":
-    "/images/gallery/shashankasana.jpg",
-
-  "lifestyle_clinic/Clinic/2025-07-05.mp4":
-    "/images/gallery/clinic-2025-07-05.jpg",
-
-  "lifestyle-practitioners-experience/follower-experience/arthritis_2025-04-09-2.mp4":
-    "/images/gallery/arthritis.jpg",
-
-  "30-06-2026_202609/clinic/02-04-2026-2.mp4":
-    "/images/gallery/clinic-02-04-2026.jpg",
-
-  "sutra_health_lifestyle_nature/sutra_health_nature_02-07-2026.mp4":
-    "/images/gallery/nature-02-07-2026.jpg"
-  */
-
-};
 
 
 /* =========================================================
@@ -981,7 +1058,6 @@ function esc(value){
     .replace(/[&<>"']/g,function(char){
 
       return {
-
         "&":"&amp;",
         "<":"&lt;",
         ">":"&gt;",
@@ -991,39 +1067,6 @@ function esc(value){
       }[char];
 
     });
-
-}
-
-
-/* =========================================================
-   INTERNET ARCHIVE URL
-   ========================================================= */
-
-function mediaUrl(identifier,filename){
-
-  return (
-    "https://archive.org/download/" +
-    encodeURIComponent(identifier) +
-    "/" +
-    filename
-      .split("/")
-      .map(encodeURIComponent)
-      .join("/")
-  );
-
-}
-
-
-/* =========================================================
-   ARCHIVE ITEM URL
-   ========================================================= */
-
-function archiveItemUrl(identifier){
-
-  return (
-    "https://archive.org/details/" +
-    encodeURIComponent(identifier)
-  );
 
 }
 
@@ -1043,478 +1086,72 @@ function archiveThumbUrl(identifier){
 
 
 /* =========================================================
-   ARCHIVE THUMBNAIL FILE
+   CREATE ONE FOLDER CARD
    ========================================================= */
 
-function archiveThumbFileUrl(identifier){
-
-  return mediaUrl(
-    identifier,
-    "__ia_thumb.jpg"
-  );
-
-}
-
-
-/* =========================================================
-   FILE TYPE
-   ========================================================= */
-
-function isVideo(filename){
-
-  return /\.(mp4|webm|mov|m4v|ogv)$/i
-    .test(filename);
-
-}
-
-
-function isImage(filename){
-
-  return /\.(jpg|jpeg|png|webp|gif|avif)$/i
-    .test(filename);
-
-}
-
-
-/* =========================================================
-   GET METADATA
-   ========================================================= */
-
-async function getItem(identifier){
-
-  const url =
-    "https://archive.org/metadata/" +
-    encodeURIComponent(identifier);
-
-  let lastError;
-
-  for(let attempt=0;attempt<3;attempt++){
-
-    try{
-
-      const response =
-        await fetch(
-          url,
-          {
-            method:"GET",
-            cache:"no-store",
-            headers:{
-              Accept:"application/json"
-            }
-          }
-        );
-
-      if(!response.ok){
-
-        throw new Error(
-          identifier +
-          " HTTP " +
-          response.status
-        );
-
-      }
-
-      const text =
-        await response.text();
-
-      if(!text.trim()){
-
-        throw new Error(
-          identifier +
-          " returned empty response"
-        );
-
-      }
-
-      return JSON.parse(text);
-
-    }
-
-    catch(error){
-
-      lastError = error;
-
-      await new Promise(
-        resolve =>
-          setTimeout(
-            resolve,
-            700 * (attempt + 1)
-          )
-      );
-
-    }
-
-  }
-
-  throw (
-    lastError ||
-    new Error(
-      "Could not load " +
-      identifier
-    )
-  );
-
-}
-
-
-/* =========================================================
-   GET CUSTOM THUMBNAIL
-   ========================================================= */
-
-function getCustomThumbnail(
-  identifier,
-  filename
-){
-
-  const key =
-    identifier +
-    "/" +
-    filename;
-
-  return CUSTOM_THUMBNAILS[key] || null;
-
-}
-
-
-/* =========================================================
-   THUMBNAIL TEST
-   ========================================================= */
-
-function testImage(url){
-
-  return new Promise(function(resolve){
-
-    const image =
-      new Image();
-
-    image.onload =
-      function(){
-
-        resolve(true);
-
-      };
-
-    image.onerror =
-      function(){
-
-        resolve(false);
-
-      };
-
-    image.src = url;
-
-  });
-
-}
-
-
-/* =========================================================
-   CREATE VIDEO CARD
-   ========================================================= */
-
-function makeVideoCard(
-  item,
-  file
-){
-
-  const identifier =
-    item.metadata?.identifier ||
-    item.identifier;
-
-  const title =
-    item.metadata?.title ||
-    identifier;
-
-  const filename =
-    file.name
-      .split("/")
-      .pop();
-
-  const videoUrl =
-    mediaUrl(
-      identifier,
-      file.name
-    );
-
-  const customThumbnail =
-    getCustomThumbnail(
-      identifier,
-      file.name
-    );
-
+function makeArchiveCard(category){
 
   const card =
     document.createElement("article");
 
   card.className =
-    "sh-video-card";
-
+    "sh-video-card sh-archive-card";
 
   card.innerHTML = `
 
-    <h3
-      title="${esc(title)}"
+    <a
+      class="sh-archive-card-link"
+      href="${esc(category.url)}"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Open ${esc(category.title)} on Internet Archive"
     >
-      ${esc(title)}
-    </h3>
 
-    <div class="sh-player">
+      <div class="sh-archive-thumb">
 
-      <video
-        controls
-        playsinline
-        preload="metadata"
-        poster="${esc(
-          customThumbnail ||
-          archiveThumbUrl(identifier)
-        )}"
-      >
-
-        <source
-          src="${esc(videoUrl)}"
+        <img
+          src="${esc(archiveThumbUrl(category.id))}"
+          loading="lazy"
+          alt="${esc(category.title)}"
         >
 
-        Your browser does not support HTML5 video.
-
-      </video>
-
-      <div
-        class="sh-fallback-poster"
-        style="
-          position:absolute;
-          inset:0;
-          display:none;
-          align-items:center;
-          justify-content:center;
-          text-align:center;
-          padding:20px;
-          color:#d9efeb;
-          font-size:12px;
-          background:linear-gradient(
-            135deg,
-            #0b4a45,
-            #123f3c
-          );
-          z-index:2;
-        "
-      >
-        Video thumbnail unavailable
-      </div>
-
-      <div
-        class="sh-play-overlay"
-        aria-hidden="true"
-      >
-
-        <span class="sh-play-button">
-          ▶
+        <span class="sh-archive-open">
+          Open Archive ↗
         </span>
 
       </div>
 
-      ${
-        customThumbnail
-        ?
-        `<span class="sh-thumb-label">
-          Custom thumbnail
-        </span>`
-        :
-        ""
-      }
+      <div class="sh-archive-card-body">
 
-    </div>
+        <h3 title="${esc(category.title)}">
+          ${esc(category.title)}
+        </h3>
 
-    <div
-      class="sh-media-name"
-      title="${esc(file.name)}"
-    >
-      ${esc(filename)}
-    </div>
+        <p class="sh-archive-card-subtitle">
+          ${esc(category.subtitle)}
+        </p>
 
-  `;
-
-
-  const video =
-    card.querySelector("video");
-
-  const overlay =
-    card.querySelector(
-      ".sh-play-overlay"
-    );
-
-  const fallback =
-    card.querySelector(
-      ".sh-fallback-poster"
-    );
-
-
-  /* =====================================================
-     PLAY OVERLAY
-     ===================================================== */
-
-  overlay.addEventListener(
-    "click",
-    function(){
-
-      overlay.style.display =
-        "none";
-
-      video.play()
-        .catch(function(){});
-
-    }
-  );
-
-
-  video.addEventListener(
-    "play",
-    function(){
-
-      overlay.style.display =
-        "none";
-
-    }
-  );
-
-
-  video.addEventListener(
-    "pause",
-    function(){
-
-      if(
-        video.currentTime === 0
-      ){
-
-        overlay.style.display =
-          "flex";
-
-      }
-
-    }
-  );
-
-
-  /* =====================================================
-     VIDEO ERROR
-     ===================================================== */
-
-  video.addEventListener(
-    "error",
-    function(){
-
-      fallback.style.display =
-        "flex";
-
-      fallback.textContent =
-        "Video unavailable — open on Internet Archive ↗";
-
-      fallback.style.cursor =
-        "pointer";
-
-      fallback.onclick =
-        function(){
-
-          window.open(
-            archiveItemUrl(identifier),
-            "_blank",
-            "noopener"
-          );
-
-        };
-
-    }
-  );
-
-
-  return card;
-
-}
-
-
-/* =========================================================
-   CREATE IMAGE CARD
-   ========================================================= */
-
-function makeImageCard(
-  item,
-  file
-){
-
-  const identifier =
-    item.metadata?.identifier ||
-    item.identifier;
-
-  const title =
-    item.metadata?.title ||
-    identifier;
-
-  const filename =
-    file.name
-      .split("/")
-      .pop();
-
-  const imageUrl =
-    mediaUrl(
-      identifier,
-      file.name
-    );
-
-
-  const card =
-    document.createElement("article");
-
-  card.className =
-    "sh-video-card";
-
-
-  card.innerHTML = `
-
-    <h3
-      title="${esc(title)}"
-    >
-      ${esc(title)}
-    </h3>
-
-    <a
-      href="${esc(imageUrl)}"
-      target="_blank"
-      rel="noopener"
-      class="sh-player"
-      style="display:block;"
-    >
-
-      <img
-        src="${esc(imageUrl)}"
-        loading="lazy"
-        alt="${esc(title)}"
-      >
+      </div>
 
     </a>
 
-    <div
-      class="sh-media-name"
-      title="${esc(file.name)}"
-    >
-      ${esc(filename)}
-    </div>
-
   `;
 
-
   const image =
-    card.querySelector("img");
-
+    card.querySelector(".sh-archive-thumb img");
 
   image.addEventListener(
     "error",
     function(){
 
-      image.style.display =
-        "none";
+      image.style.display = "none";
+
+      card
+        .querySelector(".sh-archive-thumb")
+        .classList.add("sh-no-thumbnail");
 
     }
   );
-
 
   return card;
 
@@ -1522,157 +1159,17 @@ function makeImageCard(
 
 
 /* =========================================================
-   MAKE MEDIA CARD
+   LOAD 9 ARCHIVE FOLDER CARDS
    ========================================================= */
 
-function makeCard(
-  item,
-  file
-){
+function load(){
 
-  if(
-    isVideo(file.name)
-  ){
+  status(
+    "",
+    "Archive resources"
+  );
 
-    return makeVideoCard(
-      item,
-      file
-    );
-
-  }
-
-
-  if(
-    isImage(file.name)
-  ){
-
-    return makeImageCard(
-      item,
-      file
-    );
-
-  }
-
-
-  return null;
-
-}
-
-
-/* =========================================================
-   MERGE KNOWN FILES + DISCOVERED FILES
-   ========================================================= */
-
-function mergeFiles(
-  item,
-  category
-){
-
-  const discovered =
-    (item.files || [])
-      .filter(function(file){
-
-        return (
-          file &&
-          file.name &&
-          !/^__ia_thumb\.jpg$/i.test(
-            file.name
-          ) &&
-          (
-            isVideo(file.name) ||
-            isImage(file.name)
-          )
-        );
-
-      });
-
-
-  const map =
-    new Map(
-      discovered.map(
-        file => [
-          file.name,
-          file
-        ]
-      )
-    );
-
-
-  const result = [];
-
-
-  /* -------------------------------------------------------
-     Put manually specified files first
-     ------------------------------------------------------- */
-
-  (category.knownFiles || [])
-    .forEach(function(filename){
-
-      if(
-        map.has(filename)
-      ){
-
-        result.push(
-          map.get(filename)
-        );
-
-        map.delete(filename);
-
-      }
-
-      else{
-
-        /*
-          Even if metadata doesn't currently
-          return the file, keep it.
-        */
-
-        result.push({
-          name:filename
-        });
-
-      }
-
-    });
-
-
-  /* -------------------------------------------------------
-     Add automatically discovered files
-     ------------------------------------------------------- */
-
-  Array.from(
-    map.values()
-  )
-  .sort(
-    function(a,b){
-
-      return String(a.name)
-        .localeCompare(
-          String(b.name)
-        );
-
-    }
-  )
-  .forEach(function(file){
-
-    result.push(file);
-
-  });
-
-
-  return result;
-
-}
-
-
-/* =========================================================
-   CATEGORY SECTION
-   ========================================================= */
-
-function buildSection(
-  category,
-  media
-){
+  container.innerHTML = "";
 
   const section =
     document.createElement("section");
@@ -1680,7 +1177,6 @@ function buildSection(
   section.className =
     "sh-category";
 
-
   section.innerHTML = `
 
     <div class="sh-category-head">
@@ -1688,450 +1184,33 @@ function buildSection(
       <div>
 
         <h2 class="sh-category-title">
-          ${esc(category.title)}
+          Sutra Health Archive
         </h2>
 
         <p class="sh-category-subtitle">
-          ${esc(category.subtitle)}
+          Explore our folders, publications, videos and wellness resources.
         </p>
 
       </div>
 
-      <a
-        class="sh-more-btn"
-        href="${archiveItemUrl(category.id)}"
-        target="_blank"
-        rel="noopener"
-      >
-        Open Archive ↗
-      </a>
-
     </div>
 
-    <div
-      class="sh-category-grid"
-    ></div>
-
-    <div
-      class="sh-more-wrap"
-    ></div>
+    <div class="sh-category-grid"></div>
 
   `;
-
 
   const grid =
-    section.querySelector(
-      ".sh-category-grid"
+    section.querySelector(".sh-category-grid");
+
+  CATEGORIES.forEach(function(category){
+
+    grid.appendChild(
+      makeArchiveCard(category)
     );
 
-  const more =
-    section.querySelector(
-      ".sh-more-wrap"
-    );
+  });
 
-
-  let shown = 0;
-
-
-  function renderMore(){
-
-    const count =
-      shown === 0
-      ? INITIAL
-      : STEP;
-
-
-    const end =
-      Math.min(
-        shown + count,
-        media.length
-      );
-
-
-    media
-      .slice(
-        shown,
-        end
-      )
-      .forEach(function(data){
-
-        const card =
-          makeCard(
-            data.item,
-            data.file
-          );
-
-        if(card){
-
-          grid.appendChild(
-            card
-          );
-
-        }
-
-      });
-
-
-    shown = end;
-
-
-    more.innerHTML = "";
-
-
-    if(
-      shown < media.length
-    ){
-
-      const button =
-        document.createElement(
-          "button"
-        );
-
-      button.type =
-        "button";
-
-      button.className =
-        "sh-more-btn";
-
-      button.textContent =
-        "More " +
-        category.title +
-        " (" +
-        (media.length - shown) +
-        ")";
-
-
-      button.addEventListener(
-        "click",
-        renderMore
-      );
-
-
-      more.appendChild(
-        button
-      );
-
-    }
-
-  }
-
-
-  renderMore();
-
-
-  return section;
-
-}
-
-
-/* =========================================================
-   EMPTY SECTION
-   ========================================================= */
-
-function emptySection(
-  category
-){
-
-  const section =
-    document.createElement(
-      "section"
-    );
-
-  section.className =
-    "sh-category";
-
-
-  section.innerHTML = `
-
-    <div class="sh-category-head">
-
-      <div>
-
-        <h2 class="sh-category-title">
-          ${esc(category.title)}
-        </h2>
-
-        <p class="sh-category-subtitle">
-          ${esc(category.subtitle)}
-        </p>
-
-      </div>
-
-      <a
-        class="sh-more-btn"
-        href="${archiveItemUrl(category.id)}"
-        target="_blank"
-        rel="noopener"
-      >
-        Open Archive ↗
-      </a>
-
-    </div>
-
-    <div class="sh-category-empty">
-
-      No supported video/photo files found
-      in this Archive item.
-
-    </div>
-
-  `;
-
-
-  return section;
-
-}
-
-
-/* =========================================================
-   LOAD GALLERY
-   ========================================================= */
-
-async function load(){
-
-  status(
-    "loading",
-    "Fetching videos & photos from Internet Archive…"
-  );
-
-
-  refresh.disabled =
-    true;
-
-
-  container.innerHTML = "";
-
-
-  let total = 0;
-
-  let successful = 0;
-
-
-  for(
-    const category of CATEGORIES
-  ){
-
-    try{
-
-      const item =
-        await getItem(
-          category.id
-        );
-
-
-      const files =
-        mergeFiles(
-          item,
-          category
-        );
-
-
-      if(files.length){
-
-        const media =
-          files.map(
-            function(file){
-
-              return {
-                item:item,
-                file:file
-              };
-
-            }
-          );
-
-
-        container.appendChild(
-          buildSection(
-            category,
-            media
-          )
-        );
-
-
-        total +=
-          files.length;
-
-        successful++;
-
-      }
-
-      else{
-
-        container.appendChild(
-          emptySection(
-            category
-          )
-        );
-
-      }
-
-    }
-
-    catch(error){
-
-      console.error(
-        "Internet Archive error:",
-        category.id,
-        error
-      );
-
-
-      /*
-        Important:
-
-        Even when metadata fails,
-        manually supplied known files
-        can still be displayed.
-      */
-
-      if(
-        (category.knownFiles || [])
-          .length
-      ){
-
-        const fallbackItem = {
-
-          metadata:{
-            identifier:
-              category.id,
-
-            title:
-              category.title
-
-          }
-
-        };
-
-
-        const media =
-          category.knownFiles
-            .map(function(filename){
-
-              return {
-
-                item:
-                  fallbackItem,
-
-                file:{
-                  name:
-                    filename
-                }
-
-              };
-
-            });
-
-
-        container.appendChild(
-          buildSection(
-            category,
-            media
-          )
-        );
-
-
-        total +=
-          media.length;
-
-        successful++;
-
-      }
-
-      else{
-
-        const section =
-          document.createElement(
-            "section"
-          );
-
-        section.className =
-          "sh-category";
-
-
-        section.innerHTML = `
-
-          <div class="sh-category-head">
-
-            <div>
-
-              <h2 class="sh-category-title">
-                ${esc(category.title)}
-              </h2>
-
-              <p class="sh-category-subtitle">
-                ${esc(category.subtitle)}
-              </p>
-
-            </div>
-
-            <a
-              class="sh-more-btn"
-              href="${archiveItemUrl(category.id)}"
-              target="_blank"
-              rel="noopener"
-            >
-              Open Archive ↗
-            </a>
-
-          </div>
-
-          <div class="sh-category-empty">
-
-            Could not read this Archive item
-            right now.
-
-            <br><br>
-
-            <a
-              href="${archiveItemUrl(category.id)}"
-              target="_blank"
-              rel="noopener"
-            >
-              Open on Internet Archive ↗
-            </a>
-
-          </div>
-
-        `;
-
-
-        container.appendChild(
-          section
-        );
-
-      }
-
-    }
-
-  }
-
-
-  if(successful){
-
-    status(
-      "",
-      "Synced — " +
-      total +
-      " media file(s) across " +
-      successful +
-      " categories"
-    );
-
-  }
-
-  else{
-
-    status(
-      "error",
-      "Internet Archive data could not be loaded"
-    );
-
-  }
-
-
-  refresh.disabled =
-    false;
+  container.appendChild(section);
 
 }
 
@@ -2153,6 +1232,7 @@ refresh.addEventListener(
 load();
 
 })();
+
 </script>
 
 </body>
