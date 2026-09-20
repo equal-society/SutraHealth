@@ -198,21 +198,22 @@
 
  <!-- ============================================================
  GSAP
- FIX: self-host these two files instead of pulling from
- cdnjs.cloudflare.com. Download gsap.min.js and
- ScrollTrigger.min.js (version 3.12.5) and place them in
- /js/vendor/ on your own server, then point the src at your
- own domain as shown below. This removes the dependency on a
- third-party CDN that Googlebot's renderer sometimes fails to
- fetch (confirmed failing in your Search Console report).
+ REVERTED to cdnjs.cloudflare.com. Self-hosting was attempted
+ but the files were never uploaded to /js/vendor/ on the live
+ server, which caused a MIME-type error (server returned the
+ homepage HTML instead of the script). Reverting to the CDN
+ is safe: the CSS safety net in the <head> above already
+ guarantees the hero content stays visible whether or not
+ this script loads successfully. If you self-host later,
+ just swap these two src values back to your own domain.
  ============================================================ -->
 
  <script
- src="/js/vendor/gsap.min.js"
+ src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
  ></script>
 
  <script
- src="/js/vendor/ScrollTrigger.min.js"
+ src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
  ></script>
 
  <!-- ============================================================
