@@ -230,10 +230,14 @@ const footerPath = '/Components/Footer';
   initNavbar();
 
 
-  await loadComponent(
-    'testimonials',
-    testimonialsPath
-  );
+  // Load testimonials only on pages
+  // that contain the testimonials container
+  if (document.getElementById('testimonials')) {
+    await loadComponent(
+      'testimonials',
+      testimonialsPath
+    );
+  }
 
 
   await loadComponent(
