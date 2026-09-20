@@ -139,10 +139,10 @@ const footerCss = getComponentUrl('../styles/Footer.css');
 injectStylesheet(navbarCss);
 injectStylesheet(footerCss);
 
-const navbarPath = getComponentUrl('../Components/Navbar.html');
+const navbarPath = getComponentUrl('../Components/Navbar');
 const testimonialsPath = getComponentUrl('../Components/testimonials.html');
 const yogaPath = getComponentUrl('/yoga.html');
-const footerPath = getComponentUrl('../Components/Footer.html');
+const footerPath = getComponentUrl('../Components/Footer');
 
 // ✅ Yeh lagao:
 (async () => {
