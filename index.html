@@ -143,6 +143,27 @@
  <link rel="stylesheet" href="/styles/Index.css">
 
  <!-- ============================================================
+ FIX: NO-JS / SCRIPT-FAILURE SAFETY NET
+ This guarantees the hero and animated content are visible by
+ default. GSAP/AOS will animate FROM these visible states if
+ they load successfully. If any animation library fails to
+ load (slow CDN, bot crawler, ad blocker, offline script),
+ the content is still fully visible instead of stuck invisible.
+ This is the actual fix for the "invisible hero text" issue
+ seen in Google Search Console's rendered screenshot.
+ ============================================================ -->
+ <style>
+ .hero-content .tagline,
+ .hero-content h1,
+ .hero-content p,
+ .hero-buttons a,
+ .hero-buttons button,
+ .stats-container .stat-box {
+ opacity: 1;
+ }
+ </style>
+
+ <!-- ============================================================
  GOOGLE ANALYTICS
  ============================================================ -->
 
@@ -177,14 +198,21 @@
 
  <!-- ============================================================
  GSAP
+ FIX: self-host these two files instead of pulling from
+ cdnjs.cloudflare.com. Download gsap.min.js and
+ ScrollTrigger.min.js (version 3.12.5) and place them in
+ /js/vendor/ on your own server, then point the src at your
+ own domain as shown below. This removes the dependency on a
+ third-party CDN that Googlebot's renderer sometimes fails to
+ fetch (confirmed failing in your Search Console report).
  ============================================================ -->
 
  <script
- src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+ src="/js/vendor/gsap.min.js"
  ></script>
 
  <script
- src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+ src="/js/vendor/ScrollTrigger.min.js"
  ></script>
 
  <!-- ============================================================
@@ -248,17 +276,26 @@
 
 
  <!-- HERO CONTENT -->
+ <!--
+ FIX: removed data-aos="fade-up" and its data-aos-* attributes
+ from this wrapper. AOS's own stylesheet sets opacity:0 on any
+ element carrying a data-aos attribute, and only removes it
+ once AOS's JS detects the element scrolling into view. Google's
+ renderer does not reliably trigger that scroll event, so this
+ wrapper was staying at opacity:0 in Google's render — this is
+ the direct cause of the invisible "Build Better Health Through
+ Lifestyle" headline seen in the Search Console screenshot.
+ GSAP already animates this exact content (see script at the
+ bottom of the page), so AOS on this wrapper was redundant and
+ was the thing actually causing the failure.
+ -->
 
  <div
  class="hero-content"
  id="main-content"
  >
 
- <div
- data-aos="fade-up"
- data-aos-duration="1500"
- data-aos-delay="100"
- >
+ <div>
 
  <div class="tagline">
 
@@ -1628,6 +1665,9 @@
 
  <!-- ============================================================
  FONT AWESOME
+ FIX: still recommended to self-host this too (low priority —
+ only affects icons, not text content). Left as CDN for now
+ since it does not cause the invisibility bug.
  ============================================================ -->
 
  <link
