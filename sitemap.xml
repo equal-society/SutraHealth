@@ -1,129 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
   <url>
     <loc>https://lifequality.org.in/</loc>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>
-
-  
-
-
   <url>
-    <loc>https://lifequality.org.in/equal-society.html</loc>
+    <loc>https://lifequality.org.in/equal-society</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
-
-  
-
   <url>
-    <loc>https://lifequality.org.in/programs/IntegrativeMedicine.html</loc>
+    <loc>https://lifequality.org.in/programs/IntegrativeMedicine</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
-
   <url>
-    <loc>https://lifequality.org.in/consultation.html</loc>
+    <loc>https://lifequality.org.in/consultation</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
-
   <url>
-    <loc>https://lifequality.org.in/programs/dietary-advice.html</loc>
+    <loc>https://lifequality.org.in/programs/dietary-advice</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
-
   <url>
-    <loc>https://lifequality.org.in/programs/shirodhara.html</loc>
+    <loc>https://lifequality.org.in/programs/shirodhara</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
-
   <url>
-    <loc>https://lifequality.org.in/programs/my-buddy.html</loc>
+    <loc>https://lifequality.org.in/programs/my-buddy</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
-
   <url>
-    <loc>https://lifequality.org.in/programs/singing-kirtan-dance.html</loc>
+    <loc>https://lifequality.org.in/programs/singing-kirtan-dance</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
-
   <url>
-    <loc>https://lifequality.org.in/Yoga/yoga-asana.html</loc>
+    <loc>https://lifequality.org.in/Yoga/yoga-asana</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
-
-  
-
   <url>
-    <loc>https://lifequality.org.in/Yoga/pranayama.html</loc>
+    <loc>https://lifequality.org.in/Yoga/pranayama</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
-
   <url>
-    <loc>https://lifequality.org.in/Yoga/meditation.html</loc>
+    <loc>https://lifequality.org.in/Yoga/meditation</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
-
   <url>
-    <loc>https://lifequality.org.in/LifeStyle/LifeStyleCounseling.html</loc>
+    <loc>https://lifequality.org.in/LifeStyle/LifeStyleCounseling</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
-
   <url>
-    <loc>https://lifequality.org.in/LifeStyle/research.html</loc>
+    <loc>https://lifequality.org.in/LifeStyle/research</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
-
   <url>
-    <loc>https://lifequality.org.in/LifeStyle/nature-walks.html</loc>
+    <loc>https://lifequality.org.in/LifeStyle/nature-walks</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
-
   <url>
-    <loc>https://lifequality.org.in/LifeStyle/positive-thinking.html</loc>
+    <loc>https://lifequality.org.in/LifeStyle/positive-thinking</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
-
   <url>
-    <loc>https://lifequality.org.in/LifeStyle/soft-sun-rays.html</loc>
+    <loc>https://lifequality.org.in/LifeStyle/soft-sun-rays</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
-
   <url>
-    <loc>https://lifequality.org.in/volunteer.html</loc>
+    <loc>https://lifequality.org.in/volunteer</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
-
   <url>
-    <loc>https://lifequality.org.in/Contact.html</loc>
+    <loc>https://lifequality.org.in/Contact</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
-
-   <url>
-     <loc>https://lifequality.org.in/retreat</loc>
+  <url>
+    <loc>https://lifequality.org.in/retreat</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
-
-
-
-
-
 </urlset>
